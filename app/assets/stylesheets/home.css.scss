@@ -1,0 +1,75 @@
+$grayMediumLight: #eaeaea;
+$bordercolor: #b6c2cb;
+$darkborder: #393b3d;
+$darkgreytext: #5d6062;
+$lightgreytext: #808386;
+$grayLight: #d4d9dc;
+
+/* Insert Hero CSS into Application Layout */
+
+.buffer { padding-top: 150px; }
+
+.hero {
+	background-image: image-url("luxurycondo_1.jpg");
+	background-size: 100%;
+	font-size: 50px;
+	height: 650px;
+	margin-top: -50px;
+}
+
+#hero-text {
+	text-shadow: 0 0 7px #000;
+  	-moz-text-shadow: 0 0 7px #000;
+}
+
+.calltoaction {
+	margin: 5% 30% 0 40%;
+	width: 30%;
+}
+
+.hero-details {
+	width: 90%;
+	height: 105px;
+	margin: 12% 5% 0 5%;
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid $bordercolor;
+	opacity:0.9;
+	filter: alpha(opacity=9); /* For IE8 and earlier */
+}
+
+.hero-details li {
+
+	list-style: none;
+}
+
+/* Main Content Area */
+
+.main-content-area {
+	width: 100%;
+	border-top: 5px solid $bordercolor;
+}
+
+.main-box {
+	margin: 15px 0 0 0;
+	width: 300px;
+	height: 200px;
+	border: 1px solid $bordercolor;
+	border-radius: 5px;
+	background-color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
