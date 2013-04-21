@@ -1,5 +1,3 @@
-@import "bootstrap";
-
 /* Mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
@@ -21,41 +19,30 @@ section { overflow: auto; }
 textarea { resize: vertical; }
 .left { float: left; }
 .right { float: right; }
-
-.center {
-	text-align: center;
-	h1 { margin-bottom: 10px; }
-}
-
+.center {text-align: center; h1 { margin-bottom: 10px; }}
 a { text-decoration: none; }
 a:hover { text-decoration: none; }
 li { list-style: none; }
 .wrapper { min-height: 100%; position: relative; }
-.push { padding-bottom: 200px; }
+.push { padding-bottom: 285px; }
+.main-content-area {margin-bottom: 140px; min-height: 500px; width: 100%; background-image: white;}
+.buffer {height:90px;}
+.buffer-small {height:30px;}
 
 /* Typography */
 
 h1, h2, h3, h4, h5, h6 { line-height: 1; }
-
-h1 {font-size: 1.4em; letter-spacing: -2px;
-	margin-bottom: 30px; text-align: center; color: white;
-}
-
-h2 { font-size: 1.7em; letter-spacing: -1px; 
-	margin-bottom: 30px; text-align: center;
-	font-weight: normal;
-}
+h1 {font-size: 1.4em; letter-spacing: -2px; margin-bottom: 30px; text-align: center; color: white;}
+h2 { font-size: 1.7em; letter-spacing: -1px;margin-bottom: 30px; text-align: center;font-weight: normal;}
 p { font-size: 0.9em; line-height: 1.1em; }
 
 /* Minitopbar */
 
 .minitopbar {
-	position: fixed;
-	top: 0;
-	left: 0;
+	position: absolute;
+	top: 0; left: 0;
 	z-index: 999;
-	width: 100%;
-	height: 28px;
+	width: 100%; height: 28px;
 	background-color: #232426;
 	border-bottom: 1px solid $grayLight;
 	opacity:1;
@@ -65,115 +52,93 @@ p { font-size: 0.9em; line-height: 1.1em; }
 .push-left { margin-left: -18px; }
 .push-right li { float:right; margin-left: 15px; font-weight: bold;}
 .push-left li { float: left; }
-
-.push-right, .push-left li {
-	position: relative;
-	bottom: 6px;
-	margin-left: 15px;
-	font-size: 0.95em;
+.push-right, .push-left li {position: relative; bottom: 6px; margin-left: 15px; font-size: 0.95em;
 	a { color: #d4d9dc; }	
 	a:hover { text-decoration: none; color: #b6e0fe; }
 }
 
 /* Main Topbar */
 
-.maintopbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 90px;
-	background-color: #e8eff3;
-	border-bottom: 1px solid $grayLight;
-	opacity:0.95;
-	filter: alpha(opacity=95); /* For IE8 and earlier */
-}
-
-.maintopbar nav {
-	margin-top: 35px;
-	float:left;
-}
-
-#logo {
-	font-size: 1.8em;
-	font-weight: bold;
-	margin-top: 2px;
-	margin-right: 25px;
-	&:hover { text-decoration: none; }
-}
+.maintopbar {position: absolute; top: 0; left: 0; width: 100%; height: 90px; background-color: #e8eff3; border-bottom: 2px solid #80878e; opacity:0.95; filter: alpha(opacity=95); /* For IE8 and earlier */}
+.maintopbar nav {margin-top: 35px; float:left;}
+#logo {font-size: 1.8em; font-weight: bold;margin-top: 2px; margin-right: 25px;&:hover { text-decoration: none; }}
+#topbar-right {float:right; padding: 7px 0;}
+.view-moves {border-radius: 5px; background-color: #d4e4f2; border: 1px solid $bordercolor; color: #477eaf; padding: 5px 15px; &:hover {color: #1c4f7d;}}
 
 /* Footer */
 
 footer {
-	width: 100%;
-	height: 200px;
-	border: 1px solid $bordercolor;
-	border-radius: 2px;
+	width: 100%; height: 285px;
+	border-top: 1px solid $bordercolor;
 	padding: 15px 15px;
-	color: #3c3e3f;
-	background-color: #e3e9ee;
-	opacity:0.95;
-	filter: alpha(opacity=95); 
-	clear: both;
-	position:relative;
-	margin-top: -200px;
+	margin-top: -285px;
+	color: #649ed0;
+	background-color: #eef4fa;
+	clear: both; position:relative;
 	
-	a {
-	color: #555;
-	display: block;
-	margin-top: -4px;
-	color: #12578c;
-	text-decoration: none;
-		&:hover { color: #222; }
+	a { color: #5f96c4; display: block; margin-top: -4px; text-decoration: none;
+		&:hover { color: #1c76c1; }
 	}
 }
 
+.footer-col li {float: left; width: 165px; list-style: none; margin-left: -5px; line-height: 2.2em;}
+#social-col {width:225px;}
+#footer-title {font-size:1.4em; font-weight:300; color:#7e9bb2; border-bottom:1px solid #7e9bb2; margin: 10px 20px 10px 20px; padding:0 0 6px 0;}
+
+#social-button-container {width:172px;}
+.social-button {
+	background-color: white;
+	border: 1px solid #e4e7eb; border-radius: 5px;
+	padding: 7px 5px; margin: 5px 0 0 -5px;
+	color: #afb6bb;
+	p {display:inline; vertical-align: middle; margin-left: 10px;}
+	span {font-family: "Social Icons"; font-size: 2em; display: inline; vertical-align: middle;}
+	&:hover {background-color: #e8edf1; border: 1px solid #c8dbeb; color: #3482ca;}
+}
+.facebook {&:hover {color: #3482ca;}}
+.twitter {&:hover {color: #3cd0d9; background-color: #eefcfc;}}
+.google {&:hover {color: #e05d43; background-color: #fceeee;}}
+
+#copyright-footer {display:inline;}
+#copyright-footer p {color:#9dabb4;margin-top:13px;}
+
 /* Register & Signin Pages */
 
-.register-box {
-	width: 290px;
-	margin-left: 35px;
-	float: left;
-}
-
+.register-box {width: 500px; margin-left: 35px; float: left;}
 
 /* Forms */
 
 input, textarea, select, .uneditable-input {
 	border: 1px solid #bbb;
-	width: 100%;
-	height: auto;
+	width: 100%; height: auto;
 	padding: 1px;
 	margin-bottom: 15px;
 	@include box_sizing;
 }
 
-.auth-field { width: 250px; margin: 10px 0; }
+.form-label {margin-bottom: -15px;}
 
-#error_explanation {
-	color: black;
-	ul { list-style: none; margin: 0 0 18px 0; }
+.login-graphic {float: left; width: 520px; padding: 15px 35px;}
+.login-box {float: left; border-left: 1px solid $bordercolor; width: 295px; padding: 10px 0 35px 45px;}
+.session-elements {text-align: right; padding: 0 5px 0 0;}
+.auth-field { width: 280px; margin: 10px 0;}
+#error_explanation { color: black; ul { list-style: none; margin: 0 0 18px 0; } }
+.field_with_errors { @extend .control-group; @extend .error; }
+.account-type {
+	border-radius: 5px;
+	border: 1px solid $bordercolor;
+	background-color: #eff8ff;
+	color: #1375b9;
+	padding: 3px 10px;
 }
-
-.field_with_errors {
-	@extend .control-group;
-	@extend .error;
-}
-
-#auth-btn {
-	display:block;
-	float: right;
-	margin-right: 25px;
-}
-
-#auth-section {
-	font-size: 0.85em;
-	margin-right: 25px;
-	a { float:right; text-decoration: none; }
+.account-selected {
+	background-color: #9ed5fb;
+	border-radius: 5px;
+	border: 1px solid $bordercolor;
+	color: white;
+	padding: 3px 10px;
 }
 
 /* Miscellaneous */
 
-.debug_dump { clear: both; float: left; width: 100%; margin-top: 45px;
-	@include box_sizing;
-}
+.debug_dump { clear: both; float: left; width: 100%; margin-top: 45px; @include box_sizing; }

@@ -15,6 +15,16 @@ describe User do
 	it { should respond_to(:password) }
 	it { should respond_to(:password_confirmation) }
 
+	describe "When user type is not present" do
+		before { @user.type = " " }
+		it { should_not be_valid }
+	end
+
+	describe "When user city is not present" do
+		before { @user.city = " " }
+		it { should_not be_valid }
+	end
+
 	describe "When first name is not present" do
 		before { @user.first_name = " " }
 		it { should_not be_valid }

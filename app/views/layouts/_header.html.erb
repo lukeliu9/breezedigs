@@ -3,8 +3,8 @@
 	<div class="container">
 		<nav>
 			<ul class="push-left">
-				<li><%= link_to "How it Works", "" %></li>
-				<li><%= link_to "FAQ", "" %></li>				
+				<li><%= link_to "How it Works", "/how-it-works" %></li>
+				<li><%= link_to "FAQ", faq_path %></li>				
 			</ul>
 		</nav>
 
@@ -21,7 +21,6 @@
 				</ul>
 			<% end %>
 		</nav>
-	
 	</div>
 </div>
 
@@ -45,6 +44,11 @@
 			I am moving to/within:<br>
 			Dropdown box
 		</nav>
+
+		<nav id="topbar-right">
+			<button class="view-moves">View Dig Seekers</button>
+		</nav>
+
 	</div>
 </div>
 

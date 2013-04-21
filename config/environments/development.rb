@@ -37,4 +37,8 @@ Breezedigs::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+  config.to_prepare do
+    Thread.current.keys.each{ |k| Thread.current[k] = nil if k.to_s =~ /_scoped_methods$/ }
+  end
+
 end

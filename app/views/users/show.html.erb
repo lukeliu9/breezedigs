@@ -1,0 +1,22 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'profile' %>
+<% end %>
+
+<% provide(:title, 'My Account') %>
+
+<div class="profile-header">
+	<div class="container">
+
+		<div class="buffer"></div><div class="buffer-small"></div>	
+			<% flash.each do |key, value| %>
+				<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+			<% end %>
+	
+	
+		<div class="user-section">
+			<%= image_tag @user.avatar.url %>
+			<%= @user.email %>
+		</div>
+
+	</div>
+</div>

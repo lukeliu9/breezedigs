@@ -1,0 +1,81 @@
+$grayMediumLight: #eaeaea;
+$bordercolor: #b6c2cb;
+$darkborder: #393b3d;
+$darkgreytext: #5d6062;
+$lightgreytext: #808386;
+$grayLight: #d4d9dc;
+
+/* How Content Area */
+
+.how-area {
+	height: 1000px; width: 100%;
+	background-color: white;
+}
+
+.how-hero {
+	background-image:url('emptyapt.png');
+	padding: 15px 10px 25px 10px;
+}
+
+.how-hero ul li {}
+.how-hero h1 {}
+.how-hero h2 {}
+.how-hero h3 {}
+
+/* Half Boxes */
+
+.half-box {width: 420px; margin:10px 10px; padding:10px 10px; float:left;}
+.half-box ul li ul li {display: inline-block; margin-top: -10px;}
+
+.half-box h1 {color:#54708c;font-size:1.6em;font-weight:300;}
+.half-box h2 {color:#2f3337;font-size:1.3em;font-weight:300;}
+.half-box p {color:#535e6a;font-size:1.1em;font-weight:300;line-height:1.5em;}
+.half-box span {font-size:1.2em; margin:0 2px 0 0; padding:15px; background-color: #bedaf3; border-radius: 6px;}
+
+/* Content Halves */
+
+.dig-finder {}
+.dig-seeker {}
+
+.dig-finder span {}
+.dig-finder h2 {}
+.dig-finder p {}
+
+.dig-seeker span {}
+.dig-seeker h2 {}
+.dig-seeker p {}
+
+/* Global step styles */
+
+.steps {
+
+}
+
+/* Step-Specific styles*/
+
+#step1 {}
+
+#step2 {}
+
+#step3 {}
+
+#step4 {}
+
+#step5 {}
+
+/* Other */
+
+.pricing {
+
+}
+
+
+
+
+
+
+
+
+
+
+

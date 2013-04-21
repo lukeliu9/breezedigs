@@ -1,15 +1,17 @@
 Breezedigs::Application.routes.draw do
-
+  
+  root to: 'static_pages#home'
 
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout'}
+  devise_for :users
 
   resources :users
-
-  root to: 'static_pages#home'
+  resources :surveys
+  resources :reviews
+  resources :targets
 
   match '/faq', to: 'static_pages#faq'
   match '/terms', to: 'static_pages#terms'
@@ -17,6 +19,11 @@ Breezedigs::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   match '/how-it-works', to: 'static_pages#how'
   match '/careers', to: 'static_pages#careers'
+  match '/press', to: 'static_pages#press'
+  match '/partners', to: 'static_pages#partners'
+  match '/testimonials', to: 'static_pages#testimonials'
+  match '/privacy', to: 'static_pages#privacy'
+  match '/example', to: 'static_pages#example'
 
   match '/signup', to: 'users#sign_up'
   match '/signin', to: 'sessions#sign_in'

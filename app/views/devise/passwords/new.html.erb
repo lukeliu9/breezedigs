@@ -1,12 +1,44 @@
-<h2>Forgot your password?</h2>
+<% provide(:title, 'Forgot password') %>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
+<div class="main-content-area">
+	<div class="container">
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+		<!--Flash Notice -->
+		<div class="buffer"></div>
+		<div class="buffer-small"></div>	
+			<% flash.each do |key, value| %>
+				<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+			<% end %>
+		<div class="buffer-small"></div>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
-<% end %>
+		<!-- Content Area -->	
+		<div class="login-graphic">
+			<h3>Find your next digs</h3>
+			<%= image_tag "digs.png" %>
+		</div>
 
-<%= render "devise/shared/links" %>
+		<div class="login-box">
+
+			<h2>Forgot your password?</h2>
+
+			  <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+			  <%= devise_error_messages! %>
+
+			  <div><%= f.label :email, class: "form-label" %><br />
+			  <%= f.email_field :email, class: "auth-field", :autofocus => true %></div>
+
+			 <div class="session-elements">
+			 	<br>
+			  <div><%= f.submit "Send me reset password instructions", class: "btn" %></div>
+			<% end %>
+				<br>
+				<%= render "devise/shared/links" %>		
+				<br><br><br><br><br><br><br><br>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+
