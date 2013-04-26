@@ -1,23 +1,23 @@
 <!-- Small black topbar containing utility links -->
 <div class="minitopbar">
-	<div class="container">
-		<nav>
-			<ul class="push-left">
+	<div class="container no-wrap">
+		<nav class="minibar-box left-box">
+			<ul>
 				<li><%= link_to "How it Works", "/how-it-works" %></li>
 				<li><%= link_to "FAQ", faq_path %></li>				
 			</ul>
 		</nav>
 
-		<nav>
+		<nav class="minibar-box">
 			<% if user_signed_in? %>
-				<ul class="push-right">
+				<ul>
 					<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>		
-					<li><%= link_to "My Account", "" %></li>	
+					<li><%= link_to "My Account", user_path(current_user) %></li>	
 				</ul>
 			<% else %>
-				<ul class="push-right">
+				<ul>
+					<li><%= link_to "Sign up", new_user_registration_path %></li>	
 					<li><%= link_to "Sign in", new_user_session_path %></li>
-					<li><%= link_to "Sign up", new_user_registration_path %></li>			
 				</ul>
 			<% end %>
 		</nav>
@@ -26,9 +26,9 @@
 
 <!-- Main interactive topbar -->
 <div class="maintopbar">
-	<div class="container">
+	<div class="container no-wrap">
 
-		<nav>
+		<nav class="header-box logo-box">
 			<div id="logo">
 				<%= link_to(
 				image_tag("BreezedigsLogo.png", 
@@ -40,12 +40,12 @@
 			</div>
 		</nav>
 
-		<nav>
+		<nav class="header-box city-box">
 			I am moving to/within:<br>
 			Dropdown box
 		</nav>
 
-		<nav id="topbar-right">
+		<nav class="header-box">
 			<button class="view-moves">View Dig Seekers</button>
 		</nav>
 

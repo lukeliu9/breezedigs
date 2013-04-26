@@ -1,15 +1,86 @@
 $grayMediumLight: #eaeaea;
 $bordercolor: #b6c2cb;
+$lightBorder: #c6d3df;
 $darkborder: #393b3d;
-$darkgreytext: #5d6062;
-$lightgreytext: #808386;
-$grayLight: #d4d9dc;
+$darkgreytext: #a1a6aa;
+
 
 /* Profile Header */
 
-.profile-header {}
-
-.user-section {
-	width: 300px;
-	background: black;
+.profile-header {
+	vertical-align: middle;
+	height:250px;
 }
+
+.profile-header li {
+	white-space: normal; display:inline-block;
+}
+
+.profile-header h1 {font-weight:400; color:$darkgreytext;font-size:1.5em ;color:#24292d; display:inline;}
+.profile-header h2 {font-weight:400; color:$darkgreytext;font-size:1.5em ;color:#24292d; display:inline; margin-left:3px;}
+.profile-header h3 {font-weight:300; color:$darkgreytext;font-size:1.3em ;color:#464e54;}
+
+#avatar {
+	border: 1px solid #59788d;
+	border-radius: 4px;
+	background-color: white;
+	padding: 10px;
+}
+#user-section {width: 400px;margin:0 10px;padding:0 10px;}
+
+#user-links {}
+
+.profile-nav {margin: 30px 0 0 0;}
+
+.profile-nav li {
+	list-style: none;
+	display: inline;
+	margin-left: 10px;
+}
+
+.prof-btn {padding: 8px 15px; border-radius: 5px; &:hover {background: #dfeefb;}}
+.selected-btn {background-color: #dfeefb; border: 1px solid $lightBorder;}
+
+/* Profile Content Area */
+
+.profile-content-area {
+	width: 100%;
+	min-height: 600px;
+	padding: 5px;
+}
+
+.move-placeholder {
+	border: 1px dashed $bordercolor;
+	border-radius: 15px;
+	padding: 25px 50px 35px 50px;
+	margin: 90px 20% 30px 20%;
+	width: 46%;
+	text-align: center;
+}
+
+.move-placeholder h3 {font-size: 1.3em;}
+
+.suggestions-placeholder {}
+
+
+/* Edit Profile Page */
+
+.edit-box {
+	padding: 10px 20px;
+	width: 405px;
+	border: 1px solid $bordercolor;
+	float:left;
+	border-radius: 6px;
+}
+
+.edit-box i {color:$darkgreytext;}
+
+#right {margin: 45px 0 10px 15px;}
+#left {margin: 45px 15px 10px 10px;}
+
+/* Misc */
+
+#edit-ital {margin-bottom:20px;}
+
+
+

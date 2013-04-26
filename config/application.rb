@@ -61,5 +61,7 @@ module Breezedigs
 
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
     
+    Paperclip::Railtie.insert
+
   end
 end

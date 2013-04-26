@@ -13,8 +13,7 @@ $grayLight: #d4d9dc;
 
 /* universal */
 
-html { overflow-y: scroll; }
-html, body { height: 100%; }
+body { height: 100%; width:100%;}
 section { overflow: auto; }
 textarea { resize: vertical; }
 .left { float: left; }
@@ -23,11 +22,20 @@ textarea { resize: vertical; }
 a { text-decoration: none; }
 a:hover { text-decoration: none; }
 li { list-style: none; }
-.wrapper { min-height: 100%; position: relative; }
-.push { padding-bottom: 285px; }
-.main-content-area {margin-bottom: 140px; min-height: 500px; width: 100%; background-image: white;}
+.wrapper { min-height: 100%;}
+.push { padding-bottom: 315px; }
+.main-content-area {position: relative;
+	margin:0 auto; 
+	min-height: 500px; 
+	width: 900px;}
+.buffer-large {height:150px;}
 .buffer {height:90px;}
 .buffer-small {height:30px;}
+.clear {height:0; line-height:0; clear:both;}
+.no-wrap {white-space: nowrap;}
+div > * {
+    vertical-align:middle;  // Align children to middle of line
+}
 
 /* Typography */
 
@@ -40,7 +48,7 @@ p { font-size: 0.9em; line-height: 1.1em; }
 
 .minitopbar {
 	position: absolute;
-	top: 0; left: 0;
+	top:0;
 	z-index: 999;
 	width: 100%; height: 28px;
 	background-color: #232426;
@@ -49,29 +57,32 @@ p { font-size: 0.9em; line-height: 1.1em; }
 	filter: alpha(opacity=100); /* For IE8 and earlier */
 }
 
-.push-left { margin-left: -18px; }
-.push-right li { float:right; margin-left: 15px; font-weight: bold;}
-.push-left li { float: left; }
-.push-right, .push-left li {position: relative; bottom: 6px; margin-left: 15px; font-size: 0.95em;
-	a { color: #d4d9dc; }	
-	a:hover { text-decoration: none; color: #b6e0fe; }
+.minibar-box {white-space:normal; display:inline-block; padding: 4px 0;}
+.minibar-box li {list-style: none; display:inline; margin-left: 10px;
+	a{color: #ddebf8;
+		&:hover{color:#9bc4f2;}}
 }
+.left-box {width:825px; margin-left:-30px;}
 
 /* Main Topbar */
 
 .maintopbar {position: absolute; top: 0; left: 0; width: 100%; height: 90px; background-color: #e8eff3; border-bottom: 2px solid #80878e; opacity:0.95; filter: alpha(opacity=95); /* For IE8 and earlier */}
-.maintopbar nav {margin-top: 35px; float:left;}
+.maintopbar nav {margin-top: 35px; display:inline-block;}
 #logo {font-size: 1.8em; font-weight: bold;margin-top: 2px; margin-right: 25px;&:hover { text-decoration: none; }}
-#topbar-right {float:right; padding: 7px 0;}
 .view-moves {border-radius: 5px; background-color: #d4e4f2; border: 1px solid $bordercolor; color: #477eaf; padding: 5px 15px; &:hover {color: #1c4f7d;}}
+.header-box {display:inline-block; white-space:normal;}
+.logo-box {width:200px;}
+.city-box {width:625px;}
 
 /* Footer */
 
 footer {
-	width: 100%; height: 285px;
+	position: absolute;
+	bottom: 0;
+	width: 100%; height: 315px;
 	border-top: 1px solid $bordercolor;
 	padding: 15px 15px;
-	margin-top: -285px;
+	margin-top: -315px;
 	color: #649ed0;
 	background-color: #eef4fa;
 	clear: both; position:relative;
@@ -81,7 +92,7 @@ footer {
 	}
 }
 
-.footer-col li {float: left; width: 165px; list-style: none; margin-left: -5px; line-height: 2.2em;}
+.footer-col li {vertical-align:top; display: inline-block; white-space: normal; width: 175px; list-style: none; margin-left: -5px; line-height: 2.2em; text-align:left;}
 #social-col {width:225px;}
 #footer-title {font-size:1.4em; font-weight:300; color:#7e9bb2; border-bottom:1px solid #7e9bb2; margin: 10px 20px 10px 20px; padding:0 0 6px 0;}
 
@@ -91,8 +102,8 @@ footer {
 	border: 1px solid #e4e7eb; border-radius: 5px;
 	padding: 7px 5px; margin: 5px 0 0 -5px;
 	color: #afb6bb;
-	p {display:inline; vertical-align: middle; margin-left: 10px;}
-	span {font-family: "Social Icons"; font-size: 2em; display: inline; vertical-align: middle;}
+	p {display:inline; margin-left: 10px;}
+	span {font-family: "Social Icons"; font-size: 2em; display: inline;}
 	&:hover {background-color: #e8edf1; border: 1px solid #c8dbeb; color: #3482ca;}
 }
 .facebook {&:hover {color: #3482ca;}}
@@ -117,27 +128,31 @@ input, textarea, select, .uneditable-input {
 }
 
 .form-label {margin-bottom: -15px;}
+.auth-field {width: 280px; margin: 10px 0;}
+.edit-field {width: 350px;}
+.field-label {margin-bottom: -12px; margin-top: 15px; font-weight: 500;}
+.field-label-special {margin-top: 15px; font-weight: 500;} /* Used for the edit profile page for the form labels that have italic comments underneath */
 
-.login-graphic {float: left; width: 520px; padding: 15px 35px;}
-.login-box {float: left; border-left: 1px solid $bordercolor; width: 295px; padding: 10px 0 35px 45px;}
+/* Register & Login */
+
+.login-graphic {white-space:normal; display:inline-block; width:520px; padding: 0 35px 0 35px; margin-top: -50px;}
+.login-box {white-space:normal; display:inline-block; border-left:1px solid $bordercolor; width: 295px; padding: 10px 0 35px 45px;}
 .session-elements {text-align: right; padding: 0 5px 0 0;}
-.auth-field { width: 280px; margin: 10px 0;}
-#error_explanation { color: black; ul { list-style: none; margin: 0 0 18px 0; } }
-.field_with_errors { @extend .control-group; @extend .error; }
-.account-type {
-	border-radius: 5px;
-	border: 1px solid $bordercolor;
-	background-color: #eff8ff;
-	color: #1375b9;
+#error_explanation {color: black; ul { list-style: none; margin: 0 0 18px 0; } }
+.field_with_errors {@extend .control-group; @extend .error; }
+.role-type {border-radius: 5px; border: 1px solid $bordercolor; background-color: #eff8ff; color: #646f77; padding: 3px 10px; margin-bottom: 15px}
+.role-selected {
+	background-color: #4b89c9;
+	border: 2px solid #175391;
+	color: #d9e4ef;
 	padding: 3px 10px;
+	font-weight: 300;
 }
-.account-selected {
-	background-color: #9ed5fb;
-	border-radius: 5px;
-	border: 1px solid $bordercolor;
-	color: white;
-	padding: 3px 10px;
-}
+#agent {width: 180px;}
+#mover {width: 109px;}
+
+.sign-error-messages {padding:5px 10px; background-color: #fbe4c0; border-radius:5px; margin: 2px 0 20px 0; height: 3em;}
+.sign-error-messages ul {color: #d57212;}
 
 /* Miscellaneous */
 

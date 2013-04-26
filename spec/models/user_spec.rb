@@ -10,18 +10,14 @@ describe User do
 
 	it { should respond_to(:first_name) }
 	it { should respond_to(:last_name) }
+	it { should respond_to(:role) }
 	it { should respond_to(:email) }
 	it { should respond_to(:password_digest) }
 	it { should respond_to(:password) }
 	it { should respond_to(:password_confirmation) }
 
 	describe "When user type is not present" do
-		before { @user.type = " " }
-		it { should_not be_valid }
-	end
-
-	describe "When user city is not present" do
-		before { @user.city = " " }
+		before { @user.role = " " }
 		it { should_not be_valid }
 	end
 

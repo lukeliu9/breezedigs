@@ -8,7 +8,14 @@ Breezedigs::Application.routes.draw do
 
   devise_for :users
 
-  resources :users
+  resources :users do
+    collection do
+      get :agent
+      get :mover
+    end
+  end
+
+  resources :moves
   resources :surveys
   resources :reviews
   resources :targets

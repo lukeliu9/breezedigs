@@ -6,10 +6,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :avatar, :first_name, :last_name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :role, :avatar, :first_name, :last_name, :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
   has_attached_file :avatar, styles:
   { medium: "300x300>", thumb: "100x100>" }, 
-  default_url: "/images/profileplaceholder.png"
+  default_url: "profileplaceholder.png"
 
 end

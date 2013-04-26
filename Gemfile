@@ -17,7 +17,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem "nifty-generators", :group => :development
-gem "paperclip", "~> 3.0"
+gem "paperclip", :git => "http://github.com/thoughtbot/paperclip.git"
 
 group :development do
 	gem 'annotate', '~>2.4.1.beta'

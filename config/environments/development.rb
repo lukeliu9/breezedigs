@@ -41,4 +41,8 @@ Breezedigs::Application.configure do
     Thread.current.keys.each{ |k| Thread.current[k] = nil if k.to_s =~ /_scoped_methods$/ }
   end
 
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+
+  config.gem 'paperclip'
+
 end

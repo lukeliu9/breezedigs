@@ -25,11 +25,11 @@ subject { page }
 			let(:user) { FactoryGirl.create(:user) }
 			before { sign_in user }
 
-			it { should have_link('Profile', href: user_path(user)) }
-			it { should have_link('Settings', href: edit_user_path(user)) }
-			it { should have_link('Sign out', href: signout_path) }
+			it { should have_link('My Move') } #add href later
+			it { should have_link('Edit Profile', href: edit_user_registration_path(user)) }
+			it { should have_link('Sign out', href: destroy_user_session_path) }
 
-			it { should_not have_link('Sign in', href: signin_path) }
+			it { should_not have_link('Sign in', href: new_user_session_path) }
 
 			describe "followed by signout" do
 				before { click_link "Sign out" }
@@ -42,7 +42,7 @@ subject { page }
 	describe "signup page" do
 		before { visit new_user_registration_path }
 
-		it { should have_selector('h1', text: 'Sign up')}
+		it { should have_selector('h2', text: 'Sign up')}
 		it { should have_selector('title', text: full_title('Sign up'))}
 	end
 
@@ -62,8 +62,9 @@ subject { page }
 				fill_in "user_first_name",			with: "Jim"
 				fill_in "user_last_name",			with: "Beam"
 				fill_in "user_email",				with: "user@example.com"
-				fill_in "user_password",				with: "foobar"
-				fill_in "user_password_confirmation",			with: "foobar"	
+				fill_in "user_password",				with: "foobar123"
+				fill_in "user_password_confirmation",			with: "foobar123"	
+				find(:xpath, "//input[@id='user_role']").set "mover"
 			end
 
 			it "should create a user" do
@@ -74,8 +75,8 @@ subject { page }
 				before { click_button submit }
 				let(:user) { User.find_by_email('user@example.com') }
 
-				it { should have_selector('title', text: user.name) }
-				it { should have_selector('div.alert.alert-success', text: 'Welcome') }
+				it { should have_selector('h1', text: "Jim") }
+				it { should have_selector('div.alert.alert-success', text: 'successfully') }
 
 				it { should have_link('Sign out') }
 

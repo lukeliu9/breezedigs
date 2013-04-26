@@ -3,10 +3,10 @@
 <!-- Content below -->
 
 <div class="main-content-area">
-	<div class="container">
+	<div class="container no-wrap">
 
 		<!--Flash Notice -->
-		<div class="buffer"></div><div class="buffer-small"></div>	
+		<div class="buffer"></div><div class="buffer"></div>	
 			<% flash.each do |key, value| %>
 				<%= content_tag(:div, value, class: "alert alert-#{key}") %>
 			<% end %>
@@ -46,10 +46,9 @@
 					<% end %>
 					<br><%= render "devise/shared/links" %>
 			</div>
-			<div class="buffer-small"></div>
-			<div class="buffer-small"></div>
-			<div class="buffer-small"></div>
+			
 		</div>
+		<div class="buffer-large"></div>
 	</div>
 </div>
 

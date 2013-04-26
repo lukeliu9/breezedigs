@@ -4,19 +4,17 @@
 
 <% provide(:title, 'My Account') %>
 
-<div class="profile-header">
-	<div class="container">
+<div class="container">
+	
+	<%= render 'profile_header' %>
 
-		<div class="buffer"></div><div class="buffer-small"></div>	
-			<% flash.each do |key, value| %>
-				<%= content_tag(:div, value, class: "alert alert-#{key}") %>
-			<% end %>
-	
-	
-		<div class="user-section">
-			<%= image_tag @user.avatar.url %>
-			<%= @user.email %>
+	<div class="profile-content-area">
+		
+		<div class="move-placeholder">
+			<h3>You have not created a move yet</h3>
+			<%= link_to(raw("<button class=\"btn btn-primary btn-large\">Create your move</button>"), new_move_path) %>
 		</div>
 
 	</div>
+
 </div>

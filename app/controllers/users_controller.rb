@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
+		@user = User.create(params[:user])
 	end
 
 	def update
@@ -17,9 +18,24 @@ class UsersController < ApplicationController
 	end
 
 	def edit
+		@user = User.find(params[:id])
 	end
 
 	def destroy
+	end
+
+	def agent
+		respond_to do |format|
+			format.html
+	  		format.js
+		end
+	end
+
+	def mover
+		respond_to do |format|
+			format.html
+	  		format.js
+		end
 	end
 
 end

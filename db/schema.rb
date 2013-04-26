@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421213021) do
+ActiveRecord::Schema.define(:version => 20130426043311) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -51,6 +51,32 @@ ActiveRecord::Schema.define(:version => 20130421213021) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "moves", :force => true do |t|
+    t.date     "move_in_date"
+    t.integer  "user_id"
+    t.integer  "move_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "neighborhoods"
+    t.string   "city"
+  end
+
+  create_table "profiles", :force => true do |t|
+    t.string   "address1"
+    t.string   "address2"
+    t.integer  "user_id"
+    t.string   "phone"
+    t.string   "ssn"
+    t.string   "employer"
+    t.string   "position"
+    t.integer  "income"
+    t.integer  "savings"
+    t.integer  "zip"
+    t.string   "city"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "reports", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -67,11 +93,8 @@ ActiveRecord::Schema.define(:version => 20130421213021) do
   end
 
   create_table "surveys", :force => true do |t|
-    t.string   "neighborhoods"
-    t.string   "city"
     t.string   "budget"
     t.date     "movein"
-    t.string   "neighborhood"
     t.string   "amenities"
     t.string   "view"
     t.string   "owner"
@@ -108,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20130421213021) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

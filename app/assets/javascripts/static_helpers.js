@@ -4,3 +4,10 @@ window.setTimeout(function() {
     });
 }, 2000);
 
+
+window.setTimeout(function() {
+    $(".sign-error-messages").fadeTo(300, 0).slideUp(300, function(){
+        $(this).remove(); 
+    });
+}, 2000);
+
