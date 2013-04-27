@@ -15,24 +15,24 @@
 </head>
 
 <body>
+	<div id="holder">
 
 	<% if controller.controller_name == 'static_pages' && controller.action_name == 'home' %>
 		<%= render 'layouts/hero' %>
 		<%= render 'layouts/header' %>
-		<div class="wrapper">
 	<% else %>
-		<div class="wrapper">
 		<%= render 'layouts/header' %>
 	<% end %>	
 
-	<div>
+	<div id="body">
 		<%= yield %>
 	</div>
 	
-	<div class="push"></div>
 </div>
 
 <%= render 'layouts/footer' %>
+
+</div>
 
 </body>
 </html>

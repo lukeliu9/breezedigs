@@ -13,17 +13,18 @@ $grayLight: #d4d9dc;
 
 /* universal */
 
-body { height: 100%; width:100%;}
+body {width:100%;}
+html, body {height:100%;}
 section { overflow: auto; }
 textarea { resize: vertical; }
-.left { float: left; }
-.right { float: right; }
-.center {text-align: center; h1 { margin-bottom: 10px; }}
+div > * {vertical-align:middle;}
 a { text-decoration: none; }
 a:hover { text-decoration: none; }
 li { list-style: none; }
-.wrapper { min-height: 100%;}
-.push { padding-bottom: 315px; }
+
+.left { float: left; }
+.right { float: right; }
+.center {text-align: center; h1 { margin-bottom: 10px; }}
 .main-content-area {position: relative;
 	margin:0 auto; 
 	min-height: 500px; 
@@ -33,9 +34,8 @@ li { list-style: none; }
 .buffer-small {height:30px;}
 .clear {height:0; line-height:0; clear:both;}
 .no-wrap {white-space: nowrap;}
-div > * {
-    vertical-align:middle;  // Align children to middle of line
-}
+#body {padding-bottom: 315px;}
+#holder {min-height: 100%; position:relative;}
 
 /* Typography */
 
@@ -58,7 +58,7 @@ p { font-size: 0.9em; line-height: 1.1em; }
 }
 
 .minibar-box {white-space:normal; display:inline-block; padding: 4px 0;}
-.minibar-box li {list-style: none; display:inline; margin-left: 10px;
+.minibar-box li {display:inline; margin-left: 10px;
 	a{color: #ddebf8;
 		&:hover{color:#9bc4f2;}}
 }
@@ -78,11 +78,11 @@ p { font-size: 0.9em; line-height: 1.1em; }
 
 footer {
 	position: absolute;
+	left: 0;
 	bottom: 0;
 	width: 100%; height: 315px;
 	border-top: 1px solid $bordercolor;
 	padding: 15px 15px;
-	margin-top: -315px;
 	color: #649ed0;
 	background-color: #eef4fa;
 	clear: both; position:relative;
@@ -92,7 +92,7 @@ footer {
 	}
 }
 
-.footer-col li {vertical-align:top; display: inline-block; white-space: normal; width: 175px; list-style: none; margin-left: -5px; line-height: 2.2em; text-align:left;}
+.footer-col li {vertical-align:top; display: inline-block; white-space: normal; width: 175px; margin-left: -5px; line-height: 2.2em; text-align:left;}
 #social-col {width:225px;}
 #footer-title {font-size:1.4em; font-weight:300; color:#7e9bb2; border-bottom:1px solid #7e9bb2; margin: 10px 20px 10px 20px; padding:0 0 6px 0;}
 
