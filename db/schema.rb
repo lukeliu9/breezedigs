@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130426043311) do
+ActiveRecord::Schema.define(:version => 20130428043502) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -51,63 +51,7 @@ ActiveRecord::Schema.define(:version => 20130426043311) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "moves", :force => true do |t|
-    t.date     "move_in_date"
-    t.integer  "user_id"
-    t.integer  "move_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.string   "neighborhoods"
-    t.string   "city"
-  end
-
-  create_table "profiles", :force => true do |t|
-    t.string   "address1"
-    t.string   "address2"
-    t.integer  "user_id"
-    t.string   "phone"
-    t.string   "ssn"
-    t.string   "employer"
-    t.string   "position"
-    t.integer  "income"
-    t.integer  "savings"
-    t.integer  "zip"
-    t.string   "city"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "reports", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "reviews", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "suggestions", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "surveys", :force => true do |t|
-    t.string   "budget"
-    t.date     "movein"
-    t.string   "amenities"
-    t.string   "view"
-    t.string   "owner"
-    t.string   "pets"
-    t.string   "school"
-    t.string   "supermarket"
-    t.string   "transportation"
-    t.integer  "user_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  create_table "targets", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
