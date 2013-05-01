@@ -1,81 +1,118 @@
 <footer>
 	<div class="container">
-		<ul class="footer-col no-wrap">
-			
-			<li>
-				<h3 id="footer-title">General</h3>
-				<ul>
-					<li><%= link_to "Home", root_path %></li>
-					<li><%= link_to "Sign Up", new_user_registration_path %></li>
-					<li><%= link_to "Sign In", new_user_session_path %></li>
-				</ul>
-			</li>
+		<div class="upper-footer">
+			<h3>View apartments in:</h3>
+			<ul class="footer-col no-wrap">
+				<li id="footer-cities">
+					<ul>
+						<%= footer_cities(1,19) %>
+					</ul>
+				</li>
 
-			<li>
-				<h3 id="footer-title">Our Company</h3>
-				<ul>
-					<li><%= link_to "About Us", about_path %></li>
-					<li><%= link_to "Testimonials", testimonials_path %></li>
-					<li><%= link_to "Press", press_path %></li>
-					<li><%= link_to "Careers", careers_path %></li>
-					<li><%= link_to "Partners", partners_path %></li> 
-				</ul>
-			</li>
+				<li id="footer-cities">
+					<ul>
+						<%= footer_cities(20,38) %>
+					</ul>
+				</li>
 
-			<li>
-				<h3 id="footer-title">Cities</h3>
-				<ul>
-					<li><%= link_to "Chicago", "#" %></li>
-				</ul>
-			</li>
+				<li id="footer-cities">
+					<ul>
+						<%= footer_cities(39,57) %>
+					</ul>
+				</li>
 
-			<li>
-				<h3 id="footer-title">Resources</h3>
-				<ul>
-					<li><%= link_to "How it Works", "/how-it-works" %></li>
-					<li><%= link_to "FAQ", faq_path %></li>
-					<li><%= link_to "Terms and Conditions", terms_path %></li>
-					<li><%= link_to "Privacy Policy", privacy_path %></li>
-					<li></li>
-				</ul>
-			</li>
+				<li id="footer-cities">
+					<ul>
+						<%= footer_cities(58,76) %>
+					</ul>
+				</li>
 
-			<li id="social-col">
-			<h3 id="footer-title">Social</h3>
-				<ul>
-
-					<a href="">
-					<li class="social-button facebook" id="social-button-container">
-						<span>w</span>
-						<p>Like us on Facebook</p>
-					</li>
-					</a>
-
-					<a href="">
-					<li class="social-button twitter" id="social-button-container">
-						<span>t</span>
-						<p>&nbsp;Share with Twitter</p>
-					</li>
-					</a>
-
-					<a href="">
-					<li class="social-button google" id="social-button-container">
-						<span>g</span>
-						<p>Share with Google</p>
-					</li>
-					</a>
-				</ul>
-			</li>
-		</ul>
-	</div>
-	<br>
-	<div class="container">
-		<div id="copyright-footer">
-			<%= image_tag "Logo-bw.png", size: "125x34" %>
-			<p>&#169; Breezedigs. All rights reserved. Breezedigs, Dig Seeker, Dig Finder, and the Breezedigs logo are the registered trademarks of Breezedigs, Inc</p>
+				<li id="footer-cities">
+					<ul>
+						<%= footer_cities(77,93) %>
+					</ul>
+				</li>
+			</ul>
 		</div>
 	</div>
-	<br>
+<div class="buffer-small"></div>
+		<div class="lower-footer">
+			<div class="container">
+				<ul class="footer-col no-wrap">
+					<li>
+						<h3 id="footer-title">General</h3>
+						<ul>
+							<li><%= link_to "Home", root_path %></li>
+							<li><%= link_to "Sign Up", new_user_registration_path %></li>
+							<li><%= link_to "Sign In", new_user_session_path %></li>
+							<li><%= link_to "Write a review", new_review_path %></li>
+							<li><%= link_to "Add a building", new_building_path %></li>
+						</ul>
+					</li>
+
+					<li>
+						<h3 id="footer-title">Our Company</h3>
+						<ul>
+							<li><%= link_to "About Us", about_path %></li>
+							<li><%= link_to "Press", press_path %></li>
+							<li><%= link_to "Careers", careers_path %></li>
+							<li><%= link_to "Partners", partners_path %></li> 
+						</ul>
+					</li>
+
+					<li>
+						<h3 id="footer-title">Resources</h3>
+						<ul>
+							<li><%= link_to "Moving Tips", "#" %></li>
+						</ul>
+					</li>
+
+					<li>
+						<h3 id="footer-title">Useful</h3>
+						<ul>
+							<li><%= link_to "How it Works", "/how-it-works" %></li>
+							<li><%= link_to "FAQ", faq_path %></li>
+							<li><%= link_to "Terms and Conditions", terms_path %></li>
+							<li><%= link_to "Privacy Policy", privacy_path %></li>
+							<li></li>
+						</ul>
+					</li>
+
+					<li id="social-col">
+					<h3 id="footer-title">Social</h3>
+						<ul>
+
+							<a href="">
+							<li class="social-button facebook" id="social-button-container">
+								<span>w</span>
+								<p>Like us on Facebook</p>
+							</li>
+							</a>
+
+							<a href="">
+							<li class="social-button twitter" id="social-button-container">
+								<span>t</span>
+								<p>&nbsp;Share with Twitter</p>
+							</li>
+							</a>
+
+							<a href="">
+							<li class="social-button google" id="social-button-container">
+								<span>g</span>
+								<p>Share with Google</p>
+							</li>
+							</a>
+						</ul>
+					</li>
+				</ul>
+
+			<br>
+					<div id="copyright-footer">
+						<%= link_to image_tag("BreezedigsLogo.png", size: "125x34"), root_path %>
+						<p>&#169; Breezedigs. All rights reserved. Breezedigs, Dig Seeker, Dig Finder, and the Breezedigs logo are the registered trademarks of Breezedigs, Inc</p>
+					</div>
+			</div>
+		</div>
 </footer>
 
 

@@ -4,9 +4,9 @@ describe "User experience specs" do
 
 subject { page }
 
-	describe "Beginning a move" do
+	describe "Write a review from home page" do
 		before { visit root_path }
-		it { should have_link('Get Started', href: new_move_path) }
+		it { should have_link('Write a review', href: new_review_path) }
 	end
 
 end

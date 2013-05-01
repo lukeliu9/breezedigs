@@ -4,106 +4,16 @@
 
 <% provide(:title, 'Home') %>
 
+<% if controller.controller_name == 'static_pages' && controller.action_name == 'home' %>
+        <%= render 'layouts/hero' %>
+        <% end %>
+
 <!-- Content Starts Here -->
 
 <div class="home-content-area">
 	<div class="container">
 
-		<div class="main-box">
-			<h3>Got local knowledge?</h3>
-			<h4>Be a Dig Finder: Help people looking to make a move in/to your area and get paid</h4>
-			
-			<ul class="main-box-bullets">
-				<li>Browse dig seekers in your area</li>
-				<li>Suggest apartments & homes from any online source you can find</li>
-				<li>Get hired to scout out apartment(s) for Dig Finders</li>
-				<li>Get paid for your services!</li>
-			</ul>
 
-		</div>
-
-		<div class="main-box">
-			<h3>Looking for a place?</h3>
-			<h4>Get a curated list of apartments and people to scout them out for you</h4>
-
-			<ul class="main-box-bullets">
-				<li><i class="icon-eyeball"></i>Tell us what you're looking for</li>
-				<li>Get a curated list of potential places</li>
-				<li>Have Dig Finders check out the places you're interested in</li>
-				<li>Get detailed reports and pictures from Dig Finders</li>
-				<li>Save valuable time - all you have to do is sign the lease!</li>
-			</ul>
-
-		</div>
-
-		<div class="home-comparison-table">
-		<h2>Why you'll love Breezedigs</h2>
-
-			<table class="table table-hover">
-              <thead>
-                <tr>
-					<th width="20" class="border-bottom"></th>
-					<th width="375" class="border-bottom"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-					<td class="border-bottom"><span>1</span></td>
-					<td class="border-bottom breezedigs"><p>Dig Finders get paid a flat rate with our commission based on the quality of their apartment scouting reports</p></td>
-                </tr>
-                <tr>
-					<td class="border-bottom"><span>2</span></td>
-					<td class="border-bottom breezedigs"><p>Dig Finders try to get you as much information as possible to help you make a decision but have no reason to push a specific apartment on you</p></td>
-                </tr>
-                <tr>
-					<td class="border-bottom"><span>3</span></td>
-					<td class="border-bottom breezedigs"><p>Dig Finders work for you and our reputation system incentivizes them to go the extra mile to find the truth about any potential residence</p></td>
-                </tr>
-                <tr>
-                	<td class="border-bottom"><span>4</span></td>
-                	<td class="border-bottom breezedigs"><p>Get a custom, curated list of potential residences from all sources such as Zillow, Trulia, Craigslist, Apartments.com, etc. You can even filter by things like direct from owner rentals</p></td>
-                </tr>
-                 <tr>
-                	<td class="border-bottom"><span>5</span></td>
-                	<td class="border-bottom breezedigs"><h4>Inferior inventory:</h4><p>Will push bad apartments on you since the most desirable ones can be easily moved by landlords direct to tenants</p></td>
-                </tr>
-
-                <!--
-                <tr>
-                	<td class="border-bottom"><span>6</span></td>
-                	<td class="border-bottom" id="tb-border-right"><h4>Dirty tricks:</h4> They know they'll never see you again and will pull tricks like lying about advertised prices & availabilieis & delaying the process until you are closer to your move-in date & are more willing to take a bad apartment</td>
-                	<td class="border-bottom breezedigs"><p>We screen all our Dig Finders to avoid conflicts of interest and they succeed based on their reputation of helping Dig Seekers</p></td>
-                </tr>
-                -->
-
-                <!--
-                <tr>
-                	<td class="border-bottom"><span>7</span></td>
-                	<td class="border-bottom" id="tb-border-right"><h4>Time consuming:</h4> You'll have to go on visits with the agents and spend your time looking at units you may not be interested in</td>
-                	<td class="border-bottom breezedigs"><p>Do an online screen of opportunities and dispatch our Dig Finders to scout out your top choices for you</p></td>
-                </tr>
-                -->
-                
-                <!--
-                <tr>
-                	<td class="border-bottom"><span>8</span></td>
-                	<td class="border-bottom" id="tb-border-right"><h4>Unregulated policies:</h4> Can hire whoever they want and not perform background checks</td>
-                	<td class="border-bottom breezedigs"><p>We do background checks, provide training, and have all prospective Dig Finders take exams to prove that they understand the process</p></td>
-                </tr>
-                -->
-                
-                <!--
-                <tr>
-                	<td><span>9</span></td>
-                	<td id="tb-border-right"><h4>Credit checks:</h4> Price gouging on credit checks and sometimes will charge you multiple times for credit checks</td>
-                	<td class="breezedigs"><p>We have technology to electronically deliver bank statements, credit scores, and background checks to save you money and time</p></td>
-                </tr>
-                -->
-
-              </tbody>
-            </table>
-
-		</div>
 
 	</div>
 </div>

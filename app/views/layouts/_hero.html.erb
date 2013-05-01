@@ -1,26 +1,25 @@
+<div class="em-buffer-5"></div>
+
 <div class="hero">
+	<div class="container">
 
-	<div class="buffer"></div>
-		<div class="container">
+		<div class="hero-text">
+			<h1>The inside scoop on apartments</h1>
+		</div>
 
-			<h1 id="hero-text">Take the hassle out of looking for apartments</h1>
+		<div class="hero-search">
+		</div>
 
-			<div class="calltoaction">
-				<%= link_to(raw("<button class=\"btn btn-primary btn-vlarge\">Get Started</button>"), new_move_path) %>
-			</div>
+	</div>
+</div>
 
-			<div>
-			</div>
-			
-			<div class="hero-details no-wrap">
-				<ul>
-					<li><strong>3,120</strong> <br> apartments <br> scouted</li>
-					<li><strong>314</strong> <br> leases <br> signed</li>
-					<li><strong>7,312</strong> <br> hours <br> saved</li>
-					<li><strong>789</strong> <br> BreezeDig <br> Agents</li>
-					<li id="last-stat"><strong>129</strong> <br> outstanding <br> searches</li>
-				</ul>
-			</div>
-
+<div class="home-stripe">
+	<div class="container">
+		<% form_tag projects_path, :method => 'get' do %>
+	 	<p>
+	    <%= text_field_tag :search, params[:search] %>
+	    <%= submit_tag "Search", :name => nil %>
+	  	</p>
+		<% end %>
 	</div>
 </div>

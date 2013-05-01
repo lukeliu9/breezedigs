@@ -24,14 +24,14 @@ class UsersController < ApplicationController
 	def destroy
 	end
 
-	def agent
+	def manager
 		respond_to do |format|
 			format.html
 	  		format.js
 		end
 	end
 
-	def mover
+	def tenant
 		respond_to do |format|
 			format.html
 	  		format.js

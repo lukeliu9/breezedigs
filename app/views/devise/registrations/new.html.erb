@@ -10,7 +10,7 @@
 	<div class="container no-wrap">
 
 		<!--Flash Notice -->
-		<div class="buffer"></div><div class="buffer"></div>	
+		<div class="buffer"></div>
 			<% flash.each do |key, value| %>
 				<%= content_tag(:div, value, class: "alert alert-#{key}") %>
 			<% end %>
@@ -28,13 +28,13 @@
 
 		<%= devise_error_messages! %>
 
-			<%= link_to "<button class=\"role-type\" id=\"agent\"> Landlord/Agent/Broker</button>".html_safe, agent_users_path, remote: true %>
+			<%= link_to "<button class=\"role-type\" id=\"manager\"> Manager/Landlord</button>".html_safe, manager_users_path, remote: true %>
 
-			<%= link_to "<button class=\"role-type role-selected\" id=\"mover\">I'm Moving</button>".html_safe, mover_users_path, remote: true %>
+			<%= link_to "<button class=\"role-type role-selected\" id=\"tenant\">Tenant/Buyer</button>".html_safe, tenant_users_path, remote: true %>
 
 			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
-			  <%= f.hidden_field :role, value: "mover" %>
+			  <%= f.hidden_field :role, value: "tenant" %>
 
 			  <div>
 			  	<%= f.text_field :first_name, 

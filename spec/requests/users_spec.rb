@@ -25,6 +25,7 @@ subject { page }
 			let(:user) { FactoryGirl.create(:user) }
 			before { sign_in user }
 
+			it { should have_link('My Reviews') }
 			it { should have_link('My Move') } #add href later
 			it { should have_link('Edit Profile', href: edit_user_registration_path(user)) }
 			it { should have_link('Sign out', href: destroy_user_session_path) }

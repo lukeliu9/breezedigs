@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+	include Wicked::Wizard
+
+	steps :building, :summary, :ratings, :details
 
 	def index
 	end

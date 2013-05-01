@@ -1,30 +1,3 @@
-<!-- Small black topbar containing utility links -->
-<div class="minitopbar">
-	<div class="container no-wrap">
-		<nav class="minibar-box left-box">
-			<ul>
-				<li><%= link_to "How it Works", "/how-it-works" %></li>
-				<li><%= link_to "FAQ", faq_path %></li>				
-			</ul>
-		</nav>
-
-		<nav class="minibar-box">
-			<% if user_signed_in? %>
-				<ul>
-					<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>		
-					<li><%= link_to "My Account", user_path(current_user) %></li>	
-				</ul>
-			<% else %>
-				<ul>
-					<li><%= link_to "Sign up", new_user_registration_path %></li>	
-					<li><%= link_to "Sign in", new_user_session_path %></li>
-				</ul>
-			<% end %>
-		</nav>
-	</div>
-</div>
-
-<!-- Main interactive topbar -->
 <div class="maintopbar">
 	<div class="container no-wrap">
 
@@ -40,17 +13,29 @@
 			</div>
 		</nav>
 
-		<nav class="header-box city-box">
-			I am moving to/within:<br>
-			Dropdown box
+		<nav class="header-buttons">
 		</nav>
 
 		<nav class="header-box">
-			<button class="view-moves">View Dig Seekers</button>
+			<ul class="header-links">
+				<li>
+				<%= link_to(raw("<strong>Write a Review</strong>"), new_review_path) %>
+				</li>
+			<% if user_signed_in? %>
+					<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>		
+					<li><%= link_to "My Account", user_path(current_user) %></li>	
+			<% else %>
+					<li><%= link_to "Sign up", new_user_registration_path %></li>	
+					<li><%= link_to "Sign in", new_user_session_path %></li>
+				</ul>
+			<% end %>
 		</nav>
-
 	</div>
 </div>
+
+<% if controller.action_name != 'home' %>
+	<%= render 'layouts/searchbar' %>
+<% end %>
 
 
 

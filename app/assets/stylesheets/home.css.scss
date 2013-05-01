@@ -7,20 +7,27 @@ $grayLight: #d4d9dc;
 
 /* Insert Hero CSS into Application Layout */
 
-.buffer { padding-top: 60px; }
-
 .hero {
-	background: url("luxurycondo_1.jpg") no-repeat center center fixed;
-	font-size: 50px;
-	margin-top: -50px;
+	background: url("luxurycondo_1.jpg") no-repeat center;
+	background-size: 100%;
+	height: 35em;
+	h1 {
+		font-size: 4em;
+		text-shadow: 0 0 7px #000; -moz-text-shadow: 0 0 7px #000;
+	}
+}
+.hero-text {margin: 7em 0 0 0;}
+
+.hero-search {
+	margin-right: auto;
+	margin-left: auto;
+	width:45em; height: 5em; 
+	border-radius:6px;
+	background: #557ba1;
 }
 
-#hero-text { text-shadow: 0 0 7px #000; -moz-text-shadow: 0 0 7px #000; }
-.calltoaction { margin: 5% 30% 0 40%; width: 30%; }
-
 .hero-details {
-	width: 90%; height: 105px;
-	margin: 14% 5% 0 5%;
+	width: 90%; height: 100%;
 	background-color: white;
 	border-radius: 5px; border: 1px solid $bordercolor;
 	opacity:0.85; filter: alpha(opacity=85); /* For IE8 and earlier */
@@ -36,20 +43,24 @@ $grayLight: #d4d9dc;
 	text-align: center;
 }
 
-#last-stat {
-	border-right: 0 solid white;
+/* Home Stripe */
+
+.home-stripe {
+	background: #42464b;
+	height: 8em;
 }
 
 /* Main Content Area */
 
 .home-content-area {
-	height: 1300px; width: 100%;
+	height: 40em; width: 100%;
 	border-top: 5px solid $bordercolor;
-	background-image:url('bdmainpanel.png');
-	background-repeat:repeat;
-}
+	background: white;
 
-.home-content-area h4{font-weight:200; color:$lightgreytext; line-height: 1.4em; margin-bottom: 20px;}
+	h4{
+		font-weight:200; color:$lightgreytext; line-height: 1.4em; margin-bottom: 20px;
+	}
+}
 
 .main-box {
 	float: left;
@@ -60,28 +71,12 @@ $grayLight: #d4d9dc;
 	background-color: white;
 }
 
-.main-box h3 { font-size: 1.5em; color: $darkgreytext; margin-bottom: 5px;}
-
 .main-box-bullets li {
 	list-style: none;
 	color: $lightgreytext;
 	font-size: 1.2em; font-weight: 200;
 	margin-bottom: 15px;
 }
-
-.home-comparison-table {
-	padding: 10px 60px;
-	margin: 20px 0 0 0;
-}
-
-.home-comparison-table span {font-size: 1.3em; font-weight: 400;}
-.home-comparison-table h3 {font-size: 1.5em; font-weight: 300; margin-top: 10px;}
-.breezedigs p {font-size: 1.4em; font-weight: 300; color:#45739d; line-height: 1.4em;}
-.breezedigs h2 {font-size: 1.4em;}
-.home-comparison-table td {padding:20px 12px 30px 15px;}
-.home-comparison-table th {padding:10px 5px 10px 15px;}
-.border-bottom {border-bottom:1px solid #9ca2a7;}
-
 
 
 

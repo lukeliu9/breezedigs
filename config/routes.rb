@@ -10,15 +10,14 @@ Breezedigs::Application.routes.draw do
 
   resources :users do
     collection do
-      get :agent
-      get :mover
+      get :manager
+      get :tenant
     end
   end
 
-  resources :moves
-  resources :surveys
   resources :reviews
-  resources :targets
+  resources :buildings
+  resources :neighborhoods
 
   match '/faq', to: 'static_pages#faq'
   match '/terms', to: 'static_pages#terms'
