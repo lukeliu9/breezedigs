@@ -21,6 +21,7 @@ gem 'wicked'
 gem 'sunspot_rails'
 gem 'friendly_id'
 gem 'client_side_validations'
+gem 'active_admin_importable'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
