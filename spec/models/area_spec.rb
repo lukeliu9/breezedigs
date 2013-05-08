@@ -1,5 +1,13 @@
 require 'spec_helper'
 
 describe Area do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+ 	before do
+		@area = FactoryGirl.build(:area)
+	end	
+
+	it { should respond_to(:name)}
+	it { should respond_to(:neighborhoods)}
+	it { should respond_to(:city)}
+
 end

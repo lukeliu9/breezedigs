@@ -8,6 +8,16 @@
 		</div>
 
 		<div class="hero-search">
+			<%= form_tag buildings_path, :method => 'get' do %>
+		 	<p>
+		    <%= text_field_tag :search, params[:search], placeholder: "City, area, neighborhood, building, address, zip", class: "hero-search-field"%>
+
+		   	<button type="submit" class="hero-search-button">
+    		<i class="icon-search icon-large"></i> 
+			</button>
+
+		  	</p>
+			<% end %>
 		</div>
 
 	</div>
@@ -15,11 +25,6 @@
 
 <div class="home-stripe">
 	<div class="container">
-		<% form_tag projects_path, :method => 'get' do %>
-	 	<p>
-	    <%= text_field_tag :search, params[:search] %>
-	    <%= submit_tag "Search", :name => nil %>
-	  	</p>
-		<% end %>
+
 	</div>
 </div>

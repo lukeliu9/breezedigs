@@ -16,7 +16,10 @@ Breezedigs::Application.routes.draw do
   end
 
   resources :reviews
-  resources :buildings
+  resources :buildings do
+    resources :reviews
+  end
+
   resources :neighborhoods
 
   match '/faq', to: 'static_pages#faq'

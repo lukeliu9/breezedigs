@@ -2,18 +2,17 @@ class CreateBuildings < ActiveRecord::Migration
   def change
     create_table :buildings do |t|
       t.string :address
-      t.float :lat
-      t.float :lon
+      t.decimal :lat
+      t.decimal :lon
       t.string :name
       t.string :neighborhood
       t.integer :floors
-      t.string :description
-      t.string :amenities
+      t.text :description
+      t.text :amenities
       t.string :website
       t.integer :units
-      t.integer :city
-      t.integer :zip
-      t.string :state
+      t.string :city
+      t.string :zip
       t.integer :built
 
       t.timestamps

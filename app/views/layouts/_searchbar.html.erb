@@ -1,7 +1,12 @@
 <div class="em-buffer-5"></div> <!-- To clear the header -->
 
 <div class="searchbar">
-	<div class="container">
-		
+	<div class="container center">
+			<%= form_tag buildings_path, :method => 'get' do %>
+		 	<p>
+		    <%= text_field_tag :search, params[:search], placeholder: "City, area, neighborhood, building", class: "searchbar-field"%>
+		    <%= submit_tag "search", :name => nil, class: "btn bottom-buffer" %>
+		  	</p>
+			<% end %>
 	</div>
 </div>

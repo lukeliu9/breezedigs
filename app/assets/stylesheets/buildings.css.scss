@@ -1,3 +1,315 @@
 // Place all the styles related to the buildings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "colors";
+
+/* Search Sidebar */
+
+.search-sidebar {
+	width: 28%;
+	vertical-align: top;
+	display: inline-block;
+	min-height: 20em; width: 13em;
+	margin:0 0.7em 0 0;
+	border-right: 1px solid $grayLight;
+}
+
+/* Building Results */
+
+.building-results {
+	vertical-align: top;
+	display: inline-block;
+	min-height: 10em;
+	width: 70%;
+	border-radius: 6px;
+	padding: 0.7em 0.7em 0.7em 0.7em;
+}
+
+.building-listing {
+	width: 112%;
+	padding: 1em 0.5em 1em 0;
+	border-bottom: 1px dashed #778390;
+	&:hover {
+		background: #f5f9fe;
+		h3 		{color: $offBlack;}
+		h4 		{color: $grayVeryDark;}
+		h5		{color: $grayMediumDark;}
+		span 	{color: $gbVeryDark;}
+		p 		{color: $blueVVDark;}
+	}
+}
+
+.building-image {
+	width: 20%;
+	padding: 0.2% 0 1% 3%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.building-listing-info {
+	width: 40%;
+	display: inline-block;
+	vertical-align: top;
+	h3 {
+		font-size:1.2em;
+		font-weight:350;
+		color: $offBlack;
+		padding:0 0 0 0;
+		margin:0;
+	}
+	h4 {
+		color: $grayVeryDark;
+		font-size: 1.05em;
+		font-weight: 300;
+		padding:0 0 0 0;
+		margin:0.2em 0 0.2em 0;
+	}
+	span {
+		font-size:1em;
+		font-weight:300;
+		font-style: italic;
+		padding:0 0 0 0;
+		margin:0;
+		color:$gbVeryDark;
+	}
+	p {
+		color: $blueVVDark;
+		margin-top: 3%;
+		font-size: 1em;
+	}
+}
+
+.review-summary {
+	display: inline-block;
+	vertical-align: top;
+	width:31%;
+	height: 9em;
+	padding: 0.8% 1%;
+	margin-left: 2%;
+	background: white;
+	border-radius: 5px;
+	h5 {
+		padding: 0;
+		margin: 0;
+		font-size: 1em;
+		font-weight: 300;
+		color: $grayMediumDark;
+	}
+}
+
+/* Building Profile */
+
+.building-profile {
+	min-height: 150em;
+}
+
+.interactive-holder {
+	height: 40em;
+	width: 55%;
+	display: inline-block;
+}
+
+.building-interactive-box {
+	width: 100%;
+	height: 35em;
+	padding:0;
+	border-radius:5px;
+}
+
+.interactive-buttons {
+	width:100%;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 0.5em;
+	height: 8%;
+	background: white;
+	vertical-align: top;
+	text-align: center;
+} /* Button CSS in buttons.css file */
+
+.left-btn	{border-bottom-left-radius: 6px;border-top-left-radius: 6px;}
+.right-btn	{margin-left:-1%;border-bottom-right-radius: 6px;border-top-right-radius: 6px;}
+.left-push	{margin-left:-1%;}
+
+.building-main-area {
+	height: 75%;
+	border: 1px solid $grayLight;
+}
+
+.building-thumbnails {
+	width:99.6%;
+	height: 17%;
+	margin-top: -1px;
+	border: 1px solid $grayLight;
+	background: $blueLight;
+}
+
+.building-supplement {
+	width: 96%;
+	height: 7.5em;
+	margin-top: 1.9em;
+	padding: 2%;
+	border: 1px solid $grayMedium;
+	border-radius: 5px;
+	span {
+		color: $offBlack;
+	}
+	p {
+		color: $grayDark;
+		font-size: 1em;
+	}
+}
+
+.building-info-tab {
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 1.5% 0 1.5%;
+	margin: 0.1em 0 3em 1em;
+	width: 37%;
+	height: 45em;
+	background: white;
+	h1 {
+		color: $offBlack;
+		font-size: 1.6em;
+		font-weight: 400;
+		text-align: left;
+		margin-bottom: 0;
+	}
+	p {
+		font-size: 1.1em;
+		line-height: 1.4em;
+	}
+}
+#geography {font-size:1em; font-style: italic; color:$grayDark;}
+#address-text {font-size:1em; margin:-0.6em 0 1em 0; padding:0; color: $gbMediumDark;}
+
+.description {
+	height: 13em;
+}
+
+.building-stats {
+	width: 94%;
+	height: 25em;
+	background: $grayVeryLight;
+	border-radius: 5px;
+	padding: 1em;
+}
+
+.reviews {
+	border-top:1px solid $grayMedium;
+	border-right:1px solid $grayMedium;
+	border-bottom:1px solid $grayMedium;
+	border-radius: 5px;
+	width: 96%;
+	height: 60em;
+	padding:0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1.7em;
+}
+
+.review-buttons-box {
+	margin-left: -2.7%;
+	width:25%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#review-side-placeholder {
+	width: 112.8%;
+	height: 24.65em;
+	margin-left: -14%;
+	border-left: 1px solid white;
+	border-right: 1px solid $grayMedium;
+	background: white;
+}
+
+.review-content {
+	width:76%;
+	margin-left: -3px;	
+	display: inline-block;
+	vertical-align: top;
+	height: 60em;
+}
+
+/* New building form */
+
+.new-building-form {
+	display: inline-block;
+	vertical-align: top;
+	width: 59%;
+	height: 67em;
+	margin: 3em 0 8em 0;
+	padding: 0.1em 3em 2em 3em;
+	border: 1px solid $grayMedium;
+	border-radius: 5px;
+	input {
+		margin-top:0.6em;
+		width: 10em;
+	}
+	h1 {
+		font-size: 1.6em;
+		margin: 0.9em 0 0.5em 0;
+		padding-bottom: 0.6em;
+		color: #2d68a5;
+		font-weight: 300;
+		border-bottom: 1px solid #a5afb9;
+	}
+	p {
+		margin-top: 1em;
+		margin-left: 2px;
+		font-size: 1em;
+	}
+}
+
+.new-building-sidebar {
+	display: inline-block;
+	vertical-align: top;
+	width: 26%;
+	height: 50em;
+	border-radius: 5px;
+	margin: 2.5em 0 0 1em;
+	padding: 1em 1em 3em 1em;
+	color: #6d767f;
+	h2 {
+		color: #606c78;
+		font-size: 1.35em;
+		font-weight: 300;
+		border-bottom: 1px solid #a5afb9;
+		padding:0 0 0.4em 0;
+		margin-bottom: 0.75em;
+	}
+	p {
+		font-size: 1em;
+		line-height: 1.5em;
+	}
+}
+
+.building-form-fields div {display:inline-block;}
+
+#building-name	{width:100%;}
+#address-field 	{width:70%;}
+#zip 			{width: 20%; margin-left:5%;}
+
+#city 			{width:30%;}
+#area 			{width:30%; margin-left:3.5%;}
+#neighborhood 	{width:30%; margin-left:3.5%;}
+
+.optional 		{width: 98%; padding:0.5em; margin:1.3em 0 0.7em 0; background: $grayLight; border-radius: 5px; span {color:$grayMediumDark;}}
+
+#description	{width:100%;}
+#amenities		{width:100%;}
+
+#management 	{width:46%;}
+#construction 	{margin-left:6%; width:46%;}
+
+#pets 			{width: 100%;}
+
+#units 			{width: 28.7%;}
+#floors 		{margin-left:5%; width: 28.7%;}
+#built 			{margin-left:5%; width: 28.7%;}
+
+#create-building-btn {text-align: right; padding-top:1em;}
+
+

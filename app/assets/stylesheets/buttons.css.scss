@@ -1,8 +1,15 @@
+@import "colors";
+
 /* Button Variables */
 
 $actionButton: #46afeb;
 $actionButtonHover: #3196d6;
 $buttonBorder: #3f667f;
+
+/* Light Gray & Blue colors */
+
+$lightGray: #d8dde2;
+$pureWhite: white;
 
 /* Home Buttons */
 
@@ -14,4 +21,83 @@ $buttonBorder: #3f667f;
           border-radius: 6px;
 }
 
-.btn-wide { padding: 10px 110px; }
+.btn-wide { padding: 2em 20em; }
+
+/* Building Profile */
+
+.interactive-btn {
+	display: inline-block;
+	width: 24.8%;
+	height: 100%;
+	padding: 1.5% 0 1.5% 0;
+	border: 1px solid $grayLightMedium;
+	text-align: center;
+	color: $grayVeryDark;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($pureWhite), to($lightGray));
+	background: -webkit-linear-gradient(top, $lightGray, $pureWhite);
+	background: -moz-linear-gradient(top, $lightGray, $pureWhite);
+	background: -ms-linear-gradient(top, $lightGray, $pureWhite);
+	&:hover {
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($pureWhite), to($gbLight));
+		background: -webkit-linear-gradient(top, $gbLight, $pureWhite);
+		background: -moz-linear-gradient(top, $gbLight, $pureWhite);
+		background: -ms-linear-gradient(top, $gbLight, $pureWhite);
+		color: $blueVeryDark;
+	}
+}
+.left {
+	border-top-left-radius: 5px;
+}
+.right {
+	border-top-right-radius: 5px;
+}
+#selected {
+	background: white;
+	border: 1px solid $grayLightMedium;
+	&:hover {
+		color: $grayVeryDark;
+	}
+}
+
+/* Review Buttons on side of building review page*/
+
+.review-btn {
+	padding: 0.6em 1em;
+	background: $grayVeryLight;
+	border-right: 1px solid $grayMedium;
+	border-top: 1px solid $grayMedium;
+	border-left: 1px solid $grayMedium;
+	border-radius:0;
+	text-align: right;
+	color: $grayDark;
+	&:hover {
+		background: white;
+		border-right: 1px solid white;
+		border-top: 1px solid $grayMedium;
+		border-left: 1px solid $grayMedium;
+	}
+}
+		
+.first-review-btn {
+	border-top: 0;
+	border-top-left-radius: 6px;
+	&:hover {
+		border-top: 0;
+	}
+}
+
+.last-review-btn {
+	border-bottom: 1px solid $grayMedium;
+	border-bottom-left-radius: 6px;
+}
+
+#review-selected {
+	background: white;
+	border-right: 1px solid white;
+	font-weight: 500;
+	color: $blueDark;
+}
+
+
+
+

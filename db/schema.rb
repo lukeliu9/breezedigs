@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130501232322) do
+ActiveRecord::Schema.define(:version => 20130506032408) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(:version => 20130501232322) do
 
   create_table "areas", :force => true do |t|
     t.string   "name"
-    t.string   "neighborhoods"
+    t.text     "neighborhoods"
     t.string   "city"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
@@ -56,97 +56,113 @@ ActiveRecord::Schema.define(:version => 20130501232322) do
 
   create_table "buildings", :force => true do |t|
     t.string   "address"
-    t.float    "lat"
-    t.float    "lon"
+    t.decimal  "lat"
+    t.decimal  "lon"
     t.string   "name"
     t.string   "neighborhood"
     t.integer  "floors"
-    t.string   "description"
-    t.string   "amenities"
+    t.text     "description"
+    t.text     "amenities"
     t.string   "website"
     t.integer  "units"
-    t.integer  "city"
-    t.integer  "zip"
-    t.string   "state"
+    t.string   "city"
+    t.string   "zip"
     t.integer  "built"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "area"
-    t.string   "construction"
+    t.text     "construction"
+    t.text     "management"
+    t.text     "transportation"
+    t.string   "slug"
+    t.text     "pets"
   end
+
+  add_index "buildings", ["slug"], :name => "index_buildings_on_slug"
 
   create_table "cities", :force => true do |t|
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
-    t.string   "neighborhoods"
+    t.text     "neighborhoods"
     t.string   "name"
     t.integer  "neighborhood_id"
     t.string   "areas"
   end
 
+  create_table "friendly_id_slugs", :force => true do |t|
+    t.string   "slug",                         :null => false
+    t.integer  "sluggable_id",                 :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
+  add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
+
   create_table "moves", :force => true do |t|
     t.date     "date"
-    t.string   "budget"
-    t.string   "neighborhoods"
-    t.string   "description"
+    t.text     "neighborhoods"
+    t.text     "description"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "budget_low"
+    t.integer  "budget_high"
   end
 
   create_table "neighborhoods", :force => true do |t|
     t.string   "name"
-    t.string   "state"
-    t.float    "lat"
-    t.float    "lon"
-    t.string   "description"
-    t.string   "schools"
-    t.string   "nightlife"
-    t.string   "stores"
-    t.string   "safety"
-    t.string   "demographic"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.integer  "safety_score"
-    t.integer  "recreation_score"
-    t.string   "recreation"
-    t.integer  "buildings"
+    t.decimal  "lat"
+    t.decimal  "lon"
+    t.text     "description"
+    t.text     "schools"
+    t.text     "nightlife"
+    t.text     "stores"
+    t.text     "safety"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.text     "recreation"
+    t.text     "buildings"
     t.string   "city"
     t.string   "area"
   end
 
   create_table "reviews", :force => true do |t|
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.integer  "rent"
     t.string   "neighborhood"
-    t.string   "nightlife"
-    t.string   "management"
-    t.string   "staff"
-    t.string   "amenities"
-    t.string   "pets"
+    t.text     "nightlife"
+    t.text     "management"
+    t.text     "staff"
+    t.text     "amenities"
     t.integer  "noise_rating"
     t.integer  "neighborhood_rating"
     t.string   "supermarket"
-    t.string   "schools"
+    t.text     "schools"
     t.integer  "safety_rating"
-    t.integer  "building"
-    t.string   "parking_rating"
-    t.string   "parking"
-    t.string   "maintenance"
+    t.string   "building"
+    t.text     "parking"
+    t.text     "maintenance"
     t.integer  "maintenance_rating"
-    t.string   "construction"
-    t.integer  "construction_rating"
-    t.string   "noise"
-    t.string   "people"
-    t.string   "events"
+    t.text     "construction"
+    t.text     "noise"
+    t.text     "people"
     t.integer  "overall"
-    t.string   "amenities_rating"
-    t.string   "pros"
-    t.string   "cons"
-    t.integer  "bedrooms"
+    t.text     "pros"
+    t.text     "cons"
     t.integer  "floor"
-    t.integer  "bathrooms"
-    t.string   "view"
+    t.text     "view"
+    t.integer  "user_id"
+    t.integer  "management_rating"
+    t.integer  "staff_rating"
+    t.text     "safety"
+    t.text     "transportation"
+    t.integer  "transportation_rating"
+    t.integer  "amenities_rating"
+    t.integer  "beds"
+    t.integer  "baths"
+    t.string   "identity"
   end
 
   create_table "users", :force => true do |t|

@@ -2,9 +2,10 @@ class CreateMoves < ActiveRecord::Migration
   def change
     create_table :moves do |t|
       t.date :date
-      t.string :budget
-      t.string :neighborhoods
-      t.string :description
+      t.integer :budget_low
+      t.integer :budget_high
+      t.text :neighborhoods
+      t.text :description
 
       t.timestamps
     end

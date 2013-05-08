@@ -18,10 +18,6 @@ City.delete_all    #first deletes existing records before creating new ones from
 	City.create!(name: city)	
 	end
 
-=end
-
-=begin
-
 # Create chicago areas
 
 ["Far North Side", "Northwest Side", "North Side", "West Side", 
@@ -107,12 +103,32 @@ City.delete_all    #first deletes existing records before creating new ones from
 		Neighborhood.create!(name: neighborhood, area: "Far Southwest Side")
 	end	
 
+# Seed condos in Near East Side, Chicago
+
+[["Randolph Tower City Apartments", "188 W. Randolph", "60601", "Chicago", "Downtown", "Near East Side"], 
+["Stanford Apartments", "1164 North Dearborn", "60601", "Chicago", "Downtown", "Near East Side"],
+["Millenium Park Plaza", "151 North Michigan Avenue", "60601", "Chicago", "Downtown", "Near East Side"],
+["North Harbor Tower", "175 North Harbor Drive", "60601", "Chicago", "Downtown", "Near East Side"],
+["Columbus Plaza Apartments", "233 East Wacker Drive", "60601", "Chicago", "Downtown", "Near East Side"],
+["Park Millenium", "222 North Columbus Drive", "60601", "Chicago", "Downtown", "Near East Side"],
+["MDA City Apartments", "63 East Lake Street", "60601", "Chicago", "Downtown", "Near East Side"],
+["The Aqua", "225 North Columbus Drive", "60601", "Chicago", "Downtown", "Near East Side"],
+["200 North Dearborn", "200 North Dearborn", "60601", "Chicago", "Downtown", "Near East Side"],
+["The Tides", "360 East South Water Street", "60601", "Chicago", "Downtown", "Near East Side"],
+["The Shoreham", "400 East South Water Street", "60601", "Chicago", "Downtown", "Near East Side"],
+["Doral Michigan Avanue", "155 North Michigan Avenue", "60601", "Chicago", "Downtown", "Near East Side"],
+["Harbor Point", "155 Harbor Drive North", "60601", "Chicago", "Downtown", "Near East Side"],
+["Century Tower", "182 West Lake Street", "60601", "Chicago", "Downtown", "Near East Side"],
+["Joffrey Tower", "8 East Randolph", "60601", "Chicago", "Downtown", "Near East Side"],
+["The Chandler", "450 East Waterside Drive", "60601", "Chicago", "Downtown", "Near East Side"],
+["The Parkshore", "195 North Harbor Drive", "60601", "Chicago", "Downtown", "Near East Side"],
+["The Elm at Clark", "1122 North Clark Street", "60610", "Chicago", "Downtown", "Gold Coast"]].each do |name, add, zip, city, area, hood|
+
+	Building.create!(name:name, address: add, zip: zip, city: city, area: area, neighborhood: hood)
+
+end
+
 =end
-
-
-
-
-
 
 
 

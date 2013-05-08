@@ -16,13 +16,11 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-gem 'nifty-generators', :group => :development
 gem 'paperclip', :git => "http://github.com/thoughtbot/paperclip.git"
 gem 'wicked'
-
-group :development do
-	gem 'annotate', '~>2.4.1.beta'
-end
+gem 'sunspot_rails'
+gem 'friendly_id'
+gem 'client_side_validations'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -31,6 +29,7 @@ gem 'pg', '0.12.2'
 
 group :development do
 	gem 'annotate', '~>2.4.1.beta'
+  gem 'sunspot_solr'
 end
 
 # Gems used only for assets and not required
@@ -52,13 +51,15 @@ end
 
 group :test do
   gem 'capybara', '1.1.2'
-  gem 'factory_girl_rails', '1.4.0'
+  gem 'factory_girl', '~> 2.0.0', require: false
+  gem 'factory_girl_rails', '~> 1.1.0', require: false
   gem 'cucumber-rails', '1.2.1', require: false
   gem 'database_cleaner', '0.7.0'
   gem 'launchy', '2.1.0'
   gem 'rb-fsevent', '0.9.1', require: false
   gem 'growl', '1.0.3'
   gem 'childprocess', '0.3.8'
+  gem 'simplecov', require: false
 end
 
 # To use ActiveModel has_secure_password

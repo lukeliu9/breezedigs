@@ -38,6 +38,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
 }
@@ -65,10 +66,6 @@ a { text-decoration: none; }
 a:hover { text-decoration: none;}
 
 /* General */
-
-.left { float: left; }
-.right { float: right; }
-.center {text-align: center; h1 { margin-bottom: 10px; }}
 .main-content-area {
 	margin:0 auto; 
 	min-height: 500px;}
@@ -78,13 +75,25 @@ a:hover { text-decoration: none;}
 #holder {min-height: 100%; position:relative;margin-left:auto; margin-right:auto; width:100%;}
 .container{width:1000px;margin-left:auto; margin-right:auto;}  
 
+/* Alignment */
+
+.left { float: left; }
+.right { float: right; }
+.center {text-align: center; h1 { margin-bottom: 10px; }}
+.top {vertical-align: top;}
+.middle {vertical-align: middle;}
+
 /* Buffer */
 
 .buffer-large {height:150px;}
 .buffer {height:90px;}
 .buffer-small {height:30px;}
 
-.em-buffer-5 {height:5em;}  
+.em-buffer-5 {height:5em;}
+.em-buffer-3 {height:3em;}
+.em-buffer-2 {height:2em;}  
+
+.bottom-buffer {margin-bottom:6px;}
 
 /* Typography */
 
@@ -99,7 +108,7 @@ p { font-size: 0.9em; line-height: 1.1em; }
 .maintopbar nav {padding:0.6em 0; display:inline-block;}
 #logo {font-size: 1.8em; font-weight: bold;margin-top: 2px; margin-right: 25px;&:hover { text-decoration: none; }}
 .header-box {display:inline-block; white-space:normal; width:300px;}
-.header-buttons {width:420px;}
+.header-buttons {width:32em;}
 .header-links {margin: 15px 0;}
 .header-links li {display:inline;margin-left:15px;}
 
@@ -111,6 +120,13 @@ p { font-size: 0.9em; line-height: 1.1em; }
 	background-size: 6px;
 	background-repeat:repeat;
 	border-bottom: 1px solid #c3cbd4;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.searchbar-field {
+	width: 30em;
+	margin: 0.4em 0 0.4em 0;
 }
 
 /* Footer */

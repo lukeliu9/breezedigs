@@ -21,9 +21,30 @@ $grayLight: #d4d9dc;
 .hero-search {
 	margin-right: auto;
 	margin-left: auto;
-	width:45em; height: 5em; 
+	width:45em; 
+	height: 5em; 
 	border-radius:6px;
-	background: #557ba1;
+	background: #373a3e;
+}
+
+.hero-search-field {
+	width: 82%;
+	margin: 0.5em 0 0.5em 0.5em;
+	font-style: italic;
+}
+
+#search {
+	font-size: 1.5em; height:2em;
+}
+
+.hero-search-button {
+	font-size: 1.7em;
+	border-radius: 5px;
+	padding: 10px 22px;
+	background:#4d96e1;
+	border: 1px solid #2d7fd2;
+	color: #dde9f9;
+	&:hover {background:#2d7fd2;}
 }
 
 .hero-details {
