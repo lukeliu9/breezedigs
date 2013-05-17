@@ -1,0 +1,32 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'static_pages' %>
+<% end %>
+
+<% provide(:title, 'Advertise with us') %>
+
+<div class="bg-texture-wrapper">
+	<div class="container">
+		<div class="static-content">
+			<div class="static-selector">
+				<ul>
+					<%= link_to(raw("<li class=\"static-selected\">Advertise</li>"), advertise_path) %>
+					<%= link_to(raw("<li>Partners</li>"), partners_path) %>
+					<%= link_to(raw("<li>Managers</li>"), managers_path) %>
+				</ul>
+			</div>
+			<!-- Content -->
+			<h1>Advertise with us</h1>
+
+			<h2>Our audience</h2>
+			<p></p>
+
+			<h2>Advertising opportunities</h2>
+
+			<p>We are committed to selecting only relevant advertises and displaying ads in a respectful and non-intrsuive manner. As such, advertising opportunities will be evaluated on a case-by-case basis</p>
+
+			<p>If you are interested in reaching our community of renters, please email us <%= link_to "here", contact_path %>.</p>
+
+			</div>
+		</div>
+	</div>
+</div>

@@ -11,3 +11,9 @@ window.setTimeout(function() {
     });
 }, 2000);
 
+
+window.setTimeout(function() {
+    $(".field_with_errors label").fadeTo(300, 0).slideUp(300, function(){
+        $(this).remove(); 
+    });
+}, 4000);

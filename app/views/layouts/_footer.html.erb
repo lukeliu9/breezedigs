@@ -3,36 +3,9 @@
 		<div class="upper-footer">
 			<h3>View apartments in:</h3>
 			<ul class="footer-col no-wrap">
-				<li id="footer-cities">
-					<ul>
-						<%= footer_cities(1,19) %>
-					</ul>
-				</li>
-
-				<li id="footer-cities">
-					<ul>
-						<%= footer_cities(20,38) %>
-					</ul>
-				</li>
-
-				<li id="footer-cities">
-					<ul>
-						<%= footer_cities(39,57) %>
-					</ul>
-				</li>
-
-				<li id="footer-cities">
-					<ul>
-						<%= footer_cities(58,76) %>
-					</ul>
-				</li>
-
-				<li id="footer-cities">
-					<ul>
-						<%= footer_cities(77,93) %>
-					</ul>
-				</li>
+				<%= render 'layouts/footerstaticcities' %>
 			</ul>
+			<%= link_to "View all cities >>", "" %>
 		</div>
 	</div>
 <div class="buffer-small"></div>
@@ -54,27 +27,27 @@
 						<h3 id="footer-title">Our Company</h3>
 						<ul>
 							<li><%= link_to "About Us", about_path %></li>
-							<li><%= link_to "Press", press_path %></li>
 							<li><%= link_to "Careers", careers_path %></li>
-							<li><%= link_to "Partners", partners_path %></li> 
-						</ul>
-					</li>
-
-					<li>
-						<h3 id="footer-title">Resources</h3>
-						<ul>
-							<li><%= link_to "Moving Tips", "#" %></li>
+							<li><%= link_to "Contact", contact_path %></li>
 						</ul>
 					</li>
 
 					<li>
 						<h3 id="footer-title">Useful</h3>
+						<ul>							
+							<li><%= link_to "Advertise", advertise_path %></li>
+							<li><%= link_to "Managers", managers_path %></li>
+							<li><%= link_to "Partners", partners_path %></li>
+						</ul>
+					</li>
+
+					<li>
+						<h3 id="footer-title">Please Note</h3>
 						<ul>
-							<li><%= link_to "How it Works", "/how-it-works" %></li>
-							<li><%= link_to "FAQ", faq_path %></li>
-							<li><%= link_to "Terms and Conditions", terms_path %></li>
+							
+							<li><%= link_to "Terms of Use", terms_path %></li>
 							<li><%= link_to "Privacy Policy", privacy_path %></li>
-							<li></li>
+							<li><%= link_to "Review Guidelines", guidelines_path %></li>
 						</ul>
 					</li>
 

@@ -1,10 +1,13 @@
 class City < ActiveRecord::Base
-  attr_accessible :name, :neighborhoods, :neighborhood_id, :areas
+  attr_accessible :name
 
   has_many :areas
+  has_many :neighborhoods, through: :areas
+  has_many :buildings
 
   validates :name, 				presence: true
-  validates :areas, 			presence: false
-  validates :neighborhoods, 	presence: false
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
 end

@@ -1,3 +1,45 @@
-<% provide(:title, 'Careers') %>
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'static_pages' %>
+<% end %>
 
-<h1><%= yield(:title) %></h1>
+<% provide(:title, 'Work at BreezeDigs') %>
+
+<div class="careers-hero">
+	<div class="em-buffer-3"></div>
+		<div class="careers-hero-content">
+				<h1>Work at BreezeDigs</h1>
+		</div>
+		<div class="careers-hero-desc-holder">
+			<p>Headquartered in Chicago, we are taking on the challenge of democratizing apartment reviews to empower tenants and improve the rental process</p>
+		</div>	
+</div>
+
+<div class="container">
+	<div class="careers-stripe">
+		<div class="em-buffer-2"></div>
+		<ul>
+			<li id="left-stripe">
+				<h3>Community Management</h3>
+				<p>Help us manage the integrity of our reviews, collect information about apartments, and expand our footprint. Our reviews are our lifeblood and you'll be building the foundation of our success</p>
+				<%= image_tag "buildingsicon.png", size: "210x200" %>
+				<br>
+			</li>
+
+			<li id="middle-stripe">					
+				<h3>Design & Engineering</h3>
+				<p>We are always looking for talented designers and rockstar ruby on rails programmers. At BreezeDigs, you'll get to work on challenging projects and apply technology to help renters everywhere</p>
+				<%= image_tag "engineeringicon.png", size: "200x200" %>
+				<br>
+			</li>
+
+			<li id="right-stripe">
+				<h3>Business</h3>
+				<p>Are you a hustler? Then come help us strike deals with strategic partners, market our product, analyze data, and continuously define and execute our strategy</p>
+				<br><br>
+				<%= image_tag "businessicon.png", size: "160x160" %>
+				<br>
+			</li>
+		</ul>
+		<h4>To apply for one of our roles, please submit a resume to: jobs@breezedigs.com</h4>
+	</div>
+</div>

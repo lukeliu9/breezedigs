@@ -87,7 +87,6 @@
 	height: 9em;
 	padding: 0.8% 1%;
 	margin-left: 2%;
-	background: white;
 	border-radius: 5px;
 	h5 {
 		padding: 0;
@@ -101,7 +100,8 @@
 /* Building Profile */
 
 .building-profile {
-	min-height: 150em;
+	min-height: 95em;
+	margin-top: 3em;
 }
 
 .interactive-holder {
@@ -123,52 +123,37 @@
 	margin-left: auto;
 	margin-bottom: 0.5em;
 	height: 8%;
-	background: white;
 	vertical-align: top;
-	text-align: center;
+	text-align: left;
 } /* Button CSS in buttons.css file */
 
 .left-btn	{border-bottom-left-radius: 6px;border-top-left-radius: 6px;}
-.right-btn	{margin-left:-1%;border-bottom-right-radius: 6px;border-top-right-radius: 6px;}
+.right-btn	{margin-left:-1%; border-bottom-right-radius: 6px; border-top-right-radius: 6px;}
 .left-push	{margin-left:-1%;}
 
 .building-main-area {
 	height: 75%;
-	border: 1px solid $grayLight;
+	border: 1px solid $grayMedium;
+	background: white;
 }
 
 .building-thumbnails {
 	width:99.6%;
 	height: 17%;
 	margin-top: -1px;
-	border: 1px solid $grayLight;
+	border: 1px solid $grayMedium;
 	background: $blueLight;
 }
 
-.building-supplement {
-	width: 96%;
-	height: 7.5em;
-	margin-top: 1.9em;
-	padding: 2%;
-	border: 1px solid $grayMedium;
-	border-radius: 5px;
-	span {
-		color: $offBlack;
-	}
-	p {
-		color: $grayDark;
-		font-size: 1em;
-	}
-}
-
-.building-info-tab {
+.building-info {
 	display: inline-block;
 	vertical-align: top;
 	padding: 0 1.5% 0 1.5%;
 	margin: 0.1em 0 3em 1em;
 	width: 37%;
-	height: 45em;
+	height: 35.5em;
 	background: white;
+	border: 1px solid $grayMedium;
 	h1 {
 		color: $offBlack;
 		font-size: 1.6em;
@@ -184,16 +169,21 @@
 #geography {font-size:1em; font-style: italic; color:$grayDark;}
 #address-text {font-size:1em; margin:-0.6em 0 1em 0; padding:0; color: $gbMediumDark;}
 
-.description {
-	height: 13em;
+.building-stats {
+	width: 98%;
+	height: 24em;
+	margin-top: 0.7em;
+	background: white;
+	border-radius: 5px;
+	padding: 1em 0.8em 0.5em 0.8em;
 }
 
-.building-stats {
-	width: 94%;
-	height: 25em;
-	background: $grayVeryLight;
-	border-radius: 5px;
-	padding: 1em;
+.building-data-toggle {
+	width: 95%;
+	margin-top: -2em;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 2em;
 }
 
 .reviews {
@@ -202,35 +192,41 @@
 	border-bottom:1px solid $grayMedium;
 	border-radius: 5px;
 	width: 96%;
-	height: 60em;
+	height: 45em;
 	padding:0;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 1.7em;
+	margin-top: 0.1em;
+	background: white;
 }
 
 .review-buttons-box {
 	margin-left: -2.7%;
 	width:25%;
+	height: 105%;
 	display: inline-block;
 	vertical-align: top;
+	background: url("bgtexture.png");
 }
 
-#review-side-placeholder {
-	width: 112.8%;
-	height: 24.65em;
-	margin-left: -14%;
-	border-left: 1px solid white;
-	border-right: 1px solid $grayMedium;
-	background: white;
-}
+.review-btn-b {margin-top: 1.5em;}
 
 .review-content {
-	width:76%;
-	margin-left: -3px;	
+	width:74.00%;
+	height: 45em;
+	margin-left: -0.5%;	
 	display: inline-block;
+	border-bottom:1px solid $grayMedium;
+	border-left:1px solid $grayMedium;
 	vertical-align: top;
-	height: 60em;
+}
+
+.single-review {
+	width: 98%;
+	min-height: 2em;
+	margin: 2%;
+	padding: 1.5%;
+	border-radius: 6px;
 }
 
 /* New building form */
@@ -239,11 +235,11 @@
 	display: inline-block;
 	vertical-align: top;
 	width: 59%;
-	height: 67em;
 	margin: 3em 0 8em 0;
 	padding: 0.1em 3em 2em 3em;
 	border: 1px solid $grayMedium;
 	border-radius: 5px;
+	background: white;
 	input {
 		margin-top:0.6em;
 		width: 10em;
@@ -258,8 +254,16 @@
 	}
 	p {
 		margin-top: 1em;
+		margin-bottom: 0;
 		margin-left: 2px;
 		font-size: 1em;
+	}
+	select {
+		margin-top: 0.5em;
+		height: 2em;
+	}
+	textarea {
+		padding: 0.5em;
 	}
 }
 
@@ -286,30 +290,46 @@
 	}
 }
 
-.building-form-fields div {display:inline-block;}
+.building-form-fields {
+	div {display:block;}
+}
 
-#building-name	{width:100%;}
-#address-field 	{width:70%;}
-#zip 			{width: 20%; margin-left:5%;}
+#building-name	{width: 95%;}
+#address-field 	{width: 95%;}
+#zip 			{width: 20%;}
 
 #city 			{width:30%;}
-#area 			{width:30%; margin-left:3.5%;}
-#neighborhood 	{width:30%; margin-left:3.5%;}
+#area 			{width:30%;}
+#neighborhood 	{width:30%;}
 
-.optional 		{width: 98%; padding:0.5em; margin:1.3em 0 0.7em 0; background: $grayLight; border-radius: 5px; span {color:$grayMediumDark;}}
+#management 	{width:70%; margin-top: 2em;}
 
-#description	{width:100%;}
-#amenities		{width:100%;}
+#create-building-btn {text-align: left; padding-top:1em;}
 
-#management 	{width:46%;}
-#construction 	{margin-left:6%; width:46%;}
+/* Thanks */
 
-#pets 			{width: 100%;}
+.thankyou-hero {
+	width: 100%;
+	h1 {
+		color: $gbVeryDark;
+		font-size: 2.5em;
+		font-weight: 400;
+		margin: 0 0 0.3em 0;
+		padding: 0;
+	}
+	h2 {
+		color: $grayDark;
+		font-size: 1.6em;
+		font-weight: 300;
+		margin: 0;
+		padding: 0;
+	}
+}
 
-#units 			{width: 28.7%;}
-#floors 		{margin-left:5%; width: 28.7%;}
-#built 			{margin-left:5%; width: 28.7%;}
+.thankyou-fb-box {
 
-#create-building-btn {text-align: right; padding-top:1em;}
+}
+
+
 
 

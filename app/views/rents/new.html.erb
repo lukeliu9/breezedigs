@@ -1,0 +1,15 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'rents' %>
+<% end %>
+
+<% provide(:title, "Submit a rent") %>
+
+<div class="bg-texture-wrapper">
+	<div class="container">
+		<% if @product && !@product.new_record %>
+			<%= render 'thanks' %>
+		<% else %>
+			<%= render 'newrentform' %>
+		<% end %>
+	</div>
+</div>

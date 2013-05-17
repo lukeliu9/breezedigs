@@ -1,27 +1,27 @@
 class Building < ActiveRecord::Base
-  attr_accessible :address, :amenities, :built, :city, :description, :floors, 
-  :lat, :lon, :name, :area, :neighborhood, :state, :units, :website, :zip, 
-  :management, :construction, :transportation, :slug
+  attr_accessible :name, :address, :built, :city, 
+  :latitude, :longitude, :area, :neighborhood, :website, :zip, 
+  :management, :city_id, :area_id, :neighborhood_id, :slug, :status
 
-  has_many :reviews
+  has_many :reviews, conditions: "status = approved"
+  has_many :users, through: :reviews
+  has_many :rents
+  has_many :users, through: :rents
 
-  validates :name, 				presence: true, uniqueness: true
-  validates :description, 		presence: false
-  validates :zip, 				presence: true, zip: true
-  validates :city, 				presence: true
-  validates :area, 				presence: true
-  validates :neighborhood, 		presence: true
-  validates :address, 			presence: true, uniqueness: true
-  validates :lat, 				presence: false, numericality: true, uniqueness: true
-  validates :lon, 				presence: false, numericality: true, uniqueness: true
-  validates :amenities, 		presence: false
-  validates :management, 		presence: false
-  validates :transportation, 	presence: false
-  validates :construction, 		presence: false
-  validates :floors, 			presence: false
-  validates :units, 			presence: false
-  validates :built, 			presence: false
-  validates :website, 			presence: false, uniqueness: true
+  belongs_to :city
+  belongs_to :area
+  belongs_to :neighborhood
+
+  validates :name, 				        presence: true, uniqueness: true
+  validates :zip, 				        presence: true, zip: true 
+  validates :address, 			      presence: true, uniqueness: true
+  # validates :latitude, 				  allow_blank: true, numericality: true, uniqueness: true
+  # validates :longitude, 				allow_blank: true, numericality: true, uniqueness: true
+  # validates :management, 		    allow_blank: true
+  validates :city_id,		          presence: true, numericality: { only_integer: true }
+  #validates :area_id,             presence: true, numericality: { only_integer: true }
+  #validates :neighborhood_id,	    presence: true, numericality: { only_integer: true }
+
 
   searchable do
   	text :name
@@ -34,5 +34,15 @@ class Building < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
+
+  private
+
+  def downcase_name
+  self.name = self.name.downcase if self.name.present?
+  end
+
+  def downcase_address
+  self.address = self.address.downcase if self.address.present?
+  end
 
 end

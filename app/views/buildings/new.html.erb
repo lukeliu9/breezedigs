@@ -2,28 +2,42 @@
 	<%= stylesheet_link_tag 'buildings' %>
 <% end %>
 
+<% content_for :scripts do %>
+  <%= javascript_include_tag "static_helpers" %>
+<% end %>
+
 <% provide(:title, 'Create a new building') %>
 
-<div class="container">
-	<div class="new-building-form">
-		<h1>Your addition will help other renters - thank you!</h1>
-		<%= render 'newbuildingsfields' %>
+<div class="bg-texture-wrapper">
+  <div class="container">
+      <% if @product && !@product.new_record %>
+        <%= render 'thanks' %>
+      <% else %>
+        <%= render 'newbuildingform' %>
+      <% end %>
+  </div>
+</div>
 
-	</div>
 
-	<div class="new-building-sidebar">
-		<h2>&nbsp;Adding a building:&nbsp;</h2>
-		<p>Our number one priority is ensuring the accuracy and objectivity of our review and building data</p>
-		
-		<p>We review each submission before approving them to be used and will research any information we feel may be fraudulent or inaccurate and take the appropriate action</p>
-
-		<p>Below is a list of things that we will not allow in our building submissions:</p>
-
-		<ul>
-			<li>Inaccurate information</li>
-			<li></li>
-		</ul>
-
-	</div>	
-
-</div>	
+<script>
+  $(document).ready(function() {
+    $('#cities_select').change(function() {
+      $.ajax({
+        url: "<%= update_areas_path %>",
+        data: {
+          city_id : $('#cities_select').val()
+        },
+        dataType: "script"
+      });
+    });
+    $('#areas_select').change(function() {
+      $.ajax({
+        url: "<%= update_neighborhoods_path %>",
+        data: {
+          area_id : $('#areas_select').val()
+        },
+        dataType: "script"
+      });
+    });
+  });
+</script>

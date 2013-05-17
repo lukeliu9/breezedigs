@@ -1,0 +1,15 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'reviews' %>
+<% end %>
+
+<% provide(:title, "Write a new review") %>
+
+<div class="bg-texture-wrapper">
+	<div class="container">
+		<% if @product && !@product.new_record %>
+			<%= render 'thanks' %>
+		<% else %>
+			<%= render 'newreviewform' %>
+		<% end %>
+	</div>
+</div>	

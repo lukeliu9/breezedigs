@@ -1,0 +1,20 @@
+<ul> 
+	<% @buildings.each do |building| %>
+
+		<%= link_to new_building_rent_path(building) do %>
+			<li class="select-bldg-listing">
+
+				<div class="bldg-listing-info">
+					<h1><%= building.name%></h1>
+					<h2>
+					<%= geogrify(building) %>: <span><%= building.address %> - <%= building.zip %></span>
+					</h2>
+				</div>
+					
+			<button class="select-bldg-btn">Submit a Rent</button>
+							
+			</li>
+		<% end %>
+	<% end %>
+</ul>
+<div class="pagination"><%= paginate @buildings %></div>

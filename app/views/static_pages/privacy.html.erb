@@ -1,3 +1,83 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'static_pages' %>
+<% end %>
+
 <% provide(:title, 'Privacy Policy') %>
 
-<h1><%= yield(:title) %></h1>
+<div class="bg-texture-wrapper">
+	<div class="container">
+		<div class="static-content">
+			<div class="static-selector">
+				<ul>
+					<%= link_to(raw("<li>Terms of Use</li>"), terms_path) %>
+					<%= link_to(raw("<li class=\"static-selected\">Privacy Policy</li>"), privacy_path) %>
+					<%= link_to(raw("<li>Review Guidelines</li>"), guidelines_path) %>
+				</ul>
+			</div>
+			<!-- Content -->
+			<h1>Privacy Policy</h1>
+
+			<h3>Last Updated on November 27, 2012.</h3>
+
+			<p>This Privacy Policy describes our policies on the collection, use, and disclosure of your information in connection with your use of our websites, emails, and mobile applications ("Site"). The terms "we", "us", and "BreezeDigs" refer to BreezeDigs LLC, an Illinois corporation. When you use the Site, you consent to our collection, use, and disclosure of your information as described in this Privacy Policy.</p>
+
+			<h2>I. INFORMATION YOU SUBMIT</h2>
+			<p>We may store the information you submit to or through the Site. We use the information to fulfill your requests, provide Site functionality, improve Site quality, personalize the user experience, display relevant advertising, provide customer support, message you, back up our systems, allow for disaster recovery, and comply with legal obligations. Among the information you submit to or through the Site, please note:</p>
+			<ul>
+			<li><span>1. Account Registration:</span> You must provide a valid email address in order to sign up for an Account on the Site. In addition, you may provide us with your full name, gender, and birth date. When you sign up for a BreezeDigs account, we opt you in to receive emails from other BreezeDigs users, building owners and BreezeDigs by default. You can manage your email preferences and modify some of the information associated with your account from your user account page.</li>
+
+			<li><span>2. Public Content:</span> Your reviews and other content you post to the Site are meant for public consumption. We may display this content on the Site, and further distribute it to a wider audience through third party sites and services.</li>
+
+			<li><span>3. Contacts:</span> You can invite your friends to join the Site by providing their contact information, or by allowing us to use your address book from your computer, mobile device, or other sites. If you invite a friend to join and connect with you on the Site, we may use and store your friends' contact information long enough to process your requests.</li>
+
+			<li><span>4. Messaging:</span> If you exchange messages with others through the Site, we may store these messages in order to deliver them and allow you to manage them.</li>
+			</ul>
+			
+			<h2>II. COOKIES AND OTHER INFORMATION WE COLLECT</h2>
+			<p>In addition to the information you submit to or through the Site, we also collect and store information from and about you in the course of your use of the Site. We use this information to analyze and track user behavior, personalize your experience, associate it with other information about you, provide the functionality and improve the quality of the Site, help comply with legal obligations, and may use it to display relevant advertising. We collect this information in a couple of different ways:</p>
+
+			<ul>
+			<li><span>1. Cookies:</span> We may use cookies, web beacons, local shared objects (sometimes called "flash cookies"), and similar technology in connection with your use of the Site ("Cookies"). Cookies are small data files that may have unique identifiers, and reside, among other places, on your computer or mobile device, in emails we send to you, and on our web pages. You can disable some (but not all) Cookies in your device or browser settings, but doing so may affect your ability to use the Site.</li>
+
+			<li><span>2. Server Logs:</span> Our servers log information about your use of the Site, such as your search activity, the pages you view and the date and time of your visit. Our servers also log information that your computer or mobile device provides to us in connection with your use of the Site, such as your browser type, browser language, IP address, mobile carrier, unique device identifier, location, and requested and referring URLs.</li>
+			</ul>
+
+			<h2>III. THIRD PARTIES</h2>
+			<p>We do not rent, share, sell or trade personally identifiable information with third parties for their direct marketing purposes. However, please note:</p>
+
+			<ul>
+			<li><span>1. Advertising and Third Party Cookies:</span> We allow third parties who provide services relating to advertising to use Cookies, as defined above, in connection with your use of the Site. As a result, they may collect and store the same type of information and use it for the same type of purposes as described for BreezeDigs above, and they may be able to associate the information they collect with other information they have about you from other sources.</li>
+
+			<li><span>2. Service Providers:</span> Some of the services that are offered through the Site are provided by third party providers. We also outsource some of our own functions to third party providers, such as technical and customer support, tracking and reporting functions, quality assurance testing, payment processing functions, and other services. We may share information from or about you with these third party providers so that they can perform their services or complete your requests.</li>
+
+			<li><span>3. Aggregate Information:</span> We may share user information in the aggregate with third parties, such as advertisers and content distributors. For example, we may disclose the number of users that have been exposed to, or clicked on, advertisements.</li>
+
+			<li><span>4. Investigations:</span> We may investigate and disclose information from or about you if we have a good faith belief that such investigation or disclosure is (a) reasonably necessary to comply with legal process and law enforcement instructions and orders, such as a search warrant, subpoena, statute, judicial proceeding, or other legal process served on us; (b) helpful to prevent, investigate, or identify possible wrongdoing in connection with the Site; or (c) protect our rights, reputation, property, or that of our users affiliates, or the public.</li>
+
+			<li><span>5. Links:</span> The Site may contain links to unaffiliated third party websites. Except as set forth herein, we do not share your personal information with them, and are not responsible for their privacy practices.</li>
+
+			<li><span>6. Facebook and Twitter:</span> You can connect your BreezeDigs account to your accounts on third party services like Facebook or Twitter, in which case we may collect and store information identifying your account with the third party service. We use the information to help you connect and share public content with your friends and followers.</li>
+			</ul>
+
+			<h2>IV.	DATA RETENTION AND ACCOUNT TERMINATION</h2>
+			<p>When logged into your account, you can remove or edit a review that you have posted to the Site. You can also terminate your personal account from within your account. If you terminate your account, we may continue to show some of your content in anonymized form. We may also keep personal information in our active systems for a period of 5 years (or longer if required by law) in order to ensure our ability to satisfy the authorized uses under this Privacy Policy.</p>
+			
+			<h2>V. CHILDREN</h2>
+			<p>The Site is intended for general audiences and is not directed to children under 13. We do not knowingly collect personal information from children under 13.</p>
+
+			<h2>VI.	SECURITY</h2>
+			<p>We follow generally accepted industry standards to protect the personal information submitted to us, both during transmission and once we receive it. However, No method of transmission over the Internet or via mobile device, or method of electronic storage, is 100% secure.</p>
+
+			<p>Therefore, while we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.</p>
+
+			<h2>VII. DISPUTE RESOLUTION</h2>
+			<p>If you believe that BreezeDigs has not adhered to this Privacy Policy you may write to us <%= link_to "here", contact_path %>.</p>
+
+			<h2>VIII. MODIFICATIONS TO THIS PRIVACY POLICY</h2>
+			<p>We may revise this Privacy Policy from time to time. The most current version of the Privacy Policy will govern our use of your information. By continuing to access or use the Site after those changes become effective, you agree to be bound by the revised Privacy Policy.</p>
+
+		</div>
+		<div class="em-buffer-5"></div>
+		<div class="em-buffer-3"></div>
+	</div>
+</div>

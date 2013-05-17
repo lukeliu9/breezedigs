@@ -12,12 +12,6 @@
 
 #-----------------------------------------------------------------------
 #some test synonym mappings unlikely to appear in real input text
-aaa => aaaa
-bbb => bbbb1 bbbb2
-ccc => cccc1,cccc2
-a\=>a => b\=>b
-a\,a => b\,b
-fooaaa,baraaa,bazaaa
 
 # Some synonym groups specific to this example
 GB,gib,gigabyte,gigabytes
@@ -28,4 +22,15 @@ Television, Televisions, TV, TVs
 
 # Synonym mappings can be used for spelling correction too
 pixima => pixma
+
+# Address synonyms
+
+parkway => pkwy
+place => pl
+boulevard => blvd
+drive => dr
+street => st
+avenue => ave
+
+
 
