@@ -1,5 +1,124 @@
-<% provide(:title, 'Terms') %>
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'static_pages' %>
+<% end %>
 
-<h5>Terms of Use</h5>
+<% provide(:title, 'Terms of use') %>
 
-<p>Breezedigs</p>
+<div class="bg-texture-wrapper">
+	<div class="container">
+		<div class="static-content">
+			<div class="static-selector">
+				<ul>
+					<%= link_to(raw("<li class=\"static-selected\">Terms of Use</li>"), terms_path) %>
+					<%= link_to(raw("<li>Privacy Policy</li>"), privacy_path) %>
+					<%= link_to(raw("<li>Review Guidelines</li>"), guidelines_path) %>
+				</ul>
+			</div>
+			<!-- Content -->
+			<h1>Terms of Use</h1>
+
+			<h3>Last updated: May 12th, 2013</h3>
+
+			<p>These terms and conditions (the "Terms") govern your access to and use of the BreezeDigs's website (www.breezedigs.com) that links to or reference these Terms ("Site"). By accessing or using the Site, you are agreeing to these Terms and concluding a legally binding contract with BreezeDigs LLC, an Illinois corporation headquartered in Chicago, IL ("Company"). Do not access or use the Site if you are unwilling or unable to be bound by the Terms.</p>
+
+			<h2>MODIFICATIONS TO TERMS OF AGREEMENT</h2>
+
+			<p>We may modify the Terms from time to time. The most current version of these Terms will be located <%= link_to "here", terms_path %>. You understand and agree that your access to or use of the Site is governed by the Terms effective at the time of your access to or use of the Site. If we make material changes to these Terms, we will also indicate at the top of this page the date that revisions were last made. You should revisit these Terms on a regular basis as revised versions will be binding on you. Any such modification will be effective upon our posting of new Terms.</p>
+
+			<h2>CONTENT GUIDELINES</h2>
+			<p>DEFINITION. BreezeDigs allows you to submit a review about apartment rentals & buildings (a "Review") and comments, questions, and responses("Discussion Content"), which comprise “Your Content”.</p>
+			<ul>
+			<li><span>A.</span> You alone are responsible for Your Content, and once published, it cannot always be withdrawn. You assume all risks associated with Your Content, including anyone's reliance on its quality, accuracy, or reliability, or any disclosure by you of information in Your Content that makes you personally identifiable. You represent that you own, or have the necessary permissions to use and authorize the use of Your Content as described herein. You may not imply that Your Content is in any way sponsored or endorsed by BreezeDigs.</li>
+			
+			<li><span>B.</span> By submitting Content to the BreezeDigs Site, you agree to transfer ownership and all rights of the submitted Content to BreezeDigs LLC without any obligation from the Company to pay royalties or any other licensing fees.</li>
+
+			<li><span>C.</span> REMOVAL OF CONTENT. BreezeDigs grants users the ability to edit or delete the Content they submit but is unable to guarantee that any deletions or modifications to Content will be immediately propagated across the Site. BreezeDigs reserves the right to delete any Content submitted by any user at any time.</li>
+			</ul>
+
+			<h2>USAGE GUIDELINES.</h2>
+
+			<p>You agree not to use the Site to:</p>
+			<ul>
+			<li><span>A.</span> Upload, post, email, or otherwise transmit any Content that is personally identifying information (such as actual names, physical description, phone numbers, mailing addresses, email addresses and URL), unlawful, harmful, threatening, abusive, harassing, tortious, defamatory, vulgar, obscene, libelous, invasive of another's privacy, hateful, or racially, ethnically or otherwise objectionable</li>
+
+			<li><span>B.</span> Impersonate any person or entity, or otherwise misrepresent your affiliation with a person or entity</li>
+
+			<li><span>C.</span> Upload, post, email, or otherwise transmit Content that you do not have a right to transmit under any law or under contractual or fiduciary relationships</li>
+
+			<li><span>D.</span> Upload, post, email or otherwise transmit Content that infringes any patent, trademark, trade secret, copyright or other proprietary rights ("Rights") of any party
+
+			<li><span>E.</span> Upload, post, email, or otherwise transmit any material that contains software viruses or any other computer code, files, or programs designed to interrupt, destroy, or limit the functionality of any computer software or hardware or telecommunications equipment
+			
+			<li><span>F.</span> Interfere with or disrupt the Site or servers or networks connected to the Site, or disobey any requirements, procedures, policies or regulations of networks connected to the Site
+			
+			<li><span>G.</span> Intentionally or unintentionally violate any applicable local, state, national or international law
+			</ul>
+
+			<p>Please also note the following in regards to your use of the Site:</p>
+			<ul>
+
+			<li><span>A.</span> Although we read and approve reviews before they are published to our website, we are unable to guarantee that submitted data and content is accurate and does not violate any copyright, trademark, or other restrictions.</li>
+
+			<li><span>B.</span> As such, we reserve the right to refuse to publish and/or delete any content submitted to our site by users. We also will make every reasonable effort to remove Content that infringes on the rights of any other party. If you would like to report Content published on our site, please contact us <%= link_to "here", contact_path %>.</li>
+
+			<li><span>C.</span> In using our site, you agree that you must evaluate, and bear all risks associated with, the use of any Content, including any reliance on the accuracy, completeness, or usefulness of such Content.</li>
+
+			<li><span>D.</span> You acknowledge and agree that BreezeDigs may preserve Content and may also disclose Content if required to do so by law or if BreezeDigs believes in good faith that such preservation or disclosure is reasonably necessary to: (i) comply with legal process; (ii) enforce this Agreement; (iii) respond to claims that any Content violates the rights of third-parties; or (iv) protect the rights, property, or personal safety of BreezeDigs, its users or the public.</li>
+
+			<li><span>E.</span> You agree not to reproduce, duplicate, copy, sell, resell or exploit for any commercial purposes, any portion of the Site, use of the Site, or access to the Site.</li>
+
+			<li><span>F.</span> Without BreezeDigs' express written consent, you may not (i) use any automated means to access the Site or collect any information from the Site (including without limitation robots, spiders or scripts), or (ii) frame the Site, place pop-up windows over its pages, or otherwise affect the display of its pages. You agree that you will not use the Site in any manner which could damage, disable, overburden, or impair the Site.</li>
+
+			<li><span>G.</span> In your use of this Site, you agree to: (i) provide true, accurate, current and complete information about yourself as prompted by the Site's registration form and (ii) maintain and promptly update the Registration Data to keep it true, accurate, current and complete.</li>
+
+			<h2>PRIVACY</h2>
+			<p>BreezeDigs is committed to respecting the privacy of its users. Please view our complete Privacy Policy <%= link_to "here", privacy_path %>.</p>
+
+			<h2>INDEMNITY</h2>
+			<p>You agree to indemnify and hold BreezeDigs, and its subsidiaries, affiliates, officers, agents, co-branders or other partners, and employees, harmless from any claim or demand, including attorneys' fees, made by any third party due to or arising out of Content you submit, post to or transmit through the Site, your use of the Site, your connection to the Site, your violation of this Agreement, or your violation of any rights of another.</p>
+
+			<h2>ADVERTISERS AND PARTNERS</h2>
+			<p>You agree that BreezeDigs shall not be responsible or liable for any loss or damage of any sort incurred as the result of any interactions, correspondence, or business dealings with any advertisers or partners presented on the BreezeDigs site.</p>
+
+			<h2>THIRD PARTIES</h2>
+			<p>BreezeDigs may provide access to third party data as part of the Service. In addition, BreezeDigs may provide, or third parties may provide, links to other World Wide Web sites or resources. BreezeDigs makes no representations as to the quality, accuracy, suitability, functionality or legality of any sites to which links may be provided as they are outside of the control of BreezeDigs. You rely on any such sites or data at your own risk.</p>
+
+			<h2>DISCLAIMERS & LIMITATIONS OF LIABILTIY</h2>
+			<p>THE SITE AND BREEZEDIGS' SERVICES ARE PROVIDED "AS IS," AND BREEZEDIGS AND ITS SUPPLIERS AND PARTNERS EXPRESSLY DISCLAIM ALL WARRANTIES OR CONDITIONS OF ANY KIND (EXPRESS, IMPLIED OR STATUTORY), INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</p>
+
+			<p>IN NO EVENT SHALL BREEZEDIGS OR ITS SUPPLIERS OR PARTNERS BE LIABLE FOR ANY LOST PROFITS OR SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES (HOWEVER ARISING, INCLUDING NEGLIGENCE) ARISING OUT OF OR IN CONNECTION WITH THE SITE, ITS SERVICES OR THIS AGREEMENT.</p>
+
+			<p>BREEZEDIGS' MAXIMUM AGGREGATE LIABILITY TO YOU FOR LOSSES OR DAMAGES THAT YOU SUFFER IN CONNECTION WITH THE SITE OR THESE TERMS IS LIMITED TO THE GREATER OF (i) THE AMOUNT PAID, IF ANY, BY YOU TO BREEZEDIGS IN CONNECTION WITH THE SITE IN THE 12 MONTHS PRIOR TO THE ACTION GIVING RISE TO LIABILITY, OR (ii) $100.</p>
+
+			<p>YOUR SOLE AND EXCLUSIVE RIGHT AND REMEDY IN CASE OF DISSATISFACTION WITH THE SITE, RELATED SERVICES, OR ANY OTHER GRIEVANCE SHALL BE YOUR TERMINATION AND DISCONTINUATION OF ACCESS TO, OR USE OF THE SITE.</p>
+
+			<p>THE BREEZEDIGS ENTITIES DISCLAIM LIABILITY FOR ANY (i) INDIRECT, SPECIAL, INCIDENTAL, PUNITIVE, EXEMPLARY, RELIANCE, OR CONSEQUENTIAL DAMAGES, (ii) LOSS OF PROFITS, (iii) BUSINESS INTERRUPTION, (iv) REPUTATIONAL HARM, OR (v) LOSS OF INFORMATION OR DATA.</p>
+
+
+			<h2>GOVERNING LAW</h2>
+			<p>California law will govern these Terms, as well as any claim, cause of action or dispute that might arise between you and BreezeDigs (a "Claim"), without regard to conflict of law provisions.</p> 
+
+
+			<h2>TERMINATION</h2>
+			<p>You may terminate the Terms at any time by closing your account and discontinuing your use of the Site. We may close your account, suspend your ability to use certain portions of the Site, and/or ban you altogether from the Site for any or no reason, and without notice or liability of any kind. Any such action could prevent you from accessing your account, the Site, Your Content, Site Content, or any other related information.</p>
+
+			<p>In the event of any termination of these Terms, whether by you or us, the following sections of these Terms will continue in full force and effect: a) “Content Guidelines”, b) “Usage Guidelines”, c) “Indemnity”, d) “Disclaimers & Limitations of Liabiltiy and e) “Governing Law”</p>
+
+			<h2>GENERAL</h2>
+			<p>Any failure on BreezeDigs's part to exercise or enforce any right or provision of the Terms does not constitute a waiver of such right or provision. The failure of either party to exercise in any respect any right provided for herein shall not be deemed a waiver of any further rights hereunder.</p>
+
+			<p>If any provision of the Terms is found to be unenforceable or invalid, then only that provision shall be modified to reflect the parties' intention or eliminated to the minimum extent necessary so that the Terms shall otherwise remain in full force and effect and enforceable.</p>
+
+			<p>The Terms, and any rights or obligations hereunder, are not assignable, transferable or sublicensable by you except with BreezeDigs's prior written consent, but may be assigned or transferred by us without restriction. Any attempted assignment by you shall violate these Terms and be void.</p>
+
+			<p>You shall comply with all laws and regulations applicable to your access and use of the Site and your publication of your Content.</p>
+
+
+			<h2>Entire Agreement</h2>
+			<p>The Terms contain the entire agreement between you and us regarding the use of the Site, and supersede any prior agreement between you and us on such subject matter. The parties acknowledge that no reliance is placed on any representation made but not expressly contained in these Terms.</p>
+
+		</div>
+		<div class="em-buffer-5"></div>
+		<div class="em-buffer-3"></div>
+	</div>
+</div>

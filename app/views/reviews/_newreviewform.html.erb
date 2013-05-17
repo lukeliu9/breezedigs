@@ -1,0 +1,33 @@
+<div class="new-review-form">
+	<h1>Your review will help other renters - thank you!</h1>
+	<div class="building-profile">
+		<div class="building-text">
+			<h2><%= @building.name %></h1>
+			<p id="geography"><%= building_geography %></p>
+			<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
+		</div>
+	</div>
+
+	<%= render 'newreviewfields' %>
+
+</div>
+
+<div class="new-review-sidebar">
+	<h2>&nbsp;To our community:&nbsp;</h2>
+	<p>Our number one priority is ensuring the accuracy and objectivity of our review and building data</p>
+	
+	<p>We review each submission before approving them to be used and will research any information we feel may be fraudulent or inaccurate and take the appropriate action</p>
+
+	<br>
+	<p id="bold">Things that we will not allow in reviews:</p>
+
+	<br>
+	<ul>
+		<li>Rants, venting, or obscenities</li>
+		<li>Personal insults or defamatory attacks (by name, title, or association)</li>
+		<li>Aggressive or discriminatory language</li>
+		<li>Content not relevant or helpful to other renters</li>
+		<li>Text in ALL CAPS or using excessively poor grammar</li>
+	</ul>
+
+</div>	

@@ -8,6 +8,8 @@ Breezedigs::Application.routes.draw do
 
   devise_for :users
 
+  # Resources
+
   resources :users do
     collection do
       get :manager
@@ -15,14 +17,26 @@ Breezedigs::Application.routes.draw do
     end
   end
 
+  get 'reviews/selectbuilding' => 'reviews#selectbuilding', :as => :selectbuilding
+  get 'rents/selectbuilding' => 'rents#selectbuildingrent', :as => :selectbuildingrent
+  get 'buildings/update_areas' => 'buildings#update_areas', :as => :update_areas
+  get 'buildings/update_neighborhoods' => 'buildings#update_neighborhoods', :as => :update_neighborhoods
   resources :reviews
+  resources :rents
+
+  resources :cities
+
   resources :buildings do
     resources :reviews
+    resources :rents
   end
 
   resources :neighborhoods
 
-  match '/faq', to: 'static_pages#faq'
+  # Manual routes
+
+  # get '/reviews/selectbuilding', :as => 'selectbuilding'
+
   match '/terms', to: 'static_pages#terms'
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
@@ -30,9 +44,11 @@ Breezedigs::Application.routes.draw do
   match '/careers', to: 'static_pages#careers'
   match '/press', to: 'static_pages#press'
   match '/partners', to: 'static_pages#partners'
-  match '/testimonials', to: 'static_pages#testimonials'
   match '/privacy', to: 'static_pages#privacy'
-  match '/example', to: 'static_pages#example'
+  match '/advertise', to: 'static_pages#advertise'
+  match '/managers', to: 'static_pages#managers'
+  match '/guidelines', to: 'static_pages#guidelines'
+  match '/abuse', to: 'static_pages#abuse'
 
   match '/signup', to: 'users#sign_up'
   match '/signin', to: 'sessions#sign_in'

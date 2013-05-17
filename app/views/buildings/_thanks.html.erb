@@ -1,0 +1,28 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'buildings' %>
+<% end %>
+
+<% provide(:title, "Thank you for your submission") %>
+
+<div class="em-buffer-3"></div>
+
+<div class="container">
+	<div class="main-content-area">
+
+		<div class="thankyou-hero">
+			<h1>Thank you for submitting a new building!</h1>
+			<h2>We will review your submission and send you a notification once your building is approved</h2>
+			<%= @building %>
+			<div>
+			</div>
+		</div>
+
+		<div class="thankyou-fb-box">
+			<h2>In the meantime, you can like us on Facebook or follow us on Twitter!</h2>
+		</div>
+
+		<div>
+		</div>
+
+	</div>
+</div>

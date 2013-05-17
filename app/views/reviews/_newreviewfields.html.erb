@@ -1,0 +1,95 @@
+<%= form_for @review, validate: true do |f| %>
+
+<div class="review-form-fields">
+
+	<h4>What is your overall rating of living here?</h4>
+	<%= star_ratings("overall") %>
+
+	<br>
+	<div>
+		<p>Pros:</p>
+		<%= f.text_area :pros,
+			placeholder: "General positives about living in this building", size: "5x3" %>
+		<br />
+	</div>
+
+	<div>
+		<p>Cons:</p>
+		<%= f.text_area :cons,
+			placeholder: "Negative aspects of living in this building", size: "5x3" %>
+		<br />
+	</div>
+
+	<div class="tell-us-more"><h5>Can you tell us a bit more?(optional)</h5></div><br>
+
+	<div id="advice">
+		<p>Advice:</p>
+		<%= f.text_area :advice,
+			placeholder: "Advice to prospective tenants about living in this building", size: "5x2" %>
+		<br />
+	</div>
+
+	<div id="msm">
+		<p>Management, Staff, Maintenance <span class="fw-300">(optional)</span></p>
+		<%= f.text_area :msm,
+			placeholder: "Responsiveness & practices of management, friendliness of staff, maintenance & upkeep, etc.", size: "5x5" %>
+		<br />
+	</div>
+
+	<div id="nsn">
+		<p>Neighborhood, Safety, Noise <span class="fw-300">(optional)</span></p>
+		<%= f.text_area :nsn,
+			placeholder: "What the neighborhood is like, are there any safety concerns/issues, is the area particularly noisy, etc.", size: "5x5" %>
+		<br />
+	</div>
+
+	<div id="unitamen">
+		<p>Amenities & Unit Quality <span class="fw-300">(optional)</span></p>
+		<%= f.text_area :unitamen,
+			placeholder: "Noteworthy amenities & the quality of the units", size: "5x5" %>
+		<br />
+	</div>
+
+	<div id="transpark">
+		<p>Transportation & Parking <span class="fw-300">(optional)</span></p>
+		<%= f.text_area :parktrans,
+			placeholder: "Access to transportation & availability of parking", size: "5x5" %>
+	</div>
+
+	<div class="tell-us-more"><h5>Can you rate a few more things?(optional)</h5></div><br>
+
+	<div class="star-rtngs">
+	<p>Management Rating:</p>
+	<%= star_ratings("management_rating") %>
+
+	<p>Staff Rating:</p>
+	<%= star_ratings("staff_rating") %>
+
+	<p>Maintenance Rating:</p>
+	<%= star_ratings("maintenance_rating") %>
+
+	<p>Amenities Rating:</p>
+	<%= star_ratings("amenities_rating") %>
+	</div>
+
+	<div class="star-rtngs">
+	<p>Neighborhood Rating:</p>
+	<%= star_ratings("neighborhood_rating") %>
+
+	<p>Noise Rating:</p>
+	<%= star_ratings("noise_rating") %>
+
+	<p>Safety Rating:</p>
+	<%= star_ratings("safety_rating") %>
+
+	<p>Transportation Rating:</p>
+	<%= star_ratings("transportation_rating") %>
+	</div>
+
+</div>	
+
+	<div id="create-review-btn">
+	<%= f.submit 'Create Review', class: "btn btn-primary btn-large" %>
+	</div>
+
+<% end %>

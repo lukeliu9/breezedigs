@@ -1,0 +1,69 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'buildings' %>
+<% end %>
+
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'rents' %>
+<% end %>
+
+<% content_for :scripts do %>
+	<%= javascript_include_tag "buildingprofile" %>
+<% end %>
+
+<% provide(:title, @building.name) %>
+
+<div class="bg-texture-wrapper">
+	<div class="container">
+		<div class="building-profile">
+
+			<div class="interactive-holder">
+				<div class="building-interactive-box">
+
+						<div class="interactive-buttons">
+							<button class="interactive-btn left-btn" id="selected">Photos</button>
+							<!--<button class="interactive-btn left-push">Map view</button>
+							<button class="interactive-btn left-push">Bird's eye</button>-->
+							<button class="interactive-btn right-btn">Map View</button>
+						</div>
+
+						<div class="building-main-area">
+
+						</div>
+
+						<div class="building-thumbnails">
+
+						</div>
+				</div>
+
+			</div>
+
+			<div class="building-info">
+				<h1><%= @building.name %></h1>
+				<p id="geography"><%= building_geography %></p>
+				<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
+
+				<div class="review-rent-btns"><!-- Write review & submit rent btns in bldg prof -->
+					<%= link_to(raw("<button class=\"btn\">Submit a Rent</button>"), new_building_rent_path(@building)) %>
+					<%= link_to(raw("<button class=\"btn\">Write Review</button>"), new_building_review_path(@building)) %>
+				</div>
+
+				<div class="building-stats">
+					Test
+				</div>
+			</div>
+
+			<div class="building-data-toggle"><!-- To switch between reviews and rental data -->
+				<%= link_to "<button class=\"toggle tselect\">Reviews</button>".html_safe, building_reviews_path(@building) %>
+				<%= link_to "<button class=\"toggle\">Rental Data</button>".html_safe, building_rents_path %>
+			</div>
+
+			<div id="building-data">
+				<%= render 'buildingreviews' %>
+			</div>
+
+			<div class="building-contact">
+			</div>
+
+		</div>
+	</div>
+</div>

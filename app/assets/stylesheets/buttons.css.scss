@@ -6,6 +6,11 @@ $actionButton: #46afeb;
 $actionButtonHover: #3196d6;
 $buttonBorder: #3f667f;
 
+/* Wider buttons */
+
+.btn-wide { padding: 0.8em 3.5em; }
+.btn-very-wide { padding: 2em 20em; }
+
 /* Light Gray & Blue colors */
 
 $lightGray: #d8dde2;
@@ -20,8 +25,6 @@ $pureWhite: white;
      -moz-border-radius: 6px;
           border-radius: 6px;
 }
-
-.btn-wide { padding: 2em 20em; }
 
 /* Building Profile */
 
@@ -95,9 +98,32 @@ $pureWhite: white;
 	background: white;
 	border-right: 1px solid white;
 	font-weight: 500;
-	color: $blueDark;
+	color: $blueVeryDark;
 }
 
+/* Building profile toggle buttons between rent and reviews */
+
+.toggle {
+	border-radius: 5px;
+	margin-right: 0.7em;
+	padding: 0.5em 1.5em;
+	border: 0;
+	background: white;
+	&:hover {
+		background: $grayLight;
+		color: black;
+	}
+}
+
+.tselect {
+	background: #1f6bbf;
+	border: 0;
+	color:white;
+	&:hover {
+		background: #1f6bbf;
+		color: white;
+	}
+}
 
 
 

@@ -14,4 +14,8 @@
  *= require buttons
  *= require fonts
  *= require colors
+ *= require jquery-star-rating
+ *= require_tree ../../../vendor/assets/stylesheets/powertip
  */
+
+@import "sassy-buttons"

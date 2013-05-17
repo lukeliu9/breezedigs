@@ -13,37 +13,7 @@
 	</div>
 
 	<div class="building-results">
-		<ul> 
-			<% @buildings.each do |building| %>
-
-				<%= link_to building do %>
-					<li class="building-listing">
-
-						<div class="building-image">
-						<%= image_tag 'default_building_icon.png', size: "125x125" %>
-						</div>
-
-						<div class="building-listing-info">
-							<h3><%= building.name%></h3>
-							<h4>
-							<%= geogrify(building) %>
-							</h4>
-							<span><%= building.address %></span>
-							<p>
-								<%= truncate(building.description, length: 130, separator: ' ') %>
-							</p>
-						</div>
-
-						<div class="review-summary">
-							<h5>Reviews:</h5>
-						</div>
-									
-					</li>
-				<% end %>
-
-			<% end %>
-		</ul>
-		<%= paginate @buildings %>
+		<%= render 'buildingresults' %>
 	</div>
 
 </div>

@@ -74,16 +74,13 @@ end
 FactoryGirl.define do
 	factory :city do
 		name "Chicago"
-		areas "Downtown, Near North Side"
-		neighborhoods "Gold Coast, Lincoln Park"
 	end
 end
 
 FactoryGirl.define do
 	factory :area do
 		name "Downtown"
-		neighborhoods "Gold Coast, River North, Near East Side"
-		city "Chicago"
+		city_id 1
 	end
 end
 
@@ -91,8 +88,6 @@ FactoryGirl.define do
 	factory :neighborhood do
 		name "Streeterville"
 		description "Swanky"
-		city "Chicago"
-		area "Near North Side"
 		lat 15
 		lon 15
 		schools "Lane Tech"
@@ -100,7 +95,7 @@ FactoryGirl.define do
 		stores "Steps from Magnificent Mile"
 		safety "Very safe"
 		recreation "Navy Pier"
-		buildings "Hash of buildings"
+		area_id 1
 	end
 end
 

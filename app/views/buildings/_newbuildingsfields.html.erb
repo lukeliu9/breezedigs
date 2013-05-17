@@ -5,7 +5,7 @@
 	<div id="building-name">
 		<p>Building name:</p>
 		<%= f.text_field :name,
-			placeholder: "Name or address", style: "width: 96%;" %>
+			placeholder: "Name or address", style: "width: 100%;" %>
 		<br />
 	</div>
 
@@ -26,86 +26,30 @@
 
 	<div id="city">
 		<p>City:</p>
-		<%= f.select(:city, @cities, style: "width: 100%;") %>
+		<%= f.collection_select(:city_id,  City.order('name ASC'),  :id, :name, {:prompt   => "Select a City"}, {:id => 'cities_select'}) %>
 		<br />
 	</div>
 
 	<div id="area">
 		<p>City area:</p>
-		<%= f.select :area,
-			placeholder: "Area", style: "width: 100%;" %>
+		<%= f.collection_select(:area_id, [], :id, :name, {:prompt   => "Select an Area"}, {:id => 'areas_select'}) %>
 		<br />
 	</div>
 
 	<div id="neighborhood">
 		<p>Neighborhood:</p>
-		<%= f.select :neighborhood,
-			"Neighborhood", style: "width: 100%;" %>
-		<br />
-	</div>
-
-	<div class="optional"><span>(Optional)</span></div>
-
-	<div id="description">
-		<p>Description (optional):</p>
-		<%= f.text_area :description,
-			placeholder: "Condo association", size: "10x3" %>
-		<br />
-	</div>
-
-	<div id="amenities">
-		<p>Building amenities (optional):</p>
-		<%= f.text_area :amenities,
-			placeholder: "Gym, pool, doorman, dry cleaners, etc.",
-			size: "10x2" %>
+		<%= f.collection_select(:neighborhood_id, [], :id, :name, {:prompt   => "Select a Neighborhood"}, {:id => 'neighborhoods_select'}) %>
 		<br />
 	</div>
 
 	<div id="management">
 		<p>Management/Landlord (optional):</p>
-		<%= f.text_area :management,
+		<%= f.text_field :management,
 			placeholder: "Management company or landlord", 
-			size: "5x2" %>
+			style: "width: 96%;" %>
 		<br />
 	</div>
 
-	<div id="construction">
-		<p>Construction notes/quality (optional):</p>
-		<%= f.text_area :construction,
-			placeholder: "Quality of materials, ongoing construction, etc.",size: "5x2" %>
-		<br />
-	</div>
-
-	<div id="pets">
-		<p>Pet policy (optional):</p>
-		<%= f.text_field :pets,
-			placeholder: "Cats/dogs, weight limits, etc.", style: "width:100%;" %>
-		<br />
-	</div>
-
-	<div id="units">
-		<p>No. of units (optional):</p>
-		<%= f.text_field :units,
-			placeholder: "No. of units in building",
-			style: "width: 100%" %>
-		<br />
-	</div>
-
-	<div id="floors">
-		<p>No. of floors (optional):</p>
-		<%= f.text_field :floors,
-			placeholder: "Number of floors",
-			style: "width: 100%" %>
-		<br />
-	</div>
-
-	<div id="built">
-		<p>Year built (optional):</p>
-		<%= f.text_field :built,
-			placeholder: "Year built", 
-			style: "width: 100%" %>
-		<br />
-	</div>
 </div>
 
 	<div id="create-building-btn">

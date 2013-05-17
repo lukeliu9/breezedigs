@@ -1,0 +1,247 @@
+// Place all the styles related to the rents controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "colors";
+
+/* Submit Rent Form */
+
+.new-rent-form {
+	display: inline-block;
+	vertical-align: top;
+	width: 59%;
+	margin: 3em 0 8em 0;
+	padding: 0.1em 3em 2em 3em;
+	border: 1px solid $grayMedium;
+	border-radius: 5px;
+	background: white;
+	input {
+		margin-top: 0.6em;
+		width: 10em;
+	}
+	h1 {
+		font-size: 1.6em;
+		margin: 0.9em 0 0.5em 0;
+		padding-bottom: 0.6em;
+		color: #2d68a5;
+		font-weight: 300;
+		border-bottom: 1px solid #a5afb9;
+	}
+	p {
+		margin-top: 1em;
+		margin-bottom: 0;
+		margin-left: 2px;
+		font-size: 1em;
+	}
+	select {
+		margin-top: 0.5em;
+		height: 2em;
+	}
+	textarea {
+		margin-top: 0.5em;
+		padding: 0.5em;
+	}
+}
+
+.building-profile-rentform {
+	background: $grayVeryLight;
+	border-radius: 5px;
+	padding: 0.7em;
+}
+
+.building-image-rentform {
+	width: 7em;
+	height: 7em;
+	display: inline-block;
+	vertical-align: top;
+	background: $grayLight;
+	border: 1px solid $grayMedium;
+	border-radius: 6px;
+}
+
+.building-text-rentform {
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 0 0 1em;
+	h2 {
+		margin: 0 0 0.4em 0;
+		padding: 0;
+		font-size: 1.2em;
+		font-weight: 400;
+		color: $offBlack;
+		text-align: left;
+	}
+	p {
+		margin: 0;
+		padding: 0;
+		color: $grayDark;
+		font-size: 0.95em;
+		font-style: italic;
+	}
+}
+
+.rent-form-fields {
+	margin-top: 2em;
+	p {
+		font-size: 0.95em;
+		font-weight: 600;
+	}
+	h4 {
+		font-size: 1em;
+		font-weight: 300;
+		color: $grayDark;
+	}
+	input {
+		width: 12em;
+	}
+}
+
+#unit-num-field {
+	p {
+		display: inline-block;
+		vertical-align: bottom;
+	}
+	i {
+		display: inline-block;
+		vertical-align: bottom;
+	}
+	select {
+		width: 13em;
+	}
+}
+
+.tell-us-more {
+	width: 96%;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0.8em 1.5em;
+	border-radius: 5px;
+	background: $grayVeryLight;
+	h5 {
+		font-size: 0.9em;
+		color: $grayDark;
+		font-weight: 200;
+		margin: 0;
+	}
+}
+
+.new-rent-sidebar {
+	display: inline-block;
+	vertical-align: top;
+	width: 26%;
+	height: 50em;
+	border-radius: 5px;
+	margin: 2.5em 0 0 1em;
+	padding: 1em 1em 3em 1em;
+	color: $grayDark;
+	h2 {
+		color: $grayVeryDark;
+		font-size: 1.35em;
+		font-weight: 500;
+		border-bottom: 1px solid #a5afb9;
+		padding:0 0 0.4em 0;
+		margin-bottom: 0.75em;
+	}
+	p {
+		font-size: 1em;
+		line-height: 1.5em;
+	}
+	ul {
+		li {
+			list-style: circle;
+			margin-bottom: 1em;
+			line-height: 1.3em;
+		}
+	}
+}
+
+/* Styling the fields in the create new rent form */
+
+#bedbath {
+	select {
+		width: 8em;
+	}
+}
+
+
+/* Rental data on building profile page */
+
+.rental-data-area {
+	width: 100%;
+	display: inline-block;
+	padding: 1em 1.2em;
+	border: 1px solid $grayLight;
+	background: white;
+}
+.rental-table {
+	th {
+		vertical-align: bottom;
+	}
+	h3 {
+		font-size: 1em;
+		font-weight: 400;
+		margin: 0.4em 0 0 0;
+		padding: 0;
+		color: $grayDark;
+	}
+}
+#unit-type 			{height: 2em; width:15%; border-right: 1px solid $grayMedium; border-bottom: 1px solid $grayMedium; text-align:center;}
+#avg-rent 			{height: 2em; width:10%; border-right: 1px solid $grayMedium; border-bottom: 1px solid $grayMedium; text-align:center;}
+#rent-prices-header {height: 2em; width:72%; border-bottom: 1px solid $grayMedium; text-align:left; ul {margin-top: 0.2em;} }
+#first-rent-tick 	{margin-left: -3em; p{margin: -1.3em 0 0 2.7em;}}
+.rental-data-table-prices {
+margin-bottom: -0.7em;
+	p {
+		margin: -1.3em 0 0 2.3em;
+		padding: 0;
+	}
+	li {
+		width: 6.2%;
+		height: 0.6em;
+		display: inline-block;
+		padding: 0;
+		margin-left: 0.4em;
+		border-right: 1px solid $grayMedium;
+		color: $grayDark;
+		font-weight: 300;
+	}
+}
+
+
+.rent-row {
+	width:100%;
+	height: 3em;
+	h4 {
+		margin: 0.7em;
+		padding: 0;
+		font-size: 1em;
+		font-weight: 300;
+		color: $grayVeryDark;
+	}
+}
+#rent-type-cell {
+	border-bottom: 1px solid $grayMedium;
+	border-right: 1px solid $grayMedium;
+	text-align: center;
+}
+#rent-avg-cell {
+	border-bottom: 1px solid $grayMedium;
+	border-right: 1px solid $grayMedium;
+	text-align: center;
+}
+#rent-bars-cell {
+	border-bottom: 1px solid $grayMedium;
+}
+.rent-holder {
+	width: 91.5%;
+	height: 2.5em;
+	margin-left: 3%;
+}
+
+
+
+
+
+

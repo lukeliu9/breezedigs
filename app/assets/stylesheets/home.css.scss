@@ -4,6 +4,7 @@ $darkborder: #393b3d;
 $darkgreytext: #5d6062;
 $lightgreytext: #808386;
 $grayLight: #d4d9dc;
+@import "colors";
 
 /* Insert Hero CSS into Application Layout */
 
@@ -47,6 +48,21 @@ $grayLight: #d4d9dc;
 	&:hover {background:#2d7fd2;}
 }
 
+.hero-links {
+	width: 30%;
+	margin-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0.5em 0;
+	text-align: center;
+	border-radius: 5px;
+	background: $blueLight;
+	opacity:0.65; filter: alpha(opacity=65);
+	a {
+		margin: 0 1em;
+	}
+}
+
 .hero-details {
 	width: 90%; height: 100%;
 	background-color: white;
@@ -68,7 +84,13 @@ $grayLight: #d4d9dc;
 
 .home-stripe {
 	background: #42464b;
-	height: 8em;
+	height: 15em;
+	h3 {
+		margin: 0.5em 0 0.7em 0;
+		font-size: 1.2em;
+		font-weight: 300;
+		color: $grayLightMedium;
+	}
 }
 
 /* Main Content Area */

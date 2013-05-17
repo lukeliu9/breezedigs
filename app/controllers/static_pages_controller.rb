@@ -3,25 +3,16 @@ class StaticPagesController < ApplicationController
   def home
   end
 
-  def faq
-  end
-
   def terms
   end
 
   def contact
   end
 
-  def how
-  end
-
   def careers
   end
 
   def about
-  end
-
-  def testimonials
   end
 
   def press
@@ -33,7 +24,16 @@ class StaticPagesController < ApplicationController
   def privacy
   end
 
-  def example
+  def managers
+  end
+
+  def advertise
+  end
+
+  def guidelines
+  end
+
+  def abuse
   end
 
 end

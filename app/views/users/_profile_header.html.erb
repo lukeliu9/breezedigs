@@ -1,6 +1,6 @@
 <div class="profile-header">
 
-		<div class="buffer"></div><div class="buffer-small"></div>	
+		<div class="buffer-small"></div>	
 			<% flash.each do |key, value| %>
 				<%= content_tag(:div, value, class: "alert alert-#{key}") %>
 			<% end %>

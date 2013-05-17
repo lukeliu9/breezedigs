@@ -1,0 +1,13 @@
+<div class="city-no-buildings">
+	<div class="container">
+		<div class="no-buildings-hero">
+			<h1>Looks like we don't have any buildings for:</h1>
+			<h2><%= @city.name %></h2>
+		</div>
+
+		<div class="add-building-prompt">
+			<h3>If you'd like to write a review for a building in this city, you can submit a new building below</h3>
+			<%= link_to(raw("<button class=\"btn btn-primary btn-large\">Add a building</button>"), new_building_path) %>
+		</div>
+	</div>
+</div>

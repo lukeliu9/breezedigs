@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506032408) do
+ActiveRecord::Schema.define(:version => 20130517014329) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -48,46 +48,40 @@ ActiveRecord::Schema.define(:version => 20130506032408) do
 
   create_table "areas", :force => true do |t|
     t.string   "name"
-    t.text     "neighborhoods"
-    t.string   "city"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "city_id"
   end
 
   create_table "buildings", :force => true do |t|
     t.string   "address"
-    t.decimal  "lat"
-    t.decimal  "lon"
     t.string   "name"
-    t.string   "neighborhood"
-    t.integer  "floors"
-    t.text     "description"
-    t.text     "amenities"
     t.string   "website"
-    t.integer  "units"
-    t.string   "city"
     t.string   "zip"
-    t.integer  "built"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.string   "area"
-    t.text     "construction"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.text     "management"
-    t.text     "transportation"
     t.string   "slug"
-    t.text     "pets"
+    t.integer  "area_id"
+    t.integer  "city_id"
+    t.integer  "neighborhood_id"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.string   "status",          :default => "unapproved"
   end
 
   add_index "buildings", ["slug"], :name => "index_buildings_on_slug"
 
   create_table "cities", :force => true do |t|
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.text     "neighborhoods"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "name"
-    t.integer  "neighborhood_id"
-    t.string   "areas"
+    t.string   "slug"
+    t.string   "state"
+    t.integer  "population"
   end
+
+  add_index "cities", ["slug"], :name => "index_cities_on_slug"
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
@@ -112,57 +106,50 @@ ActiveRecord::Schema.define(:version => 20130506032408) do
 
   create_table "neighborhoods", :force => true do |t|
     t.string   "name"
-    t.decimal  "lat"
-    t.decimal  "lon"
-    t.text     "description"
-    t.text     "schools"
-    t.text     "nightlife"
-    t.text     "stores"
-    t.text     "safety"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "area_id"
+  end
+
+  create_table "rents", :force => true do |t|
+    t.integer  "rent"
+    t.integer  "floor"
+    t.integer  "beds"
+    t.integer  "baths"
+    t.integer  "sqft"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.text     "recreation"
-    t.text     "buildings"
-    t.string   "city"
-    t.string   "area"
+    t.integer  "utilities"
+    t.integer  "building_id"
+    t.integer  "user_id"
+    t.text     "notes"
+    t.string   "unitnum"
+    t.string   "recency"
   end
 
   create_table "reviews", :force => true do |t|
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
-    t.integer  "rent"
-    t.string   "neighborhood"
-    t.text     "nightlife"
-    t.text     "management"
-    t.text     "staff"
-    t.text     "amenities"
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
     t.integer  "noise_rating"
     t.integer  "neighborhood_rating"
-    t.string   "supermarket"
-    t.text     "schools"
     t.integer  "safety_rating"
-    t.string   "building"
-    t.text     "parking"
-    t.text     "maintenance"
     t.integer  "maintenance_rating"
-    t.text     "construction"
-    t.text     "noise"
-    t.text     "people"
     t.integer  "overall"
     t.text     "pros"
     t.text     "cons"
-    t.integer  "floor"
-    t.text     "view"
     t.integer  "user_id"
     t.integer  "management_rating"
     t.integer  "staff_rating"
-    t.text     "safety"
-    t.text     "transportation"
     t.integer  "transportation_rating"
     t.integer  "amenities_rating"
-    t.integer  "beds"
-    t.integer  "baths"
     t.string   "identity"
+    t.text     "msm"
+    t.text     "nsn"
+    t.text     "advice"
+    t.integer  "building_id"
+    t.text     "parktrans"
+    t.text     "unitamen"
+    t.string   "status",                :default => "unapproved"
   end
 
   create_table "users", :force => true do |t|
@@ -185,6 +172,7 @@ ActiveRecord::Schema.define(:version => 20130506032408) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "role"
+    t.string   "status"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
