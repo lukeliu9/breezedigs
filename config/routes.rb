@@ -19,16 +19,33 @@ Breezedigs::Application.routes.draw do
 
   get 'reviews/selectbuilding' => 'reviews#selectbuilding', :as => :selectbuilding
   get 'rents/selectbuilding' => 'rents#selectbuildingrent', :as => :selectbuildingrent
+  get 'photos/selectbuilding' => 'photos#selectbuildingphoto', :as => :selectbuildingphoto
+  get 'floorplans/selectbuilding' => 'floorplans#selectbuildingfloorplan', :as => :selectbuildingfloorplan
   get 'buildings/update_areas' => 'buildings#update_areas', :as => :update_areas
   get 'buildings/update_neighborhoods' => 'buildings#update_neighborhoods', :as => :update_neighborhoods
+
   resources :reviews
   resources :rents
+  resources :floorplans
+  resources :photos
 
   resources :cities
 
   resources :buildings do
-    resources :reviews
+    resources :reviews do
+      collection do
+        get :pros
+        get :cons
+        get :mgmt
+        get :nsn
+        get :unitamen
+        get :parktrans
+        get :advice
+      end
+    end
     resources :rents
+    resources :floorplans
+    resources :photos
   end
 
   resources :neighborhoods
@@ -49,6 +66,7 @@ Breezedigs::Application.routes.draw do
   match '/managers', to: 'static_pages#managers'
   match '/guidelines', to: 'static_pages#guidelines'
   match '/abuse', to: 'static_pages#abuse'
+  match '/allcities', to: 'static_pages#allcities'
 
   match '/signup', to: 'users#sign_up'
   match '/signin', to: 'sessions#sign_in'

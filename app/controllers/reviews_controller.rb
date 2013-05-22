@@ -16,10 +16,11 @@ class ReviewsController < ApplicationController
 	end
 
 	def create
-		@review = Review.new(params[:review])
+		@building = Building.find(params[:building_id])
+		@review = @building.reviews.new(params[:review])
 		if @review.save
 			flash[:notice] = "Thank you for submitting a review and contributing to our community!"
-			render action: 'thanks'
+			render action: 'new'
 		else
 			render :action => 'new'
 		end
@@ -55,6 +56,27 @@ class ReviewsController < ApplicationController
 	end
 
 	def thanks
+	end
+
+	def pros
+	end
+
+	def cons
+	end
+
+	def mgmt
+	end
+
+	def nsn
+	end
+
+	def unitamen
+	end
+
+	def parktrans
+	end
+
+	def advice
 	end
 	
 end

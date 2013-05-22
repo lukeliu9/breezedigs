@@ -3,11 +3,11 @@
 <% end %>
 
 <% content_for :head do %>
-	<%= stylesheet_link_tag 'rents' %>
+	<%= stylesheet_link_tag 'reviews' %>
 <% end %>
 
 <% content_for :scripts do %>
-	<%= javascript_include_tag "buildingprofile" %>
+	<%= javascript_include_tag "reviews" %>
 <% end %>
 
 <% provide(:title, @building.name) %>
@@ -28,11 +28,17 @@
 
 						<div class="building-main-area">
 
+							
 						</div>
 
 						<div class="building-thumbnails">
 
 						</div>
+				</div>
+
+				<div class="add-photos-floorplans">
+					<div class="right">
+					<%= link_to "Add a photo", new_building_photo_path(@building) %></div>
 				</div>
 
 			</div>
@@ -50,6 +56,7 @@
 				<div class="building-stats">
 					Test
 				</div>
+				
 			</div>
 
 			<div class="building-data-toggle"><!-- To switch between reviews and rental data -->
@@ -57,9 +64,24 @@
 				<%= link_to "<button class=\"toggle\">Rental Data</button>".html_safe, building_rents_path %>
 			</div>
 
-			<div id="building-data">
-				<%= render 'buildingreviews' %>
-			</div>
+				<div class="reviews">
+					<div class="review-buttons-box">
+					</div>	
+
+					<div class="review-content">
+						<div class="single-review">
+							<% @reviews.each do |review| %>
+							<%= raw("<div class=\"review unhidden\" id=\"pros\">#{review.pros}</div>") %>
+							<%= raw("<div class=\"review\" id=\"cons\">#{review.cons}</div>") %>
+							<%= raw("<div class=\"review\" id=\"mgmt\">#{review.msm}</div>") %>
+							<%= raw("<div class=\"review\" id=\"rnsn\">#{review.nsn}</div>") %>
+							<%= raw("<div class=\"review\" id=\"uamen\">#{review.unitamen}</div>") %>
+							<%= raw("<div class=\"review\" id=\"ptrans\">#{review.parktrans}</div>") %>
+							<%= raw("<div class=\"review\" id=\"adv\">#{review.advice}</div>") %>
+							<% end %>
+						</div>
+					</div>
+				</div>
 
 			<div class="building-contact">
 			</div>

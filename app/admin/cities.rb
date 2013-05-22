@@ -4,6 +4,7 @@ ActiveAdmin.register City do
 
 	index do
 		column :name
+		column :population
 		column 'Areas' do |city|
   			city.areas.collect(&:name).join(', ')
   		end

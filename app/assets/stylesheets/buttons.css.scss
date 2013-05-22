@@ -82,11 +82,8 @@ $pureWhite: white;
 }
 		
 .first-review-btn {
-	border-top: 0;
+	border-top:1px solid $grayMedium;
 	border-top-left-radius: 6px;
-	&:hover {
-		border-top: 0;
-	}
 }
 
 .last-review-btn {
@@ -94,7 +91,7 @@ $pureWhite: white;
 	border-bottom-left-radius: 6px;
 }
 
-#review-selected {
+.review-btn-selected {
 	background: white;
 	border-right: 1px solid white;
 	font-weight: 500;

@@ -1,0 +1,32 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'reviews' %>
+<% end %>
+
+<% provide(:title, "Select a building") %>
+
+<div class="bg-texture-wrapper">
+	<div class="container">
+		<div class="main-content-area">
+			
+
+			<div class="select-building-box top">
+				<h1>Step 1: Select a building to submit a rent for</h1>
+				<%= form_tag selectbuildingrent_path, :method => 'get' do %>
+		 		<p>
+		    	<%= text_field_tag :search, params[:search], placeholder: "City, area, neighborhood, building, address, zip", class: "select-bldg-search-field"%>
+
+				   	<button type="submit" class="btn btn-primary inline-block top">
+		    		Search 
+					</button>
+
+				  	</p>
+				<% end %>
+			</div>
+
+			<div class="select-building-results">
+				<%= render 'selectbuildingresults' %>
+			</div>
+
+		</div>
+	</div>
+</div>

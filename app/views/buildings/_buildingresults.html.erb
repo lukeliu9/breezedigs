@@ -1,7 +1,10 @@
+<% if @buildings.empty? %>
+	<%= render 'noresults' %>
+	<% else %>
 <ul> 
 	<% @buildings.each do |building| %>
 
-		<%= link_to building_reviews_path do %>
+		<%= link_to building do %>
 			<li class="building-listing">
 
 				<div class="building-image">
@@ -9,18 +12,17 @@
 				</div>
 
 				<div class="building-listing-info">
-					<h3><%= building.name%></h3>
+					<div>
+						<h3><%= building.name%></h3>
+
+					</div>
 					<h4>
 					<%= geogrify(building) %>
 					</h4>
 					<span><%= building.address %></span>
 					<p>
-						<!-- review snipped code -->
+						<%= building.reviews.map(&:pros) %>
 					</p>
-				</div>
-
-				<div class="review-summary">
-					<h5>Reviews:</h5>
 				</div>
 							
 			</li>
@@ -28,3 +30,5 @@
 	<% end %>
 </ul>
 <%= paginate @buildings %>
+
+<% end %>

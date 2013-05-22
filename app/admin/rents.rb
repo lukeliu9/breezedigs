@@ -2,6 +2,7 @@ ActiveAdmin.register Rent do
   active_admin_importable
 
 	index do
+		column :building
 		column :rent
 		column :utilities
 		column :beds

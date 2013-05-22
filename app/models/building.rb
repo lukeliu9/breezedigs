@@ -3,9 +3,11 @@ class Building < ActiveRecord::Base
   :latitude, :longitude, :area, :neighborhood, :website, :zip, 
   :management, :city_id, :area_id, :neighborhood_id, :slug, :status
 
-  has_many :reviews, conditions: "status = approved"
+  has_many :reviews
   has_many :users, through: :reviews
   has_many :rents
+  has_many :photos
+  has_many :floorplans
   has_many :users, through: :rents
 
   belongs_to :city
@@ -32,8 +34,14 @@ class Building < ActiveRecord::Base
   	text :zip
   end
 
+  geocoded_by :address
+
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
+
+  def address
+    [address, city].compact.join(', ')
+  end
 
   private
 

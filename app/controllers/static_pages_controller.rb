@@ -36,4 +36,7 @@ class StaticPagesController < ApplicationController
   def abuse
   end
 
+  def allcities
+  end
+
 end

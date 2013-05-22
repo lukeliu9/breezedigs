@@ -11,7 +11,8 @@ class RentsController < ApplicationController
 	end
 
 	def create
-		@rent = Rent.new(params[:rent])
+		@building = Building.find(params[:building_id])
+		@rent = @building.rents.new(params[:rent])
 		if @rent.save
 			flash[:notice] = "Thank you for submitting your rent and contributing to our community!"
 			render action: 'thanks'

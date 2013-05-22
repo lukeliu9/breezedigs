@@ -2,7 +2,7 @@
 	<h1>Your addition will help other renters - thank you!</h1>
 	<div class="building-profile-rentform">
 		<div class="building-text-rentform">
-			<h2><%= @building.name %></h1>
+			<h2><%= link_to @building.name, building_path(@building) %></h1>
 			<p id="geography"><%= building_geography %></p>
 			<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
 		</div>

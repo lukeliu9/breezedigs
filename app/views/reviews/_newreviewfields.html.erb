@@ -1,4 +1,4 @@
-<%= form_for @review, validate: true do |f| %>
+<%= form_for([@building, @building.reviews.new], validate: true) do |f| %>
 
 <div class="review-form-fields">
 
@@ -30,7 +30,7 @@
 	</div>
 
 	<div id="msm">
-		<p>Management, Staff, Maintenance <span class="fw-300">(optional)</span></p>
+		<p>Management & Staff <span class="fw-300">(optional)</span></p>
 		<%= f.text_area :msm,
 			placeholder: "Responsiveness & practices of management, friendliness of staff, maintenance & upkeep, etc.", size: "5x5" %>
 		<br />
