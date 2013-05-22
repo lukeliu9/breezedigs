@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+if RUBY_VERSION =~ /1.9/
+  Encoding.default_external = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
+end
+
 gem 'rails', '3.2.12'
 gem "therubyracer"
 gem "less-rails" 
@@ -24,9 +29,11 @@ gem 'client_side_validations'
 gem 'active_admin_importable'
 gem "geocoder"
 gem 'gmaps4rails'
-gem 'jquery-star-rating-rails'
 gem 'activerecord-reputation-system'
 gem 'contact_us', '~> 0.4.0'
+gem 'carrierwave'
+gem "rmagick"
+gem 'jquery-star-rating-rails'
 
 
 # Bundle edge Rails instead:

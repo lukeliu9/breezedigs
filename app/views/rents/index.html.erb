@@ -35,6 +35,11 @@
 						</div>
 				</div>
 
+				<div class="add-photos-floorplans">
+					<div class="right">
+					<%= link_to "Add a photo", new_building_photo_path(@building) %></div>
+				</div>
+
 			</div>
 
 			<div class="building-info">
@@ -56,10 +61,369 @@
 				<%= link_to "<button class=\"toggle\">Reviews</button>".html_safe, building_reviews_path(@building) %>
 				<%= link_to "<button class=\"toggle tselect\">Rental Data</button>".html_safe, building_rents_path(@building) %>
 			</div>
+			
+				<div class="rental-data-area">
+					<div class="rental-data">
+						<div class="rent-table-key">
+							<div id="rent-range-key"></div><p>Range</p>
+							<div id="rent-avg-key"></div><p>Average</p>
+						</div>
+						<br>
+						<table class="table rental-table">
+							<thead>
+				                <tr>
+				                  <th id="unit-type"><h3>Unit Type</h3></th>
+				                  <th id="avg-rent"><h3>Avg Rent & Utilities</h3></th>
+				                  <th id="rent-prices-header">
+				                  	<ul class="rental-data-table-prices">
+				                  		<li id="first-rent-tick"><p>$0</p></li>
+				                  		<li><p>$0.5k</p></li>
+				                  		<li><p>$1k</p></li>
+				                  		<li><p>$1.5k</p></li>
+				                  		<li><p>$2k</p></li>
+				                  		<li><p>$2.5k</p></li>
+				                  		<li><p>$3k</p></li>
+				                  		<li><p>$3.5k</p></li>
+				                  		<li><p>$4k</p></li>
+				                  		<li><p>$4.5k</p></li>
+				                  		<li><p>$5k</p></li>
+				                  		<li><p>$5.5k</p></li>
+				                  		<li><p>$6k+</p></li>
+				                  	</ul>	
+				                  </th>
+				                </tr>
+				              </thead>
+				              <tbody>
 
-			<div id="building-data">
-				<%= render 'rentaldata' %>
-			</div>
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				Studio, 1 bath
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg("studio", 1) %></h5>
+										<h5><%= get_util_avg("studio", 1) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar("studio", 1) %>
+											<%= show_avg_bar("studio", 1) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				1 bed, 1 bath
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(1, 1) %></h5>
+										<h5><%= get_util_avg(1, 1) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(1, 1) %>
+											<%= show_avg_bar(1, 1) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				1 bed, 1.5 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(1, 1.5) %></h5>
+										<h5><%= get_util_avg(1, 1.5) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(1, 1.5) %>
+											<%= show_avg_bar(1, 1.5) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				1.5 beds, 1 bath
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(1.5, 1) %></h5>
+										<h5><%= get_util_avg(1.5, 1) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(1.5, 1) %>
+											<%= show_avg_bar(1.5, 1) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				2 beds, 1 bath
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(2, 1) %></h5>
+										<h5><%= get_util_avg(2, 1) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(2, 1) %>
+											<%= show_avg_bar(2, 1) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				2 beds, 1.5 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(2, 1.5) %></h5>
+										<h5><%= get_util_avg(2, 1.5) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(2, 1.5) %>
+											<%= show_avg_bar(2, 1.5) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				2 beds, 2 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(2, 2) %></h5>
+										<h5><%= get_util_avg(2, 2) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(2, 2) %>
+											<%= show_avg_bar(2, 2) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				2 beds, 2.5 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(2, 2.5) %></h5>
+										<h5><%= get_util_avg(2, 2.5) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(2, 2.5) %>
+											<%= show_avg_bar(2, 2.5) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				3 beds, 2 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(3, 2) %></h5>
+										<h5><%= get_util_avg(3, 2) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(3, 2) %>
+											<%= show_avg_bar(3, 2) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				3 beds, 2.5 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(3, 2.5) %></h5>
+										<h5><%= get_util_avg(3, 2.5) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(3, 2.5) %>
+											<%= show_avg_bar(3, 2.5) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				3 beds, 3 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(3, 3) %></h5>
+										<h5><%= get_util_avg(3, 3) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(3, 3) %>
+											<%= show_avg_bar(3, 3) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				3 beds, 3.5 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(3, 3.5) %></h5>
+										<h5><%= get_util_avg(3, 3.5) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(3, 3.5) %>
+											<%= show_avg_bar(3, 3.5) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				3 beds, 4 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(3, 4) %></h5>
+										<h5><%= get_util_avg(3, 4) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(3, 4) %>
+											<%= show_avg_bar(3, 4) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				4 beds, 2 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(4, 2) %></h5>
+										<h5><%= get_util_avg(4, 2) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(4, 2) %>
+											<%= show_avg_bar(4, 2) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				4 beds, 3 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(4, 3) %></h5>
+										<h5><%= get_util_avg(4, 3) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(4, 3) %>
+											<%= show_avg_bar(4, 3) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				4 beds, 3.5 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(4, 3.5) %></h5>
+										<h5><%= get_util_avg(4, 3.5) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(4, 3.5) %>
+											<%= show_avg_bar(4, 3.5) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				4 beds, 4 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(4, 4) %></h5>
+										<h5><%= get_util_avg(4, 4) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(4, 4) %>
+											<%= show_avg_bar(4, 4) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              	<tr class="rent-row">
+				              		<td id="rent-type-cell">
+				              			<h4>
+				              				4 beds, 5 baths
+				              			</h4>
+				              		</td>
+									<td id="rent-avg-cell">
+										<h5><%= get_rent_avg(4, 5) %></h5>
+										<h5><%= get_util_avg(4, 5) %></h5>
+									</td>
+									<td id="rent-bars-cell">
+										<div class="rent-holder">
+											<%= show_rent_bar(4, 5) %>
+											<%= show_avg_bar(4, 5) %>
+										</div>
+									</td>
+				              	</tr>
+
+				              </tbody>
+						</table>
+					</div>
+				</div>
+			
 
 			<div class="building-contact">
 			</div>

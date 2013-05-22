@@ -48,7 +48,7 @@
 }
 
 .building-listing-info {
-	width: 40%;
+	width: 75%;
 	display: inline-block;
 	vertical-align: top;
 	h3 {
@@ -97,11 +97,32 @@
 	}
 }
 
+/* No Results */
+
+.no-results {
+	h2 {
+
+	}
+	h3 {
+
+	}
+	ul {
+		li {
+
+		}
+	}
+	p {
+
+	}
+}
+
 /* Building Profile */
 
 .building-profile {
-	min-height: 95em;
+	width:100%;
+	display: inline-block;
 	margin-top: 3em;
+	margin-bottom: 10em;
 }
 
 .interactive-holder {
@@ -112,7 +133,7 @@
 
 .building-interactive-box {
 	width: 100%;
-	height: 35em;
+	height: 33em;
 	padding:0;
 	border-radius:5px;
 }
@@ -171,11 +192,20 @@
 
 .building-stats {
 	width: 98%;
-	height: 24em;
+	height: 23em;
 	margin-top: 0.7em;
 	background: white;
 	border-radius: 5px;
 	padding: 1em 0.8em 0.5em 0.8em;
+}
+
+.add-photos-floorplans {
+	width: 95%;
+	margin-top: 1.5em;
+	padding: 0 1em;
+	span {
+		margin-right: 1.5em;
+	}
 }
 
 .building-data-toggle {
@@ -187,12 +217,10 @@
 }
 
 .reviews {
-	border-top:1px solid $grayMedium;
-	border-right:1px solid $grayMedium;
-	border-bottom:1px solid $grayMedium;
 	border-radius: 5px;
+	border-top-right-radius: 0;
 	width: 96%;
-	height: 45em;
+	height: auto;
 	padding:0;
 	margin-left: auto;
 	margin-right: auto;
@@ -203,7 +231,7 @@
 .review-buttons-box {
 	margin-left: -2.7%;
 	width:25%;
-	height: 105%;
+	height: 150%;
 	display: inline-block;
 	vertical-align: top;
 	background: url("bgtexture.png");
@@ -212,12 +240,15 @@
 .review-btn-b {margin-top: 1.5em;}
 
 .review-content {
-	width:74.00%;
-	height: 45em;
-	margin-left: -0.5%;	
+	width:73.5%;
+	margin-left: -0.5%;
+	padding-right: 3.5%;
+	min-height: 30em;
 	display: inline-block;
-	border-bottom:1px solid $grayMedium;
+	border-top:1px solid $grayMedium;
 	border-left:1px solid $grayMedium;
+	border-right:1px solid $grayMedium;
+	border-bottom:1px solid $grayMedium;
 	vertical-align: top;
 }
 

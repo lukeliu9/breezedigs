@@ -14,9 +14,9 @@ module BuildingsHelper
 
 	# For use in the buildings search results when iterating through the building results
 	def geogrify(building)
-		city = building.city.name
-		area = building.area.name
-		hood = building.neighborhood.name
+		city = building.city.map(&:name)
+		area = building.area.map(&:name)
+		hood = building.neighborhood.map(&:name)
 
 		city = area.blank? ? "#{city}" : "#{city} > "
 		area = hood.blank? ? "#{area}" : "#{area} > "
@@ -36,15 +36,9 @@ module BuildingsHelper
 		"N/A"
 	end
 
-	def display_rental_data
-		"rentalll"
-		# raw("
-		# 	<tr class=\"rent-row\">
-		# 		<td id=\"rent-type-cell\"><h4>Test<h4></td>
-		# 		<td id=\"rent-avg-cell\"><h4>Avg Rent<h4></td>
-		# 		<td id=\"rent-bars-cell\"><div class=\"rent-holder\">Rents</div></td>
-		# 	</tr>
-		# 	")
+	def results_overall_rating
+		#overall_ratings = @building.reviews.map(&:overall).average
+
 	end
 
 end

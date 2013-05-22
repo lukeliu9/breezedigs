@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130517014329) do
+ActiveRecord::Schema.define(:version => 20130520034604) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20130517014329) do
     t.decimal  "latitude"
     t.decimal  "longitude"
     t.string   "status",          :default => "unapproved"
+    t.integer  "reviews_count"
   end
 
   add_index "buildings", ["slug"], :name => "index_buildings_on_slug"
@@ -82,6 +83,15 @@ ActiveRecord::Schema.define(:version => 20130517014329) do
   end
 
   add_index "cities", ["slug"], :name => "index_cities_on_slug"
+
+  create_table "floorplans", :force => true do |t|
+    t.string   "image"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "building_id"
+  end
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
@@ -111,11 +121,19 @@ ActiveRecord::Schema.define(:version => 20130517014329) do
     t.integer  "area_id"
   end
 
+  create_table "photos", :force => true do |t|
+    t.string   "image"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "building_id"
+  end
+
   create_table "rents", :force => true do |t|
     t.integer  "rent"
     t.integer  "floor"
-    t.integer  "beds"
-    t.integer  "baths"
+    t.string   "beds"
+    t.string   "baths"
     t.integer  "sqft"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

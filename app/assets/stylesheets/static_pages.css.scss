@@ -296,7 +296,33 @@
 
 /* Community Guidelines */
 
-
+/* All Cities */
+.all-cities {
+	width: 110%;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10em;
+	padding-left: 2.5em;
+	h1 {
+		margin: 2em 0 2em 0;
+		padding: 0;
+		color: $grayDark;
+		font-weight: 400;
+		letter-spacing: 1px;
+	}
+	ul {
+		width: 16.8%;
+		display: inline-block;
+		vertical-align: top;
+		li {
+			width: 100%;
+		}
+	}
+	span {
+		color: $gbMedium;
+	}
+}
 
 
 

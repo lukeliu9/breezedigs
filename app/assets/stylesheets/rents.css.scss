@@ -175,6 +175,31 @@
 	border: 1px solid $grayLight;
 	background: white;
 }
+.rent-table-key {
+	width: 10em;
+	padding: 0.2em 1.2em;
+	border-radius: 5px;
+	background: $grayVeryLight;
+	p {
+		display: inline-block;
+		margin: 0.5em;
+	}
+}
+#rent-range-key {
+	display: inline-block;
+	width: 0.9em;
+	height: 0.9em;
+	border: 1px solid $blueDark;
+	background: url('rentbar.png');
+}
+#rent-avg-key {
+	display: inline-block;
+	width: 0.9em;
+	height: 0.9em;
+	border: 1px solid #3a88d0;
+	background: #3a88d0;
+}
+
 .rental-table {
 	th {
 		vertical-align: bottom;
@@ -188,8 +213,8 @@
 	}
 }
 #unit-type 			{height: 2em; width:15%; border-right: 1px solid $grayMedium; border-bottom: 1px solid $grayMedium; text-align:center;}
-#avg-rent 			{height: 2em; width:10%; border-right: 1px solid $grayMedium; border-bottom: 1px solid $grayMedium; text-align:center;}
-#rent-prices-header {height: 2em; width:72%; border-bottom: 1px solid $grayMedium; text-align:left; ul {margin-top: 0.2em;} }
+#avg-rent 			{height: 2em; width:15%; border-right: 1px solid $grayMedium; border-bottom: 1px solid $grayMedium; text-align:center;}
+#rent-prices-header {height: 2em; width:67%; border-bottom: 1px solid $grayMedium; text-align:left; ul {margin-top: 0.2em;} }
 #first-rent-tick 	{margin-left: -3em; p{margin: -1.3em 0 0 2.7em;}}
 .rental-data-table-prices {
 margin-bottom: -0.7em;
@@ -220,6 +245,19 @@ margin-bottom: -0.7em;
 		font-weight: 300;
 		color: $grayVeryDark;
 	}
+	h5 {
+		margin-top: -0.6em;
+		padding: 0;
+		font-size: 0.95em;
+		font-weight: 300;
+		color: $grayVeryDark;
+	}
+	h6 {
+		margin-top: 1.7em;
+		color: $grayDark;
+		font-weight: 400;
+	}
+	span {font-weight: 500}
 }
 #rent-type-cell {
 	border-bottom: 1px solid $grayMedium;
@@ -230,6 +268,7 @@ margin-bottom: -0.7em;
 	border-bottom: 1px solid $grayMedium;
 	border-right: 1px solid $grayMedium;
 	text-align: center;
+	padding-top: 1.5em;
 }
 #rent-bars-cell {
 	border-bottom: 1px solid $grayMedium;
@@ -240,7 +279,28 @@ margin-bottom: -0.7em;
 	margin-left: 3%;
 }
 
+.rent-range {
+	float: left;
+	height: 25px;
+	margin-top: 0.65em;
+	background: url('rentbar.png');
+	border: 1px solid $blueDark;
+	opacity:0.80; filter: alpha(opacity=80); /* For IE8 and earlier */
+}
 
+.avg-bar {
+	height: 33px;
+	width: 4px;
+	margin-top: 0.5em;
+	position: absolute;
+	background: #3a88d0;
+}
+
+/* Thanks Page */
+
+.thanks-content {
+	height: 30em;
+}
 
 
 

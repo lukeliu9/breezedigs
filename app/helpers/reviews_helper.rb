@@ -6,4 +6,5 @@ module ReviewsHelper
 		<input name=\"#{rating}\" type=\"radio\" class=\"star\" value=\"4\"/>
 		<input name=\"#{rating}\" type=\"radio\" class=\"star\" value=\"5\"/><br>")
 	end
+
 end

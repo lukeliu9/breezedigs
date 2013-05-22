@@ -19,6 +19,8 @@ class BuildingsController < ApplicationController
 	end
 
 	def show
+		@building = Building.find(params[:id])
+		redirect_to building_reviews_path(@building)
 		if request.path != building_path(@building)
 			redirect_to @building, status: :moved_permanently
 		end

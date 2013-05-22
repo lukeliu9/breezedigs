@@ -1,42 +1,42 @@
 <ul>
-	<%= link_to "" do %>
-		<li class="review-btn first-review-btn" id="review-selected">
+	<%= link_to pros_building_reviews_path, remote: true do %>
+		<li class="review-btn first-review-btn review-btn-selected" id="pros">
 			Pros
 		</li>
 	<% end %>
 
-	<%= link_to "" do %>
-		<li class="review-btn">
+	<%= link_to cons_building_reviews_path, remote: true do %>
+		<li class="review-btn" id="cons">
 			Cons
 		</li>
 	<% end %>
 
-	<%= link_to "" do %>
-		<li class="review-btn">
+	<%= link_to mgmt_building_reviews_path, remote: true do %>
+		<li class="review-btn" id="mgmt">
 			Management, Staff, Maintenance
 		</li>
 	<% end %>
 
-	<%= link_to "" do %>
-		<li class="review-btn">
+	<%= link_to nsn_building_reviews_path, remote: true do %>
+		<li class="review-btn" id="rnsn">
 			Neighborhood, Safety, Noise
 		</li>
 	<% end %>
 
-	<%= link_to "" do %>
-		<li class="review-btn">
-			Amenities, Transportation, Parking, Units
+	<%= link_to unitamen_building_reviews_path, remote: true do %>
+		<li class="review-btn" id="uamen">
+			Amenities & Unit Quality
 		</li>
 	<% end %>
 
-	<%= link_to "" do %>
-		<li class="review-btn">
-			People, Events, Nightlife
+	<%= link_to parktrans_building_reviews_path, remote: true do %>
+		<li class="review-btn" id="ptrans">
+			Transportation & Parking
 		</li>
 	<% end %>
 
-	<%= link_to "" do %>
-		<li class="review-btn last-review-btn">
+	<%= link_to advice_building_reviews_path, remote: true do %>
+		<li class="review-btn last-review-btn" id="adv">
 			Advice
 		</li>
 	<% end %>

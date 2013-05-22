@@ -54,7 +54,7 @@ a { text-decoration: none; }
 a:hover { text-decoration: none;}
 
 /* General */
-.main-content-area {margin:0 auto; min-height: 45em;}
+.main-content-area {margin:0 auto; display: inline-block;}
 .clear {height:0; line-height:0; clear:both;}
 .no-wrap {white-space: nowrap;}
 #body {padding-bottom: $footerHeight;}

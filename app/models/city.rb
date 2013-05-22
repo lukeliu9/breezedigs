@@ -1,5 +1,5 @@
 class City < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :state, :population
 
   has_many :areas
   has_many :neighborhoods, through: :areas

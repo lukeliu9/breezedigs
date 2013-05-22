@@ -4,12 +4,12 @@ ActiveAdmin.register Review do
 
 	index do
 		column :building
+		column :overall
 		column :pros
 		column :cons
-		column :overall
+		column :advice
 		column :user_id
 		column :created_at
-		column :status
 
 		default_actions
 	end

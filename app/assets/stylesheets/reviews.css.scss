@@ -26,6 +26,12 @@
 	}
 }
 
+.building-profile-new {
+	background: $grayVeryLight;
+	border-radius: 5px;
+	padding: 0.7em;
+}
+
 .select-bldg-search-field {
 	width: 40em;
 	display: inline-block;
@@ -107,6 +113,19 @@
 	text-align: center;
 }
 
+/* Displaying Reviews */
+
+.review {
+	margin-bottom: 0.8em;
+	padding: 0.8em 1em;
+	border-radius: 5px;
+	background: $grayVeryLight;
+	display: none;
+}
+.unhidden {
+	display: block;
+}
+
 /* New Review Form */
 
 .new-review-form {
@@ -144,12 +163,6 @@
 		margin-top: 0.5em;
 		padding: 0.5em;
 	}
-}
-
-.building-profile {
-	background: $grayVeryLight;
-	border-radius: 5px;
-	padding: 0.7em;
 }
 
 .building-image {
