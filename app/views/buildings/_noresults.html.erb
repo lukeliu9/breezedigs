@@ -1,0 +1,12 @@
+<div class="no-results">
+<h2>Sorry, but your search did not return any results</h2>
+
+<h3>Here are a few reasons why there are no results:</h3>
+<ul>
+	<li><p>If you are looking for a specific building, we may not have it in our database yet. You can add a new building <%= link_to "here", new_building_path %></p></li>
+	<li><p>If you tried a city, zip code, area, or neighborhood, we may not have any buildings in the geographic area you searched for. You can add a new building <%= link_to "here", new_building_path %></p></li>
+	<li><p>There may be multiple names for the city/area/neighborhood you searched for</p></li>
+	<li><p>If you searched by address, try searching without abbreviations (ie, "Drive instead of "Dr")</p></li>
+	<li><p>If you are searching by zip code, please use just the five-character base zip code (ie, 60601 instead of 60601-4722)</p></li>
+</ul>
+</div>

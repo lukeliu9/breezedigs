@@ -22,14 +22,12 @@ gem 'sunspot_rails'
 gem 'friendly_id'
 gem 'client_side_validations'
 gem 'active_admin_importable'
-<<<<<<< HEAD
-=======
 gem "geocoder"
 gem 'gmaps4rails'
 gem 'jquery-star-rating-rails'
 gem 'activerecord-reputation-system'
 gem 'contact_us', '~> 0.4.0'
->>>>>>> buildings
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

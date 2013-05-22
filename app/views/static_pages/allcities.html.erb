@@ -1,0 +1,32 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'static_pages' %>
+<% end %>
+
+<% provide(:title, 'All US Cities') %>
+
+<div class="container">
+	<div class="main-content-area">
+		<div class="all-cities">
+			<h1>All U.S Cities</h1>
+			<ul>
+				<%= show_cities(0, 54, 268, "all-city-listing", true) %>
+			</ul>
+
+			<ul>
+				<%= show_cities(54, 54, 268, "all-city-listing", true) %>
+			</ul>
+
+			<ul>
+				<%= show_cities(108, 54, 268, "all-city-listing", true) %>
+			</ul>
+
+			<ul>
+				<%= show_cities(162, 54, 268, "all-city-listing", true) %>
+			</ul>
+
+			<ul>
+				<%= show_cities(216, 52, 268, "all-city-listing", true) %>
+			</ul>
+		</div>
+	</div>
+</div>
