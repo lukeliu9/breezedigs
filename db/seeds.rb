@@ -192,13 +192,6 @@ puts "Seed chicago buildings rental data"
 
 # Seed reviews
 
-Review.delete_all
-
-[["16", "New building, awesome amenities, amazing views, great Lakeshore East neighborhood", "A bit far away from the trains and nightlife, but the tradeoff is that it is much more quiet and serene. Condo association does not like renters and some of the buildings rules are restrictive", "Never had a problem with the management. Perhaps the only complaint is that the association is fairly conservative and there are rules in place to discourage renters, though this mainly affects unit owners looking to lease their units so it does not directly affect renters.", "Probably the best neighborhood in Chicago. Lakeshore East has a great grocery store in Mariano's, there is a dog park & playground, and it is very safe and quiet", "Top-shelf amenities like a hot tub and pool on the roof, delivery of packages straight to your door by the staff, a dry cleaners in the building, gym, massage room, movie room, party room, etc. Units all have great views and ours has premium finishes and appliances..", "There is a shuttle for residents in the area run by Magellan and plenty of parking in the building", "When moving in, make sure to reserve the elevators ahead of time and as long as you don't cause problems in regards to noise and such, the door staff will like you and give you plenty of flexibility.", "5", "5", "5", "5", "4", "4", "4", "3", "5"],
-["16", "Great building in a quiet corner of the loop, close to grocery store, amazing views", "A bit far away from the train and our unit facing the highway can get a bit noisy", "Very friendly doormen - Cassie is great and they are very flexible when you lock yourself out and such", "Very safe enighborhood and lots of families around. Overall extremely quiet and quaint unless you’re on  a lower floor facing the highway", "", "", "The building is very strict against short term leases and the minimum is 12 months", "5", "5", "5", "5", "5", "5", "5", "4", "5"]].each do |bid, pros, cons, ms, nsn, amenunit, parktrans, adv, overall, noise, neigh, safety, main, mgmt, staff, tr, ar|
-	Review.create!(building_id: bid, pros: pros, cons: cons, msm: ms, nsn: nsn, unitamen: amenunit, parktrans: parktrans, advice: adv, overall: overall, noise_rating: noise, neighborhood_rating: neigh, safety_rating: safety, maintenance_rating: main, management_rating: mgmt, staff_rating: staff, transportation_rating: tr, amenities_rating: ar)
-end
-
 # Seed areas for U.S. cities
 =begin
 # Atlanta areas
