@@ -14,9 +14,9 @@ module BuildingsHelper
 
 	# For use in the buildings search results when iterating through the building results
 	def geogrify(building)
-		city = building.city.map(&:name)
-		area = building.area.map(&:name)
-		hood = building.neighborhood.map(&:name)
+		city = building.city.name
+		area = building.area.name
+		hood = building.neighborhood.name
 
 		city = area.blank? ? "#{city}" : "#{city} > "
 		area = hood.blank? ? "#{area}" : "#{area} > "
