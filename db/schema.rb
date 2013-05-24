@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520034604) do
+ActiveRecord::Schema.define(:version => 20130523041804) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -83,6 +83,17 @@ ActiveRecord::Schema.define(:version => 20130520034604) do
   end
 
   add_index "cities", ["slug"], :name => "index_cities_on_slug"
+
+  create_table "contributions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "building_id"
+    t.integer  "review_id"
+    t.integer  "rent_id"
+    t.integer  "photo_id"
+    t.integer  "floorplan_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "floorplans", :force => true do |t|
     t.string   "image"

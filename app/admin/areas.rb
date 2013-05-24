@@ -5,7 +5,7 @@ ActiveAdmin.register Area do
   index do
   	column :name
   	column :city
-  	column 'Areas' do |area|
+  	column 'Neighborhoods' do |area|
   		area.neighborhoods.collect(&:name).join(', ')
   	end
 

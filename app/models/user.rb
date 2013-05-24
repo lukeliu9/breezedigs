@@ -13,9 +13,6 @@ class User < ActiveRecord::Base
   default_url: "profileplaceholder.png"
 
   has_many :reviews
-  has_many :buildings, through: :reviews
-
   has_many :rents
-  has_many :buildings, through: :rents
 
 end

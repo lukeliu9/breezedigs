@@ -9,8 +9,8 @@ class Rent < ActiveRecord::Base
   validates :utilities,	presence: true, numericality: { only_integer: true }
   validates :beds,		presence: true
   validates :baths,		presence: true
-  validates :unitnum,	presence: true
-  validates :recency,	presence: true
+  #validates :unitnum,	presence: true
+  #validates :recency,	presence: true
 
   def self.average_for(beds, baths, metric)
  	 where(beds: beds, baths: baths).average(metric)

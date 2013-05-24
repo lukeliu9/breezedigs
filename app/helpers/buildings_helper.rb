@@ -36,9 +36,9 @@ module BuildingsHelper
 		"N/A"
 	end
 
-	def results_overall_rating
-		#overall_ratings = @building.reviews.map(&:overall).average
-
+	def star_ratings(rating)
+		avg_rating = @reviews.average_review_rating(rating)
+		
 	end
 
 end

@@ -1,5 +1,5 @@
 # Create US cities
-#=begin
+=begin
 City.delete_all    #first deletes existing records before creating new ones from array below
 [["New York", "NY", "8489713"], ["Detroit", "MI", "5901160"], ["Chicago", "IL", "2901633"], ["Houston", "TX", "2400133"], ["Phoenix", "AZ", "1657153"], 
 ["Philadelphia", "PA", "1656138"], ["San Diego", "CA", "1582739"], ["San Antonio", "TX", "1391022"], ["Dallas", "TX", "1383776"], ["San Jose", "CA", "1098132"], 
@@ -62,7 +62,7 @@ puts "Cities"
 ["Far North Side", "Northwest Side", "North Side", "West Side", 
 	"Downtown", "South Side", "Southwest Side", "Far Southeast Side", 
 	"Far Southwest Side"].each do |area|
-		Area.create!(name: area, city_id: 17)
+		Area.create!(name: area, city_id: 3)
 	end
 puts "Created Chicago Areas"	
 
@@ -148,38 +148,13 @@ puts "Chicago: Far SouthEast Side"
 		Neighborhood.create!(name: neighborhood, area_id: 9)
 	end	
 puts "Chicago Far Southwest Side"
-
+#=end
 # Seed condos in Near East Side, Chicago
-
-[["Randolph Tower City Apartments", "188 W. Randolph", "60601", "17", "5", "42"], 
-["Stanford Apartments", "1164 North Dearborn", "60601", "17", "5", "42"],
-["Millenium Park Plaza", "151 North Michigan Avenue", "60601", "17", "5", "42"],
-["North Harbor Tower", "175 North Harbor Drive", "60601", "17", "5", "42"],
-["Columbus Plaza Apartments", "233 East Wacker Drive", "60601", "17", "5", "42"],
-["Park Millenium", "222 North Columbus Drive", "60601", "17", "5", "42"],
-["MDA City Apartments", "63 East Lake Street", "60601", "17", "5", "42"],
-["The Aqua", "225 North Columbus Drive", "60601", "17", "5", "42"],
-["200 North Dearborn", "200 North Dearborn", "60601", "17", "5", "42"],
-["The Tides", "360 East South Water Street", "60601", "17", "5", "42"],
-["The Shoreham", "400 East South Water Street", "60601", "17", "5", "42"],
-["Doral Michigan Avanue", "155 North Michigan Avenue", "60601", "17", "5", "42"],
-["Harbor Point", "155 Harbor Drive North", "60601", "17", "5", "42"],
-["Century Tower", "182 West Lake Street", "60601", "17", "5", "42"],
-["Joffrey Tower", "8 East Randolph", "60601", "17", "5", "42"],
-["The Chandler", "450 East Waterside Drive", "60601", "17", "5", "42"],
-["The Parkshore", "195 North Harbor Drive", "60601", "17", "5", "42"],
-["The Elm at Clark", "1122 North Clark Street", "60610", "17", "5", "35"]].each do |name, add, zip, city, area, hood|
-
-	Building.create!(name:name, address: add, zip: zip, city_id: city, area_id: area, neighborhood_id: hood)
-
-end
-
-puts "Seed Chicago buildings"
 
 #=end
 
 # Seed some rental data
-
+#=begin
 Rent.delete_all
 
 [["3300", "2", "2", "20", "150", "16", "1", ""],
@@ -193,171 +168,381 @@ puts "Seed chicago buildings rental data"
 # Seed reviews
 
 # Seed areas for U.S. cities
-=begin
+#=end
 # Atlanta areas
-[["Downtown"], ["Midtown"], ["West Midtown"], ["East Side"], ["Southeastern Atlanta"], ["Southwestern Atlanta"], ["Northwestern Atlanta"], ["Buckhead"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Downtown", "Midtown", "West Midtown", "East Side", "Southeastern Atlanta", "Southwestern Atlanta", "Northwestern Atlanta", "Buckhead"].each do |name|
+	Area.create!(name: name, city_id: 33)
 end
+puts "Atlanta"
 # Miami areas
-[["Allapattah"], ["Brickell"], ["Buena Vista"], ["Civic Center"], ["Coconut Grove"], ["Coral Way"], ["Design District"], ["Downtown"], ["Edgewater"], 
-["Flagami"], ["Grapeland Heights"], ["Liberty City"], ["Little Haiti"], ["Little Havana"], ["Lummus Park"], ["Midtown"], ["Omni"], ["Overtown"], 
-["Park West"], ["The Roads"], ["Upper East Side"], ["Venetian Islands"], ["Virginia Key"], ["West Flagler"], ["Wynwood"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Allapattah", "Brickell", "Buena Vista", "Civic Center", "Coconut Grove", "Coral Way", "Design District", "Downtown", "Edgewater", "Flagami", 
+	"Grapeland Heights", "Liberty City", "Little Haiti", "Little Havana", "Lummus Park", "Midtown", "Omni", "Overtown", "Park West", "The Roads", 
+	"Upper East Side", "Venetian Islands", "Virginia Key", "West Flagler", "Wynwood"].each do |name|
+	Area.create!(name: name, city_id: 42)
 end
-# Seattle aread
-[["North Seattle"], ["Northgate"], ["Lake City"], ["Magnolia"], ["University District"], ["Ballard"], ["Central Seattle"], ["Queene Anne"], ["Capitol Hill"], 
-["Lake Union"], ["Downtown"], ["Rainier Valley"], ["Beacon Hill"], ["West Seattle"], ["Delridge"], ["Stevens"], ["Madison Park"], ["Atlantic"], ["South End"]].each do |name|
-	Area.create!(name: name, city_id: )
+puts "Miami"
+# Seattle areas
+["North Seattle", "Northgate", "Lake City", "Magnolia", "University District", "Ballard", "Central Seattle", "Queene Anne", "Capitol Hill", 
+	"Lake Union", "Downtown", "Rainier Valley", "Beacon Hill", "West Seattle", "Delridge", "Stevens", "Madison Park", "Atlantic", "South End"].each do |name|
+	Area.create!(name: name, city_id: 25)
 end
+puts "Seattle"
 # Portland areas
-[["Southwest"], ["Northwest"], ["North"], ["Northeast"], ["Southeast"]].each do |name|
-	Area.create!(name: name, city_id: )
-end	
+["Southwest", "Northwest", "North", "Northeast", "Southeast"].each do |name|
+	Area.create!(name: name, city_id: 29)
+end
+puts "Portland"
 # Austin areas
-[["Downtown"], ["Georgetown"], ["Liberty Hill"], ["Hutte"], ["Taylor-Coupland"], ["Round Rock"], ["Elgin"], ["Bastrop"], ["Smithville"], ["Hays"], 
-["San Marcos"], ["Hays"], ["Wimberly"], ["Dripping Springs"], ["Leander"], ["Lockhart"]].each do |name|
-	Area.create!(name: name, city_id: )
-end	
+["Downtown", "Georgetown", "Liberty Hill", "Hutte", "Taylor-Coupland", "Round Rock", "Elgin", "Bastrop", 
+	"Smithville", "Hays", "San Marcos", "Hays", "Wimberly", "Dripping Springs", "Leander", "Lockhart"].each do |name|
+	Area.create!(name: name, city_id: 15)
+end
+puts "Austin"
 # Dallas areas
-[["Downtown"], ["East Dallas"], ["Old East Dallas"], ["Lake Highlands"], ["North Dallas"], ["Far North Dallas"], ["Northwest Dallas"], ["Oak Cliff"], 
-["Kessler"], ["Redbird"], ["Oak Lawn"], ["Pleasant Grove"], ["South Dallas"], ["West Dallas"]].each do |name|
-	Area.create!(name: name, city_id: )
-end	
+["Downtown", "East Dallas", "Old East Dallas", "Lake Highlands", "North Dallas", "Far North Dallas", "Northwest Dallas", 
+	"Oak Cliff", "Kessler", "Redbird", "Oak Lawn", "Pleasant Grove", "South Dallas", "West Dallas"].each do |name|
+	Area.create!(name: name, city_id: 9)
+end
+puts "Dallas"
 # Boston areas
-[["Allston/Brighton"], ["Back Bay"], ["Bay Village"], ["Beacon Hill"], ["Charlestown"], ["Chinatown/Leather District"], ["Dorchester"], ["Downtown"], 
-["East Boston"], ["Fenway/Kenmore"], ["Hyde Park"], ["Jamaica Plain"], ["Mattapan"], ["Mission Hill"], ["North End"], ["Roslindale"], ["Roxbury"], 
-["South Boston"], ["South End"], ["West End"], ["West Roxbury"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Allston/Brighton", "Back Bay", "Bay Village", "Beacon Hill", "Charlestown", "Chinatown/Leather District", "Dorchester", 
+	"Downtown", "East Boston", "Fenway/Kenmore", "Hyde Park", "Jamaica Plain", "Mattapan", "Mission Hill", "North End", 
+	"Roslindale", "Roxbury", "South Boston", "South End", "West End", "West Roxbury"].each do |name|
+	Area.create!(name: name, city_id: 22)
 end
+puts "Boston"
 # San Francisco areas
-[["Downtown"], ["South San Francisco"], ["San Bruno"], ["Burlingame"], ["San Mateo"], ["Foster City"], ["Menlo Park"], ["Palo Alto"], ["Redwood City"], ["Daly City"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Downtown", "South San Francisco", "San Bruno", "Burlingame", "San Mateo", "Foster City", "Menlo Park", "Palo Alto", "Redwood City", "Daly City"].each do |name|
+	Area.create!(name: name, city_id: 13)
 end
+puts "San Fran"
 # San Diego areas
-[["Coronado"], ["Downtown"], ["Hillcrest"], ["La Jolla"], ["Misson Bay"], ["South Bay"], ["East County"], ["North County"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Coronado", "Downtown", "Hillcrest", "La Jolla", "Misson Bay", "South Bay", "East County", "North County"].each do |name|
+	Area.create!(name: name, city_id: 7)
 end
-# Iandianapolis areas
-[["Downtown"], ["Zionsville"], ["Carmel"], ["Lawrence"], ["Warren"], ["Franklin"], ["Perry"], ["Fishers"], ["Brownsburg"], ["Wayne"]].each do |name|
-	Area.create!(name: name, city_id: )
-end	
+puts "San Diego"
+# Indianapolis areas
+["Downtown", "Zionsville", "Carmel", "Lawrence", "Warren", "Franklin", "Perry", "Fishers", "Brownsburg", "Wayne"].each do |name|
+	Area.create!(name: name, city_id: 14)
+end
+puts "Indianapolis"
 # Houston areas
-[["Downtown"], ["South Side"], ["Southwest"], ["Southeast"], ["Northside"], ["Midtown"]].each do |name|
-	Area.create!(name: name, city_id: )
-end	
+["Downtown", "South Side", "Southwest", "Southeast", "Northside", "Midtown"].each do |name|
+	Area.create!(name: name, city_id: 4)
+end
+puts "Houston"
 # Philadelphia areas
-[["Center City"], ["South"], ["Southwest"], ["West"], ["Northwest"], ["Northwest"], ["Northeast"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Center City", "South", "Southwest", "West", "Northwest", "Northwest", "Northeast"].each do |name|
+	Area.create!(name: name, city_id: 6)
 end
+puts "Philly"
 # Jacksonville areas
-[["Downtown"], ["Riverside/Avondale"], ["Springfield"], ["Eastside"], ["San Marco"], ["St Nicholas"], 
-["Ortega"], ["Mandarin"], ["Northside"], ["Westside"], ["Arlington"], ["Southside"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Downtown", "Riverside/Avondale", "Springfield", "Eastside", "San Marco", "St Nicholas", "Ortega", 
+	"Mandarin", "Northside", "Westside", "Arlington", "Southside"].each do |name|
+	Area.create!(name: name, city_id: 12)
 end
+puts "Jacksonville"
 # San Antonio areas
-[["Downtown"], ["Alamo Heights"], ["Midtown"], ["Uptown"], ["North Central"], ["Far North Central"], 
-["Northeast Side"], ["Northwest Side"], ["Far Northwest Side"], ["Inner West Side"], ["South Side"], ["East Side"], ["Near East Side"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Downtown", "Alamo Heights", "Midtown", "Uptown", "North Central", "Far North Central", "Northeast Side", 
+	"Northwest Side", "Far Northwest Side", "Inner West Side", "South Side", "East Side", "Near East Side"].each do |name|
+	Area.create!(name: name, city_id: 8)
 end	
+puts "San Antonio"
 # Detroit areas
-[["Downtown"], ["Midtown"], ["New Center Area"], ["North"], ["East"], ["West"], ["Southwest/Near West"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Downtown", "Midtown", "New Center Area", "North", "East", "West", "Southwest/Near West"].each do |name|
+	Area.create!(name: name, city_id: 2)
 end
+puts "Detroit"
 # Charlotte areas
-[["South Charlotte"], ["West Charlotte"], ["North Charlotte"], ["East Charlotte"], ["Center City"]].each do |name|
-	Area.create!(name: name, city_id: )
+["South Charlotte", "West Charlotte", "North Charlotte", "East Charlotte", "Center City"].each do |name|
+	Area.create!(name: name, city_id: 18)
 end
+puts "Charlotte"
 # Memphis areas
-[["Downtown"], ["Midtown"], ["North Memphis"], ["South Memphis"], ["East Memphis"]]each do |name|
-	Area.create!(name: name, city_id: )
+["Downtown", "Midtown", "North Memphis", "South Memphis", "East Memphis"].each do |name|
+	Area.create!(name: name, city_id: 19)
 end
+puts "Memphis"
 # Baltimore areas
-[["Northwest"], ["North"], ["Northeast"], ["West"], ["Central"], ["East"], ["Southwest"], ["South"], ["Southeast"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Northwest", "North", "Northeast", "West", "Central", "East", "Southwest", "South", "Southeast"].each do |name|
+	Area.create!(name: name, city_id: 20)
 end
+puts "Baltimore"
 # Nashville areas
-[["Berry Hill"], ["Downtown"], ["Hillsboro Village"], ["Opryland/Music Valley"], ["Germantown"], ["12South"], 
-["East Nashville"], ["8th Avenue South"], ["Elliston Place"], ["Green Hills"], ["The Gulch"], ["Midtown"], ["Sylvan Park"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Berry Hill", "Downtown", "Hillsboro Village", "Opryland/Music Valley", "Germantown", "12South", "East Nashville", "8th Avenue South", 
+	"Elliston Place", "Green Hills", "The Gulch", "Midtown", "Sylvan Park"].each do |name|
+	Area.create!(name: name, city_id: 26)
 end
+puts "Nashville"
 # Milwaukee areas
-[["North Side"], ["South Side"], ["East Side"], ["West Side"], ["Downtown"]].each do |name|
-	Area.create!(name: name, city_id: )
+["North Side", "South Side", "East Side", "West Side", "Downtown"].each do |name|
+	Area.create!(name: name, city_id: 23)
 end
+puts "Milwaukee"
 # Denver areas
-[["Downtown"], ["Berkeley Park"], ["Cherry Creek"], ["Colorado Springs"], ["Evergreen"], ["Five Points"], 
-["Fort Collins"], ["Golden"], ["Highlands"], ["Lakewood"], ["Morrison"], ["Old South Pearl Street"], 
-["Stapleton"], ["Aurora"], ["Boulder"], ["Broomfield"], ["Littleton"], ["Westminster"], ["Arvada"], 
-["Castle Rock"], ["Englewood"], ["Parker"], ["Washington Park"], ["Black Hawk"], ["Capitol Hill"], ["Thornton"], 
-["Commerce City"], ["Centennial"], ["Highlands Ranch"], ["Lafayette"], ["Longmont"], ["Louisville"], ["Wheat Ridge"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Downtown", "Berkeley Park", "Cherry Creek", "Colorado Springs", "Evergreen", "Five Points", "Fort Collins", "Golden", "Highlands", 
+	"Lakewood", "Morrison", "Old South Pearl Street", "Stapleton", "Aurora", "Boulder", "Broomfield", "Littleton", "Westminster", "Arvada", 
+	"Castle Rock", "Englewood", "Parker", "Washington Park", "Black Hawk", "Capitol Hill", "Thornton", "Commerce City", "Centennial", 
+	"Highlands Ranch", "Lafayette", "Longmont", "Louisville", "Wheat Ridge", ].each do |name|
+	Area.create!(name: name, city_id: 24)
 end
+puts "Denver"
 # New Orleans areas
-[["East Bank"], ["New Orleans East"], ["West Bank"]].each do |name|
-	Area.create!(name: name, city_id: )
+["East Bank", "New Orleans East", "West Bank"].each do |name|
+	Area.create!(name: name, city_id: 58)
 end
+puts "New Orleans"
 #Oklahoma City areas
-[["Downtown"], ["Midtown"], ["Uptown"], ["Inner City South"], ["Northeast OKC"], ["Northwest"], ["Westside"], ["Southside"], ["Southeast"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Downtown", "Midtown", "Uptown", "Inner City South", "Northeast OKC", 
+	"Northwest", "Westside", "Southside", "Southeast"].each do |name|
+	Area.create!(name: name, city_id: 31)
 end
+puts "OKC"
 # Omaha areas
-[["Downtown"], ["Midtown"], ["North Omaha"], ["South Omaha"], ["West Omaha"], ["East Omaha"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Downtown", "Midtown", "North Omaha", "South Omaha", "West Omaha", "East Omaha"].each do |name|
+	Area.create!(name: name, city_id: 39)
 end
+puts "Omaha"
 # Oakland areas
-[["Downtown"], ["West Oakland"], ["The Temescal"], ["Lakeshore & Lake Merritt"], ["Rockridge"], ["Piedmont"], ["Laurel District"], ["Oakland Hills"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Downtown", "West Oakland", "The Temescal", "Lakeshore & Lake Merritt", 
+	"Rockridge", "Piedmont", "Laurel District", "Oakland Hills"].each do |name|
+	Area.create!(name: name, city_id: 43)
 end
+puts "Oakland"
 # Cleveland areas
-[["Downtown"], ["West Cleveland"], ["South Cleveland"], ["East Cleveland"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Downtown", "West Cleveland", "South Cleveland", "East Cleveland"].each do |name|
+	Area.create!(name: name, city_id: 40)
 end
+puts "Cleveland"
 # St. Louis areas
-[["North"], ["Central"], ["South"], ["Florissant"], ["Hazelwood"], ["Saint Charles"], ["St. Peters"], ["Chesterfield"], ["Granite City"]].each do |name|
-	Area.create!(name: name, city_id: )
+["North", "Central", "South", "Florissant", "Hazelwood", "Saint Charles", "St. Peters", "Chesterfield", "Granite City"].each do |name|
+	Area.create!(name: name, city_id: 51)
 end
+puts "St Louis"
 # Orlando areas
-[["Downtown"], ["Kissimmee"], ["Sanford"], ["Tavares"], ["Winter Park"], ["Apopka"], ["Oviedo"], ["Clermont"], ["Altamonte Springs"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Downtown", "Kissimmee", "Sanford", "Tavares", "Winter Park", "Apopka", "Oviedo", "Clermont", "Altamonte Springs"].each do |name|
+	Area.create!(name: name, city_id: 79)
 end
+puts "Orlando"
 # Newark areas
-[["North Ward"], ["South Ward"], ["Central Ward"], ["East Ward"], ["West Ward"]].each do |name|
-	Area.create!(name: name, city_id: )
+["North Ward", "South Ward", "Central Ward", "East Ward", "West Ward"].each do |name|
+	Area.create!(name: name, city_id: 67)
 end
+puts "Newark"
 # Long Beach areas
-[["North Long Beach"], ["Poly High District"], ["West Side"], ["Wrigley"], ["The Plaza"], ["Hellman"], ["Traffic Circle"], ["Zaferia"], ["East Side"], 
-["Alamitos Beach"], ["Bixby Area"], ["Belmont Heights"], ["City College Area"], ["Downtown"], ["Willmore City"], ["East Village"], ["Rose Park"]].each do |name|
-	Area.create!(name: name, city_id: )
+["North Long Beach", "Poly High District", "West Side", "Wrigley", "The Plaza", "Hellman", "Traffic Circle", "Zaferia", "East Side", "Alamitos Beach", 
+	"Bixby Area", "Belmont Heights", "City College Area", "Downtown", "Willmore City", "East Village", "Rose Park"].each do |name|
+	Area.create!(name: name, city_id: 37)
 end
+puts "Long Beach"
 # Louisville areas
-[["Anchorage"], ["Butchertown"], ["Cherokee Triangle"], ["Central Downtown"], ["Clifton"], ["Crescent Hill"], ["Germantown"], ["Highlands"], 
-["Indian Hills"], ["Jeffersontown"], ["Lyndon"], ["Middletown"], ["Old Louisville"], ["Oldham County"], ["St Matthews"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Anchorage", "Butchertown", "Cherokee Triangle", "Central Downtown", "Clifton", "Crescent Hill", "Germantown", "Highlands", 
+	"Indian Hills", "Jeffersontown", "Lyndon", "Middletown", "Old Louisville", "Oldham County", "St Matthews"].each do |name|
+	Area.create!(name: name, city_id: 30)
 end
+puts "Louisville"
 # Anaheim areas
-[["Downtown/Colonial District"], ["Southwest Anaheim"], ["Southeast Anaheim"], ["Northeast Anaheim"], ["Anaheim Hills"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Downtown/Colonial District", "Southwest Anaheim", "Southeast Anaheim", "Northeast Anaheim", "Anaheim Hills"].each do |name|
+	Area.create!(name: name, city_id: 54)
 end
+puts "Anaheim"
 # Raleigh areas
-[["North Raleigh"], ["Northwest Raleigh"], ["Northeast Raleigh"], ["West Raleigh"], ["Southeast Raleigh"], ["Southwest Raleigh"], ["South Raleigh"], ["Hillsborough"], ["East Raleigh"]].each do |name|
-	Area.create!(name: name, city_id: )
+["North Raleigh", "Northwest Raleigh", "Northeast Raleigh", "West Raleigh", "Southeast Raleigh", "Southwest Raleigh", "South Raleigh", "Hillsborough", "East Raleigh"].each do |name|
+	Area.create!(name: name, city_id: 44)
 end
+puts "Raleigh"
 # Minneapolis areas
-[["Calhoun-Isles"], ["Camden"], ["Cental"], ["Longfellow"], ["Near North"], ["Nokomis"], ["Northeast"], ["Phillips"], ["Powderhorn"], ["Southwest"], ["University"]].each do |name|
-	Area.create!(name: name, city_id: )
+["Calhoun-Isles", "Camden", "Cental", "Longfellow", "Near North", "Nokomis", "Northeast", "Phillips", "Powderhorn", "Southwest", "University"].each do |name|
+	Area.create!(name: name, city_id: 46)
 end
+puts "Minneapolis"
+=end
+
+=begin
+# Seed neighborhoods
+# San Fran neighborhoods
+# Downtown
+["Financial District", "Japantown", "Nob Hill", "Panhandle", "Russian Hill", "Sunset", "Castro District", "Fisherman's Wharf", "Lower Height", "Noe Valley", "Potrero Hill", "Sea Cliff", "Tenderloin", "Chinatown", 
+	"Haight-Ashbury", "Marina", "North Beach", "Presidio", "Sixth Street", "Union Square", "Cole Valley", "Hayes Valley", "Mission District", "Pacific Heights", "Richmond", "SOMA", "Upper Market"].each do |name|
+	Neighborhood.create!(name: name, area_id: 118)
+end
+puts "Downtown SF"
+["Avalon Park", "Avalon Pines", "Brentwood", "Buri Buri", "Cypress", "Francisco Terrace", "Mayfair Village", "Paradise Valley", "Parkhaven", "Parkway", "Pecks Lot", "Peninsula Pines", "Serra Highlands", 
+	"Southwood", "Sunshine Gardens", "Susie Way", "East Side", "West Winston Manor", "Westborough", "West Park"].each do |name|
+	Neighborhood.create!(name: name, area_id: 119)
+end
+puts "South SF"
+
+# San Diego neighborhoods
+# Downtown
+["Columbia", "Core District", "Cortez Hill", "East Village", "Gaslamp Quarter", "Little Italy", "Marina", "Horton District", "Seaport Village"].each do |name|
+	Neighborhood.create!(name: name, area_id: 129)
+end
+# South Bay
+["South San Diego", "Chula Vista", "National City", "Imperial Beach"].each do |name|
+	Neighborhood.create!(name: name, area_id: 133)
+end
+# East County
+["El Cajon", "La Mesa", "Santee", "Lemon Grove"].each do |name|
+	Neighborhood.create!(name: name, area_id: 134)
+end
+# North County
+["Oceanside", "Escondido", "Carlsbad", "Vista", "San Marcos", "Encinitas", "Poway", "Solana Beach", "Del Mar"].each do |name|
+	Neighborhood.create!(name: name, area_id: 135)
+end
+puts "San Diego neighborhoods"
+
+# Indianapolis neighborhoods
+# Downtown
+["Financial District", "Old Northside", "Indiana University", "North Square", "Lockerbie Square"].each do |name|
+	Neighborhood.create!(name: name, area_id: 136)
+end
+puts "Indianapolis neighborhoods"
+
+# Houston neighborhoods
+# Downtown
+["Skyline District", "Theater District", "Old Chinatown", "New Chinatown", "Main Street Corridor", "Preston Station"].each do |name|
+	Neighborhood.create!(name: name, area_id: 146)
+end
+["Hiram Clarke", "Sunnyside", "South Park"].each do |name|
+	Neighborhood.create!(name: name, area_id: 147)
+end
+["Alief", "Fondren", "Southwest", "Meyerland", "Sharpstown", "Westbury"].each do |name|
+	Neighborhood.create!(name: name, area_id: 148)
+end
+["Third Ward", "Texas Medical Center", "Riverside Terrace", "University Oaks", "Washington Terrace"].each do |name|
+	Neighborhood.create!(name: name, area_id: 149)
+end
+["Houston Heights", "Near Northside", "Fifth Ward", "Sixth Ward", "Kashmere Gardens", "Trinity Gardens", "Homestead", "Acres Homes", "East Aldine District", "Greenspoint"].each do |name|
+	Neighborhood.create!(name: name, area_id: 150)
+end
+puts "Houston neighborhoods"
+
+# Jacksonville neighborhoods
+# Downtown
+["Downtown Core", "LaVilla", "Brooklyn", "Southbank"].each do |name|
+	Neighborhood.create!(name: name, area_id: 159)
+end
+puts "Jacksonville neighborhoods"
+
+# Milwaukee neighborhoods
+# Downtown
+["Westown", "Third Ward", "Menomonee River Valley", "East Town"].each do |name|
+	Neighborhood.create!(name: name, area_id: 227)
+end
+puts "Milwaukee neighborhoods"
+
+# New Orleans neighborhoods
+# East Bank
+["French Quarter", "Central City", "Uptown", "Mid-City", "Lakeview", "Gentilly", "Bywater", "Lower ninth Ward"].each do |name|
+	Neighborhood.create!(name: name, area_id: 261)
+end
+# New Orleans East
+["New Orleans East", "Village d L\'Est", "Venetian Isles"].each do |name|
+	Neighborhood.create!(name: name, area_id: 262)
+end
+# West Bank
+["Algiers", "English Turn"].each do |name|
+	Neighborhood.create!(name: name, area_id: 263)
+end
+puts "New Orleans neighborhoods"
+
+# OKC neighborhoods
+# Downtown
+["Bricktown", "Deep Deuce", "Arts District", "Film Row"].each do |name|
+	Neighborhood.create!(name: name, area_id: 264)
+end
+# Midtown
+["Automobile Alley", "Plaza District", "Heritage Hills", "Cottage District"].each do |name|
+	Neighborhood.create!(name: name, area_id: 265)
+end
+# Uptown
+["Asia District", "The Paseo", "Crown Heights", "Western Avenue Corridor", "39th Street Enclave"].each do |name|
+	Neighborhood.create!(name: name, area_id: 266)
+end
+# Northeast OKC
+["Adventure District", "Lincoln Terrace"].each do |name|
+	Neighborhood.create!(name: name, area_id: 268)
+end
+puts "OKC neighborhoods"
+
+# Cleveland neighborhoods
+# West Cleveland
+["Lakewood", "Detroit Shoreway", "Edgewater", "Ohio City", "Bay Village"].each do |name|
+	Neighborhood.create!(name: name, area_id: 288)
+end
+# South Cleveland
+["Brooklyn", "Old Brooklyn", "Newsburgh Heights", "Broadway", "Slavic Village", "Woodland Hills"].each do |name|
+	Neighborhood.create!(name: name, area_id: 289)
+end
+# East Cleveland
+["Hough", "Collingwood", "Fairfax", "Glenville", "Cleveland Heights", "University Heights", "University Circle", "Richmond Heights"].each do |name|
+	Neighborhood.create!(name: name, area_id: 290)
+end
+puts "Cleveland neighborhoods"
+
+# St Louis neighborhoods
+# North
+["Academy", "Baden", "Carr Square", "College Hill", "Columbus Square", "Fairground", "Fountain Park", "Greater Ville", "Hamilton Heights", "Hyde Park", "JeffVanderLou", 
+	"Kingsway East", "Kingsway West", "Lewis Place", "Mark Twain", "Mark Twain I 70 Industrial", "Near North Riverfront", "North Point", "North Riverfront", "O Fallon", 
+	"Old North St. Louis", "Penrose", "Riverview", "St. Louis Place", "Vandenventer", "The Ville", "Visitation Park", "Walnut Park East", "Walnut Park West", "Well Goodfellow", "West End"].each do |name|
+	Neighborhood.create!(name: name, area_id: 291)
+end
+# Central
+["Botanical Heights", "Central West End", "Cheltenham", "Clayton Tamm", "Covenant Blu Grand Center", "DeBaliviere Place", "Downtown", "Downtown West", "Forest Park Southeast", 
+	"Franz Park", "The Gate District", "Hi Pointe", "Kings Oak", "Lafayette Square", "LaSalle Park", "Midtown", "Peabody Darst Webbe", "Skinker DeBaliviere", "Tiffany", 
+	"Wydown"].each do |name|
+	Neighborhood.create!(name: name, area_id: 292)
+end
+# South
+["Benton Park", "Benton Park West", "Bevo Mill", "Boulevard Heights", "Carondelet", "Clifton Heights", "Compton Heights", "Dutchtown", "Ellendale", "Fox Park", "Gravois Park", "The Hill", 
+	"Holly Hills", "Kosciusko", "Lindenwood Park", "Marine Villa", "McKinley Heights", "Mount Pleasant", "North Hampton", "Patch", "Princeton Heights", "Shaw", "Soulard", "South Hampton", 
+	"Southwest Garden", "St. Louis Hills", "Tower Grove East", "Tower Grove South"].each do |name|
+	Neighborhood.create!(name: name, area_id: 293)
+end
+puts "St Louis neighborhoods"
+
+# Orlando neighborhoods
+# Downtown
+["Uptown", "Parramore", "Central Business District", "Lake Eola Heights", "Thornton Park"].each do |name|
+	Neighborhood.create!(name: name, area_id: 300)
+end
+puts "Orlando neighborhoods"
+
+# Newark neighborhoods
+# North Ward
+["Broadway", "Forest Hill", "Mount Pleasant", "Roseville", "Seventh Avenue"].each do |name|
+	Neighborhood.create!(name: name, area_id: 309)
+end
+# South Ward
+["Clinton Hill", "Dayton", "South Broad Valley", "Weequahic"].each do |name|
+	Neighborhood.create!(name: name, area_id: 310)
+end
+# Central Ward
+["The Coast", "Government Center", "Springfield", "University Heights"].each do |name|
+	Neighborhood.create!(name: name, area_id: 311)
+end
+# East Ward
+["Four Corners", "Five Corners", "The Ironbound", "Downtown"].each do |name|
+	Neighborhood.create!(name: name, area_id: 312)
+end
+# West Ward
+["Fairmount", "Ivy Hill", "Vailsburg", "West Side"].each do |name|
+	Neighborhood.create!(name: name, area_id: 313)
+end
+puts "Newark neighborhoods"
+
+# Minneapolis neighborhoods
+# Downtown
+["Downtown East", "Downtown West", "Elliot Park", "Loring Park", "North Loop", "Stevens Square"].each do |name|
+	Neighborhood.create!(name: name, area_id: 362)
+end
+puts "Minneapolis neighborhoods"
 
 puts "all seeds complete!"
 
 =end
-
-
-
-
-
-
-
-
+#=end
 
 
 
