@@ -64,20 +64,27 @@ $grayLight: #d4d9dc;
 }
 
 .hero-details {
-	width: 90%; height: 100%;
+	width: 60%; 
+	height: 100%;
+	margin-top: 9%;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: white;
 	border-radius: 5px; border: 1px solid $bordercolor;
-	opacity:0.85; filter: alpha(opacity=85); /* For IE8 and earlier */
+	opacity:0.65; filter: alpha(opacity=65); /* For IE8 and earlier */
 }
 
 .hero-details ul li {
 	white-space: normal;
 	display: inline-block;
-	height: 60px; width: 130px;
+	height: 8em; width: 34.25em;
 	font-size: 0.35em;
-	margin: 10px 10px 0 0; padding: 10px 5px;
+	margin: 10px 10px 0 0; padding: 2em 1em;
 	border-right: 1px solid $bordercolor;
 	text-align: center;
+	&:last-child {
+		border: 0;
+	}
 }
 
 /* Home Stripe */

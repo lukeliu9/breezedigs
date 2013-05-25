@@ -1,6 +1,9 @@
 class StaticPagesController < ApplicationController
 
   def home
+    @buildings = Building.all
+    @reviews = Review.all
+    @rents = Rent.all
   end
 
   def terms

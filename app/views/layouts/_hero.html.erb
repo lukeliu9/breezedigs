@@ -25,6 +25,14 @@
 			<%= link_to "Submit a rent", new_rent_path %>
 		</div>
 
+		<div class="hero-details">
+			<ul>
+				<li><h3><%= @buildings.count %></h3></li>
+				<li><%= @reviews.count %></h3></li>
+				<li><%= @rents.count %></h3></li>
+			</ul>
+		</div>
+
 	</div>
 </div>
 
