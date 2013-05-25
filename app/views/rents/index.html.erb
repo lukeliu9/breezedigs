@@ -48,12 +48,30 @@
 				<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
 
 				<div class="review-rent-btns"><!-- Write review & submit rent btns in bldg prof -->
+					<%= link_to(raw("<button class=\"btn\">Add a Photo</button>"), new_building_photo_path(@building)) %>
 					<%= link_to(raw("<button class=\"btn\">Submit a Rent</button>"), new_building_rent_path(@building)) %>
 					<%= link_to(raw("<button class=\"btn\">Write Review</button>"), new_building_review_path(@building)) %>
 				</div>
 
 				<div class="building-stats">
-					Test
+					<ul>
+						<li>
+						</li>
+						<li>
+						</li>
+						<li>
+						</li>
+						<li>
+						</li>
+						<li>
+						</li>
+						<li>
+						</li>
+						<li>
+						</li>
+						<li>
+						</li>
+					</ul>
 				</div>
 			</div>
 

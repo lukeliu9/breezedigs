@@ -37,9 +37,9 @@ class Building < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
 
-  def address
-    [address, city].compact.join(', ')
-  end
+  # def address
+  #   [address, city].compact.join(', ')
+  # end
 
   private
 

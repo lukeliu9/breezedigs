@@ -64,40 +64,6 @@ $pureWhite: white;
 
 /* Review Buttons on side of building review page*/
 
-.review-btn {
-	padding: 0.6em 1em;
-	background: $grayVeryLight;
-	border-right: 1px solid $grayMedium;
-	border-top: 1px solid $grayMedium;
-	border-left: 1px solid $grayMedium;
-	border-radius:0;
-	text-align: right;
-	color: $grayDark;
-	&:hover {
-		background: white;
-		border-right: 1px solid white;
-		border-top: 1px solid $grayMedium;
-		border-left: 1px solid $grayMedium;
-	}
-}
-		
-.first-review-btn {
-	border-top:1px solid $grayMedium;
-	border-top-left-radius: 6px;
-}
-
-.last-review-btn {
-	border-bottom: 1px solid $grayMedium;
-	border-bottom-left-radius: 6px;
-}
-
-.review-btn-selected {
-	background: white;
-	border-right: 1px solid white;
-	font-weight: 500;
-	color: $blueVeryDark;
-}
-
 /* Building profile toggle buttons between rent and reviews */
 
 .toggle {
@@ -121,6 +87,5 @@ $pureWhite: white;
 		color: white;
 	}
 }
-
 
 

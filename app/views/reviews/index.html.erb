@@ -15,6 +15,9 @@
 <div class="bg-texture-wrapper">
 	<div class="container">
 		<div class="building-profile">
+			<% flash.each do |key, value| %>
+			<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+			<% end %>
 
 			<div class="interactive-holder">
 				<div class="building-interactive-box">
@@ -35,12 +38,6 @@
 
 						</div>
 				</div>
-
-				<div class="add-photos-floorplans">
-					<div class="right">
-					<%= link_to "Add a photo", new_building_photo_path(@building) %></div>
-				</div>
-
 			</div>
 
 			<div class="building-info">
@@ -49,12 +46,13 @@
 				<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
 
 				<div class="review-rent-btns"><!-- Write review & submit rent btns in bldg prof -->
+					<%= link_to(raw("<button class=\"btn\">Add a Photo</button>"), new_building_photo_path(@building)) %>
 					<%= link_to(raw("<button class=\"btn\">Submit a Rent</button>"), new_building_rent_path(@building)) %>
 					<%= link_to(raw("<button class=\"btn\">Write Review</button>"), new_building_review_path(@building)) %>
 				</div>
 
 				<div class="building-stats">
-					Test
+					<div id="star"></div>
 				</div>
 				
 			</div>
@@ -66,7 +64,8 @@
 
 				<div class="reviews">
 					<div class="review-buttons-box">
-					</div>	
+						<%= render 'reviewbuttons' %>
+					</div>
 
 					<div class="review-content">
 						<div class="single-review">
@@ -81,6 +80,10 @@
 							<% end %>
 						</div>
 					</div>
+				</div>
+
+				<div class="building-sidebar">
+					ad
 				</div>
 
 			<div class="building-contact">

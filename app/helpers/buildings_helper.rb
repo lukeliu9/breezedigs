@@ -37,8 +37,13 @@ module BuildingsHelper
 	end
 
 	def star_ratings(rating)
-		avg_rating = @reviews.average_review_rating(rating)
-		
+		#avg_rating = @reviews.average_review_rating(rating)
+		raw("
+			<input name=\"adv2\" type=\"radio\" class=\"wow {split:4}\" checked=\"checked\"/>
+			<input name=\"adv2\" type=\"radio\" class=\"wow {split:4}\"/>
+			<input name=\"adv2\" type=\"radio\" class=\"wow {split:4}\"/>
+			<input name=\"adv2\" type=\"radio\" class=\"wow {split:4}\"/>
+			")
 	end
 
 end

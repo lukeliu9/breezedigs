@@ -66,8 +66,6 @@ puts "Cities"
 	end
 puts "Created Chicago Areas"	
 
-
-
 # Create city of Chicago neighborhoods	
 
 # Chicago: Far North Side
@@ -356,10 +354,15 @@ puts "Raleigh"
 	Area.create!(name: name, city_id: 46)
 end
 puts "Minneapolis"
+# NYC areas
+["Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island"].each do |name|
+	Area.create!(name: name, city_id: 1)
+end
+puts "NYC areas"
 =end
 
-=begin
 # Seed neighborhoods
+=begin
 # San Fran neighborhoods
 # Downtown
 ["Financial District", "Japantown", "Nob Hill", "Panhandle", "Russian Hill", "Sunset", "Castro District", "Fisherman's Wharf", "Lower Height", "Noe Valley", "Potrero Hill", "Sea Cliff", "Tenderloin", "Chinatown", 
@@ -538,11 +541,55 @@ puts "Newark neighborhoods"
 	Neighborhood.create!(name: name, area_id: 362)
 end
 puts "Minneapolis neighborhoods"
+#=end
+# NYC Neighborhoods
+# Bronx neighborhoods
+["Melrose", "Mott Haven", "Port Morris", "Hunts Point", "Longwood", "Claremont", "Concourse Village", "Crotona Park", "Morrisania", "Concourse", "High Bridge", "Fordham", "Morris Heights", 
+	"Mount Hope", "University Heights", "Bathgate", "Belmont", "East Tremont", "West Farms", "Bedford Park", "Norwood", "University Heights", "Fieldston", "Kingsbridge", "Kingsbridge Heights", 
+	"Marble Hill", "Riverdale", "Spuyten Duyvil", "Van Cortlandt Village", "Bronx River", "Bruckner", "Castle Hill", "Clason Point", "Harding Park", "Parkchester", "Soundview", "Unionport", 
+	"City Island", "Co op City", "Locust Point", "Pelham Bay", "Silver Beach", "Throgs Neck", "Westchester Square", "Allerton", "Bronxdale", "Laconia", "Morris Park", "Pelham Gardens", 
+	"Pelham Parkway", "Van Nest", "Baychester", "Edenwald", "Eastchester", "Fish Bay", "Olinville", "Wakefield", "Williamsbridge", "Woodlawn"].each do |name|
+	Neighborhood.create!(name: name, area_id: 371)
+end
+# Brooklyn neighborhoods
+["Greenpoint", "Williamsburg", "Boerum Hill", "Brooklyn Heights", "Brooklyn Navy Yard", "Clinton Hill", "DUMBO", "Fort Greene", "Fulton Ferry", "Fulton Mall", "Vinegar Hill", "Bedford Stuyvesant", 
+	"Ocean Hill", "Stuyvesant Heights", "Bushwick", "City Line", "Cypress Hills", "East New York", "Highland Park", "New Lots", "Starrett City", "Carroll Gardens", "Cobble Hill", "Gowanus", 
+	"Park Slope", "Red Hook", "Greenwood Heights", "Sunset Park", "Windsor Terrace", "Crown Heights", "Prospect Heights", "Weeksville", "Crown Heights", "Prospect Lefferts Gardens", "Wingate", 
+	"Bay Ridge", "Dyker Heights", "Fort Hamilton", "Bath Beach", "Bensonhurst", "Gravesend", "Mapleton", "Borough Park", "Kensington", "Midwood", "Ocean Parkway", "Bensonhurst", "Brighton Beach", 
+	"Coney Island", "Gravesend", "Sea Gate", "Flatbush", "Kensington", "Midwood", "Ocean Parkway", "East Gravesend", "Gerritsen Beach", "Homecrest", "Kings Bay", "Kings Highway", "Madison", "Manhattan Beach", 
+	"Plum Beach", "Sheepshead Bay", "Brownsville", "Ocean Hill", "Ditmas Village", "East Flatbush", "Erasmus", "Farragut", "Remsen Village", "Rugby", "Canarsie", "Bergen Beach", "Mill Basin", "Flatlands", 
+	"Marine Park", "Georgetown", "Mill Island"].each do |name|
+	Neighborhood.create!(name: name, area_id: 372)
+end
+# Manhattan neighborhoods
+["Battery Park City", "Financial District", "TriBeCa", "Chinatown", "Greenwich Village", "Little Italy", "Lower East Side", "NoHo", "SoHo", "West Village", "Alphabet City", "Chinatown", "East Village", 
+	"Lower East Side", "Two Bridges", "Chelsea", "Clinton", "Midtown", "Gramercy Park", "Kips Bay", "Murray Hill", "Peter Cooper Village", "Stuyvesant Town", "Sutton Place", "Tudor City", "Turtle Bay", 
+	"Waterside Plaza", "Lincoln Square", "Manhattan Valley", "Upper West Side", "Lenox Hill", "Roosevelt Island", "Upper East Side", "Yorkville", "Hamilton Heights", "Manhattanville", "Morningside Heights", 
+	"Harlem", "Polo Grounds", "East Harlem", "Randalls Island", "Spanish Harlem", "Wards Island", "Inwood", "Washington Heights"].each do |name|
+	Neighborhood.create!(name: name, area_id: 373)
+end
+# Queens
+["Astoria", "Ditmars", "Garden Bay", "Long Island City", "Old Astoria", "Queensbridge", "Ravenswood", "Steinway", "Woodside", "Hunters Point", "Long Island City", "Sunnyside", "Woodside", "East Elmhurst", 
+	"Jackson Heights", "North Corona", "Corona", "Elmhurst", "Roosevelt Avenue", "Fresh Pond", "Glendale", "Maspeth", "Middle Village", "Liberty Park", "Ridgewood", "Forest Hills", "Rego Park", "Bay Terrace", 
+	"Beechhurst", "College Point", "Flushing", "Linden Hill", "Malba", "Queensboro Hill", "Whitestone", "Willets Point", "Briarwood", "Cunningham Heights", "Flushing South", "Fresh Meadows", "Hilltop Village", 
+	"Holliswood", "Jamaica Estates", "Kew Gardens Hills", "Pomonok Houses", "Utopia", "Kew Gardens", "Ozone Park", "Richmond Hill", "Woodhaven", "Howard Beach", "Lindenwood", "Richmond Hill", "South Ozone Park", 
+	"Tudor Village", "Auburndale", "Bayside", "Douglaston", "East Flushing", "Hollis Hills", "Little Neck", "Oakland Gardens", "Baisley Park", "Jamaica", "Hollis", "Rochdale Village", "St Albans", 
+	"Springfield Gardens", "South Jamaica", "Bellerose", "Brookville", "Cambria Heights", "Floral Park", "Glen Oaks", "Laurelton", "Meadowmere", "New Hyde Park", "Queens Village", "Rosedale", "Arverne", "Bayswater", 
+	"Belle Harbor", "Breezy Point", "Edgemere", "Far Rockaway", "Neponsit", "Rockaway Park"].each do |name|
+	Neighborhood.create!(name: name, area_id: 374)
+end
+# Staten Island
+["Arlington", "Castleton Corners", "Clifton", "Concord", "Elm Park", "Fort Wadsworth", "Graniteville", "Grymes Hill", "Livingston", "Mariners Harbor", "Meiers Corners", "New Brighton", "Port Ivory", "Port Richmond", 
+	"Randall Manor", "Rosebank", "St George", "Shore Acres", "Silver Lake", "Stapleton", "Sunnyside", "Tompkinsville", "West Brighton", "Westerleigh", "Arrochar", "Bloomfield", "Bulls Heads", "Chelsea", "Dongan Hills", 
+	"Egbertville", "Emerson Hill", "Grant City", "Grasmere", "Midland Beach", "New Dorp", "New Springville", "Oakwood", "Ocean Breeze", "Old Town", "South Beach", "Todt Hill", "Travis", "Annadale", "Arden Heights", 
+	"Bay Terrace", "Charleston", "Eltingville", "Great Kills", "Greenridge", "Huguenot", "Pleasant Plains", "Princes Bay", "Richmond Valley", "Rossville", "Tottenville", "Woodrow"].each do |name|
+	Neighborhood.create!(name: name, area_id: 375)
+end
+puts "All NYC neighorhoods"
 
 puts "all seeds complete!"
 
 =end
-#=end
 
 
 

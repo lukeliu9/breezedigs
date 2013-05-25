@@ -10,4 +10,8 @@ class City < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  def name_with_state
+  	"#{name}, #{state}"
+  end
+
 end

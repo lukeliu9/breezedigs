@@ -15,7 +15,7 @@
 					</h4>
 					<span><%= building.address %></span>
 					<p>
-						<%= truncate(building.description, length: 130, separator: ' ') %>
+						<%= building.reviews.map(&:pros) %>
 					</p>
 				</div>
 

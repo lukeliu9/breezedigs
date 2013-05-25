@@ -18,9 +18,10 @@ class ReviewsController < ApplicationController
 	def create
 		@building = Building.find(params[:building_id])
 		@review = @building.reviews.new(params[:review])
+		current_user.reviews << @review
 		if @review.save
 			flash[:notice] = "Thank you for submitting a review and contributing to our community!"
-			render action: 'new'
+			redirect_to building_path(@building)
 		else
 			render :action => 'new'
 		end
@@ -46,12 +47,12 @@ class ReviewsController < ApplicationController
 		empty_search = params[:search] ? false : true
     	
     	if empty_search
-    		@buildings = Building.page(params[:page]).per(10)
+    		@buildings = Building.page(params[:page]).per(15)
     	else
 			@search = Sunspot.search(Building) do
 	  			fulltext params[:search]
 			end
-	  		@buildings = Building.where(id: @search.results.map(&:id)).page(params[:page]).per(10)
+	  		@buildings = Building.where(id: @search.results.map(&:id)).page(params[:page]).per(15)
 	  	end
 	end
 

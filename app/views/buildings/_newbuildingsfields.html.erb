@@ -26,7 +26,7 @@
 
 	<div id="city">
 		<p>City:</p>
-		<%= f.collection_select(:city_id,  City.order('name ASC'),  :id, :name, {:prompt   => "Select a City"}, {:id => 'cities_select'}) %>
+		<%= f.collection_select(:city_id, City.order('name ASC'),  :id, :name_with_state, {:prompt   => "Select a City"}, {:id => 'cities_select'}) %>
 		<br />
 	</div>
 

@@ -106,7 +106,18 @@
 		vertical-align: bottom;
 	}
 	select {
-		width: 13em;
+		width: 5em;
+		vertical-align: top;
+	}
+}
+#start-stop {
+	p {
+		display: inline-block;
+		vertical-align: top;
+	}
+	select {
+		width: 5em;
+		vertical-align: top;
 	}
 }
 
