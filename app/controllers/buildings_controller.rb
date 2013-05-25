@@ -34,6 +34,8 @@ class BuildingsController < ApplicationController
     	else
 			@search = Sunspot.search(Building) do
 	  			fulltext params[:search]
+	  			order_by :reviews_count, :desc
+	  			#facet :areas
 			end
 	  		@buildings = Building.where(id: @search.results.map(&:id)).page(params[:page]).per(10)
 	  	end

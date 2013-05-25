@@ -22,14 +22,26 @@ class Building < ActiveRecord::Base
   #validates :area_id,             presence: true, numericality: { only_integer: true }
   #validates :neighborhood_id,	    presence: true, numericality: { only_integer: true }
 
-
   searchable do
   	text :name
   	text :address
-  	text :city
-  	text :area
-  	text :neighborhood
+  	text :city do
+      city.name
+    end
+  	text :areas do
+      area.name
+    end
+  	text :neighborhoods do
+      if neighborhood.blank?
+        nil
+      else
+        neighborhood.name
+      end
+    end
   	text :zip
+    integer :reviews_count do
+      reviews.count
+    end
   end
 
   geocoded_by :address

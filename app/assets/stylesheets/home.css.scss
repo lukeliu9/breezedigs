@@ -77,11 +77,22 @@ $grayLight: #d4d9dc;
 .hero-details ul li {
 	white-space: normal;
 	display: inline-block;
-	height: 8em; width: 34.25em;
-	font-size: 0.35em;
-	margin: 10px 10px 0 0; padding: 2em 1em;
+	height: 3.5em; 
+	width: 10.65em;
+	margin: 10px 10px 0 0; 
+	padding: 0.5em 1em;
 	border-right: 1px solid $bordercolor;
 	text-align: center;
+	h3 {
+		font-size: 1.3em;
+		font-weight: 600;
+		margin: 0.2em 0 0.4em 0;
+		padding: 0;
+	}
+	p {
+		color: $grayDark;
+		font-size: 1.1em;
+	}
 	&:last-child {
 		border: 0;
 	}

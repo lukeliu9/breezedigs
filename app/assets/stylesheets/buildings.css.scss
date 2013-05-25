@@ -75,10 +75,14 @@
 	}
 	p {
 		color: $blueVVDark;
-		margin-top: 3%;
+		margin-top: 1.5%;
 		font-size: 1em;
 	}
+	a {
+		color: $blueVVDark;
+	}
 }
+#reviews-count {color: $gbDark; font-weight: 500;}
 
 .review-summary {
 	display: inline-block;
@@ -104,15 +108,20 @@
 
 	}
 	h3 {
-
+		font-size: 1.5em;
+		font-weight: 400;
+		color: $grayVeryDark;
+		margin-bottom: 1em;
+		margin-left: 1.2em;
 	}
 	ul {
 		li {
-
+			margin-bottom: 1.3em;
 		}
 	}
 	p {
-
+		font-size: 1em;
+		color: $offBlack;
 	}
 }
 
