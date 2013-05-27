@@ -14,9 +14,10 @@ module BuildingsHelper
 
 	# For use in the buildings search results when iterating through the building results
 	def geogrify(building)
+
 		city = building.city.name
-		area = building.area.name
-		hood = building.neighborhood.name
+		area = building.area ? building.area.name : ""
+		hood = building.neighborhood ? building.neighborhood.name : ""
 
 		city = area.blank? ? "#{city}" : "#{city} > "
 		area = hood.blank? ? "#{area}" : "#{area} > "
@@ -34,16 +35,6 @@ module BuildingsHelper
 
 	def pets
 		"N/A"
-	end
-
-	def star_ratings(rating)
-		#avg_rating = @reviews.average_review_rating(rating)
-		raw("
-			<input name=\"adv2\" type=\"radio\" class=\"wow {split:4}\" checked=\"checked\"/>
-			<input name=\"adv2\" type=\"radio\" class=\"wow {split:4}\"/>
-			<input name=\"adv2\" type=\"radio\" class=\"wow {split:4}\"/>
-			<input name=\"adv2\" type=\"radio\" class=\"wow {split:4}\"/>
-			")
 	end
 
 end

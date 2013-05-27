@@ -34,6 +34,8 @@ class RentsController < ApplicationController
 	end
 
 	def edit
+		@rent = Rent.find(params[:id])
+		@building = @rent.building
 	end
 
 	def destroy

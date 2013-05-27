@@ -23,9 +23,14 @@ class Review < ActiveRecord::Base
   validates :user_id, 				      presence: false, numericality: { only_integer: true }
 =end
 
+def self.average_review_rating(rating)
+  return nil if self.blank?
+  self.average(rating)
+end
+
 def average_review_rating(rating)
   return nil if self.blank?
-  self.average(:rating)
+  self.average(rating)
 end
 
 end

@@ -1,6 +1,7 @@
 class Rent < ActiveRecord::Base
   attr_accessible :baths, :beds, :floor, :rent, 
-  :sqft, :utilities, :building_id, :user_id, :notes, :recency, :unitnum
+  :sqft, :utilities, :building_id, :user_id, :notes, 
+  :start, :stop, :unitnum
 
   belongs_to :building
   belongs_to :user

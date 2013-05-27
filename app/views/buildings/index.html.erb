@@ -13,6 +13,11 @@
 	</div>
 
 	<div class="building-results">
+		
+		<div class="results-header">
+		<h2>Your search returned <%= pluralize(@buildings.count, "result") %></h2>
+		</div>
+
 		<%= render 'buildingresults' %>
 	</div>
 

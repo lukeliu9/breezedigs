@@ -1,0 +1,219 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'reviews' %>
+<% end %>
+
+<% provide(:title, "Edit Review") %>
+
+<div class="bg-texture-wrapper">
+	<div class="container">
+		<div class="new-review-form">
+			<h1>Your review will help other renters - thank you!</h1>
+			<div class="building-profile-new">
+				<div class="building-text">
+					<h2><%= link_to @building.name, building_path(@building) %></h1>
+					<p id="geography"><%= building_geography %></p>
+					<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
+				</div>
+			</div>
+			<%= form_for(@review, validate: true) do |f| %>
+					<div class="review-form-fields">
+
+						<h4>What is your overall rating of living here?</h4>
+						<% (1...@review.overall).each do %>
+							<input name="review[overall]" type="radio" class="star" value="1">
+						<% end %>
+						<input name="review[overall]" type="radio" class="star" value="1" checked="checked">
+						<% (5-@review.overall).times do %>
+							<input name="review[overall]" type="radio" class="star" value="1">
+						<% end %>
+
+						<br>
+						<div>
+							<p>Pros:</p>
+							<%= f.text_area :pros,
+								placeholder: "General positives about living in this building", size: "5x3" %>
+							<br />
+						</div>
+
+						<div>
+							<p>Cons:</p>
+							<%= f.text_area :cons,
+								placeholder: "Negative aspects of living in this building", size: "5x3" %>
+							<br />
+						</div>
+
+						<div class="tell-us-more"><h5>Can you tell us a bit more?(optional)</h5></div><br>
+
+						<div id="advice">
+							<p>Advice:</p>
+							<%= f.text_area :advice,
+								placeholder: "Advice to prospective tenants about living in this building", size: "5x2" %>
+							<br />
+						</div>
+
+						<div id="msm">
+							<p>Management & Staff <span class="fw-300">(optional)</span></p>
+							<%= f.text_area :msm,
+								placeholder: "Responsiveness & practices of management, friendliness of staff, maintenance & upkeep, etc.", size: "5x5" %>
+							<br />
+						</div>
+
+						<div id="nsn">
+							<p>Neighborhood, Safety, Noise <span class="fw-300">(optional)</span></p>
+							<%= f.text_area :nsn,
+								placeholder: "What the neighborhood is like, are there any safety concerns/issues, is the area particularly noisy, etc.", size: "5x5" %>
+							<br />
+						</div>
+
+						<div id="unitamen">
+							<p>Amenities & Unit Quality <span class="fw-300">(optional)</span></p>
+							<%= f.text_area :unitamen,
+								placeholder: "Noteworthy amenities & the quality of the units", size: "5x5" %>
+							<br />
+						</div>
+
+						<div id="transpark">
+							<p>Transportation & Parking <span class="fw-300">(optional)</span></p>
+							<%= f.text_area :parktrans,
+								placeholder: "Access to transportation & availability of parking", size: "5x5" %>
+						</div>
+
+						<div class="tell-us-more"><h5>Can you rate a few more things?(optional)</h5></div><br>
+
+						<div class="star-rtngs">
+						<p>Management Rating:</p>
+						<% if @review.management_rating.blank? %>
+							<%= star_ratings("management_rating") %>
+						<% else %>
+							<% (1...@review.management_rating).each do %>
+								<input name="review[management_rating]" type="radio" class="star" value="1">
+							<% end %>
+							<input name="review[management_rating]" type="radio" class="star" value="1" checked="checked">
+							<% (5-@review.management_rating).times do %>
+								<input name="review[management_rating]" type="radio" class="star" value="1">
+							<% end %>
+						<% end %>
+
+						<br><p>Staff Rating:</p>
+						<% if @review.staff_rating.blank? %>
+							<%= star_ratings("staff_rating") %>
+						<% else %>
+							<% (1...@review.staff_rating).each do %>
+								<input name="review[staff_rating]" type="radio" class="star" value="1">
+							<% end %>
+							<input name="review[staff_rating]" type="radio" class="star" value="1" checked="checked">
+							<% (5-@review.staff_rating).times do %>
+								<input name="review[staff_rating]" type="radio" class="star" value="1">
+							<% end %>
+						<% end %>
+
+						<br><p>Maintenance Rating:</p>
+						<% if @review.maintenance_rating.blank? %>
+							<%= star_ratings("maintenance_rating") %>
+						<% else %>
+							<% (1...@review.maintenance_rating).each do %>
+								<input name="review[maintenance_rating]" type="radio" class="star" value="1">
+							<% end %>
+							<input name="review[maintenance_rating]" type="radio" class="star" value="1" checked="checked">
+							<% (5-@review.maintenance_rating).times do %>
+								<input name="review[maintenance_rating]" type="radio" class="star" value="1">
+							<% end %>
+						<% end %>						
+
+						<br><p>Amenities Rating:</p>
+						<% if @review.amenities_rating.blank? %>
+							<%= star_ratings("amenities_rating") %>
+						<% else %>
+							<% (1...@review.amenities_rating).each do %>
+								<input name="review[amenities_rating]" type="radio" class="star" value="1">
+							<% end %>
+							<input name="review[amenities_rating]" type="radio" class="star" value="1" checked="checked">
+							<% (5-@review.amenities_rating).times do %>
+								<input name="review[amenities_rating]" type="radio" class="star" value="1">
+							<% end %>
+						<% end %>
+						</div>
+
+						<div class="star-rtngs">
+						<p>Neighborhood Rating:</p>
+						<% if @review.neighborhood_rating.blank? %>
+							<%= star_ratings("neighborhood_rating") %>
+						<% else %>
+							<% (1...@review.neighborhood_rating).each do %>
+								<input name="review[neighborhood_rating]" type="radio" class="star" value="1">
+							<% end %>
+							<input name="review[neighborhood_rating]" type="radio" class="star" value="1" checked="checked">
+							<% (5-@review.neighborhood_rating).times do %>
+								<input name="review[neighborhood_rating]" type="radio" class="star" value="1">
+							<% end %>
+						<% end %>
+
+						<br><p>Noise Rating:</p>
+						<% if @review.noise_rating.blank? %>
+							<%= star_ratings("noise_rating") %>
+						<% else %>
+							<% (1...@review.noise_rating).each do %>
+								<input name="review[noise_rating]" type="radio" class="star" value="1">
+							<% end %>
+							<input name="review[noise_rating]" type="radio" class="star" value="1" checked="checked">
+							<% (5-@review.noise_rating).times do %>
+								<input name="review[noise_rating]" type="radio" class="star" value="1">
+							<% end %>
+						<% end %>
+
+						<br><p>Safety Rating:</p>
+						<% if @review.safety_rating.blank? %>
+							<%= star_ratings("safety_rating") %>
+						<% else %>
+							<% (1...@review.safety_rating).each do %>
+								<input name="review[safety_rating]" type="radio" class="star" value="1">
+							<% end %>
+							<input name="review[safety_rating]" type="radio" class="star" value="1" checked="checked">
+							<% (5-@review.safety_rating).times do %>
+								<input name="review[safety_rating]" type="radio" class="star" value="1">
+							<% end %>
+						<% end %>
+
+						<br><p>Transportation Rating:</p>
+						<% if @review.transportation_rating.blank? %>
+							<%= star_ratings("transportation_rating") %>
+						<% else %>
+							<% (1...@review.transportation_rating).each do %>
+								<input name="review[transportation_rating]" type="radio" class="star" value="1">
+							<% end %>
+							<input name="review[transportation_rating]" type="radio" class="star" value="1" checked="checked">
+							<% (5-@review.transportation_rating).times do %>
+								<input name="review[transportation_rating]" type="radio" class="star" value="1">
+							<% end %>
+						<% end %>
+						</div>
+
+					</div>	
+
+						<div id="create-review-btn">
+						<%= f.submit 'Update Review', class: "btn btn-primary btn-large" %>
+						</div>
+
+					<% end %>
+					</div>
+
+					<div class="new-review-sidebar">
+						<h2>&nbsp;To our community:&nbsp;</h2>
+						<p>Our number one priority is ensuring the accuracy and objectivity of our review and building data</p>
+						
+						<p>We review each submission before approving them to be used and will research any information we feel may be fraudulent or inaccurate and take the appropriate action</p>
+
+						<br>
+						<p id="bold">Things that we will not allow in reviews:</p>
+
+						<br>
+						<ul>
+							<li>Rants, venting, or obscenities</li>
+							<li>Personal insults or defamatory attacks (by name, title, or association)</li>
+							<li>Aggressive or discriminatory language</li>
+							<li>Content not relevant or helpful to other renters</li>
+							<li>Text in ALL CAPS or using excessively poor grammar</li>
+						</ul>
+					</div>	
+	</div>
+</div>	

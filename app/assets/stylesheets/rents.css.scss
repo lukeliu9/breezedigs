@@ -293,17 +293,17 @@ margin-bottom: -0.7em;
 .rent-range {
 	float: left;
 	height: 25px;
-	margin-top: 0.65em;
+	margin-top: 0.2em;
 	background: url('rentbar.png');
 	border: 1px solid $blueDark;
 	opacity:0.80; filter: alpha(opacity=80); /* For IE8 and earlier */
 }
 
 .avg-bar {
+	position:relative;
 	height: 33px;
-	width: 4px;
+	width: 3px;
 	margin-top: 0.5em;
-	position: absolute;
 	background: #3a88d0;
 }
 

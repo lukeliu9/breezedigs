@@ -34,9 +34,14 @@ class ReviewsController < ApplicationController
 	end
 
 	def edit
+		@review = Review.find(params[:id])
+		@building = @review.building
 	end
 
 	def destroy
+		@review = Review.find(params[:id])
+		@review.delete
+		redirect_to current_user
 	end
 
 	def setup_building

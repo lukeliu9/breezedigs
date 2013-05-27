@@ -1,5 +1,5 @@
 <% content_for :head do %>
-	<%= stylesheet_link_tag 'profile' %>
+	<%= stylesheet_link_tag 'users' %>
 <% end %>
 
 <% provide(:title, 'My Account') %>
@@ -7,11 +7,93 @@
 <div class="container">
 	
 	<%= render 'profile_header' %>
+	<!-- Code snipped from partial above to be able to manually adjust which buttons i highlgihted depending on the view -->
+		    <li id="user-links">
+	        <ul class="profile-nav">
+	          <li>
+	            <%= link_to "My Account", user_path(current_user), class: "prof-btn selected-btn" %>
+	          </li>
+	          <li>
+	            <%= link_to "Edit Profile & Settings", edit_user_path(current_user), class: "prof-btn" %>
+	          </li>
+	        </ul>
+	      </li>
+	    </ul>
+	  </div>
 
 	<div class="profile-content-area">
-		
-		<div class="review-placeholder">
-			
+		<div class="contributions">
+			<div class="user-contributions">
+				<div class="contributions-header">
+					<h2>Your Reviews</h2>
+					<%= link_to(raw("<button class=\"btn\">Write a new review</button>"), new_review_path) %>
+				</div>
+				<% if @reviews.blank? %>
+					<%= raw("You have not written any reviews yet") %>
+				<% else %>
+					<ul>
+						<% @reviews.each do |review| %>
+							<li>
+								<div id="user-content-each">
+									<h4><%= review.building.name %><span id="building-address-text">, <%= review.building.address %></span></h4>
+							<%= raw("
+								<p><span>Pros:</span> #{review.pros}</p>
+								<p><span>Cons:</span> #{review.cons}</p>
+							") %>
+								</div>
+								<div id="user-edit-link">
+							<%= link_to "Edit Review", edit_review_path(review) %>
+							<%= link_to "Delete Review", review_path(review), confirm: "Are you sure?", method: :delete %>
+								</div>
+							</li>
+						<% end %>
+					</ul>
+				<% end %>
+			</div>
+
+			<div class="user-contributions margin-top-1em">
+				<div class="contributions-header">
+					<h2>Rents You've Submitted</h2>
+					<%= link_to(raw("<button class=\"btn\">Submit a New Rent</button>"), new_rent_path) %>
+				</div>
+				<% if @rents.blank? %>
+				<%= raw("You have not written any reviews yet") %>
+				<% else %>
+					<ul>
+						<% @rents.each do |rent| %>
+							<li>
+								<div id="user-content-each">
+								<h4><%= rent.building.name %><span id="building-address-text">, <%= rent.building.address %></span></h4>
+							<%= raw("
+								<p><span>Rent:</span> #{rent.rent}</p>
+								<p><span>Utilities:</span> #{rent.utilities}</p>
+							") %>
+								</div>
+								<div id="user-edit-link">
+							<%= link_to "Edit rent", edit_rent_path(rent) %><br>
+							<%= link_to "Delete rent", rent_path(rent), confirm: "Are you sure?", method: :delete %>
+								</div>
+							</li>
+						<% end %>
+					</ul>
+				<% end %>
+			</div>
+
+			<div class="user-contributions margin-top-1em">
+				<div class="contributions-header">
+					<h2>Photos You've Added</h2>
+					<%= link_to(raw("<button class=\"btn\">Add a New Photo</button>"), new_photo_path) %>
+				</div>
+			</div>
 		</div>
+
+		<div class="user-sidebar">
+			<h5>Thank you for contributing to our community</h5>
+			<p>BreezeDigs was founded to offer a simple and reliable way for renters to share their experiences to help other renters.</p>
+			<p>The reviews, rental data, and photos you submit add to a growing collection of information that will make the rental process easier and hold agents and landlords accountable for providing better living conditions and playing by the rules.</p>
+			<p>Please take a moment to share our site with your friends to help us in our mission:</p>
+
+		</div>
+
 	</div>
 </div>

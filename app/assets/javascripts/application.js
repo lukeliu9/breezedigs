@@ -17,6 +17,7 @@
 //= require jquery-star-rating
 //= require powertip/powertip.js
 //= require jquery.raty
+//= require jquery.metadata.js
 
 
 

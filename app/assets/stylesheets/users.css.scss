@@ -1,3 +1,157 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "colors";
+
+/* Profile Header */
+
+.profile-header {
+	vertical-align: middle;
+	height: 13em;
+	li {white-space: normal; display:inline-block;}
+	h1 {font-weight:400; color: $grayVeryDark;font-size:1.5em ;color:#24292d; display:inline;}
+	h2 {font-weight:400; color: $grayVeryDark;font-size:1.5em ;color:#24292d; display:inline; margin-left:3px;}
+	h3 {font-weight:300; color: $grayVeryDark;font-size:1.3em ;color:#464e54;}
+}
+
+#avatar {
+	border: 1px solid #59788d;
+	border-radius: 4px;
+	background-color: white;
+	padding: 10px;
+}
+#user-section {
+	width: 52%; margin:0 10px; padding:0 10px;
+}
+
+.profile-nav {
+	margin: 3em 0 0 0;
+	li {
+	list-style: none;
+	display: inline;
+	margin-left: 0.8em;
+	}
+}
+
+.prof-btn {padding: 8px 15px; border-radius: 5px; &:hover {background: #dfeefb;}}
+.selected-btn {background-color: #dfeefb;}
+
+/* Profile Content Area */
+
+.profile-content-area {
+	width: 102%;
+	min-height: 600px;
+	padding: 5px;
+}
+
+.contributions {
+	display: inline-block;
+	vertical-align: top;
+	width: 69%;
+	min-height: 30em;
+	margin-left: 2%;
+	margin-bottom: 10em;
+	padding: 1em 1.2em;
+	border: 1px solid $grayLight;
+	border-radius: 6px;
+}
+.contributions-header {
+	height: 2.2em;
+	background: $blueLight;
+	margin-bottom: 0.9em;
+	padding: 0.5em;
+	border: 1px solid $blueMedium;
+	border-radius: 6px;
+	h2 {
+		display: inline-block;
+		vertical-align: bottom;
+		font-size: 1.1em;
+		font-weight: 400;
+		margin: 0.5em 0 0.4em 0.5em;
+		text-align: left;
+		color: $blueVVDark;
+	}
+	button {
+		display: inline-block;
+		vertical-align: bottom;
+		float: right;
+	}
+}
+
+.user-contributions {
+	padding: 0.7em;
+	background: $blueOffWhite;
+	border: 1px dashed $blueMedium;
+	ul {
+		&:last-child {border: 0;}
+		li {
+			width: 95%;
+			padding: 0.6em 0;
+			border-bottom: 1px solid $blueLight;
+			h4 {
+				font-size: 1.05em;
+				font-weight: 500;
+				color: $gbVeryDark;
+			}
+			p {
+				margin: 0.5em 0 0.5em 0;
+				color: $grayVeryDark;
+			}
+			span {
+				font-weight: 600;
+			}
+			a {
+				font-size: 0.9em;
+			}
+		}
+	}
+}
+#user-content-each {width: 83%; display: inline-block; vertical-align: middle;}
+#user-edit-link {width: 15%;display: inline-block; vertical-align: middle; text-align: right;}
+#building-address-text {font-weight: 300; font-style: italic; font-size: 0.9em;}
+.move-placeholder h3 {font-size: 1.3em;}
+
+.suggestions-placeholder {}
+
+/* Profile Sidebar */
+
+.user-sidebar {
+	display: inline-block;
+	vertical-align: top;
+	width: 20%;
+	margin-left: 1.5%;
+	padding: 0.8em 0.9em;
+	background: $grayVeryLight;
+	border-radius: 7px;
+	h5 {
+		margin: 0 0 1em 0;
+		color: $grayVeryDark;
+		font-size: 1.1em;
+		font-weight: 500;
+	}
+	p {
+		color: $grayDark;
+	}
+}
+
+/* Edit Profile Page */
+
+.edit-box {
+	padding: 10px 20px;
+	width: 45%;
+	border: 1px solid $grayLight;
+	float:left;
+	border-radius: 6px;
+	i {color: $grayDark;}
+}
+
+#right {margin: 45px 0 10px 15px;}
+#left {margin: 45px 15px 10px 10px;}
+
+/* Misc */
+
+#edit-ital {margin-bottom:20px;}
+
+
+

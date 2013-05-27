@@ -275,5 +275,13 @@
 
 .review-btn {
 	display: inline-block;
+	padding: 0.5em;
+	border-radius: 6px;
+	margin-bottom: 0.7em;
+	&:hover {
+		background: #e0f3f9;
+	}
 }
-
+.review-btn-selected {
+	background: #e0f3f9;
+}

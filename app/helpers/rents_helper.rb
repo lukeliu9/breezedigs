@@ -13,7 +13,7 @@ module RentsHelper
 		if util == nil
 			"N/A"
 		else
-			raw("<span>Util:</span> $") << number_with_precision(util, precision: 0, delimiter: ',')
+			raw("<span>Utilities:</span> $") << number_with_precision(util, precision: 0, delimiter: ',')
 		end
 	end
 
@@ -31,7 +31,7 @@ module RentsHelper
 	end
 
 	def show_avg_bar(beds, baths)
-		avg = @rents.average_for(beds, baths, "rent") ? @rents.average_for(beds, baths, "rent").to_f / 120 : 0
+		avg = @rents.average_for(beds, baths, "rent") ? @rents.average_for(beds, baths, "rent").to_f / 60 : 0
 		if avg == 0
 			""
 		else

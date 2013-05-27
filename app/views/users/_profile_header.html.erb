@@ -13,17 +13,6 @@
 			<li id="user-section">
 				<h1><%= @user.first_name %></h1>
 				<h2><%= @user.last_name %></h2>
+				<h3><%= @user.email %></h3>
 			</li>
 
-			<li id="user-links">
-				<ul class="profile-nav">
-					<li><%= link_to "My Reviews", "#", class: "prof-btn selected-btn" %></li>
-					<li><%= link_to "My Move", "#", class: "prof-btn" %></li>
-					<li><%= link_to "Edit Profile", edit_user_registration_path(current_user), class: "prof-btn" %></li>
-					<li><%= link_to "Settings", "#", class: "prof-btn" %></li>
-				</ul>
-			</li>
-		
-		</ul>
-			
-	</div>

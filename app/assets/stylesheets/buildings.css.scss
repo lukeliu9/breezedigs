@@ -24,6 +24,10 @@
 	width: 70%;
 	border-radius: 6px;
 	padding: 0.7em 0.7em 0.7em 0.7em;
+	h2 {
+		font-size: 1.2em;
+		font-weight: 400;
+	}
 }
 
 .building-listing {
@@ -134,54 +138,17 @@
 	margin-bottom: 10em;
 }
 
-.interactive-holder {
-	height: 40em;
-	width: 55%;
-	display: inline-block;
-}
-
-.building-interactive-box {
-	width: 100%;
-	height: 33em;
-	padding:0;
-	border-radius:5px;
-}
-
-.interactive-buttons {
-	width:100%;
-	margin-right: auto;
-	margin-left: auto;
-	margin-bottom: 0.5em;
-	height: 8%;
-	vertical-align: top;
-	text-align: left;
-} /* Button CSS in buttons.css file */
-
-.left-btn	{border-bottom-left-radius: 6px;border-top-left-radius: 6px;}
-.right-btn	{margin-left:-1%; border-bottom-right-radius: 6px; border-top-right-radius: 6px;}
-.left-push	{margin-left:-1%;}
-
-.building-main-area {
-	height: 75%;
-	border: 1px solid $grayMedium;
-	background: white;
-}
-
-.building-thumbnails {
-	width:99.6%;
-	height: 17%;
-	margin-top: -1px;
-	border: 1px solid $grayMedium;
-	background: $blueLight;
+.building-topbar {
+	width: 105%;
 }
 
 .building-info {
 	display: inline-block;
 	vertical-align: top;
 	padding: 0 1.5% 0 1.5%;
-	margin: 0.1em 0 3em 1em;
-	width: 37%;
-	height: 33.5em;
+	margin: 0.1em 0 4em 1em;
+	width: 28%;
+	height: 26.5em;
 	background: white;
 	border: 1px solid $grayMedium;
 	h1 {
@@ -197,15 +164,69 @@
 	}
 }
 #geography {font-size:1em; font-style: italic; color:$grayDark;}
-#address-text {font-size:1em; margin:-0.6em 0 1em 0; padding:0; color: $gbMediumDark;}
+#address-text {font-size:1em; margin:-0.6em 0 1em 0; padding:0; color: $gbDark;}
 
 .building-stats {
 	width: 98%;
 	height: 23em;
-	margin-top: 0.7em;
-	background: white;
 	border-radius: 5px;
-	padding: 1em 0.8em 0.5em 0.8em;
+	padding: 1em 0.5em 0.5em 0.5em;
+	h4 {
+		font-size: 0.95em;
+		color: $grayDark;
+		font-weight: 400;
+		text-align: right;
+	}
+}
+.stats-labels {
+	display: inline-block;
+	width: 59%;
+	margin-left: -3em;
+	padding: 0;
+}
+.stats-stars {
+	display: inline-block;
+	width: 35%;
+}
+
+.interactive-holder {
+	display: inline-block;
+	vertical-align: top;
+	height: 26.75em;
+	width: 65%;
+}
+
+.photos-area {
+	display: inline-block;
+	vertical-align: top;
+	width: 40%;
+	height: 26.75em;
+	background: gray;
+}
+.main-photo {
+	display: block;
+	width: 98%;
+	height: 15em;
+	padding: 1%;
+	background: blue;
+}
+.thumbnails {
+	display: block;
+	width: 98%;
+	height: 8.5em;
+	margin-left: 0;
+	padding: 1%;
+	background: red;
+}
+
+.map-area {
+	display: inline-block;
+	vertical-align: top;
+	width: 54%;
+	height: 25.75em;
+	padding: 1%;
+	border: 1px solid $grayLight;
+	background: white;
 }
 
 .add-photos-floorplans {
@@ -228,9 +249,9 @@
 .reviews {
 	display: inline-block;
 	vertical-align: top;
-	border-radius: 5px;
-	border-top-right-radius: 0;
-	width: 75%;
+	border-radius: 7px;
+	border: 1px solid $grayLight;
+	width: 76%;
 	height: auto;
 	padding:0;
 	margin-left: auto;
@@ -242,8 +263,9 @@
 .review-buttons-box {
 	margin-left: auto;
 	margin-right: auto;
+	padding-top: 1em;
 	width: 90%;
-	height: 4em;
+	height: 5em;
 	display: inline-block;
 	background: white;
 }
@@ -255,10 +277,6 @@
 	padding-right: 3.5%;
 	min-height: 38em;
 	display: inline-block;
-	border-top:1px solid $grayMedium;
-	border-left:1px solid $grayMedium;
-	border-right:1px solid $grayMedium;
-	border-bottom:1px solid $grayMedium;
 }
 
 .single-review {
@@ -274,9 +292,9 @@
 .building-sidebar {
 	display: inline-block;
 	vertical-align: top;
-	margin-left: 2%;
+	margin-left: 1%;
 	padding: 1.2em;
-	width: 19%;
+	width: 18.5%;
 	height: 40em;
 	background: $grayVeryLight;
 }

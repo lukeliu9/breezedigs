@@ -54,7 +54,6 @@ a { text-decoration: none; }
 a:hover { text-decoration: none;}
 
 /* General */
-.center-div {margin-left: auto; margin-right: auto;}
 .main-content-area {margin:0 auto; display: inline-block;}
 .clear {height:0; line-height:0; clear:both;}
 .no-wrap {white-space: nowrap;}
@@ -67,6 +66,8 @@ a:hover { text-decoration: none;}
 	background: url("bgtexture.png");
 }
 
+.container-wider {width: 1000px;}
+
 /* Alignment & display */
 
 .left { float: left; }
@@ -75,8 +76,12 @@ a:hover { text-decoration: none;}
 .top {vertical-align: top;}
 .middle {vertical-align: middle;}
 .inline-block {display: inline-block;}
-
+.center-div {margin-left: auto; margin-right: auto;}
 .hidden {display: none;}
+
+.margin-left-1em {margin-left: 1em;}
+.margin-right-1em {margin-right: 1em;}
+.margin-top-1em {margin-top: 1em}
 
 /* Buffer */
 
@@ -98,16 +103,20 @@ h1 {font-size: 1.4em; letter-spacing: -2px; margin-bottom: 30px; text-align: cen
 h2 { font-size: 1.7em; letter-spacing: -1px;margin-bottom: 30px; text-align: center;font-weight: normal;}
 p { font-size: 0.9em; line-height: 1.1em; }
 #bold { font-weight: 500; }
+.fw-400 {font-weight: 400;}
 .fw-300 {font-weight: 300;}
 .fw-200 {font-weight: 200;}
+#fw-400 {font-weight: 400;}
+#fw-300 {font-weight: 300;}
+#fw-200 {font-weight: 200;}
 
 /* Main Topbar */
 
 .maintopbar {position: absolute; top: 0; left: 0; width: 100%; height: 5em; background-color: #d9eafb; border-bottom: 2px solid #5181b8; text-align:left; opacity:0.75; filter: alpha(opacity=75); /* For IE8 and earlier */}
 .maintopbar nav {padding:0.6em 0; display:inline-block;}
 #logo {font-size: 1.8em; font-weight: bold;margin-top: 2px; margin-right: 25px;&:hover { text-decoration: none; }}
-.header-box {display:inline-block; white-space:normal; width:300px;}
-.header-buttons {width: 45%;}
+.header-box {display:inline-block; white-space:normal; width: 30em;}
+.header-buttons {width: 18%;}
 .header-links {margin: 15px 0;}
 .header-links li {display:inline;margin-left:15px;}
 
@@ -194,6 +203,10 @@ input, textarea, select, .uneditable-input {
 .edit-field {width: 350px;}
 .field-label {margin-bottom: -12px; margin-top: 15px; font-weight: 500;}
 .field-label-special {margin-top: 15px; font-weight: 500;} /* Used for the edit profile page for the form labels that have italic comments underneath */
+::-webkit-input-placeholder { /* WebKit browsers */color: $grayMedium;}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */color: $grayMedium;}
+::-moz-placeholder { /* Mozilla Firefox 19+ */color: $grayMedium;}
+:-ms-input-placeholder { /* Internet Explorer 10+ */color: $grayMedium;}
 
 /* Register & Login */
 

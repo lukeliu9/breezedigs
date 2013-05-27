@@ -14,5 +14,6 @@ class User < ActiveRecord::Base
 
   has_many :reviews
   has_many :rents
+  has_many :photos
 
 end

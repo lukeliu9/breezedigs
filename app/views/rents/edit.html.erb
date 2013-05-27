@@ -1,0 +1,122 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'rents' %>
+<% end %>
+
+<% provide(:title, "Submit a rent") %>
+
+<div class="bg-texture-wrapper">
+	<div class="container">
+
+		<div class="new-rent-form">
+			<h1>Your addition will help other renters - thank you!</h1>
+			<div class="building-profile-rentform">
+				<div class="building-text-rentform">
+					<h2><%= link_to @building.name, building_path(@building) %></h1>
+					<p id="geography"><%= building_geography %></p>
+					<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
+				</div>
+			</div>
+
+				<%= form_for(@rent, validate: true) do |f| %>
+
+				<div class="rent-form-fields">
+
+				<div>
+					<p>Monthly rent <span class="fw-300">($)</span></p>
+					<%= f.text_field :rent,  
+						placeholder: "ex. 1,100" %>
+				</div>
+
+				<div>
+					<p>Monthly utilities <span class="fw-300">($)</span></p>
+					<%= f.text_field :utilities, 
+						placeholder: "ex. 95" %>
+				</div>
+
+				<div id="bedbath">
+					<p>Number of bedrooms</p>
+					<%= f.select :beds, "
+					<option>studio</option>
+					<option>1</option>
+					<option>1.5</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					".html_safe, multiple: false %>
+					<br />
+				</div>
+
+				<div id="bedbath">
+					<p>Number of bathrooms</p>
+						<%= f.select :baths, "
+					<option>1</option>
+					<option>1.5</option>
+					<option>2</option>
+					<option>2.5</option>
+					<option>3</option>
+					<option>3.5</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					".html_safe, multiple: false %>
+				</div>
+
+				<div id="unit-num-field">
+					<p>When did you live here?</p>
+					&nbsp;&nbsp;<i class="icon-info-sign"></i><br>
+						<div id="start-stop">
+						<%= select_year Date.today, start_year: Time.now.year, end_year: Time.now.year - 95, field_name: :start, prefix: :rent %>
+						<p>&nbsp;&nbsp;to&nbsp;&nbsp;</p>
+						<%= select_year Date.today, start_year: Time.now.year, end_year: Time.now.year - 95, field_name: :stop, prefix: :rent %>
+						</div>
+				</div>
+
+				<div id="unit-num-field">
+					<p>Your unit number</p>
+					&nbsp;&nbsp;<i class="icon-info-sign"></i><br>
+					<%= f.text_field :unitnum, 
+						placeholder: "ex. 1205 or 5C" %>
+				</div>
+
+				<div class="tell-us-more"><h5>Can you tell us a bit more?(optional)</h5></div><br>
+
+				<div>
+					<p>Square feet <span class="fw-300">(optional)</span></p>
+					<%= f.text_field :sqft, 
+						placeholder: "ex. 725" %>
+				</div>
+
+				<div>
+					<p>Floor <span class="fw-300">(optional)</span></p>
+					<%= f.text_field :floor, 
+						placeholder: "12" %>
+				</div>
+
+				<div>
+					<p>Additional notes that impact your rent <span class="fw-300">(optional)</span></p>
+					<%= f.text_area :notes,
+						placeholder: "Unique issues and/or good qualities of your unit such as: close to a train, superior finishes, etc.", size: "5x3" %>
+				</div>
+
+				</div>
+
+				<div id="create-review-btn">
+				<%= f.submit 'Update Rent', class: "btn btn-primary btn-large" %>
+				</div>
+
+				<% end %>
+		</div>
+
+		<!-- Sidebar -->
+		<div class="new-rent-sidebar">
+			<h2>&nbsp;Updating your rental data:&nbsp;</h2>
+			<p>Our number one priority is ensuring the accuracy and objectivity of the rental data that we display to users</p>
+
+			<p>As such, we review all content submitted to our site and check for suspicious submissions on a regular basis</p>
+			
+			<p></p>
+		</div>
+	</div>
+</div>

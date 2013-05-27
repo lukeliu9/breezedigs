@@ -26,12 +26,8 @@
 						<%= link_to(raw("<button class=\"btn\">Submit a Rent</button>"), new_building_rent_path(building)) %>
 						<%= link_to raw("<button class=\"btn\">Write the first review</button>"), new_building_review_path(building) %>
 						<% else %>
-						<%= raw("<p id=\"reviews-count\">(") %>
-						<%= building.reviews.count %>
-						<%= raw("Reviews )</p>") %>
-						<%= raw("<p>\"") %>
-						<%= building.reviews.map(&:pros).first %>
-						<%= raw("\"</p>") %>
+						<%= raw("<p id=\"reviews-count\">(#{building.reviews.count} Reviews)</p>") %>
+						<%= raw("<p>\"#{building.reviews.map(&:pros).first} reviews\"") %>
 						<% end %>
 				</div>
 							

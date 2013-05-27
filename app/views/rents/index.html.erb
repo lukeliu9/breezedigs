@@ -16,65 +16,101 @@
 	<div class="container">
 		<div class="building-profile">
 
-			<div class="interactive-holder">
-				<div class="building-interactive-box">
+			<div class="building-topbar">
+				<div class="building-info">
+					<h1><%= @building.name %></h1>
+					<p id="geography"><%= building_geography %></p>
+					<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
 
-						<div class="interactive-buttons">
-							<button class="interactive-btn left-btn" id="selected">Photos</button>
-							<!--<button class="interactive-btn left-push">Map view</button>
-							<button class="interactive-btn left-push">Bird's eye</button>-->
-							<button class="interactive-btn right-btn">Map View</button>
+					<div class="review-rent-btns"><!-- Write review & submit rent btns in bldg prof -->
+						<%= link_to(raw("<button class=\"btn\">Submit a Rent</button>"), new_building_rent_path(@building)) %>
+						<%= link_to(raw("<button class=\"btn\">Write Review</button>"), new_building_review_path(@building)) %>
+					</div>
+
+					<div class="building-stats">
+						<div class="stats-labels">
+							<ul>
+								<li>
+									<h4>Overall Rating:</h4>
+								</li>
+								<li>
+									<h4>Management Rating:</h4>
+								</li>
+								<li>
+									<h4>Staff Rating:</h4>
+								</li>
+								<li>
+									<h4>Maintenance Rating:</h4>
+								</li>
+								<li>
+									<h4>Amenities Rating:</h4>
+								</li>
+								<li>
+									<h4>Neighborhood Rating:</h4>
+								</li>
+								<li>
+									<h4>Safety Rating:</h4>
+								</li>
+								<li>
+									<h4>Noise Rating:</h4>
+								</li>
+								<li>
+									<h4>Transporation Rating:</h4>
+								</li>
+							</ul>
 						</div>
-
-						<div class="building-main-area">
-
+						<div class="stats-stars">
+							<ul>
+								<li>
+									Star
+								</li>
+								<li>
+									Star
+								</li>
+								<li>
+									Star
+								</li>
+								<li>
+									Star
+								</li>
+								<li>
+									Star
+								</li>
+								<li>
+									Star
+								</li>
+								<li>
+									Star
+								</li>
+								<li>
+									Star
+								</li>
+								<li>
+									Star
+								</li>
+							</ul>
 						</div>
-
-						<div class="building-thumbnails">
-
-						</div>
+					</div>
 				</div>
 
-				<div class="add-photos-floorplans">
-					<div class="right">
-					<%= link_to "Add a photo", new_building_photo_path(@building) %></div>
-				</div>
+				<div class="interactive-holder">
+					<div class="building-interactive-box">
+						<div class="photos-area">
+							<div class="main-photo">
+							</div>
 
+							<div class="thumbnails">
+							</div>
+							<%= link_to(raw("Add a Photo"), new_building_photo_path(@building)) %>
+						</div>
+
+						<div class="map-area">
+						
+						</div>
+					</div>
+				</div>
 			</div>
-
-			<div class="building-info">
-				<h1><%= @building.name %></h1>
-				<p id="geography"><%= building_geography %></p>
-				<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
-
-				<div class="review-rent-btns"><!-- Write review & submit rent btns in bldg prof -->
-					<%= link_to(raw("<button class=\"btn\">Add a Photo</button>"), new_building_photo_path(@building)) %>
-					<%= link_to(raw("<button class=\"btn\">Submit a Rent</button>"), new_building_rent_path(@building)) %>
-					<%= link_to(raw("<button class=\"btn\">Write Review</button>"), new_building_review_path(@building)) %>
-				</div>
-
-				<div class="building-stats">
-					<ul>
-						<li>
-						</li>
-						<li>
-						</li>
-						<li>
-						</li>
-						<li>
-						</li>
-						<li>
-						</li>
-						<li>
-						</li>
-						<li>
-						</li>
-						<li>
-						</li>
-					</ul>
-				</div>
-			</div>
-
+			
 			<div class="building-data-toggle"><!-- To switch between reviews and rental data -->
 				<%= link_to "<button class=\"toggle\">Reviews</button>".html_safe, building_reviews_path(@building) %>
 				<%= link_to "<button class=\"toggle tselect\">Rental Data</button>".html_safe, building_rents_path(@building) %>
