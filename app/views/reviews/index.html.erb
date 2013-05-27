@@ -36,74 +36,7 @@
 					</div>
 
 					<div class="building-stats">
-						<div class="stats-labels">
-							<ul>
-								<li>
-									<h4>Overall Rating:</h4>
-								</li>
-								<li>
-									<h4>Management Rating:</h4>
-								</li>
-								<li>
-									<h4>Staff Rating:</h4>
-								</li>
-								<li>
-									<h4>Maintenance Rating:</h4>
-								</li>
-								<li>
-									<h4>Amenities Rating:</h4>
-								</li>
-								<li>
-									<h4>Neighborhood Rating:</h4>
-								</li>
-								<li>
-									<h4>Safety Rating:</h4>
-								</li>
-								<li>
-									<h4>Noise Rating:</h4>
-								</li>
-								<li>
-									<h4>Transporation Rating:</h4>
-								</li>
-							</ul>
-						</div>
-						<div class="stats-stars">
-							<ul>
-								<li>
-									<% (1...@reviews.average_review_rating("overall")).each do %>
-										<input name="review[overall]" type="radio" class="star {split:4}" value="1">
-									<% end %>
-									<input name="review[overall]" type="radio" class="star {split:4}" value="1" checked="checked">
-									<% (5-@reviews.average_review_rating("overall")).times do %>
-										<input name="review[overall]" type="radio" class="star {split:4}" value="1">
-									<% end %>
-								</li>
-								<li>
-									Star
-								</li>
-								<li>
-									Star
-								</li>
-								<li>
-									Star
-								</li>
-								<li>
-									Star
-								</li>
-								<li>
-									Star
-								</li>
-								<li>
-									Star
-								</li>
-								<li>
-									Star
-								</li>
-								<li>
-									Star
-								</li>
-							</ul>
-						</div>
+						<%= render 'buildings/star_ratings' %>
 					</div>
 				</div>
 

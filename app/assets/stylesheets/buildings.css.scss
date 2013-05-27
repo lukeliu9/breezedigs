@@ -148,29 +148,31 @@
 	padding: 0 1.5% 0 1.5%;
 	margin: 0.1em 0 4em 1em;
 	width: 28%;
-	height: 26.5em;
 	background: white;
 	border: 1px solid $grayMedium;
+	border-radius: 6px;
 	h1 {
 		color: $offBlack;
-		font-size: 1.6em;
-		font-weight: 400;
+		font-size: 1.2em;
+		font-weight: 500;
 		text-align: left;
 		margin-bottom: 0;
+		letter-spacing: 0.5px;
 	}
 	p {
-		font-size: 1.1em;
-		line-height: 1.4em;
+		font-size: 0.95em;
+		line-height: 1.2em;
 	}
 }
-#geography {font-size:1em; font-style: italic; color:$grayDark;}
-#address-text {font-size:1em; margin:-0.6em 0 1em 0; padding:0; color: $gbDark;}
-
+#geography {font-size: 0.9em; font-style: italic; color:$grayDark;}
+#address-text {font-size: 0.9em; margin:-0.8em 0 1em 0; padding:0; color: $gbDark;}
+.review-rent-btns {margin-top: -0.5em;}
 .building-stats {
 	width: 98%;
-	height: 23em;
+	display: inline-block;
 	border-radius: 5px;
-	padding: 1em 0.5em 0.5em 0.5em;
+	padding: 1em 0.5em 1em 0.5em;
+	margin-top: -0.7em;
 	h4 {
 		font-size: 0.95em;
 		color: $grayDark;
@@ -179,14 +181,30 @@
 	}
 }
 .stats-labels {
+	vertical-align: top;
 	display: inline-block;
 	width: 59%;
-	margin-left: -3em;
+	margin-left: -2em;
 	padding: 0;
+	ul {
+		li {
+			margin-bottom: 0.75em;
+		}
+	}
 }
 .stats-stars {
+	vertical-align: top;
 	display: inline-block;
-	width: 35%;
+	width: 45%;
+	margin-top: -0.2em;
+	margin-left: -1em;
+	ul {
+		li {
+			display: block;
+			margin-bottom: 0.85em;
+		}
+		&:first-child {line-height: 0.87em}
+	}
 }
 
 .interactive-holder {
@@ -200,7 +218,7 @@
 	display: inline-block;
 	vertical-align: top;
 	width: 40%;
-	height: 26.75em;
+	height: 24em;
 	background: gray;
 }
 .main-photo {
@@ -213,7 +231,7 @@
 .thumbnails {
 	display: block;
 	width: 98%;
-	height: 8.5em;
+	height: 7em;
 	margin-left: 0;
 	padding: 1%;
 	background: red;
@@ -223,7 +241,7 @@
 	display: inline-block;
 	vertical-align: top;
 	width: 54%;
-	height: 25.75em;
+	height: 23em;
 	padding: 1%;
 	border: 1px solid $grayLight;
 	background: white;
