@@ -67,7 +67,7 @@
 					<p>When did you live here?</p>
 					&nbsp;&nbsp;<i class="icon-info-sign"></i><br>
 						<div id="start-stop">
-						<%= select_year Date.today, start_year: Time.now.year, end_year: Time.now.year - 95, field_name: :start, prefix: :rent %>
+						<%= select_year @rent.start, start_year: Time.now.year, end_year: Time.now.year - 95, field_name: :start, prefix: :rent %>
 						<p>&nbsp;&nbsp;to&nbsp;&nbsp;</p>
 						<%= select_year Date.today, start_year: Time.now.year, end_year: Time.now.year - 95, field_name: :stop, prefix: :rent %>
 						</div>

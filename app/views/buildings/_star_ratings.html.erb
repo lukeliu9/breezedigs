@@ -1,8 +1,27 @@
-<div class="stats-labels">
+<div id="overall-rating-div">
 	<ul>
 		<li>
-			<h4>Overall Rating:</h4>
+			<h4><span>Overall Rating:</span></h4>
 		</li>
+		<li id="overall-avg-stars">
+			<% if @reviews.average_review_rating("overall").nil? %>
+				<% 20.times do %>
+					<input name="review[overall]" type="radio" class="star {split:4}" value="1" disabled="disabled">
+				<% end %>
+			<% else %>
+				<% (1...(@reviews.average_review_rating("overall")*4).round).each do %>
+					<input name="review[overall]" type="radio" class="star {split:4}" value="1" disabled="disabled">
+				<% end %>
+				<input name="review[overall]" type="radio" class="star {split:4}" value="1" checked="checked" disabled="disabled">
+				<% (20-(@reviews.average_review_rating("overall")*4).round).times do %>
+					<input name="review[overall]" type="radio" class="star {split:4}" value="1" disabled="disabled">
+				<% end %>
+			<% end %>
+		</li>
+	</ul>
+</div>
+<div class="stats-labels">
+	<ul>
 		<li>
 			<h4>Management Rating:</h4>
 		</li>
@@ -32,21 +51,6 @@
 <div class="stats-stars">
 	<ul>
 		<li>
-			<% if @reviews.average_review_rating("overall").nil? %>
-				<% 20.times do %>
-					<input name="review[overall]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
-			<% else %>
-				<% (1...(@reviews.average_review_rating("overall")*4).round).each do %>
-					<input name="review[overall]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
-				<input name="review[overall]" type="radio" class="star {split:4}" value="1" checked="checked" disabled="disabled">
-				<% (20-(@reviews.average_review_rating("overall")*4).round).times do %>
-					<input name="review[overall]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
-			<% end %>	
-		</li><br><br>
-		<li>
 			<% if @reviews.average_review_rating("management_rating").nil? %>
 				<% 20.times do %>
 					<input name="review[management_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
@@ -60,7 +64,7 @@
 					<input name="review[management_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
 				<% end %>
 			<% end %>
-		</li><br>
+		</li><br><br>
 		<li>
 			<% if @reviews.average_review_rating("staff_rating").nil? %>
 				<% 20.times do %>

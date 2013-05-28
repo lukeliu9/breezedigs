@@ -22,5 +22,8 @@ class ApplicationController < ActionController::Base
    		render 'shared/search_results'
    		end
    		# Configure routes
-   	end
+   end
+
+   private
+   
 end

@@ -1,6 +1,6 @@
 GIT
   remote: http://github.com/thoughtbot/paperclip.git
-  revision: 2a74ca48f5a693566c179fa6c587e460b9584735
+  revision: f55173018e246f2f8c196474cb85c7288491644c
   specs:
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
@@ -171,8 +171,6 @@ GEM
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-raty-rails (0.0.1)
-      rails (~> 3.2.3)
     jquery-star-rating-rails (4.0.4)
       rails (>= 3.1.0)
     json (1.8.0)
@@ -202,7 +200,7 @@ GEM
       polyamorous (~> 0.5.0)
     method_source (0.8.1)
     mime-types (1.23)
-    multi_json (1.7.3)
+    multi_json (1.7.4)
     multipart-post (1.2.0)
     netrc (0.7.7)
     nokogiri (1.5.9)
@@ -296,7 +294,7 @@ GEM
     sassy-buttons (0.1.4)
       compass (>= 0.12.2)
       sass (>= 3.2.0)
-    selenium-webdriver (2.32.1)
+    selenium-webdriver (2.33.0)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
       rubyzip
@@ -375,7 +373,6 @@ DEPENDENCIES
   guard-spork (= 1.2.0)
   heroku (= 2.26.7)
   jquery-rails
-  jquery-raty-rails
   jquery-star-rating-rails
   kaminari
   launchy (= 2.1.0)

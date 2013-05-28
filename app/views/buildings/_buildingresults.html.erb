@@ -14,7 +14,11 @@
 				<div class="building-listing-info">
 					<div>
 						<h3><%= building.name%></h3>
-
+						<% if building.reviews.nil? || building.reviews.blank? %>
+							<img src="/assets/stars/star0.png" height="16px" width="80px">
+						<% else %>
+						<%= star_image((building.reviews.average("overall")*4).round) %>
+						<% end %>
 					</div>
 					<h4>
 					<%= geogrify(building) %>

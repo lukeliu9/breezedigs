@@ -29,4 +29,8 @@ class Rent < ActiveRecord::Base
  	 where(beds: beds, baths: baths).minimum(:rent)
   end
 
+  def self.count_rents(beds, baths)
+  	where(beds: beds, baths: baths).count
+  end
+
 end

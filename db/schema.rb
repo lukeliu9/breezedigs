@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130525210036) do
+ActiveRecord::Schema.define(:version => 20130527230901) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -65,10 +65,11 @@ ActiveRecord::Schema.define(:version => 20130525210036) do
     t.integer  "area_id"
     t.integer  "city_id"
     t.integer  "neighborhood_id"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "status",          :default => "unapproved"
     t.integer  "reviews_count"
+    t.boolean  "gmaps"
   end
 
   add_index "buildings", ["slug"], :name => "index_buildings_on_slug"
@@ -179,6 +180,7 @@ ActiveRecord::Schema.define(:version => 20130525210036) do
     t.text     "parktrans"
     t.text     "unitamen"
     t.string   "status",                :default => "unapproved"
+    t.text     "flagged",               :default => "no"
   end
 
   create_table "users", :force => true do |t|

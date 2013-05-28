@@ -44,14 +44,23 @@ class Building < ActiveRecord::Base
     end
   end
 
-  geocoded_by :address
+  acts_as_gmappable
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
 
-  # def address
-  #   [address, city].compact.join(', ')
-  # end
+  def gmaps4rails_address
+    "#{self.address}, #{self.zip}"
+  end
+
+  def self.star_avg_image(rating)
+      self.reviews.average_review_rating(rating)
+  end
+
+  def average_review_rating(rating)
+    return nil if self.blank?
+    self.average(rating)
+  end
 
   private
 

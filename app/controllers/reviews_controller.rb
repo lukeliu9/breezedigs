@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
 	def index
 		@building = Building.find(params[:building_id])
 		@reviews = @building.reviews
+		@json = @building.to_gmaps4rails
 	end
 
 	def new

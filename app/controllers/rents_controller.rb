@@ -25,6 +25,7 @@ class RentsController < ApplicationController
 	def index
 		@building = Building.find(params[:building_id])
 		@rents = @building.rents
+		@reviews = @building.reviews
 	end
 
 	def show

@@ -18,7 +18,7 @@
 //= require powertip/powertip.js
 //= require jquery.raty
 //= require jquery.metadata.js
-
-
+//= require gmaps4rails/gmaps4rails.googlemaps
+//= require gmaps4rails/gmaps4rails.base
 
 

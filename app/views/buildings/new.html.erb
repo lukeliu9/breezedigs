@@ -10,11 +10,13 @@
 
 <div class="bg-texture-wrapper">
   <div class="container">
+    <div class="center-div">
       <% if @product && !@product.new_record %>
         <%= render 'thanks' %>
       <% else %>
         <%= render 'newbuildingform' %>
       <% end %>
+    </div>
   </div>
 </div>
 

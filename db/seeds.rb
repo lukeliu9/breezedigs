@@ -359,10 +359,10 @@ puts "Minneapolis"
 	Area.create!(name: name, city_id: 1)
 end
 puts "NYC areas"
-=end
+#=end
 
 # Seed neighborhoods
-=begin
+#=begin
 # San Fran neighborhoods
 # Downtown
 ["Financial District", "Japantown", "Nob Hill", "Panhandle", "Russian Hill", "Sunset", "Castro District", "Fisherman's Wharf", "Lower Height", "Noe Valley", "Potrero Hill", "Sea Cliff", "Tenderloin", "Chinatown", 

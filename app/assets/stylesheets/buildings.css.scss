@@ -56,11 +56,16 @@
 	display: inline-block;
 	vertical-align: top;
 	h3 {
+		display: inline-block;
 		font-size:1.2em;
 		font-weight:350;
 		color: $offBlack;
 		padding:0 0 0 0;
 		margin:0;
+	}
+	img {
+		display: inline-block;
+		margin-left: 0.5em;
 	}
 	h4 {
 		color: $grayVeryDark;
@@ -132,10 +137,26 @@
 /* Building Profile */
 
 .building-profile {
-	width:100%;
+	width:105%;
 	display: inline-block;
 	margin-top: 3em;
 	margin-bottom: 10em;
+}
+
+.building-content-area {
+	display: inline-block;
+	vertical-align: top;
+	border-right: 1px solid $grayLight;
+	padding-right: 1.5%;
+	width: 61.75%;
+}
+.building-sidebar {
+	display: inline-block;
+	vertical-align: top;
+	width: 32%;
+	height: 2em;
+	margin-left: 0.5%;
+	padding: 0.7em;
 }
 
 .building-topbar {
@@ -146,8 +167,8 @@
 	display: inline-block;
 	vertical-align: top;
 	padding: 0 1.5% 0 1.5%;
-	margin: 0.1em 0 4em 1em;
-	width: 28%;
+	margin: 0.1em 0 4em 0;
+	width: 41%;
 	background: white;
 	border: 1px solid $grayMedium;
 	border-radius: 6px;
@@ -171,7 +192,7 @@
 	width: 98%;
 	display: inline-block;
 	border-radius: 5px;
-	padding: 1em 0.5em 1em 0.5em;
+	padding: 1em 0.5em 0.5em 0.5em;
 	margin-top: -0.7em;
 	h4 {
 		font-size: 0.95em;
@@ -179,11 +200,34 @@
 		font-weight: 400;
 		text-align: right;
 	}
+	span {
+		color: $offBlack;
+		font-weight: 600;
+	}
 }
+#overall-rating-div {
+	width: 16.5em;
+	height: 1.75em;
+	margin: 0.5em 0 0.75em 1.9em;
+	padding-left: 0em;
+	background: $blueLight;
+	border: 1px solid $blueLight;
+	border-radius: 6px;
+	ul {
+		margin-left: 1.5em;
+		margin-top: -0.4em;
+		li {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}
+#overall-avg-stars {margin-left: 1em;}
 .stats-labels {
 	vertical-align: top;
 	display: inline-block;
 	width: 59%;
+	margin-top: -1em;
 	margin-left: -2em;
 	padding: 0;
 	ul {
@@ -196,7 +240,7 @@
 	vertical-align: top;
 	display: inline-block;
 	width: 45%;
-	margin-top: -0.2em;
+	margin-top: -1.2em;
 	margin-left: -1em;
 	ul {
 		li {
@@ -207,31 +251,24 @@
 	}
 }
 
-.interactive-holder {
-	display: inline-block;
-	vertical-align: top;
-	height: 26.75em;
-	width: 65%;
-}
-
 .photos-area {
 	display: inline-block;
 	vertical-align: top;
-	width: 40%;
+	width: 50%;
 	height: 24em;
 	background: gray;
 }
 .main-photo {
 	display: block;
 	width: 98%;
-	height: 15em;
+	height: 17em;
 	padding: 1%;
 	background: blue;
 }
 .thumbnails {
 	display: block;
 	width: 98%;
-	height: 7em;
+	height: 5em;
 	margin-left: 0;
 	padding: 1%;
 	background: red;
@@ -240,8 +277,9 @@
 .map-area {
 	display: inline-block;
 	vertical-align: top;
-	width: 54%;
+	width: 100%;
 	height: 23em;
+	margin-top: -0.5em;
 	padding: 1%;
 	border: 1px solid $grayLight;
 	background: white;
@@ -258,63 +296,19 @@
 
 .building-data-toggle {
 	width: 95%;
-	margin-top: -2em;
+	margin-top: -3em;
 	margin-left: auto;
 	margin-right: auto;
-	margin-bottom: 2em;
-}
-
-.reviews {
-	display: inline-block;
-	vertical-align: top;
-	border-radius: 7px;
-	border: 1px solid $grayLight;
-	width: 76%;
-	height: auto;
-	padding:0;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 0.1em;
-	background: white;
-}
-
-.review-buttons-box {
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 1em;
-	width: 90%;
-	height: 5em;
-	display: inline-block;
-	background: white;
-}
-
-.review-btn-b {margin-top: 1.5em;}
-
-.review-content {
-	width: 96%;
-	padding-right: 3.5%;
-	min-height: 38em;
-	display: inline-block;
-}
-
-.single-review {
-	width: 98%;
-	min-height: 2em;
-	margin: 2%;
-	padding: 1.5%;
-	border-radius: 6px;
-}
+	margin-bottom: 1em;
+} 
 
 /* Advertisement & Contact Manager Box */
 
-.building-sidebar {
-	display: inline-block;
-	vertical-align: top;
-	margin-left: 1%;
-	padding: 1.2em;
-	width: 18.5%;
-	height: 40em;
-	background: $grayVeryLight;
+.ad-holder-336 {
+	width: 92%;
+	margin-top: 2em;
+	padding: 4%;
+	border: 1px solid $grayLight;
 }
 
 /* New building form */

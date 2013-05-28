@@ -15,7 +15,7 @@
  *= require fonts
  *= require colors
  *= require jquery-star-rating
- 
+ *= require gmaps4rails
  */
 
 @import "sassy-buttons"

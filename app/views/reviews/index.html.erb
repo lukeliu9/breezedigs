@@ -14,7 +14,6 @@
 	<%= javascript_include_tag "buildings" %>
 <% end %>
 
-
 <% provide(:title, @building.name) %>
 
 <div class="bg-texture-wrapper">
@@ -24,6 +23,7 @@
 			<%= content_tag(:div, value, class: "alert alert-#{key}") %>
 			<% end %>
 
+			<div class="building-content-area">
 			<div class="building-topbar">
 				<div class="building-info">
 					<h1><%= @building.name %></h1>
@@ -39,22 +39,14 @@
 						<%= render 'buildings/star_ratings' %>
 					</div>
 				</div>
-
-				<div class="interactive-holder">
-					<div class="building-interactive-box">
-						<div class="photos-area">
-							<div class="main-photo">
-							</div>
-
-							<div class="thumbnails">
-							</div>
-							<%= link_to(raw("Add a Photo"), new_building_photo_path(@building)) %>
-						</div>
-
-						<div class="map-area">
-						
-						</div>
+				
+				<div class="photos-area">
+					<div class="main-photo">
 					</div>
+
+					<div class="thumbnails">
+					</div>
+					<%= link_to(raw("Add a Photo"), new_building_photo_path(@building)) %>
 				</div>
 			</div>
 
@@ -64,32 +56,110 @@
 			</div>
 
 				<div class="reviews">
-					<div class="review-buttons-box">
-						<%= render 'reviewbuttons' %>
+					<div class="review-header">
+						<h2><%= pluralize(@reviews.count,'review') %> for this building</h2>
 					</div>
 
 					<div class="review-content">
-						<div class="single-review">
 							<% @reviews.each do |review| %>
-							<%= raw("<div class=\"review unhidden\" id=\"pros\">#{review.pros}</div>") %>
-							<%= raw("<div class=\"review\" id=\"cons\">#{review.cons}</div>") %>
-							<%= raw("<div class=\"review\" id=\"mgmt\">#{review.msm}</div>") %>
-							<%= raw("<div class=\"review\" id=\"rnsn\">#{review.nsn}</div>") %>
-							<%= raw("<div class=\"review\" id=\"uamen\">#{review.unitamen}</div>") %>
-							<%= raw("<div class=\"review\" id=\"ptrans\">#{review.parktrans}</div>") %>
-							<%= raw("<div class=\"review\" id=\"adv\">#{review.advice}</div>") %>
-							<% end %>
-						</div>
+							<div class="single-review-header">
+								<div>									
+									<h4>Overall rating:</h4>
+									<%= star_image((review[:overall]*4).round) %>
+									<p>
+										Posted by: <%= review.user.first_name.capitalize %> <%= review.user.last_name[0,1].capitalize %>. on <%= review.created_at.strftime("%d %b. %Y") %>
+									</p>
+								</div>
+								<div>
+
+								</div>
+							</div>
+							<div class="review">
+								<div class="other-review-ratings">
+									<div class="other-stats-labels">
+										<ul>
+											<li>
+												<h4>Management Rating:</h4>
+											</li>
+											<li>
+												<h4>Staff Rating:</h4>
+											</li>
+											<li>
+												<h4>Maintenance Rating:</h4>
+											</li>
+											<li>
+												<h4>Amenities Rating:</h4>
+											</li>
+											<li>
+												<h4>Neighborhood Rating:</h4>
+											</li>
+											<li>
+												<h4>Safety Rating:</h4>
+											</li>
+											<li>
+												<h4>Noise Rating:</h4>
+											</li>
+											<li>
+												<h4>Transporation Rating:</h4>
+											</li>
+										</ul>
+									</div>
+									<div class="review-other-stars">
+										<ul>
+											<li>
+												<%= light_star_image((review[:management_rating]*4).round) %>
+											</li>
+											<li>
+												<%= light_star_image((review[:staff_rating]*4).round) %>	
+											</li>
+											<li>
+												<%= light_star_image((review[:maintenance_rating]*4).round) %>
+											</li>
+											<li>
+												<%= light_star_image((review[:amenities_rating]*4).round) %>
+											</li>
+											<li>
+												<%= light_star_image((review[:neighborhood_rating]*4).round) %>
+											</li>
+											<li>
+												<%= light_star_image((review[:safety_rating]*4).round) %>
+											</li>
+											<li>
+												<%= light_star_image((review[:noise_rating]*4).round) %>
+											</li>
+											<li>
+												<%= light_star_image((review[:transportation_rating]*4).round) %>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="review-text">
+								<p><span>Pros -</span> <%= raw("#{review.pros}")%></p>
+								<p><span>Cons -</span> <%= raw("#{review.cons}")%></p>
+								<p><span>Management & Staff -</span> <%= raw("#{review.msm}")%></p>
+								<p><span>Neighborhood, Safety & Noise -</span> <%= raw("#{review.nsn}")%></p>
+								<p><span>Amenities & Unit Quality -</span> <%= raw("#{review.unitamen}")%></p>
+								<p><span>Parking & Transportation -</span> <%= raw("#{review.parktrans}")%></p>
+								<p><span>Advice -</span> <%= raw("#{review.advice}")%></p>
+								<br><%= share_icons %>
+								</div>
+							</div>
+						<% end %>
 					</div>
 				</div>
-
-				<div class="building-sidebar">
-					ad
-				</div>
-
-			<div class="building-contact">
 			</div>
+				<div class="building-sidebar">
+					<div class="map-area">
+						<%= gmaps4rails(@json) %>
+					</div>
 
-		</div>
+					<div class="ad-holder-336">
+						<div class="ad-336">
+
+						</div>
+					</div>
+
+				</div>
 	</div>
+</div>
 </div>

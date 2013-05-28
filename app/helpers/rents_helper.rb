@@ -18,24 +18,24 @@ module RentsHelper
 	end
 
 	def show_rent_bar(beds, baths)
-		min = @rents.get_rents_min(beds, baths).to_f / 60
+		min = @rents.get_rents_min(beds, baths) ? (@rents.get_rents_min(beds, baths)-500).to_f / 120 : ""
 		rent = @rents.average_for(beds, baths, "rent")
-		range = rent_range(beds, baths).to_f / 60
+		range = rent_range(beds, baths).to_f / 120
 
 		if rent == nil
 			raw("<h6>N/A</h6>").html_safe
 		else
-			raw("<div class=\"rent-range\" style=\"width: #{range}%; margin-left: #{min}%;\">
+			raw("<div class=\"rent-range\" style=\"width: #{range}em; margin-left: #{min}em;\">
 											</div>").html_safe
 		end
 	end
 
 	def show_avg_bar(beds, baths)
-		avg = @rents.average_for(beds, baths, "rent") ? @rents.average_for(beds, baths, "rent").to_f / 60 : 0
+		avg = @rents.average_for(beds, baths, "rent") ? (@rents.average_for(beds, baths, "rent")-499).to_f / 120 : 0
 		if avg == 0
 			""
 		else
-			raw("<div class=\"avg-bar\" style=\"margin-left: #{avg}%\"></div>").html_safe
+			raw("<div class=\"avg-bar\" style=\"margin-left: #{avg}em\"></div>").html_safe
 		end
 	end
 
