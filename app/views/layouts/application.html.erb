@@ -2,9 +2,9 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= yield :head %>
   <%= javascript_include_tag "application", "rails.validations" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= csrf_meta_tags %>
 
  	<!--[if lt IE 8]>
@@ -14,6 +14,7 @@
 </head>
 
 <body>
+	<%= yield :scripts %>
 	<div id="holder">
 
 	<%= render 'layouts/header' %>	
@@ -23,7 +24,6 @@
 	</div>
 
 <%= render 'layouts/footer' %>
-<%= yield :scripts %>
 </div>
 
 </body>

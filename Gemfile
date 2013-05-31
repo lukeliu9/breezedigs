@@ -16,7 +16,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-gem 'paperclip', :git => "http://github.com/thoughtbot/paperclip.git"
+gem "paperclip", "~> 3.0"
 gem 'wicked'
 gem 'sunspot_rails'
 gem 'friendly_id'
@@ -26,7 +26,6 @@ gem "geocoder"
 gem 'gmaps4rails'
 gem 'activerecord-reputation-system'
 gem 'contact_us', '~> 0.4.0'
-gem 'carrierwave'
 gem "rmagick"
 gem 'jquery-star-rating-rails'
 

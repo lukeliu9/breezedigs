@@ -96,9 +96,6 @@
 	height: 40em;
 	display: inline-block;
 	border-radius: 8px;
-	h1 {
-		color: $grayDark;
-	}
 }
 
 .about-people {
@@ -194,14 +191,43 @@
 }
 
 /* Contact */
-
+#title {font-size: 1.4em; font-weight: 400; color: $grayVeryDark; margin-top: 3em;}
 .contact-sidebar {
-
+	display: inline-block;
+	vertical-align: top;
+	width: 30%;
+	padding: 1em;
+	background: $grayVeryLight;
+	border-radius: 6px;
+	h3 {
+		margin-top: 0em;
+		font-size: 1.2em;
+		font-weight: 500;
+	}
+	h4 {
+		font-size: 1.1em;
+		font-weight: 400;
+	}
+	p {
+		font-size: 1em;
+		font-weight: 300;
+	}
 }
 
 .contact-content {
-
+	display: inline-block;
+	vertical-align: top;
+	width: 55%;
+	margin-left: 3em;
+	padding-bottom: 5em;
+	select {height: 3em;}
+	li {
+		list-style: none;
+	}
+	input {width: 20em;}
 }
+
+.commit {text-align: right;}
 
 /* Advertise */
 
@@ -225,7 +251,6 @@
 	background: white;
 	h1 {
 		margin-bottom: 1em;
-		color: $offBlack;
 		text-align: left;
 	}
 	h2 {
@@ -307,7 +332,6 @@
 	h1 {
 		margin: 2em 0 2em 0;
 		padding: 0;
-		color: $grayDark;
 		font-weight: 400;
 		letter-spacing: 1px;
 	}

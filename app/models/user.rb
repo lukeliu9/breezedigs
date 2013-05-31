@@ -12,8 +12,8 @@ class User < ActiveRecord::Base
   { medium: "300x300>", thumb: "100x100>" }, 
   default_url: "profileplaceholder.png"
 
-  has_many :reviews
-  has_many :rents
-  has_many :photos
+  has_many :reviews, dependent: :destroy
+  has_many :rents, dependent: :destroy
+  has_many :photos, dependent: :destroy
 
 end

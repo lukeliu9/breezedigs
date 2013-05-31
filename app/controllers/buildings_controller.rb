@@ -38,6 +38,11 @@ class BuildingsController < ApplicationController
 	  			#facet :areas
 			end
 	  		@buildings = Building.where(id: @search.results.map(&:id)).page(params[:page]).per(10)
+	  		@json = @buildings.to_gmaps4rails do |building, marker|
+  				marker.infowindow render_to_string(:partial => "/buildings/infowindow", :locals => { :building => building})
+    			marker.title "#{building.name}"
+    			marker.json({ :population => building.address})
+    		end
 	  	end
 	end
 

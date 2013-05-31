@@ -3,5 +3,5 @@ class Photo < ActiveRecord::Base
   
   belongs_to :user
   belongs_to :building
-  # mount_uploader :photo, ImageUploader
+ 
 end

@@ -3,10 +3,10 @@ class Building < ActiveRecord::Base
   :latitude, :longitude, :area, :neighborhood, :website, :zip, 
   :management, :city_id, :area_id, :neighborhood_id, :slug, :status
 
-  has_many :reviews
-  has_many :rents
-  has_many :photos
-  has_many :floorplans
+  has_many :reviews, dependent: :destroy
+  has_many :rents, dependent: :destroy
+  has_many :photos, dependent: :destroy
+  has_many :floorplans, dependent: :destroy
 
   belongs_to :city
   belongs_to :area

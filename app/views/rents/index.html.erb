@@ -232,6 +232,25 @@
 			              	<tr class="rent-row">
 			              		<td id="rent-type-cell">
 			              			<h4>
+			              				2 beds, 3 baths
+			              			</h4>
+			              			<p>(<%= pluralize(@rents.count_rents(2, 2.5), 'Rent') %>)</p>
+			              		</td>
+								<td id="rent-avg-cell">
+									<h5><%= get_rent_avg(2, 3) %></h5>
+									<h5><%= get_util_avg(2, 3) %></h5>
+								</td>
+								<td id="rent-bars-cell">
+									<div class="rent-holder">
+										<%= show_rent_bar(2, 3) %>
+										<%= show_avg_bar(2, 3) %>
+									</div>
+								</td>
+			              	</tr>
+
+			              	<tr class="rent-row">
+			              		<td id="rent-type-cell">
+			              			<h4>
 			              				3 beds, 2 baths
 			              			</h4>
 			              			<p>(<%= pluralize(@rents.count_rents(3, 2), 'Rent') %>)</p>
@@ -427,6 +446,12 @@
 			<div class="building-sidebar">
 				<div class="map-area">
 					
+				</div>
+				
+				<div class="ad-holder-336">
+					<div class="ad-336">
+
+					</div>
 				</div>
 			</div>
 		</div>

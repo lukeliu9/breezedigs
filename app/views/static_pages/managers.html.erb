@@ -1,0 +1,45 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'static_pages' %>
+<% end %>
+
+<% provide(:title, 'Managers') %>
+
+<div class="bg-texture-wrapper">
+	<div class="container">
+		<div class="static-content">
+			<div class="static-selector">
+				<ul>
+					<%= link_to(raw("<li>Advertise</li>"), advertise_path) %>
+					<%= link_to(raw("<li>Partners</li>"), partners_path) %>
+					<%= link_to(raw("<li class=\"static-selected\">Managers</li>"), managers_path) %>
+				</ul>
+			</div>
+			<!-- Content -->
+			<h1>About BreezeDigs</h1>
+			<p>BreezeDigs is the number one place online for reviews and rental information for apartment buildings. Our users trust us to gather objective information from renters so they can make informed decisions about their living situation and avoid common pitfalls in the rental process</p>
+			<br>
+			<h1>Benefits to Managers</h1>
+			<p>Our community is based on trust and a desire by renters to help others future renters.</p>
+
+			<p>In the universe of property managers & management companies, the difference between good and bad managers can be tremendous.</p>
+
+			<p>However, it is difficult for renters to know which managers will be responsive and properly care for the building versus the ones that are indifferent and behave unethically.</p>
+
+			<p>By joining BreezeDigs as a verified property managers, you will be able to:</p>
+
+			<li>Respond to individual reviews to offer your perspective</li>
+			<li>Keep your building's information up to date</li>
+			<li>Post information about building events, news, & initiatives</li>
+			<li>Find leads for potential renters</li>
+			<li>Post available units in your building</li>
+			<br>
+			<h1>How to Get Started</h1>
+			<p>We are currently in the process of developing our suite of tools for property managers and agents.</p>
+			<p>If you would like to get involved and/or be one of our beta users for our manager/agent platform, please send us a note <%= link_to "here", contact_us_path %></p>
+			<br>
+
+		</div>
+		<div class="em-buffer-5"></div>
+		<div class="em-buffer-3"></div>
+	</div>
+</div>

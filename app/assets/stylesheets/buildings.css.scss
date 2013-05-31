@@ -7,23 +7,43 @@
 /* Search Sidebar */
 
 .search-sidebar {
-	width: 28%;
+	width: 35%;
 	vertical-align: top;
 	display: inline-block;
-	min-height: 20em; width: 13em;
-	margin:0 0.7em 0 0;
-	border-right: 1px solid $grayLight;
+	min-height: 20em;
+	margin:0 1em 0 0;
+	padding: 0.7em 0 0 0;
+}
+
+.search-options {
+
 }
 
 /* Building Results */
+
+.results-header {
+	margin-bottom: 1em;
+	padding: 0.7em 0;
+	border-radius: 6px;
+	background: $gbVeryLight;
+	h2 {
+		padding: 0;
+		margin: 0;
+		color: $blueVVVDark;
+		font-weight: 300;
+		font-size: 1em;
+	}
+}
 
 .building-results {
 	vertical-align: top;
 	display: inline-block;
 	min-height: 10em;
-	width: 70%;
+	width: 60%;
+	border: 1px solid $grayLight;
 	border-radius: 6px;
 	padding: 0.7em 0.7em 0.7em 0.7em;
+	background: white;
 	h2 {
 		font-size: 1.2em;
 		font-weight: 400;
@@ -31,7 +51,7 @@
 }
 
 .building-listing {
-	width: 112%;
+	width: 100%;
 	padding: 1em 0.5em 1em 0;
 	border-bottom: 1px dashed #778390;
 	&:hover {
@@ -91,7 +111,7 @@
 		color: $blueVVDark;
 	}
 }
-#reviews-count {color: $gbDark; font-weight: 500;}
+#reviews-count {color: $grayDark; font-weight: 300;}
 
 .review-summary {
 	display: inline-block;
@@ -173,11 +193,9 @@
 	border: 1px solid $grayMedium;
 	border-radius: 6px;
 	h1 {
-		color: $offBlack;
 		font-size: 1.2em;
 		font-weight: 500;
 		text-align: left;
-		margin-bottom: 0;
 		letter-spacing: 0.5px;
 	}
 	p {
@@ -240,12 +258,12 @@
 	vertical-align: top;
 	display: inline-block;
 	width: 45%;
-	margin-top: -1.2em;
+	margin-top: -0.6em;
 	margin-left: -1em;
 	ul {
 		li {
 			display: block;
-			margin-bottom: 0.85em;
+			margin-bottom: 0.28em;
 		}
 		&:first-child {line-height: 0.87em}
 	}
@@ -269,7 +287,7 @@
 	display: block;
 	width: 98%;
 	height: 5em;
-	margin-left: 0;
+	margin: 0;
 	padding: 1%;
 	background: red;
 }
@@ -280,9 +298,23 @@
 	width: 100%;
 	height: 23em;
 	margin-top: -0.5em;
-	padding: 1%;
+	padding: 1% 0 1% 2%;
 	border: 1px solid $grayLight;
 	background: white;
+}
+
+.info-window {/*Styles the popup info windows in the google map results on building seach results page*/
+	width: 18em;
+	height: 3.5em;
+	padding: 0;
+	border-radius: 6px;
+	h1 {
+		font-weight: 400;
+		font-size: 1em;
+	}
+	h2 {
+		font-size: 0.9em;
+	}
 }
 
 .add-photos-floorplans {

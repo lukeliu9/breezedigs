@@ -1,0 +1,66 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'static_pages' %>
+<% end %>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<% provide(:title, 'Contact Us') %>
+
+<div class="container">
+  <div class="main-content-area">
+    <h1 id="title">We love hearing from our users and potential business partners. Please get in touch with us below:</h1>
+    <div class="contact-sidebar">
+      <h3>Like our Facebook Page</h3>
+      <div class="fb-like-box" data-href="https://www.facebook.com/breezedigs" data-width="292" data-show-faces="true" data-stream="false" data-show-border="false" data-header="false"></div>
+    </div>
+
+    <div class="contact-content">
+      <%= form_for @contact, :url => contacts_path, :html => {:class => 'formtastic'} do |f| %>
+        <% if ContactUs.require_name %>
+          <li class='string required' id='contact_us_contact_name_input'>
+            <%= f.label :name, (t('.name') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+            <%= f.text_field :name, class: "name" %>
+            <% if f.object.errors[:name].present? %>
+              <p class='inline-error'><%= f.object.errors[:name].join(' and ') %></p>
+            <% end %>
+          </li>
+        <% end %>
+        <li class='string required' id='contact_us_contact_email_input'>
+          <%= f.label :email, (t('.email') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+          <%= f.text_field :email, class: "email" %>
+          <% if f.object.errors[:email].present? %>
+            <p class='inline-error'><%= f.object.errors[:email].join(' and ') %></p>
+          <% end %>
+        </li>
+        <% if ContactUs.require_subject %>
+          <li class='string required' id='contact_us_contact_subject_input'>
+            <%= f.label :subject, (t('.subject') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+            <%= f.select :subject, ["Support & technical questions","General feedback & suggestions","Partnership inquiry", "Adertising inquiry", "Content & copyright issues", "Building manager inquiry"] %>
+            <% if f.object.errors[:subject].present? %>
+              <p class='inline-error'><%= f.object.errors[:subject].join(' and ') %></p>
+            <% end %>
+          </li>
+        <% end %>
+        <li class='text required' id='contact_us_contact_message_input'>
+          <%= f.label :message, (t('.message') + content_tag(:abbr, '*', :class => 'required')).html_safe %>
+          <%= f.text_area :message, cols: "30", rows: "10" %>
+          <% if f.object.errors[:message].present? %>
+            <p class='inline-error'><%= f.object.errors[:message].join(' and ') %></p>
+          <% end %>
+        </li>
+        <li class='commit'>
+          <%= f.submit :submit, :alt => t('.submit'), :class => 'btn btn-primary btn-large', :label => t('.submit'), :title => t('.submit') %>
+        </li>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>

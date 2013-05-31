@@ -16,7 +16,7 @@ class RentsController < ApplicationController
 		current_user.rents << @rent
 		if @rent.save
 			flash[:notice] = "Thank you for submitting your rent and contributing to our community!"
-			render action: 'thanks'
+			redirect_to building_rents_path(@building)
 		else
 			render :action => 'new'
 		end

@@ -6,10 +6,6 @@
 
 <div class="bg-texture-wrapper">
 	<div class="container">
-		<% if @product && !@product.new_record %>
-			<%= render 'thanks' %>
-		<% else %>
-			<%= render 'newreviewform' %>
-		<% end %>
+		<%= render 'newreviewform' %>
 	</div>
 </div>	

@@ -5,17 +5,9 @@
 		</li>
 		<li id="overall-avg-stars">
 			<% if @reviews.average_review_rating("overall").nil? %>
-				<% 20.times do %>
-					<input name="review[overall]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image(0) %>
 			<% else %>
-				<% (1...(@reviews.average_review_rating("overall")*4).round).each do %>
-					<input name="review[overall]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
-				<input name="review[overall]" type="radio" class="star {split:4}" value="1" checked="checked" disabled="disabled">
-				<% (20-(@reviews.average_review_rating("overall")*4).round).times do %>
-					<input name="review[overall]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image((@reviews.average("overall")*4).round) %>
 			<% end %>
 		</li>
 	</ul>
@@ -52,122 +44,58 @@
 	<ul>
 		<li>
 			<% if @reviews.average_review_rating("management_rating").nil? %>
-				<% 20.times do %>
-					<input name="review[management_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image(0) %>
 			<% else %>
-				<% (1...(@reviews.average_review_rating("management_rating")*4).round).each do %>
-					<input name="review[management_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
-				<input name="review[management_rating]" type="radio" class="star {split:4}" value="1" checked="checked" disabled="disabled">
-				<% (20-(@reviews.average_review_rating("management_rating")*4).round).times do %>
-					<input name="review[management_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image((@reviews.average("management_rating")*4).round) %>
 			<% end %>
-		</li><br><br>
+		</li>
 		<li>
 			<% if @reviews.average_review_rating("staff_rating").nil? %>
-				<% 20.times do %>
-					<input name="review[staff_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image(0) %>
 			<% else %>
-				<% (1...(@reviews.average_review_rating("staff_rating")*4).round).each do %>
-					<input name="review[staff_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
-				<input name="review[staff_rating]" type="radio" class="star {split:4}" value="1" checked="checked" disabled="disabled">
-				<% (20-(@reviews.average_review_rating("staff_rating")*4).round).times do %>
-					<input name="review[staff_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image((@reviews.average("staff_rating")*4).round) %>
 			<% end %>
-		</li><br>
+		</li>
 		<li>
 			<% if @reviews.average_review_rating("maintenance_rating").nil? %>
-				<% 20.times do %>
-					<input name="review[maintenance_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image(0) %>
 			<% else %>
-				<% (1...(@reviews.average_review_rating("maintenance_rating")*4).round).each do %>
-					<input name="review[maintenance_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
-				<input name="review[maintenance_rating]" type="radio" class="star {split:4}" value="1" checked="checked" disabled="disabled">
-				<% (20-(@reviews.average_review_rating("maintenance_rating")*4).round).times do %>
-					<input name="review[maintenance_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image((@reviews.average("maintenance_rating")*4).round) %>
 			<% end %>
-		</li><br>
+		</li>
 		<li>
 			<% if @reviews.average_review_rating("amenities_rating").nil? %>
-				<% 20.times do %>
-					<input name="review[amenities_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image(0) %>
 			<% else %>
-				<% (1...(@reviews.average_review_rating("amenities_rating")*4).round).each do %>
-					<input name="review[amenities_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
-				<input name="review[amenities_rating]" type="radio" class="star {split:4}" value="1" checked="checked" disabled="disabled">
-				<% (20-(@reviews.average_review_rating("amenities_rating")*4).round).times do %>
-					<input name="review[amenities_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image((@reviews.average("amenities_rating")*4).round) %>
 			<% end %>
-		</li><br>
+		</li>
 		<li>
 			<% if @reviews.average_review_rating("neighborhood_rating").nil? %>
-				<% 20.times do %>
-					<input name="review[neighborhood_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image(0) %>
 			<% else %>
-				<% (1...(@reviews.average_review_rating("neighborhood_rating")*4).round).each do %>
-					<input name="review[neighborhood_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
-				<input name="review[neighborhood_rating]" type="radio" class="star {split:4}" value="1" checked="checked" disabled="disabled">
-				<% (20-(@reviews.average_review_rating("neighborhood_rating")*4).round).times do %>
-					<input name="review[neighborhood_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image((@reviews.average("neighborhood_rating")*4).round) %>
 			<% end %>
-		</li><br>
+		</li>
 		<li>
 			<% if @reviews.average_review_rating("safety_rating").nil? %>
-				<% 20.times do %>
-					<input name="review[safety_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image(0) %>
 			<% else %>
-				<% (1...(@reviews.average_review_rating("safety_rating")*4).round).each do %>
-					<input name="review[safety_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
-				<input name="review[safety_rating]" type="radio" class="star {split:4}" value="1" checked="checked" disabled="disabled">
-				<% (20-(@reviews.average_review_rating("safety_rating")*4).round).times do %>
-					<input name="review[safety_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image((@reviews.average("safety_rating")*4).round) %>
 			<% end %>
-		</li><br>
+		</li>
 		<li>
 			<% if @reviews.average_review_rating("noise_rating").nil? %>
-				<% 20.times do %>
-					<input name="review[noise_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image(0) %>
 			<% else %>
-				<% (1...(@reviews.average_review_rating("noise_rating")*4).round).each do %>
-					<input name="review[noise_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
-				<input name="review[noise_rating]" type="radio" class="star {split:4}" value="1" checked="checked" disabled="disabled">
-				<% (20-(@reviews.average_review_rating("noise_rating")*4).round).times do %>
-					<input name="review[noise_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image((@reviews.average("noise_rating")*4).round) %>
 			<% end %>
-		</li><br>
+		</li>
 		<li>
 			<% if @reviews.average_review_rating("transportation_rating").nil? %>
-				<% 20.times do %>
-					<input name="review[transportation_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image(0) %>
 			<% else %>
-				<% (1...(@reviews.average_review_rating("transportation_rating")*4).round).each do %>
-					<input name="review[transportation_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
-				<input name="review[transportation_rating]" type="radio" class="star {split:4}" value="1" checked="checked" disabled="disabled">
-				<% (20-(@reviews.average_review_rating("transportation_rating")*4).round).times do %>
-					<input name="review[transportation_rating]" type="radio" class="star {split:4}" value="1" disabled="disabled">
-				<% end %>
+				<%= star_image((@reviews.average("transportation_rating")*4).round) %>
 			<% end %>
 		</li>
 	</ul>

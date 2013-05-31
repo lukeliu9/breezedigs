@@ -10,15 +10,15 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require gmaps4rails/gmaps4rails.base
+//= require gmaps4rails/gmaps4rails.googlemaps
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require rails.validations
 //= require jquery-star-rating
 //= require powertip/powertip.js
-//= require jquery.raty
-//= require jquery.metadata.js
-//= require gmaps4rails/gmaps4rails.googlemaps
-//= require gmaps4rails/gmaps4rails.base
+//= require jquery.metadata
+
 
 
