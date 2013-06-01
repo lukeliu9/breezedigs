@@ -1,3 +1,12 @@
+$(function(){
+	$('#gallery').galleryView({
+		panel_width: 375,
+		panel_height: 263,
+		frame_width: 70,
+		frame_height: 50
+	});
+});
+
 $.fn.rating.options.required = true;
 
 $(function(){ // wait for document to load

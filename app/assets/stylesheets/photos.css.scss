@@ -1,3 +1,21 @@
 // Place all the styles related to the photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "colors";
+/* New photo form */
+
+.new-photo-form {
+
+}
+
+.photo-file-field {
+	width: 16em;
+	height: 4em;
+	margin-top: 0.5em;
+	input {
+		vertical-align: top;
+		border: 0;
+		padding: 0 0 1em 0;
+	}
+
+}

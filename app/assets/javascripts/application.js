@@ -14,11 +14,15 @@
 //= require gmaps4rails/gmaps4rails.googlemaps
 //= require jquery
 //= require jquery_ujs
+//= require galleryview/jquery.galleryview
+//= require galleryview/jquery.timers
+//= require galleryview/jquery.easing
 //= require twitter/bootstrap
 //= require rails.validations
 //= require jquery-star-rating
 //= require powertip/powertip.js
 //= require jquery.metadata
+
 
 
 

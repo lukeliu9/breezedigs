@@ -65,16 +65,20 @@
 }
 
 .building-image {
-	width: 20%;
-	padding: 0.2% 0 1% 3%;
+	margin-top: 0.3em;
+	padding: 2px;
 	display: inline-block;
 	vertical-align: top;
+	border-radius: 3px;
+	background: $grayVeryDark;
+	text-align: center;
 }
 
 .building-listing-info {
 	width: 75%;
 	display: inline-block;
 	vertical-align: top;
+	margin-left: 0.8em;
 	h3 {
 		display: inline-block;
 		font-size:1.2em;
@@ -274,23 +278,8 @@
 	vertical-align: top;
 	width: 50%;
 	height: 24em;
-	background: gray;
 }
-.main-photo {
-	display: block;
-	width: 98%;
-	height: 17em;
-	padding: 1%;
-	background: blue;
-}
-.thumbnails {
-	display: block;
-	width: 98%;
-	height: 5em;
-	margin: 0;
-	padding: 1%;
-	background: red;
-}
+.add-photo-link {margin-top: 0.4em; float:right;}
 
 .map-area {
 	display: inline-block;

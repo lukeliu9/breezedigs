@@ -32,17 +32,7 @@ Breezedigs::Application.routes.draw do
   resources :cities
 
   resources :buildings do
-    resources :reviews do
-      collection do
-        get :pros
-        get :cons
-        get :mgmt
-        get :nsn
-        get :unitamen
-        get :parktrans
-        get :advice
-      end
-    end
+    resources :reviews
     resources :rents
     resources :floorplans
     resources :photos

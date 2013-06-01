@@ -16,7 +16,8 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-gem "paperclip", "~> 3.0"
+gem "paperclip", "2.5"
+gem 'cocaine', '0.3.2'
 gem 'wicked'
 gem 'sunspot_rails'
 gem 'friendly_id'

@@ -41,12 +41,18 @@
 				</div>
 				
 				<div class="photos-area">
-					<div class="main-photo">
-					</div>
-
-					<div class="thumbnails">
-					</div>
+					<ul id="gallery">
+					<% if @building.photos.blank? %>
+						<li><%= image_tag 'nobuildingimage.png' %></li>
+					<% else %>					
+						<% @building.photos.each do |photo| %>
+							<li><%= image_tag photo.image.url %></li>
+						<% end %>
+					<% end %>	
+					</ul>
+					<div class="add-photo-link">
 					<%= link_to(raw("Add a Photo"), new_building_photo_path(@building)) %>
+					</div>
 				</div>
 			</div>
 
