@@ -26,6 +26,7 @@ class RentsController < ApplicationController
 		@building = Building.find(params[:building_id])
 		@rents = @building.rents
 		@reviews = @building.reviews
+		@json = @building.to_gmaps4rails
 	end
 
 	def show
