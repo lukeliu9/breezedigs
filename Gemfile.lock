@@ -145,6 +145,7 @@ GEM
     heroku-api (0.2.13)
       excon (~> 0.15.4)
     hike (1.2.2)
+    hirb (0.7.1)
     httpauth (0.2.0)
     i18n (0.6.4)
     inherited_resources (1.4.0)
@@ -360,6 +361,7 @@ DEPENDENCIES
   guard-rspec (= 1.2.1)
   guard-spork (= 1.2.0)
   heroku (= 2.26.7)
+  hirb
   jquery-rails
   jquery-star-rating-rails
   kaminari

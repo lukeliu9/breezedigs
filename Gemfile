@@ -29,6 +29,7 @@ gem 'activerecord-reputation-system'
 gem 'contact_us', '~> 0.4.0'
 gem "rmagick"
 gem 'jquery-star-rating-rails'
+gem 'hirb'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
