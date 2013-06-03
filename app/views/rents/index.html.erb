@@ -13,37 +13,13 @@
 <div class="bg-texture-wrapper">
 	<div class="container">
 		<div class="building-profile">
+			<% flash.each do |key, value| %>
+			<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+			<% end %>
+
 		<div class="building-content-area">
-			<div class="building-topbar">
-				<div class="building-info">
-					<h1><%= @building.name %></h1>
-					<p id="geography"><%= building_geography %></p>
-					<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
+			<%= render 'buildings/building_header' %>
 
-					<div class="review-rent-btns"><!-- Write review & submit rent btns in bldg prof -->
-						<%= link_to(raw("<button class=\"btn\">Submit a Rent</button>"), new_building_rent_path(@building)) %>
-						<%= link_to(raw("<button class=\"btn\">Write Review</button>"), new_building_review_path(@building)) %>
-					</div>
-
-					<div class="building-stats">
-						<%= render 'buildings/star_ratings' %>
-					</div>
-				</div>
-				
-				<div class="photos-area rental-photos-area">
-					<ul id="gallery">
-					<% if @building.photos.blank? %>
-						<li><%= image_tag 'nobuildingimage.png' %></li>
-					<% else %>					
-						<% @building.photos.each do |photo| %>
-							<li><%= image_tag photo.image.url %></li>
-						<% end %>
-					<% end %>	
-					</ul>
-					<%= link_to(raw("Add a Photo"), new_building_photo_path(@building)) %>
-				</div>
-			</div>
-			
 			<div class="building-data-toggle"><!-- To switch between reviews and rental data -->
 				<%= link_to "<button class=\"toggle\">Reviews</button>".html_safe, building_reviews_path(@building) %>
 				<%= link_to "<button class=\"toggle tselect\">Rental Data</button>".html_safe, building_rents_path(@building) %>
@@ -84,16 +60,16 @@
 			              			<h4>
 			              				Studio, 1 bath
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents("studio", 1), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("studio", "1"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg("studio", 1) %></h5>
-									<h5><%= get_util_avg("studio", 1) %></h5>
+									<h5><%= get_rent_avg("studio", "1") %></h5>
+									<h5><%= get_util_avg("studio", "1") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar("studio", 1) %>
-										<%= show_avg_bar("studio", 1) %>
+										<%= show_rent_bar("studio", "1") %>
+										<%= show_avg_bar("studio", "1") %>
 									</div>
 								</td>
 			              	</tr>
@@ -103,16 +79,16 @@
 			              			<h4>
 			              				1 bed, 1 bath
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(1, 1), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("1", "1"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(1, 1) %></h5>
-									<h5><%= get_util_avg(1, 1) %></h5>
+									<h5><%= get_rent_avg("1", "1") %></h5>
+									<h5><%= get_util_avg("1", "1") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(1, 1) %>
-										<%= show_avg_bar(1, 1) %>
+										<%= show_rent_bar("1", "1") %>
+										<%= show_avg_bar("1", "1") %>
 									</div>
 								</td>
 			              	</tr>
@@ -122,16 +98,16 @@
 			              			<h4>
 			              				1 bed, 1.5 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(1, 1.5), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("1", "1.5"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(1, 1.5) %></h5>
-									<h5><%= get_util_avg(1, 1.5) %></h5>
+									<h5><%= get_rent_avg("1", "1.5") %></h5>
+									<h5><%= get_util_avg("1", "1.5") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(1, 1.5) %>
-										<%= show_avg_bar(1, 1.5) %>
+										<%= show_rent_bar("1", "1.5") %>
+										<%= show_avg_bar("1", "1.5") %>
 									</div>
 								</td>
 			              	</tr>
@@ -141,16 +117,16 @@
 			              			<h4>
 			              				1.5 beds, 1 bath
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(1.5, 1), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("1.5", "1"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(1.5, 1) %></h5>
-									<h5><%= get_util_avg(1.5, 1) %></h5>
+									<h5><%= get_rent_avg("1.5", "1") %></h5>
+									<h5><%= get_util_avg("1.5", "1") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(1.5, 1) %>
-										<%= show_avg_bar(1.5, 1) %>
+										<%= show_rent_bar("1.5", "1") %>
+										<%= show_avg_bar("1.5", "1") %>
 									</div>
 								</td>
 			              	</tr>
@@ -160,16 +136,16 @@
 			              			<h4>
 			              				2 beds, 1 bath
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(2, 1), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("2", "1"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(2, 1) %></h5>
-									<h5><%= get_util_avg(2, 1) %></h5>
+									<h5><%= get_rent_avg("2", "1") %></h5>
+									<h5><%= get_util_avg("2", "1") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(2, 1) %>
-										<%= show_avg_bar(2, 1) %>
+										<%= show_rent_bar("2", "1") %>
+										<%= show_avg_bar("2", "1") %>
 									</div>
 								</td>
 			              	</tr>
@@ -179,16 +155,16 @@
 			              			<h4>
 			              				2 beds, 1.5 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(2, 1.5), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("2", "1.5"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(2, 1.5) %></h5>
-									<h5><%= get_util_avg(2, 1.5) %></h5>
+									<h5><%= get_rent_avg("2", "1.5") %></h5>
+									<h5><%= get_util_avg("2", "1.5") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(2, 1.5) %>
-										<%= show_avg_bar(2, 1.5) %>
+										<%= show_rent_bar("2", "1.5") %>
+										<%= show_avg_bar("2", "1.5") %>
 									</div>
 								</td>
 			              	</tr>
@@ -198,16 +174,16 @@
 			              			<h4>
 			              				2 beds, 2 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(2, 2), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("2", "2"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(2, 2) %></h5>
-									<h5><%= get_util_avg(2, 2) %></h5>
+									<h5><%= get_rent_avg("2", "2") %></h5>
+									<h5><%= get_util_avg("2", "2") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(2, 2) %>
-										<%= show_avg_bar(2, 2) %>
+										<%= show_rent_bar("2", "2") %>
+										<%= show_avg_bar("2", "2") %>
 									</div>
 								</td>
 			              	</tr>
@@ -217,16 +193,16 @@
 			              			<h4>
 			              				2 beds, 2.5 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(2, 2.5), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("2", "2.5"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(2, 2.5) %></h5>
-									<h5><%= get_util_avg(2, 2.5) %></h5>
+									<h5><%= get_rent_avg("2", "2.5") %></h5>
+									<h5><%= get_util_avg("2", "2.5") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(2, 2.5) %>
-										<%= show_avg_bar(2, 2.5) %>
+										<%= show_rent_bar("2", "2.5") %>
+										<%= show_avg_bar("2", "2.5") %>
 									</div>
 								</td>
 			              	</tr>
@@ -236,16 +212,16 @@
 			              			<h4>
 			              				2 beds, 3 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(2, 2.5), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("2", "3"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(2, 3) %></h5>
-									<h5><%= get_util_avg(2, 3) %></h5>
+									<h5><%= get_rent_avg("2", "3") %></h5>
+									<h5><%= get_util_avg("2", "3") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(2, 3) %>
-										<%= show_avg_bar(2, 3) %>
+										<%= show_rent_bar("2", "3") %>
+										<%= show_avg_bar("2", "3") %>
 									</div>
 								</td>
 			              	</tr>
@@ -255,16 +231,16 @@
 			              			<h4>
 			              				3 beds, 2 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(3, 2), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("3", "2"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(3, 2) %></h5>
-									<h5><%= get_util_avg(3, 2) %></h5>
+									<h5><%= get_rent_avg("3", "2") %></h5>
+									<h5><%= get_util_avg("3", "2") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(3, 2) %>
-										<%= show_avg_bar(3, 2) %>
+										<%= show_rent_bar("3", "2") %>
+										<%= show_avg_bar("3", "2") %>
 									</div>
 								</td>
 			              	</tr>
@@ -274,16 +250,16 @@
 			              			<h4>
 			              				3 beds, 2.5 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(3, 2.5), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("3", "2.5"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(3, 2.5) %></h5>
-									<h5><%= get_util_avg(3, 2.5) %></h5>
+									<h5><%= get_rent_avg("3", "2.5") %></h5>
+									<h5><%= get_util_avg("3", "2.5") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(3, 2.5) %>
-										<%= show_avg_bar(3, 2.5) %>
+										<%= show_rent_bar("3", "2.5") %>
+										<%= show_avg_bar("3", "2.5") %>
 									</div>
 								</td>
 			              	</tr>
@@ -293,16 +269,16 @@
 			              			<h4>
 			              				3 beds, 3 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(3, 3), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("3", "3"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(3, 3) %></h5>
-									<h5><%= get_util_avg(3, 3) %></h5>
+									<h5><%= get_rent_avg("3", "3") %></h5>
+									<h5><%= get_util_avg("3", "3") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(3, 3) %>
-										<%= show_avg_bar(3, 3) %>
+										<%= show_rent_bar("3", "3") %>
+										<%= show_avg_bar("3", "3") %>
 									</div>
 								</td>
 			              	</tr>
@@ -312,16 +288,16 @@
 			              			<h4>
 			              				3 beds, 3.5 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(3, 3.5), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("3", "3.5"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(3, 3.5) %></h5>
-									<h5><%= get_util_avg(3, 3.5) %></h5>
+									<h5><%= get_rent_avg("3", "3.5") %></h5>
+									<h5><%= get_util_avg("3", "3.5") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(3, 3.5) %>
-										<%= show_avg_bar(3, 3.5) %>
+										<%= show_rent_bar("3", "3.5") %>
+										<%= show_avg_bar("3", "3.5") %>
 									</div>
 								</td>
 			              	</tr>
@@ -331,16 +307,16 @@
 			              			<h4>
 			              				3 beds, 4 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(3, 4), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("3", "4"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(3, 4) %></h5>
-									<h5><%= get_util_avg(3, 4) %></h5>
+									<h5><%= get_rent_avg("3", "4") %></h5>
+									<h5><%= get_util_avg("3", "4") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(3, 4) %>
-										<%= show_avg_bar(3, 4) %>
+										<%= show_rent_bar("3", "4") %>
+										<%= show_avg_bar("3", "4") %>
 									</div>
 								</td>
 			              	</tr>
@@ -350,16 +326,16 @@
 			              			<h4>
 			              				4 beds, 2 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(4, 2), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("4", "2"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(4, 2) %></h5>
-									<h5><%= get_util_avg(4, 2) %></h5>
+									<h5><%= get_rent_avg("4", "2") %></h5>
+									<h5><%= get_util_avg("4", "2") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(4, 2) %>
-										<%= show_avg_bar(4, 2) %>
+										<%= show_rent_bar("4", "2") %>
+										<%= show_avg_bar("4", "2") %>
 									</div>
 								</td>
 			              	</tr>
@@ -369,16 +345,16 @@
 			              			<h4>
 			              				4 beds, 3 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(4, 3), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("4", "3"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(4, 3) %></h5>
-									<h5><%= get_util_avg(4, 3) %></h5>
+									<h5><%= get_rent_avg("4", "3") %></h5>
+									<h5><%= get_util_avg("4", "3") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(4, 3) %>
-										<%= show_avg_bar(4, 3) %>
+										<%= show_rent_bar("4", "3") %>
+										<%= show_avg_bar("4", "3") %>
 									</div>
 								</td>
 			              	</tr>
@@ -388,16 +364,16 @@
 			              			<h4>
 			              				4 beds, 3.5 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(4, 3.5), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("4", "3.5"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(4, 3.5) %></h5>
-									<h5><%= get_util_avg(4, 3.5) %></h5>
+									<h5><%= get_rent_avg("4", "3.5") %></h5>
+									<h5><%= get_util_avg("4", "3.5") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(4, 3.5) %>
-										<%= show_avg_bar(4, 3.5) %>
+										<%= show_rent_bar("4", "3.5") %>
+										<%= show_avg_bar("4", "3.5") %>
 									</div>
 								</td>
 			              	</tr>
@@ -407,16 +383,16 @@
 			              			<h4>
 			              				4 beds, 4 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(4, 4), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("4", "4"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(4, 4) %></h5>
-									<h5><%= get_util_avg(4, 4) %></h5>
+									<h5><%= get_rent_avg("4", "4") %></h5>
+									<h5><%= get_util_avg("4", "4") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(4, 4) %>
-										<%= show_avg_bar(4, 4) %>
+										<%= show_rent_bar("4", "4") %>
+										<%= show_avg_bar("4", "4") %>
 									</div>
 								</td>
 			              	</tr>
@@ -426,16 +402,16 @@
 			              			<h4>
 			              				4 beds, 5 baths
 			              			</h4>
-			              			<p>(<%= pluralize(@rents.count_rents(4, 5), 'Rent') %>)</p>
+			              			<p>(<%= pluralize(@rents.count_rents("4", "5"), 'Rent') %>)</p>
 			              		</td>
 								<td id="rent-avg-cell">
-									<h5><%= get_rent_avg(4, 5) %></h5>
-									<h5><%= get_util_avg(4, 5) %></h5>
+									<h5><%= get_rent_avg("4", "5") %></h5>
+									<h5><%= get_util_avg("4", "5") %></h5>
 								</td>
 								<td id="rent-bars-cell">
 									<div class="rent-holder">
-										<%= show_rent_bar(4, 5) %>
-										<%= show_avg_bar(4, 5) %>
+										<%= show_rent_bar("4", "5") %>
+										<%= show_avg_bar("4", "5") %>
 									</div>
 								</td>
 			              	</tr>
@@ -445,20 +421,7 @@
 				</div>
 			</div>
 			</div>
-			<div class="building-sidebar">
-				<div class="map-area">
-					<%= gmaps({
-  						"map_options" => {"auto_zoom" => false, "zoom" => 14 },
- 						"markers" => {"data" => @json }
-						}) %>
-				</div>
-				
-				<div class="ad-holder-336">
-					<div class="ad-336">
-
-					</div>
-				</div>
-			</div>
+			<%= render 'buildings/building_sidebar' %>
 		</div>
 	</div>
 </div>

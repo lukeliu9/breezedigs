@@ -1,0 +1,53 @@
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'photos' %>
+	<%= stylesheet_link_tag 'rents' %>
+<% end %>
+
+<% provide(:title, "Submit a rent") %>
+
+<div class="bg-texture-wrapper">
+	<div class="container">
+		<div class="new-rent-form">
+			<h1>Your addition will help other renters - thank you!</h1>
+			<div class="building-profile-rentform">
+				<div class="building-text-rentform">
+					<h2><%= link_to @building.name, building_path(@building) %></h1>
+					<p id="geography"><%= building_geography %></p>
+					<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
+				</div>
+			</div>
+			<!-- Image Upload Form fields -->
+			<div class="edit-photo-form">
+				<p id="current-image">Your current image:</p>
+
+				<%= image_tag @photo.image.url, width: "600px" %>
+
+				<%= form_for @photo, validate: true, html: { multipart: true} do |f| %>
+					<br>
+					<p>Upload new image</p>
+					<div class="photo-file-field">
+			  			<%= f.file_field :image %>
+			  		</div>
+
+			  		<p>Image Description (optional)</p>
+			  		<%= f.text_area :description, placeholder: "Tell us what this photo is of", size: "10x3" %>
+
+			  		<div id="create-review-btn">
+			  		<%= f.submit 'Update', class: "btn btn-primary btn-large" %>
+			  		</div>
+
+				<% end %>
+			</div>
+		</div>
+
+		<!-- Sidebar with guidelines -->
+		<div class="new-rent-sidebar">
+			<h2>&nbsp;Adding your rental data:&nbsp;</h2>
+			<p>Our number one priority is ensuring the accuracy and objectivity of the rental data that we display to users</p>
+
+			<p>As such, we review all content submitted to our site and check for suspicious submissions on a regular basis</p>
+			
+			<p></p>
+		</div>	
+	</div>
+</div>

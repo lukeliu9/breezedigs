@@ -4,6 +4,7 @@
 
 <% provide(:title, 'My Account') %>
 
+<div class="bg-texture-wrapper">
 <div class="container">
   <%= render 'users/profile_header' %>
         <!-- Code snipped from partial above to be able to manually adjust which buttons i highlgihted depending on the view -->
@@ -19,31 +20,38 @@
       </li>
     </ul>
   </div>
+  <div class="em-buffer-2"></div>
+    <!--
+    <div class="user-settings">
+      <h2>Edit Email Settings</h2>
+    </div>
+    -->
 
-    <div class="edit-box" id="left">
+    <div class="edit-box">
+      <h2>Edit your profile</h2>
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
         <%= devise_error_messages! %>
 
-        <div><%= f.label :first_name, class: "field-label" %><br />
+        <div><p>First Name</p>
         <%= f.email_field :first_name, :autofocus => true, class: "edit-field" %></div>
 
-        <div><%= f.label :last_name, class: "field-label" %><br />
+        <div><p>Last Name</p>
         <%= f.email_field :last_name, :autofocus => true, class: "edit-field" %></div>
 
-        <div><%= f.label :email, class: "field-label" %><br />
+        <div><p>Email</p>
         <%= f.email_field :email, :autofocus => true, class: "edit-field" %></div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
 
-        <div><%= f.label :password, class: "field-label-special" %> <i>(leave blank if you don't want to change it)</i><br />
+        <div><p>Password <i>(leave blank if you don't want to change it)</i></p>
         <%= f.password_field :password, :autocomplete => "off", class: "edit-field" %></div>
 
-        <div><%= f.label :password_confirmation, class: "field-label" %><br />
+        <div><p>Password Confirmation</p>
         <%= f.password_field :password_confirmation, class: "edit-field" %></div>
 
-        <div><%= f.label :current_password, class: "field-label-special" %> <i>(we need your current password to confirm your changes)</i><br />
+        <div><p>Current Password <i>(we need your current password to confirm your changes)</i></p>
         <%= f.password_field :current_password, class: "edit-field" %></div>
 
         <div><%= f.submit "Update", class: "btn" %></div>
@@ -54,6 +62,7 @@
       <%= link_to "Back", :back %>
 
     </div>
+</div>
 </div>
 
 <div class="buffer"></div>

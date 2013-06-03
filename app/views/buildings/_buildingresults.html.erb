@@ -1,22 +1,24 @@
-<% if @buildings.empty? %>
+<% if @buildingresults.nil? || @buildingresults.empty?  %>
 	<%= render 'noresults' %>
 	<% else %>
-<ul> 
-	<% @buildings.each do |building| %>
+<div class="pagination">
+<%= paginate @buildingresults %>
+</div>
+<ul class="building-results-ul"> 
+	<% @buildingresults.each do |building| %>
 
 		<%= link_to building do %>
 			<li class="building-listing">
 
 				<div class="building-image">
-					<center>
+					<!-- Sets default image if building does not have one yet -->
 					<% if building.photos.blank? %>
 						<%= image_tag 'nobuildingimage.png', size: "125x125" %>
 					<% else %>
 						<%= image_tag building.photos.first.image.url, size: "125x125" %>
 					<% end %>
-				</center>
 				</div>
-
+				<!-- All the content to the right of the building image -->
 				<div class="building-listing-info">
 					<div>
 						<h3><%= building.name%></h3>
@@ -29,7 +31,7 @@
 					<h4>
 					<%= geogrify(building) %>
 					</h4>
-					<span><%= building.address %></span>
+					<span><%= building.address %>, <%= building.zip %></span>
 					
 						<% if building.reviews.blank? %>
 						<%= raw("<p>") %><%= "No reviews yet" %><%= raw("</p>") %>						
@@ -45,6 +47,7 @@
 		<% end %>
 	<% end %>
 </ul>
-<%= paginate @buildings %>
-
+<div class="pagination">
+<%= paginate @buildingresults %>
+</div>
 <% end %>

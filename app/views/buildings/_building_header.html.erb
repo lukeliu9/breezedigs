@@ -1,0 +1,29 @@
+<div class="building-topbar">
+	<div class="building-info">
+		<h1><%= @building.name %></h1>
+		<p id="geography"><%= building_geography %></p>
+		<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
+
+		<div class="review-rent-btns"><!-- Write review & submit rent btns in bldg prof -->
+			<%= link_to(raw("<button class=\"btn\">Add Photo</button>"), new_building_photo_path(@building)) %>
+			<%= link_to(raw("<button class=\"btn\">Add Rent</button>"), new_building_rent_path(@building)) %>
+			<%= link_to(raw("<button class=\"btn\">Write Review</button>"), new_building_review_path(@building)) %>
+		</div>
+
+		<div class="building-stats">
+			<%= render 'buildings/star_ratings' %>
+		</div>
+	</div>
+	
+	<div class="photos-area">
+		<ul id="gallery">
+		<% if @building.photos.blank? %>
+			<li><%= image_tag 'nobuildingimage.png' %></li>
+		<% else %>					
+			<% @building.photos.each do |photo| %>
+				<li><%= image_tag photo.image.url %></li>
+			<% end %>
+		<% end %>	
+		</ul>
+	</div>
+</div>

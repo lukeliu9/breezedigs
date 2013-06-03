@@ -1,0 +1,49 @@
+<div class="building-sidebar">
+	<div class="map-area">
+		<%= gmaps({
+			"map_options" => {"auto_zoom" => false, "zoom" => 14 },
+			"markers" => {"data" => @json }
+		}) %>
+	</div>
+
+	<div class="ad-holder-336">
+		<div class="ad-336">
+
+		</div>
+	</div>
+
+	<div class="nearby-buildings">
+		<h3>Nearby Buildings <span id="fw-300">(Within half mile)</span></h3>
+			<ul>
+				<% @nearby.each do |building| %>
+				<%= link_to building do %>
+				<li>
+					<div class="nearby-buildings-image">
+						<!-- Uses over:hidden to crudely crop images for display -->
+						<% if building.photos.blank? %>
+							<%= image_tag 'nobuildingimage.png', size: "70x70" %>
+						<% else %>
+							<%= image_tag building.photos.first.image.url, size: "70x70" %>
+						<% end %>
+					</div>
+					<div class="nearby-buildings-info">
+					<h5><%= building.name %></h5>
+					<% if building.reviews.nil? || building.reviews.blank? %>
+						<img src="/assets/stars/star0.png" height="16px" width="80px">
+					<% else %>
+					<%= star_image((building.reviews.average("overall")*4).round) %>
+					<% end %>
+					<p><%= building.address %>, <%= building.zip %></h5>
+					</div>
+				</li>
+				<% end %><!-- Ends the link_to block -->
+			<% end %><!-- Ends the block that loops through the @nearby var -->
+			</ul>		
+	</div>
+</div>
+<div class="em-buffer-5">
+</div>
+<div class="em-buffer-5">
+</div>
+<div class="em-buffer-3">
+</div>

@@ -30,19 +30,21 @@ class BuildingsController < ApplicationController
 		empty_search = params[:search] ? false : true
 
     	if empty_search
-    		@buildings = Building.page(params[:page]).per(10)
+    		@buildings = Building.all
+    		@buildingresults = Kaminari.paginate_array(@buildings).page(params[:page]).per(10)
+    		@json = @buildings.to_gmaps4rails
+    		@areas = @buildings.map(&:area)
+  			@neighborhoods = @buildings.map(&:neighborhood)
     	else
-			@search = Sunspot.search(Building) do
-	  			fulltext params[:search]
-	  			order_by :reviews_count, :desc
-	  			#facet :areas
+	  		@search = Building.search_attributes(params[:search])
+	  		@buildings = @search.sort_by_reviews("count")
+	  		@buildingresults = Kaminari.paginate_array(@buildings).page(params[:page]).per(10)
+  			@areas = @buildings.map(&:area)
+  			@neighborhoods = @buildings.map(&:neighborhood)
+  			@json = @buildingresults.to_gmaps4rails do |building, marker|
+			  	marker.infowindow render_to_string(:partial => "/buildings/infowindow", :locals => { :building => building})
+			    marker.title "#{building.name}"
 			end
-	  		@buildings = Building.where(id: @search.results.map(&:id)).page(params[:page]).per(10)
-	  		@json = @buildings.to_gmaps4rails do |building, marker|
-  				marker.infowindow render_to_string(:partial => "/buildings/infowindow", :locals => { :building => building})
-    			marker.title "#{building.name}"
-    			marker.json({ :population => building.address})
-    		end
 	  	end
 	end
 

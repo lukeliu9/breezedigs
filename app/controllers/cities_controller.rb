@@ -9,11 +9,12 @@ class CitiesController < ApplicationController
 	def show
 		@city = City.find(params[:id])
 
-			@search = Sunspot.search(Building) do
-	  			fulltext params[:id]
-	  		end
+		@search = Building.where{city =~ @city}
+  		@buildings = @search
+  		@buildingresults = Kaminari.paginate_array(@buildings).page(1).per(10)
+		@json = @buildingresults.to_gmaps4rails
 
-	  	@buildings = Building.where(id: @search.results.map(&:id)).page(params[:page]).per(10)
+		@json = @buildings.to_gmaps4rails
 	end
 
 	def update

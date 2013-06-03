@@ -4,5 +4,7 @@ class Photo < ActiveRecord::Base
   
   belongs_to :user
   belongs_to :building
+
+  validates :image, presence: true
  
 end

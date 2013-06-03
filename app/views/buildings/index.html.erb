@@ -17,14 +17,19 @@
 				}) %>
 			</div>
 			<div class="search-options">
-
+				
 			</div>
 		</div>
 
 		<div class="building-results">
 			
 			<div class="results-header">
-			<h2>Your search returned <%= pluralize(@buildings.count, "result") %></h2>
+			<% if @buildingresults.nil? || @buildingresults.empty? %>
+				<h2>Your search did not return any results</h2>
+			<% else %>
+				<h2>Your search returned <%= pluralize(@buildings.count, "result") %></h2>
+			<% end %>
+
 			</div>
 
 			<%= render 'buildingresults' %>

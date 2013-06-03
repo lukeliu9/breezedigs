@@ -29,12 +29,17 @@ class PhotosController < ApplicationController
 	end
 
 	def edit
+		@photo = Photo.find(params[:id])
+		@building = @photo.building
 	end
 
 	def update
 	end
 
 	def destroy
+		@photo = Photo.find(params[:id])
+		@photo.delete
+		redirect_to current_user
 	end
 
 	def selectbuildingphoto

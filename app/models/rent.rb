@@ -6,12 +6,13 @@ class Rent < ActiveRecord::Base
   belongs_to :building
   belongs_to :user
 
-  validates :rent, 		presence: true, numericality: { only_integer: true }
-  validates :utilities,	presence: true, numericality: { only_integer: true }
+  validates :rent, 		presence: true, numericality: { only_integer: true }, length: {minimum: 3, maximum: 5}
+  validates :utilities,	presence: true, numericality: { only_integer: true }, length: {minimum: 3, maximum: 5}
   validates :beds,		presence: true
-  validates :baths,		presence: true
-  #validates :unitnum,	presence: true
-  #validates :recency,	presence: true
+  validates :baths,		presence: true, numericality: { only_integer: true }
+  validates :unitnum,	presence: true, length: {minimum: 1, maximum: 6}
+  validates :start,		presence: true
+  validates :stop,		presence: true
 
   def self.average_for(beds, baths, metric)
  	 where(beds: beds, baths: baths).average(metric)

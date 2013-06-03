@@ -22,28 +22,8 @@ class Building < ActiveRecord::Base
   #validates :area_id,             presence: true, numericality: { only_integer: true }
   #validates :neighborhood_id,	    presence: true, numericality: { only_integer: true }
 
-  searchable do
-  	text :name
-  	text :address
-  	text :city do
-      city.name
-    end
-  	text :areas do
-      area.name
-    end
-  	text :neighborhoods do
-      if neighborhood.blank?
-        nil
-      else
-        neighborhood.name
-      end
-    end
-  	text :zip
-    integer :reviews_count do
-      reviews.count
-    end
-  end
-
+  reverse_geocoded_by :latitude, :longitude
+  geocoded_by :gmaps4rails_address
   acts_as_gmappable
 
   extend FriendlyId
@@ -60,6 +40,50 @@ class Building < ActiveRecord::Base
   def average_review_rating(rating)
     return nil if self.blank?
     self.average(rating)
+  end
+
+  def average_overall
+    instance_eval { reduce(:+) / size.to_f }
+  end
+
+  def self.search_attributes(search)
+    self.joins{city}.where{(zip =~ "%#{search}%") | (name =~ "%#{search}%") | (address =~ "%#{search}%") | (city.name =~ "%#{search}%")}
+  end
+
+  def self.select_only_in_city(selection)
+    self.joins{city}.where{city.name =~ selection}
+  end
+
+  def self.has_image
+    self.includes{photos}.where{photos.id != nil}
+  end
+
+  def self.select_featured(many)
+    self.order("RANDOM()").first(many)
+  end
+
+  def find_for_count(name)
+    self.select { |place| place.name == name }
+  end
+
+  def self.sort_by_reviews(type)
+    if type == "count"
+      self.all.sort! { |x, y| y.reviews.count <=> x.reviews.count }
+    else
+      self.all.sort! { |x, y| y.reviews.average("overall").to_f <=> x.reviews.average("overall").to_f }
+    end
+  end
+
+  def self.sort_featured(type)
+    if type == "count"
+      self.all.sort! { |x, y| y.reviews.count <=> x.reviews.count }
+    else
+      self.all.sort! { |x, y| y.reviews.average("overall").to_f <=> x.reviews.average("overall").to_f }
+    end
+  end
+
+  def self.delete_current_building(building)
+    self.all.delete_if { |x| x.name == building.name }
   end
 
   private

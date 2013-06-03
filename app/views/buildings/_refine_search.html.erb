@@ -1,0 +1,17 @@
+<h3>Refine your search</h3>
+<%= form_tag buildings_path, method: :get do %>
+	<%= select_tag :reviews, "<option value=\"count\">Number of Reviews</option><option value=\"overall\">Average Overall Rating</option>".html_safe, :onchange => "this.form.submit();" %>
+<% end %>
+
+<% if @areas.blank? || @areas.nil? %>
+
+	<% @areas.group_by(&:name).each do |name, area| %>
+		<p><%= area.name %></p>
+		<p><%= area.count %></p>
+	<% end %>
+<% end %>
+
+<% @neighborhoods.group_by(&:name).each do |name, neighborhood| %>
+  <p><%= name %></p>
+  <p><%= neighborhood.count %></p>
+<% end %>

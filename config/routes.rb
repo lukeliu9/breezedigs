@@ -1,5 +1,11 @@
 Breezedigs::Application.routes.draw do
   
+  get "authentications/index"
+
+  get "authentications/create"
+
+  get "authentications/destroy"
+
   root to: 'static_pages#home'
 
   ActiveAdmin.routes(self)

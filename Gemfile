@@ -10,26 +10,30 @@ gem 'faker', '1.0.1'
 gem 'kaminari'
 gem 'heroku', '2.26.7'
 gem 'activeadmin'
-gem 'meta_search',    '>= 1.1.0.pre'
-gem 'devise'
-gem 'omniauth'
-gem 'omniauth-twitter'
-gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
-gem "paperclip", "2.5"
-gem 'cocaine', '0.3.2'
 gem 'wicked'
-gem 'sunspot_rails'
 gem 'friendly_id'
 gem 'client_side_validations'
 gem 'active_admin_importable'
-gem "geocoder"
-gem 'gmaps4rails'
 gem 'activerecord-reputation-system'
 gem 'contact_us', '~> 0.4.0'
 gem "rmagick"
 gem 'jquery-star-rating-rails'
 gem 'hirb'
+# Authentication
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+#Image Upload
+gem "paperclip", "3.4.2"
+gem 'cocaine', '0.5'
+# Used for building search
+gem "squeel"
+gem "meta_search"
+# Geocoding & maps
+gem "geocoder"
+gem 'gmaps4rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -38,7 +42,6 @@ gem 'pg', '0.12.2'
 
 group :development do
 	gem 'annotate', '~>2.4.1.beta'
-  gem 'sunspot_solr'
 end
 
 # Gems used only for assets and not required

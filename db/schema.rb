@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130531031849) do
+ActiveRecord::Schema.define(:version => 20130603050542) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -51,6 +51,14 @@ ActiveRecord::Schema.define(:version => 20130531031849) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "city_id"
+  end
+
+  create_table "authentications", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "buildings", :force => true do |t|
@@ -184,6 +192,14 @@ ActiveRecord::Schema.define(:version => 20130531031849) do
     t.text     "unitamen"
     t.string   "status",                :default => "unapproved"
     t.text     "flagged",               :default => "no"
+  end
+
+  create_table "settings", :force => true do |t|
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.string   "promotion",  :default => "yes"
+    t.string   "survey",     :default => "yes"
+    t.string   "moving",     :default => "yes"
   end
 
   create_table "users", :force => true do |t|

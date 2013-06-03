@@ -11,44 +11,14 @@
 <% provide(:title, @building.name) %>
 
 <div class="bg-texture-wrapper">
-	<div class="container-wider center-div">
+	<div class="container">
 		<div class="building-profile">
 			<% flash.each do |key, value| %>
 			<%= content_tag(:div, value, class: "alert alert-#{key}") %>
 			<% end %>
 
 			<div class="building-content-area">
-			<div class="building-topbar">
-				<div class="building-info">
-					<h1><%= @building.name %></h1>
-					<p id="geography"><%= building_geography %></p>
-					<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
-
-					<div class="review-rent-btns"><!-- Write review & submit rent btns in bldg prof -->
-						<%= link_to(raw("<button class=\"btn\">Submit a Rent</button>"), new_building_rent_path(@building)) %>
-						<%= link_to(raw("<button class=\"btn\">Write Review</button>"), new_building_review_path(@building)) %>
-					</div>
-
-					<div class="building-stats">
-						<%= render 'buildings/star_ratings' %>
-					</div>
-				</div>
-				
-				<div class="photos-area">
-					<ul id="gallery">
-					<% if @building.photos.blank? %>
-						<li><%= image_tag 'nobuildingimage.png' %></li>
-					<% else %>					
-						<% @building.photos.each do |photo| %>
-							<li><%= image_tag photo.image.url %></li>
-						<% end %>
-					<% end %>	
-					</ul>
-					<div class="add-photo-link">
-					<%= link_to(raw("Add a Photo"), new_building_photo_path(@building)) %>
-					</div>
-				</div>
-			</div>
+			<%= render 'buildings/building_header' %>
 
 			<div class="building-data-toggle"><!-- To switch between reviews and rental data -->
 				<%= link_to "<button class=\"toggle tselect\">Reviews</button>".html_safe, building_reviews_path(@building) %>
@@ -173,21 +143,7 @@
 					</div>
 				</div>
 			</div>
-				<div class="building-sidebar">
-					<div class="map-area">
-						<%= gmaps({
-  						"map_options" => {"auto_zoom" => false, "zoom" => 14 },
- 						"markers" => {"data" => @json }
-						}) %>
-					</div>
-
-					<div class="ad-holder-336">
-						<div class="ad-336">
-
-						</div>
-					</div>
-
-				</div>
+			<%= render 'buildings/building_sidebar' %>
 	</div>
 </div>
 </div>

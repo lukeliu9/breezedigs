@@ -8,9 +8,9 @@
 		</div>
 
 		<div class="hero-search">
-			<%= form_tag buildings_path, :method => 'get' do %>
-		 	<p>
-		    <%= text_field_tag :search, params[:search], placeholder: "City, area, neighborhood, building, address, zip", class: "hero-search-field"%>
+			<%= form_tag buildings_path, method: :get do %>
+			  
+			    <%= text_field_tag :search, params[:search] %>
 
 		   	<button type="submit" class="hero-search-button">
     		<i class="icon-search icon-large"></i> 
@@ -38,13 +38,21 @@
 
 <div class="home-stripe">
 	<div class="container">
-		<h3>Featured buildings:</h3>
-		<ul>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
+		<h3>Featured buildings:</h3>		
+		<ul class="featured-buildings-ul">
+		<% @featured.each do |building| %>
+			<li class="featured-building">
+				<h4><%= building.name %></h4>
+				<div class="featured-image-container">
+					<%= link_to(image_tag(building.photos.first.image.url, width: "240px"), building_path(building)) %>
+				</div>
+				<% if building.reviews.nil? || building.reviews.blank? %>
+					<img src="/assets/stars/star0.png" height="16px" width="80px">
+				<% else %>
+				<%= star_image((building.reviews.average("overall")*4).round) %>
+				<% end %>
+			</li>
+		<% end %>
 		</ul>	
 	</div>
 </div>

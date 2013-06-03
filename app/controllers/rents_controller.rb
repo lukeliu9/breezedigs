@@ -27,6 +27,7 @@ class RentsController < ApplicationController
 		@rents = @building.rents
 		@reviews = @building.reviews
 		@json = @building.to_gmaps4rails
+		@nearby = Building.near(@building, 0.5).delete_current_building(@building).first(5)
 	end
 
 	def show
@@ -41,19 +42,13 @@ class RentsController < ApplicationController
 	end
 
 	def destroy
+		@rent = Rent.find(params[:id])
+		@rent.delete
+		redirect_to current_user
 	end
 
 	def selectbuildingrent
-		empty_search = params[:search] ? false : true
-    	
-    	if empty_search
-    		@buildings = Building.page(params[:page]).per(10)
-    	else
-			@search = Sunspot.search(Building) do
-	  			fulltext params[:search]
-			end
-	  		@buildings = Building.where(id: @search.results.map(&:id)).page(params[:page]).per(10)
-	  	end
+		@featured = Building.select_only_in_city("Chicago").has_image.select_featured(15)
 	end
 
 end

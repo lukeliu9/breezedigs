@@ -16,7 +16,12 @@
 }
 
 .search-options {
-
+	h3 {
+		margin: 1em 0 0 0;
+		font-weight: 500;
+		font-size: 1.1em;
+		color: $grayVeryDark;
+	}
 }
 
 /* Building Results */
@@ -49,7 +54,7 @@
 		font-weight: 400;
 	}
 }
-
+.building-results-ul {margin-top: -1.8em;}
 .building-listing {
 	width: 100%;
 	padding: 1em 0.5em 1em 0;
@@ -65,13 +70,16 @@
 }
 
 .building-image {
+	width: 125px;
+	height: 105px;
 	margin-top: 0.3em;
 	padding: 2px;
 	display: inline-block;
 	vertical-align: top;
 	border-radius: 3px;
-	background: $grayVeryDark;
 	text-align: center;
+	overflow: hidden;
+	img { border: 1px solid $grayMedium; }
 }
 
 .building-listing-info {
@@ -192,7 +200,7 @@
 	vertical-align: top;
 	padding: 0 1.5% 0 1.5%;
 	margin: 0.1em 0 4em 0;
-	width: 41%;
+	width: 42%;
 	background: white;
 	border: 1px solid $grayMedium;
 	border-radius: 6px;
@@ -201,15 +209,16 @@
 		font-weight: 500;
 		text-align: left;
 		letter-spacing: 0.5px;
+		margin-bottom: 0.2em;
 	}
 	p {
-		font-size: 0.95em;
+		font-size: 1em;
 		line-height: 1.2em;
 	}
 }
 #geography {font-size: 0.9em; font-style: italic; color:$grayDark;}
 #address-text {font-size: 0.9em; margin:-0.8em 0 1em 0; padding:0; color: $gbDark;}
-.review-rent-btns {margin-top: -0.5em;}
+.review-rent-btns {margin-top: 0em;}
 .building-stats {
 	width: 98%;
 	display: inline-block;
@@ -230,7 +239,7 @@
 #overall-rating-div {
 	width: 16.5em;
 	height: 1.75em;
-	margin: 0.5em 0 0.75em 1.9em;
+	margin: 0.5em 0 0.75em 2.9em;
 	padding-left: 0em;
 	background: $blueLight;
 	border: 1px solid $blueLight;
@@ -262,12 +271,12 @@
 	vertical-align: top;
 	display: inline-block;
 	width: 45%;
-	margin-top: -0.6em;
+	margin-top: -0.7em;
 	margin-left: -1em;
 	ul {
 		li {
 			display: block;
-			margin-bottom: 0.28em;
+			margin-bottom: 0.18em;
 		}
 		&:first-child {line-height: 0.87em}
 	}
@@ -278,16 +287,15 @@
 	vertical-align: top;
 	width: 50%;
 	height: 24em;
-	margin-left: 0.2em;
+	margin-left: 0.6em;
 }
-.rental-photos-area {margin-left: 0.6em;}
 .add-photo-link {margin-top: 0.4em; float:right;}
 
 .map-area {
 	display: inline-block;
 	vertical-align: top;
 	width: 100%;
-	height: 23em;
+	height: 23.3em;
 	margin-top: -0.5em;
 	padding: 1% 0 1% 2%;
 	border: 1px solid $grayLight;
@@ -329,11 +337,62 @@
 
 .ad-holder-336 {
 	width: 92%;
-	margin-top: 2em;
+	margin-top: 1.5em;
 	padding: 4%;
 	border: 1px solid $grayLight;
 }
 
+/* Nearby Buildings */
+
+.nearby-buildings {
+	display: inline-block;
+	width: 95%;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	padding: 0.8em;
+	background: white;
+	border: 1px solid $grayLight;
+	border-radius: 6px;
+	h3 {
+		margin: 0 0 1.5em 0;
+		font-weight: 500;
+		font-size: 1.1em;
+	}
+	ul {
+		margin: 0;
+		li {
+			padding: 0.4em 0.6em;
+			margin: 0 0 0.4em 0;
+			border-radius: 6px;
+			h5 {
+				margin: 0.6em 0 0 0;
+				font-weight: 500;
+			}
+			img {
+				margin: 0.5em 0 0.5em 0;
+			}
+			&:hover {
+				background: $blueLight;
+			}
+		}
+	}
+}
+.nearby-buildings-image {
+	width: 70px;
+	height: 70px;
+	vertical-align: top;
+	display: inline-block;
+	overflow: hidden;
+	img {
+		border: 1px solid $grayMedium;
+	}
+}
+
+.nearby-buildings-info {
+	vertical-align: top;
+	display: inline-block;
+	margin-left: 0.7em;
+}
 /* New building form */
 
 .new-building-form {

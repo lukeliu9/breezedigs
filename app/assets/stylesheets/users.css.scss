@@ -7,22 +7,26 @@
 /* Profile Header */
 
 .profile-header {
+	display: block;
 	vertical-align: middle;
-	height: 13em;
+	height: 10em;
+	margin-bottom: 2em;
 	li {white-space: normal; display:inline-block;}
-	h1 {font-weight:400; color: $grayVeryDark;font-size:1.5em ;color:#24292d; display:inline;}
-	h2 {font-weight:400; color: $grayVeryDark;font-size:1.5em ;color:#24292d; display:inline; margin-left:3px;}
-	h3 {font-weight:300; color: $grayVeryDark;font-size:1.3em ;color:#464e54;}
+	h1 {margin: 0em; font-weight:400; color: $grayVeryDark;font-size:1.5em ;color:#24292d; display:inline;}
+	h2 {margin: 0em; font-weight:400; color: $grayVeryDark;font-size:1.5em ;color:#24292d; display:inline; margin-left:3px;}
+	h3 {margin: 0 0 0.7 0em; font-weight:300; color: $grayVeryDark;font-size:1.3em ;color:#464e54;}
 }
 
 #avatar {
+	vertical-align: top;
 	border: 1px solid #59788d;
 	border-radius: 4px;
 	background-color: white;
 	padding: 10px;
 }
 #user-section {
-	width: 52%; margin:0 10px; padding:0 10px;
+	vertical-align: top;
+	width: 58%; margin:0 10px; padding:0 10px;
 }
 
 .profile-nav {
@@ -40,6 +44,7 @@
 /* Profile Content Area */
 
 .profile-content-area {
+	display: block;
 	width: 102%;
 	min-height: 600px;
 	padding: 5px;
@@ -82,7 +87,7 @@
 .user-contributions {
 	padding: 0.7em;
 	background: $blueOffWhite;
-	border: 1px dashed $blueMedium;
+	border: 1px solid $blueMedium;
 	ul {
 		&:last-child {border: 0;}
 		li {
@@ -131,23 +136,53 @@
 		font-weight: 500;
 	}
 	p {
+		font-size: 1.05em;
 		color: $grayDark;
+		font-weight: 300;
+		letter-spacing: 1px;
 	}
 }
 
 /* Edit Profile Page */
 
-.edit-box {
-	padding: 10px 20px;
-	width: 45%;
+.user-settings {
+	vertical-align: top;
+	display: inline-block;
+	width: 41%;
+	margin-left: 0.7em;
+	padding: 1em 2em;
 	border: 1px solid $grayLight;
-	float:left;
-	border-radius: 6px;
-	i {color: $grayDark;}
+	border-radius: 7px;
+	h2 {
+		font-size: 1.2em;
+		font-weight: 500;
+	}
 }
 
-#right {margin: 45px 0 10px 15px;}
-#left {margin: 45px 15px 10px 10px;}
+.edit-box {
+	vertical-align: top;
+	display: inline-block;
+	margin-left: 19em;
+	margin-right: auto;
+	padding: 1em 2em;
+	width: 45%;
+	border: 1px solid $grayLight;
+	border-radius: 6px;
+	background: white;
+	h2 {
+		font-size: 1.2em;
+		font-weight: 500;
+	}
+	p {
+		margin-top: 1.2em;
+		font-size: 1.05em;
+		font-weight: 500;
+	}
+	i {color: $grayDark;}
+	input {
+		width: 36em;
+	}
+}
 
 /* Misc */
 

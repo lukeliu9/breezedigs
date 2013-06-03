@@ -11,7 +11,7 @@
 /* IMPORTANT - Change '#myGallery' to the ID of your gallery list to prevent a flash of unstyled content */
 #gallery { display: none; }
 
-.gv_galleryWrap { position: relative; background: #222; font-size: 10pt; }
+.gv_galleryWrap { position: relative; background: #d9dddf; border: 1px solid #bbbfc3; border-radius: 5px; font-size: 10pt; }
 
 /* GALLERY DIV */
 .gv_gallery { overflow: hidden; position: relative;}
@@ -98,15 +98,10 @@
 .gv_frame.current .gv_caption { }
 
 /* POINTER FOR CURRENT FRAME */
-.gv_pointer {
-	border-color: black;
-}
+.gv_pointer { border-color: black; }
 
 /* NAVIGATION BUTTONS */
-.gv_navWrap {
-	text-align: center;
-	position: absolute;
-}
+.gv_navWrap { text-align: center; position: absolute; }
 .gv_navPlay,
 .gv_navPause,
 .gv_navNext,

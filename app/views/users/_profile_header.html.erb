@@ -1,18 +1,16 @@
 <div class="profile-header">
 
 		<div class="buffer-small"></div>	
-			<% flash.each do |key, value| %>
-				<%= content_tag(:div, value, class: "alert alert-#{key}") %>
-			<% end %>
 	
 		<ul class="profile-header no-wrap">
 			<li id="avatar">
-				<%= image_tag @user.avatar.url, size: "100x100" %>
+				<%= gravatar_for @user %>
 			</li>
 
 			<li id="user-section">
 				<h1><%= @user.first_name %></h1>
 				<h2><%= @user.last_name %></h2>
 				<h3><%= @user.email %></h3>
+				<%= link_to "Change your Gravatar", "http://en.gravatar.com/emails/" %>
 			</li>
 

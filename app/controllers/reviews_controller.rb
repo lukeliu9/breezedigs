@@ -3,7 +3,8 @@ class ReviewsController < ApplicationController
 	def index
 		@building = Building.find(params[:building_id])
 		@reviews = @building.reviews
-		@json = @building.to_gmaps4rails		
+		@json = @building.to_gmaps4rails
+		@nearby = Building.near(@building, 0.5).delete_current_building(@building).first(5)
 	end
 
 	def new
@@ -50,40 +51,7 @@ class ReviewsController < ApplicationController
 	end
 
 	def selectbuilding
-		empty_search = params[:search] ? false : true
-    	
-    	if empty_search
-    		@buildings = Building.page(params[:page]).per(15)
-    	else
-			@search = Sunspot.search(Building) do
-	  			fulltext params[:search]
-			end
-	  		@buildings = Building.where(id: @search.results.map(&:id)).page(params[:page]).per(15)
-	  	end
-	end
-
-	def thanks
-	end
-
-	def pros
-	end
-
-	def cons
-	end
-
-	def mgmt
-	end
-
-	def nsn
-	end
-
-	def unitamen
-	end
-
-	def parktrans
-	end
-
-	def advice
+		@featured = Building.select_only_in_city("Chicago").has_image.select_featured(15)
 	end
 	
 end
