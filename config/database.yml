@@ -18,7 +18,7 @@ production:
   database: breezedigs_production
   pool: 5
   host: localhost
-  username: breezedigs
+  username: breeze
   password: reviews321
 
 development:
