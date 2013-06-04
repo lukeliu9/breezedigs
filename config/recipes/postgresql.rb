@@ -31,4 +31,12 @@ namespace :postgresql do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
   after "deploy:finalize_update", "postgresql:symlink"
+
+  desc "Resets the Production Database"
+  task :migrate_reset do
+      puts "\n\n=== Resetting the Production Database! ===\n\n"
+      run "cd #{current_path}; rake db:migrate:reset RAILS_ENV=production"
+  end
+  after "deploy:setup", "postgresql:migrate_reset"
+
 end
