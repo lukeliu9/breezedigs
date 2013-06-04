@@ -372,6 +372,7 @@ DEPENDENCIES
   cucumber-rails (= 1.2.1)
   database_cleaner (= 0.7.0)
   devise
+  execjs
   factory_girl (~> 2.0.0)
   factory_girl_rails (~> 1.1.0)
   faker (= 1.0.1)

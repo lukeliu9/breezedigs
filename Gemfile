@@ -44,6 +44,11 @@ gem 'capistrano'
 
 gem 'pg', '0.12.2'
 
+group :production do
+ gem 'therubyracer'
+ gem 'execjs'
+end
+
 group :development do
 	gem 'annotate', '~>2.4.1.beta'
 end
