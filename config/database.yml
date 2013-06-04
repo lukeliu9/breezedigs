@@ -13,10 +13,11 @@
 # gem 'pg'
 #
 production:
- adapter: postgresql
+  adapter: postgresql
   encoding: unicode
   database: breezedigs_production
   pool: 5
+  host: localhost
   username: breezedigs
   password: reviews321
 

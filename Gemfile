@@ -45,7 +45,6 @@ gem 'capistrano'
 gem 'pg', '0.12.2'
 
 group :production do
- gem 'therubyracer'
  gem 'execjs'
 end
 
