@@ -7,7 +7,7 @@ $darkgreytext: #5d6062;
 $lightgreytext: #808386;
 $grayLight: #d4d9dc;
 
-$footerHeight: 58em;
+$footerHeight: 46em;
 
 @import "colors";
 @mixin box_sizing {
@@ -59,7 +59,7 @@ a:hover { text-decoration: none;}
 .no-wrap {white-space: nowrap;}
 #body {padding-bottom: $footerHeight;}
 #holder {min-height: 100%; position:relative;margin-left:auto; margin-right:auto; width:100%;}
-.container{width:1150px; margin-left:auto; margin-right:auto;}  
+.container{width:950px; margin-left:auto; margin-right:auto;}  
 .no-border {border: 0;}
 
 .bg-texture-wrapper {
@@ -116,8 +116,8 @@ p { font-size: 0.9em; line-height: 1.1em; }
 .maintopbar nav {padding:0.6em 0; display:inline-block;}
 #logo {font-size: 1.8em; font-weight: bold;margin-top: 2px; margin-right: 25px;&:hover { text-decoration: none; }}
 .header-box {display:inline-block; white-space:normal; width: 30em;}
-.header-buttons {width: 26.5%;}
-.header-links {margin: 15px 0;}
+.header-buttons {width: 22%;}
+.header-links {margin: 15px 0; a {font-size: 0.95em;}}
 .header-links li {display:inline;margin-left:15px;}
 
 /* Pagination */
@@ -158,17 +158,17 @@ footer {
 		&:hover { color: #699fdb; }
 	}
 }
-
-.footer-col li {vertical-align:top; display: inline-block; white-space: normal; width: 16em; margin-left: -5px; line-height: 2.2em; text-align:left;}
+.footer-narrow {width: 80%; margin-left: auto; margin-right: auto;}
+.footer-col li {vertical-align:top; display: inline-block; white-space: normal; width: 14em; margin-left: -5px; line-height: 2.2em; text-align:left; font-size: 0.95em;}
 
 .upper-footer {
-	h3 {font-size: 1.3em; margin-bottom: 20px; font-weight: 300;}
+	h3 {font-size: 1em; margin-bottom: 20px; font-weight: 300;}
 }
 .lower-footer {background: #c3d8f0; height:25em; border-top: 1px solid #78a4d6;}
 
 #social-col {width:225px;}
-#footer-title {font-size:1.4em; font-weight:300; color:#396392; border-bottom:1px solid #7e9bb2; margin: 10px 20px 10px 20px; padding:0 0 6px 0;}
-#footer-cities {line-height: 2em;}
+#footer-title {font-size:1.2em; font-weight:300; color:#396392; border-bottom:1px solid #7e9bb2; margin: 10px 20px 10px 20px; padding:0 0 6px 0;}
+#footer-cities {line-height: 1.9em;}
 #social-button-container {width:172px;}
 .social-button {
 	background-color: #c3d8f0;

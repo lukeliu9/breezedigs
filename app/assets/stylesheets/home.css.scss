@@ -13,7 +13,7 @@ $grayLight: #d4d9dc;
 	background-size: 100%;
 	height: 35em;
 	h1 {
-		font-size: 4em;
+		font-size: 3em;
 		text-shadow: 0 0 4px #fff; -moz-text-shadow: 0 0 4px #fff;
 	}
 }
@@ -71,18 +71,18 @@ $grayLight: #d4d9dc;
 	white-space: normal;
 	display: inline-block;
 	height: 3em; 
-	width: 7.4em;
+	width: 6.3em;
 	margin: 10px 10px 0 0; 
 	padding: 0.1em 0.7em 0.4em 0.7em;
 	border-right: 1px solid $bordercolor;
 	text-align: center;
 	h3 {
-		font-size: 1.3em;
+		font-size: 1.1em;
 		font-weight: 600;
 		margin: 0.2em 0 0.4em 0;
 		padding: 0;
 	}
-	p { color: $grayDark; font-size: 1.1em; }
+	p { color: $grayDark; font-size: 1em; }
 	&:last-child { border: 0; }
 }
 
@@ -124,8 +124,8 @@ $grayLight: #d4d9dc;
 }
 
 .featured-image-container {
-	width: 226px;
-	height:142px;
+	width: 200px;
+	height:135px;
 	position: relative; overflow: hidden;
 	img { position: absolute; }
 }

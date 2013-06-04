@@ -8,8 +8,7 @@ class CitiesController < ApplicationController
 
 	def show
 		@city = City.find(params[:id])
-
-		@search = Building.where{city =~ @city}
+		@search = Building.joins{city}.where{city.id = @city}
   		@buildings = @search
   		@buildingresults = Kaminari.paginate_array(@buildings).page(1).per(10)
 		@json = @buildingresults.to_gmaps4rails

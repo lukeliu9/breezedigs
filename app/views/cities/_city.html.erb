@@ -1,19 +1,41 @@
-<div class="container">
-	<div class="main-content-area">
+<% content_for :head do %>
+	<%= stylesheet_link_tag 'buildings' %>
+	<%= stylesheet_link_tag 'gmaps4rails' %>
+<% end %>
+
+<% provide(:title, 'Buildings in this city') %>
+
+<div class="bg-texture-wrapper">
+	<div class="container">
+		<div class="em-buffer-3"></div>
 
 		<h1><%= "#{@city.name}" %></h1>
-
-		<div class="city-header">
-			<h2>`<%= @buildings.count %> buildings in </h2>
-		</div>
-
+		
 		<div class="search-sidebar">
-
+			<div class="map-area">
+				<%= gmaps({
+  				"map_options" => {"auto_zoom" => false, "zoom" => 13 },
+ 				"markers" => {"data" => @json }
+				}) %>
+			</div>
+			<div class="search-options">
+				
+			</div>
 		</div>
 
 		<div class="building-results">
+			
+			<div class="results-header">
+			<% if @buildingresults.nil? || @buildingresults.empty? %>
+				<h2>Your search did not return any results</h2>
+			<% else %>
+				<h2>Your search returned <%= pluralize(@buildings.count, "result") %></h2>
+			<% end %>
+
+			</div>
+
 			<%= render 'buildings/buildingresults' %>
 		</div>
-
+		<div class="buffer"></div>
 	</div>
 </div>

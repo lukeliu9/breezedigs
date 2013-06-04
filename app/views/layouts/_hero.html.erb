@@ -44,7 +44,7 @@
 			<li class="featured-building">
 				<h4><%= building.name %></h4>
 				<div class="featured-image-container">
-					<%= link_to(image_tag(building.photos.first.image.url, width: "240px"), building_path(building)) %>
+					<%= link_to(image_tag(building.photos.first.image.url, width: "196px"), building_path(building)) %>
 				</div>
 				<% if building.reviews.nil? || building.reviews.blank? %>
 					<img src="/assets/stars/star0.png" height="16px" width="80px">

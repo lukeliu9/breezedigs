@@ -12,9 +12,10 @@
 	height: 10em;
 	margin-bottom: 2em;
 	li {white-space: normal; display:inline-block;}
-	h1 {margin: 0em; font-weight:400; color: $grayVeryDark;font-size:1.5em ;color:#24292d; display:inline;}
-	h2 {margin: 0em; font-weight:400; color: $grayVeryDark;font-size:1.5em ;color:#24292d; display:inline; margin-left:3px;}
-	h3 {margin: 0 0 0.7 0em; font-weight:300; color: $grayVeryDark;font-size:1.3em ;color:#464e54;}
+	h1 {margin: 0em; font-weight:500; color: $grayVeryDark;font-size:1.2em ;color:#24292d; display:inline;}
+	h2 {margin: 0em; font-weight:500; color: $grayVeryDark;font-size:1.2em ;color:#24292d; display:inline; margin-left:3px;}
+	h3 {margin: 0 0 0.7 0em; font-weight:300; color: $grayVeryDark;font-size:1.05em ;color:#464e54;}
+	a { font-size:0.95; }
 }
 
 #avatar {
@@ -26,7 +27,7 @@
 }
 #user-section {
 	vertical-align: top;
-	width: 58%; margin:0 10px; padding:0 10px;
+	width: 55%; margin:0 10px; padding:0 10px;
 }
 
 .profile-nav {
@@ -180,7 +181,7 @@
 	}
 	i {color: $grayDark;}
 	input {
-		width: 36em;
+		width: 29em;
 	}
 }
 
