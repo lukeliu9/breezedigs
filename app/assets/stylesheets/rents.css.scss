@@ -92,7 +92,23 @@
 		color: $grayDark;
 	}
 	input {
+		vertical-align: bottom;
+		display: block;
 		width: 12em;
+	}
+}
+
+.field_with_errors {
+	background: white;
+	display: inline;
+	label {
+		display: inline-block;
+		margin-top: -0.3em;
+		background: #ffe5e1;
+		vertical-align: top;
+		padding: 0.2em 0.7em;
+		border-radius: 6px;
+		color: #9d2d1a;
 	}
 }
 

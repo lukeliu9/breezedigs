@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603050542) do
+ActiveRecord::Schema.define(:version => 20130603191355) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -51,14 +51,6 @@ ActiveRecord::Schema.define(:version => 20130603050542) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "city_id"
-  end
-
-  create_table "authentications", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "provider"
-    t.string   "uid"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "buildings", :force => true do |t|
@@ -192,6 +184,8 @@ ActiveRecord::Schema.define(:version => 20130603050542) do
     t.text     "unitamen"
     t.string   "status",                :default => "unapproved"
     t.text     "flagged",               :default => "no"
+    t.date     "start"
+    t.date     "stop"
   end
 
   create_table "settings", :force => true do |t|
@@ -222,6 +216,8 @@ ActiveRecord::Schema.define(:version => 20130603050542) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "status"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

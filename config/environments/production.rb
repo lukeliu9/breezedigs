@@ -64,4 +64,10 @@ Breezedigs::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  TWITTER_KEY = 'NT1fdKC7veGFZjpt69GF8g'
+  TWITTER_SECRET = 'Qeo7mpyADS9TmyPS1sf2b4KjbyaJxYr5IRnA3r24OY'
+
+  FACEBOOK_KEY = '363280463794243'
+  FACEBOOK_SECRET = '19b711f8e62c8e1d5c0082059f524d82'
 end

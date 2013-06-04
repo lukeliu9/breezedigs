@@ -302,10 +302,22 @@
 	}
 	h4 {
 		font-size: 1em;
-		font-weight: 300;
-		color: $grayDark;
+		font-weight: 400;
+		color: $grayVeryDark;
 	}
 }
+
+#start-stop {
+	p {
+		display: inline-block;
+		vertical-align: top;
+	}
+	select {
+		width: 5em;
+		vertical-align: top;
+	}
+}
+
 
 .tell-us-more {
 	width: 96%;
@@ -318,7 +330,7 @@
 	background: $grayVeryLight;
 	h5 {
 		font-size: 0.9em;
-		color: $grayDark;
+		color: $grayVeryDark;
 		font-weight: 200;
 		margin: 0;
 	}

@@ -46,7 +46,7 @@
 
 	<div id="unit-num-field">
 		<p>When did you live here?</p>
-		&nbsp;&nbsp;<i class="icon-info-sign"></i><br>
+		<!-- &nbsp;&nbsp;<i class="icon-info-sign"></i><br> -->
 			<div id="start-stop">
 			<%= select_year Date.today, start_year: Time.now.year, end_year: Time.now.year - 95, field_name: :start, prefix: :rent %>
 			<p>&nbsp;&nbsp;to&nbsp;&nbsp;</p>
@@ -55,8 +55,8 @@
 	</div>
 
 	<div id="unit-num-field">
-		<p>Your unit number</p>
-		&nbsp;&nbsp;<i class="icon-info-sign"></i><br>
+		<p>Your unit number <span id="fw-300">(Will not be published)</span></p><br>
+		<!-- &nbsp;&nbsp;<i class="icon-info-sign"></i><br> -->
 		<%= f.text_field :unitnum, 
 			placeholder: "ex. 1205 or 5C" %>
 	</div>

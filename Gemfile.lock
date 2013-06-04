@@ -155,11 +155,14 @@ GEM
       has_scope (~> 0.5.0)
       responders (~> 0.9)
     journey (1.0.4)
-    jquery-rails (3.0.0)
+    jquery-rails (2.3.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     jquery-star-rating-rails (4.0.4)
       rails (>= 3.1.0)
+    jquery-ui-rails (4.0.3)
+      jquery-rails
+      railties (>= 3.1.0)
     json (1.8.0)
     jwt (0.1.8)
       multi_json (>= 1.5)
@@ -187,7 +190,7 @@ GEM
       polyamorous (~> 0.5.0)
     method_source (0.8.1)
     mime-types (1.23)
-    multi_json (1.7.4)
+    multi_json (1.7.5)
     multipart-post (1.2.0)
     netrc (0.7.7)
     nokogiri (1.5.9)
@@ -360,8 +363,9 @@ DEPENDENCIES
   guard-spork (= 1.2.0)
   heroku (= 2.26.7)
   hirb
-  jquery-rails
+  jquery-rails (= 2.3.0)
   jquery-star-rating-rails
+  jquery-ui-rails
   kaminari
   launchy (= 2.1.0)
   less-rails

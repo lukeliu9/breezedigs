@@ -53,7 +53,8 @@ group :assets do
   gem 'sassy-buttons'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '2.3.0'
+gem "jquery-ui-rails"
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'

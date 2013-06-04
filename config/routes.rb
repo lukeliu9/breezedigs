@@ -1,18 +1,11 @@
 Breezedigs::Application.routes.draw do
-  
-  get "authentications/index"
-
-  get "authentications/create"
-
-  get "authentications/destroy"
 
   root to: 'static_pages#home'
 
-  ActiveAdmin.routes(self)
-
   devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
-  devise_for :users
+  ActiveAdmin.routes(self)
 
   # Resources
 

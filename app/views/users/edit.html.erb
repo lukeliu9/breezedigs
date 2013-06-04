@@ -29,7 +29,7 @@
 
     <div class="edit-box">
       <h2>Edit your profile</h2>
-      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+      <%= form_for(@user) do |f| %>
         <%= devise_error_messages! %>
 
         <div><p>First Name</p>
@@ -51,8 +51,10 @@
         <div><p>Password Confirmation</p>
         <%= f.password_field :password_confirmation, class: "edit-field" %></div>
 
-        <div><p>Current Password <i>(we need your current password to confirm your changes)</i></p>
-        <%= f.password_field :current_password, class: "edit-field" %></div>
+        <% if f.object.encrypted_password.present? %>
+          <div><p>Current Password <i>(we need your current password to confirm your changes)</i></p>
+          <%= f.password_field :current_password, class: "edit-field" %></div>
+        <% end %>
 
         <div><%= f.submit "Update", class: "btn" %></div>
       <% end %>

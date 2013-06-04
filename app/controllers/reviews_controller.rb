@@ -12,8 +12,12 @@ class ReviewsController < ApplicationController
 		if no_building
 			redirect_to selectbuilding_path
 		else
-			@building = Building.find(params[:building_id])
-			@review = @building.reviews.new
+			if user_signed_in?
+				@building = Building.find(params[:building_id])
+				@review = @building.reviews.new
+			else
+		  		redirect_to new_user_session_path
+	    	end
 		end
 	end
 
@@ -23,7 +27,7 @@ class ReviewsController < ApplicationController
 		current_user.reviews << @review
 		if @review.save
 			flash[:notice] = "Thank you for submitting a review and contributing to our community!"
-			redirect_to building_path(@building)
+			redirect_to current_user
 		else
 			render :action => 'new'
 		end

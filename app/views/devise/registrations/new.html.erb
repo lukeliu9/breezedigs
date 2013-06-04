@@ -25,50 +25,60 @@
 		</div>
 
 		<div class="login-box">
-		<h2>Sign up</h2>
+			<div class="authentication">
+				<h2>Login with:</h2>
+					<%= link_to(raw("
+					<button class=\"social-button facebook\" id=\"auth-ext-btn\"><span>w</span>&nbsp;&nbsp;Facebook</button>"),
+					user_omniauth_authorize_path(:facebook)) %>
+				<br>
+					<%= link_to(raw("
+					<button class=\"social-button twitter\" id=\"auth-ext-btn\"><span>t</span>&nbsp;&nbsp;&nbsp;&nbsp;Twitter</button>"),
+					user_omniauth_authorize_path(:twitter)) %>
+			</div>
+			<div class="normal-auth">
+			<h2>or...Sign up with Email</h2>
 
-		<%= devise_error_messages! %>
+				<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
-			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+				  <div>
+				  	<%= f.text_field :first_name, 
+				  	class: "auth-field", 
+				  	style: "color: #5b5e62; width: 105px;", 
+				  	placeholder: "First Name" %>
 
-			  <%= f.hidden_field :role, value: "tenant" %>
+				  <%= f.text_field :last_name, 
+				  	class: "auth-field", 
+				  	style: "color: #5b5e62; width: 130px; margin-left: 8px;", 
+				  	placeholder: "Last Name" %>
+				  </div>
 
-			  <div>
-			  	<%= f.text_field :first_name, 
-			  	class: "auth-field", 
-			  	style: "color: #5b5e62; width: 120px;", 
-			  	placeholder: "First Name" %>
+				  <div>
+				  	<%= f.email_field :email, 
+				  	autofocus: true, 
+				  	class: "auth-field", 
+				  	style: "color: #5b5e62;", 
+				  	placeholder: "Email" %>
+				  </div>
 
-			  <%= f.text_field :last_name, 
-			  	class: "auth-field", 
-			  	style: "color: #5b5e62; width: 133px; margin-left: 8px;", 
-			  	placeholder: "Last Name" %>
-			  </div>
+				  <% if f.object.password_required? %>
+					  <div><%= f.password_field :password, 
+					  	class: "auth-field", 
+					  	style: "color: #5b5e62;", 
+					  	placeholder: "Password" %>
+					  </div>
 
-			  <div>
-			  	<%= f.email_field :email, 
-			  	autofocus: true, 
-			  	class: "auth-field", 
-			  	style: "color: #5b5e62;", 
-			  	placeholder: "Email" %>
-			  </div>
+					  <div><%= f.password_field :password_confirmation, 
+					  	class: "auth-field", 
+					  	style: "color: #5b5e62;", 
+					  	placeholder: "Confirm password" %>
+					  </div>
+				  <% end %>
 
-			  <div><%= f.password_field :password, 
-			  	class: "auth-field", 
-			  	style: "color: #5b5e62;", 
-			  	placeholder: "Password" %>
-			  </div>
-
-			  <div><%= f.password_field :password_confirmation, 
-			  	class: "auth-field", 
-			  	style: "color: #5b5e62;", 
-			  	placeholder: "Confirm password" %>
-			  </div>
-
-			  <div class="session-elements">
-			  <br><div id="auth-btn"><%= f.submit "Create my account", class: "btn btn-primary"  %></div><br>
-				<% end %>
-				<%= render "devise/shared/links" %>
+				  <div class="session-elements">
+				  <br><div id="auth-btn"><%= f.submit "Create my account", class: "btn btn-primary"  %></div><br>
+					<% end %>
+					<%= render "devise/shared/links" %>
+				</div>
 			</div>
 		</div>
 		<div class="buffer-large"></div>

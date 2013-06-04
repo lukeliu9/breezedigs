@@ -5,8 +5,12 @@ class RentsController < ApplicationController
 		if no_building
 			redirect_to selectbuildingrent_path
 		else
-			@building = Building.find(params[:building_id])
-			@rent = @building.rents.new
+			if user_signed_in?
+				@building = Building.find(params[:building_id])
+				@rent = @building.rents.new
+			else
+		  		redirect_to new_user_session_path
+	    	end
 		end
 	end
 

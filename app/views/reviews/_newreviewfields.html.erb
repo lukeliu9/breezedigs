@@ -1,24 +1,33 @@
 <%= form_for([@building, @building.reviews.new], validate: true) do |f| %>
-
+ 	
 <div class="review-form-fields">
 
-	<h4>What is your overall rating of living here?</h4>
+	<h4>What is your overall rating of living here?*</h4>
 	<%= star_ratings("overall") %>
-
-	<br>
+	<br><br>
 	<div>
-		<p>Pros:</p>
+		<p>Pros*: <span id="fw-400"><i>(100 character minimum)</i></span></p>
 		<%= f.text_area :pros,
 			placeholder: "General positives about living in this building", size: "5x3" %>
 		<br />
 	</div>
 
 	<div>
-		<p>Cons:</p>
+		<p>Cons*: <span id="fw-400"><i>(100 character minimum)</i></span></p>
 		<%= f.text_area :cons,
 			placeholder: "Negative aspects of living in this building", size: "5x3" %>
 		<br />
 	</div>
+
+	<div>
+		<p>When did you live here?* <span id="fw-300"><i>(Leave end date unchanged if you currently live here)</i></span></p>
+		<!-- &nbsp;&nbsp;<i class="icon-info-sign"></i><br> -->
+			<div id="start-stop">
+			<%= select_year Date.today, start_year: Time.now.year, end_year: Time.now.year - 95, field_name: :start, prefix: :rent %>
+			<p>&nbsp;&nbsp;to&nbsp;&nbsp;</p>
+			<%= select_year Date.today, start_year: Time.now.year, end_year: Time.now.year - 95, field_name: :stop, prefix: :rent %>
+			</div>
+	</div>		
 
 	<div class="tell-us-more"><h5>Can you tell us a bit more?(optional)</h5></div><br>
 

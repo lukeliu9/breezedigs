@@ -9,9 +9,13 @@ ActiveAdmin.register User do
   	column :last_sign_in_at
   	column :created_at
 
-  	column 'Areas' do |user|
-  		user.reviews.collect(&:name).join(', ')
+  	column 'Reviews' do |user|
+  		user.reviews.collect(&:overall).join(', ')
   	end
+
+    column 'Rents' do |user|
+      user.rents.collect(&:rent).join(', ')
+    end
 
   	default_actions
   end
