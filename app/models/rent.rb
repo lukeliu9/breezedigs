@@ -13,6 +13,7 @@ class Rent < ActiveRecord::Base
   validates :unitnum,	presence: true, length: {minimum: 1, maximum: 6}
   validates :start,		presence: true
   validates :stop,		presence: true
+  validates :user_id,   uniqueness: { scope: :building_id, message: "Users may only submit one rent per building" }
 
   def self.average_for(beds, baths, metric)
  	 where(beds: beds, baths: baths).average(metric)
