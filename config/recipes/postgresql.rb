@@ -35,8 +35,8 @@ namespace :postgresql do
   desc "Resets the Production Database"
   task :migrate_reset do
       puts "\n\n=== Resetting the Production Database! ===\n\n"
-      run "cd #{current_path}; rake db:migrate:reset RAILS_ENV=production"
+      run "cd #{current_path} && bundle exec rake db:reset RAILS_ENV=#{rails_env}"
   end
-  after "deploy:setup", "postgresql:migrate_reset"
+
 
 end

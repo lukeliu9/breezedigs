@@ -64,7 +64,7 @@
 					<%= link_to(raw("<button class=\"btn\">Submit a New Rent</button>"), new_rent_path) %>
 				</div>
 				<% if @rents.nil? || @rents.blank? %>
-				<%= raw("You have not written any reviews yet") %>
+				<%= raw("You have not submited a rent yet") %>
 				<% else %>
 					<ul>
 						<% @rents.each do |rent| %>
@@ -92,7 +92,7 @@
 					<%= link_to(raw("<button class=\"btn\">Add a New Photo</button>"), new_photo_path) %>
 				</div>
 				<% if @photos.nil? || @photos.blank? %>
-				<%= raw("You have not written any reviews yet") %>
+				<%= raw("You have not uploaded a photo yet") %>
 				<% else %>
 					<ul>
 						<% @photos.each do |photo| %>
