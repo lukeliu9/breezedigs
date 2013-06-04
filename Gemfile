@@ -35,6 +35,10 @@ gem "meta_search"
 gem "geocoder"
 gem 'gmaps4rails'
 
+# Deployment
+gem 'unicorn'
+gem 'capistrano'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
