@@ -17,9 +17,8 @@ production:
   encoding: unicode
   database: breezedigs_production
   pool: 5
-  host: localhost
   username: breezedigs
-  password: 'reviews#321'
+  password: reviews321
 
 development:
   adapter: postgresql
