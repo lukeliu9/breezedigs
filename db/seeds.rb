@@ -1,5 +1,5 @@
 # Create US cities
-=begin
+#=begin
 City.delete_all    #first deletes existing records before creating new ones from array below
 [["New York", "NY", "8489713"], ["Detroit", "MI", "5901160"], ["Chicago", "IL", "2901633"], ["Houston", "TX", "2400133"], ["Phoenix", "AZ", "1657153"], 
 ["Philadelphia", "PA", "1656138"], ["San Diego", "CA", "1582739"], ["San Antonio", "TX", "1391022"], ["Dallas", "TX", "1383776"], ["San Jose", "CA", "1098132"], 
@@ -589,7 +589,7 @@ puts "All NYC neighorhoods"
 
 puts "all seeds complete!"
 
-=end
+#=end
 
 
 
