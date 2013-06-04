@@ -17,6 +17,7 @@
 
 #Ignore others
 
+/config/database.yml
 *.swp
 doc/
 *~
