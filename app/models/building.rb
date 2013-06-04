@@ -51,7 +51,7 @@ class Building < ActiveRecord::Base
   end
 
   def self.search_by_city(search)
-    self.joins{city}.where{city = "#{search.id}"}
+    self.joins{city}.where{city.name =~ "%#{search.name}%"}
   end
 
   def self.select_only_in_city(selection)
