@@ -5,8 +5,12 @@ class PhotosController < ApplicationController
 		if no_building
 			redirect_to selectbuildingphoto_path
 		else
-			@building = Building.find(params[:building_id])
+			if user_signed_in?
+				@building = Building.find(params[:building_id])
 			@photo = @building.photos.new
+			else
+		  		redirect_to new_user_session_path
+	    	end
 		end
 	end
 

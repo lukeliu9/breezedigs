@@ -90,7 +90,7 @@ $grayLight: #d4d9dc;
 
 .home-stripe { background: #42464b; height: 18em;
 	h3 {
-		margin: 1em 0 0.7em -1em;
+		margin: 1em 0 0.7em 0;
 		font-size: 1.05em;
 		font-weight: 300;
 		color: $grayLightMedium;
@@ -99,7 +99,7 @@ $grayLight: #d4d9dc;
 
 .featured-buildings-ul {
 	width: 102%;
-	margin-left: -1em;
+	margin-left: 0;
 	h4 {
 		display: inline-block;
 		margin: 0 0 0.7em 0;
