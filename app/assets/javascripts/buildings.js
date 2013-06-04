@@ -1,7 +1,7 @@
 $(function(){
 	$('#gallery').galleryView({
-		panel_width: 375,
-		panel_height: 270,
+		panel_width: 345,
+		panel_height: 262,
 		frame_width: 70,
 		frame_height: 50
 	});

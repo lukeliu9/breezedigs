@@ -81,56 +81,56 @@
 										<ul>
 											<li>
 												<% if review[:management_rating].nil? %>
-													<%= light_star_image(0) %>
+													<p>N/A</p>
 												<% else %>
 													<%= light_star_image((review[:management_rating]*4).round) %>
 												<% end %>
 											</li>
 											<li>
 												<% if review[:staff_rating].nil? %>
-													<%= light_star_image(0) %>
+													<p>N/A</p>
 												<% else %>
 													<%= light_star_image((review[:staff_rating]*4).round) %>
 												<% end %>	
 											</li>
 											<li>
 												<% if review[:maintenance_rating].nil? %>
-													<%= light_star_image(0) %>
+													<p>N/A</p>
 												<% else %>
 													<%= light_star_image((review[:maintenance_rating]*4).round) %>
 												<% end %>
 											</li>
 											<li>
 												<% if review[:amenities_rating].nil? %>
-													<%= light_star_image(0) %>
+													<p>N/A</p>
 												<% else %>
 													<%= light_star_image((review[:amenities_rating]*4).round) %>
 												<% end %>
 											</li>
 											<li>
 												<% if review[:neighborhood_rating].nil? %>
-												<%= light_star_image(0) %>
+													<p>N/A</p>
 												<% else %>
 													<%= light_star_image((review[:neighborhood_rating]*4).round) %>
 												<% end %>
 											</li>
 											<li>
 												<% if review[:safety_rating].nil? %>
-													<%= light_star_image(0) %>
+													<p>N/A</p>
 												<% else %>
 													<%= light_star_image((review[:safety_rating]*4).round) %>
 												<% end %>
 											</li>
 											<li>
 												<% if review[:noise_rating].nil? %>
-													<%= light_star_image(0) %>
+													<p>N/A</p>
 												<% else %>
 													<%= light_star_image((review[:noise_rating]*4).round) %>
 												<% end %>
 											</li>
 											<li>
 												<% if review[:transportation_rating].nil? %>
-													<%= light_star_image(0) %>
+													<p>N/A</p>
 												<% else %>
 													<%= light_star_image((review[:transportation_rating]*4).round) %>
 												<% end %>

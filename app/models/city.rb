@@ -14,4 +14,6 @@ class City < ActiveRecord::Base
   	"#{name}, #{state}"
   end
 
+  
+
 end
