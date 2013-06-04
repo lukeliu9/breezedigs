@@ -153,16 +153,6 @@ puts "Chicago Far Southwest Side"
 
 # Seed some rental data
 #=begin
-Rent.delete_all
-
-[["3300", "2", "2", "20", "150", "16", "1", ""],
-["1850", "studio", "1", "7", "125", "16", "1", ""],
-["1790", "studio", "1", "3", "130", "16", "1", ""]].each do |rent, beds, baths, floor, utilities, building, user, notes|
-	Rent.create!(rent: rent, beds: beds, baths: baths, floor: floor, utilities: utilities, building_id: building, user_id: user, notes: notes)
-end	
-
-puts "Seed chicago buildings rental data"
-
 # Seed reviews
 
 # Seed areas for U.S. cities
