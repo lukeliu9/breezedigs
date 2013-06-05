@@ -9,13 +9,15 @@
 }
 
 .photo-file-field {
-	width: 16em;
+	width: 35em;
 	height: 4em;
 	margin-top: 0.5em;
 	input {
-		vertical-align: top;
+		vertical-align: bottom;
 		border: 0;
 		padding: 0 0 1em 0;
+		font-size: 0.86em;
+		color: $grayVeryDark;
 	}
 
 }
