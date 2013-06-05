@@ -47,7 +47,7 @@
 							<%= link_to(raw("<button class=\"btn btn-small\">Submit a Rent</button>"), new_building_rent_path(building)) %>
 							<%= link_to raw("<button class=\"btn btn-small\">Write the first review</button>"), new_building_review_path(building) %>
 						<% else %>
-							<%= raw("<p>\"#{building.reviews.map(&:pros).first} reviews\"") %>
+							<p><%= raw("\"#{building.reviews.map(&:pros).first} reviews\"") %></p>
 						<% end %>
 
 				</div>

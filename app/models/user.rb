@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
   has_many :rents, dependent: :destroy
   has_many :photos, dependent: :destroy
+  has_many :buildings, dependent: :destroy
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|

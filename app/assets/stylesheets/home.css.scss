@@ -23,18 +23,18 @@ $grayLight: #d4d9dc;
 	margin-right: auto;
 	margin-left: auto;
 	width:45em; 
-	height: 5.2em; 
-	border-radius:6px;
+	height: 5em; 
+	border-radius: 6px;
 	background: #373a3e;
 }
 
-#search { display: inline-block; width: 82%; margin: 0.5em 0 0.5em 0.5em; font-style: italic; font-size: 1.5em; height:2em; }
+#search { display: inline-block; width: 82%; margin: 0.5em 0 0.5em 0.5em; font-style: italic; font-size: 1.5em; height: 1.7em; }
 
 .hero-search-button {
 	display: inline-block;
 	font-size: 1.7em;
 	border-radius: 5px;
-	padding: 10px 22px;
+	padding: 0.3em 22px;
 	background:#4d96e1;
 	border: 1px solid #2d7fd2;
 	color: #dde9f9;
@@ -71,8 +71,8 @@ $grayLight: #d4d9dc;
 	white-space: normal;
 	display: inline-block;
 	height: 3em; 
-	width: 6.3em;
-	margin: 10px 10px 0 0; 
+	width: 6em;
+	margin: 10px 0.3em 0 0; 
 	padding: 0.1em 0.7em 0.4em 0.7em;
 	border-right: 1px solid $bordercolor;
 	text-align: center;

@@ -10,9 +10,10 @@ class BuildingsController < ApplicationController
 
 	def create
 		@building = Building.new(params[:building])
+		current_user.buildings << @building
 		if @building.save
 			flash[:notice] = "Successfully created building."
-			render action: 'thanks'
+			redirect_to current_user
 		else
 			render :action => 'new'
 		end

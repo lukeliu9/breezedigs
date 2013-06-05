@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 		@reviews = @user.reviews
 		@rents = @user.rents
 		@photos = @user.photos
+		@buildings = @user.buildings
 	end
 
 	def index

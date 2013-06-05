@@ -203,7 +203,7 @@
 	background: white;
 }
 .rent-table-key {
-	width: 10em;
+	width: 13em;
 	padding: 0.2em 1.2em;
 	border-radius: 5px;
 	background: $grayVeryLight;
@@ -228,11 +228,17 @@
 }
 
 .rental-table {
+	td {
+		border: 0;
+	}
+	tr {
+		border-bottom: 1px solid $grayMedium;
+	}
 	th {
 		vertical-align: bottom;
 	}
 	h3 {
-		font-size: 1em;
+		font-size: 0.9em;
 		font-weight: 400;
 		margin: 0.4em 0 0 0;
 		padding: 0;
@@ -269,14 +275,14 @@ margin-left: 0.5em;
 	h4 {
 		margin: 0.7em;
 		padding: 0;
-		font-size: 1em;
+		font-size: 0.86em;
 		font-weight: 300;
 		color: $grayVeryDark;
 	}
 	h5 {
 		margin-top: -0.6em;
 		padding: 0;
-		font-size: 0.95em;
+		font-size: 0.85em;
 		font-weight: 300;
 		color: $grayVeryDark;
 	}
@@ -286,21 +292,16 @@ margin-left: 0.5em;
 		font-weight: 400;
 	}
 	span {font-weight: 500}
-	p {color: $grayDark; font-weight: 400;}
+	p {color: $grayDark; font-weight: 300; font-size: 0.80em;}
 }
 #rent-type-cell {
-	border-bottom: 1px solid $grayMedium;
 	border-right: 1px solid $grayMedium;
 	text-align: center;
 }
 #rent-avg-cell {
-	border-bottom: 1px solid $grayMedium;
 	border-right: 1px solid $grayMedium;
 	text-align: center;
-	padding-top: 2em;
-}
-#rent-bars-cell {
-	border-bottom: 1px solid $grayMedium;
+	padding-top: 2.3em;
 }
 .rent-holder {
 	width: 91.5%;

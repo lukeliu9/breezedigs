@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603191355) do
+ActiveRecord::Schema.define(:version => 20130605014253) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20130603191355) do
     t.string   "status",          :default => "unapproved"
     t.integer  "reviews_count"
     t.boolean  "gmaps"
+    t.integer  "user_id"
   end
 
   add_index "buildings", ["slug"], :name => "index_buildings_on_slug"

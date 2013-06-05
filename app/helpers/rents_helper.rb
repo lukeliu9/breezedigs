@@ -18,9 +18,9 @@ module RentsHelper
 	end
 
 	def show_rent_bar(beds, baths)
-		min = @rents.get_rents_min(beds, baths) ? (@rents.get_rents_min(beds, baths)-500).to_f / 120 : ""
+		min = @rents.get_rents_min(beds, baths) ? (@rents.get_rents_min(beds, baths)-535).to_f / 135 : ""
 		rent = @rents.average_for(beds, baths, "rent")
-		range = rent_range(beds, baths).to_f / 120
+		range = rent_range(beds, baths).to_f / 135
 
 		if rent == nil
 			raw("<h6>N/A</h6>").html_safe
@@ -31,7 +31,7 @@ module RentsHelper
 	end
 
 	def show_avg_bar(beds, baths)
-		avg = @rents.average_for(beds, baths, "rent") ? (@rents.average_for(beds, baths, "rent")-499).to_f / 120 : 0
+		avg = @rents.average_for(beds, baths, "rent") ? (@rents.average_for(beds, baths, "rent")-535).to_f / 135 : 0
 		if avg == 0
 			""
 		else

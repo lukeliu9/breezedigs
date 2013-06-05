@@ -1,7 +1,7 @@
 class Building < ActiveRecord::Base
   attr_accessible :name, :address, :city, 
   :latitude, :longitude, :area, :neighborhood, :website, :zip, 
-  :management, :city_id, :area_id, :neighborhood_id, :slug, :status
+  :management, :city_id, :area_id, :neighborhood_id, :slug, :status, :user_id
 
   has_many :reviews, dependent: :destroy
   has_many :rents, dependent: :destroy
@@ -11,7 +11,9 @@ class Building < ActiveRecord::Base
   belongs_to :city
   belongs_to :area
   belongs_to :neighborhood
+  belongs_to :user
 
+  validates :user_id,             presence: true
   validates :name, 				        presence: true, uniqueness: true
   validates :zip, 				        presence: true, zip: true 
   validates :address, 			      presence: true, uniqueness: true
@@ -47,7 +49,7 @@ class Building < ActiveRecord::Base
   end
 
   def self.search_attributes(search)
-    self.joins{city}.where{(zip =~ "%#{search}%") | (name =~ "%#{search}%") | (address =~ "%#{search}%") | (city.name =~ "%#{search}%")}
+    self.joins{city}.joins{area}.joins{neighborhood}.where{(zip =~ "%#{search}%") | (name =~ "%#{search}%") | (address =~ "%#{search}%") | (city.name =~ "%#{search}%") | (area.name =~ "%#{search}%") | (neighborhood.name =~ "%#{search}%")}
   end
 
   def self.search_by_city(search)

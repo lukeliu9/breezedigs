@@ -33,10 +33,10 @@
 			<div class="user-contributions">
 				<div class="contributions-header">
 					<h2>Your Reviews</h2>
-					<%= link_to(raw("<button class=\"btn\">Write a new review</button>"), new_review_path) %>
+					<%= link_to "Write a new review", new_review_path %>
 				</div>
 				<% if @reviews.nil? || @reviews.blank? %>
-					<%= raw("You have not written any reviews yet") %>
+					<p>You have not written any reviews yet</p>
 				<% else %>
 					<ul>
 						<% @reviews.each do |review| %>
@@ -49,8 +49,8 @@
 							") %>
 								</div>
 								<div id="user-edit-link">
-							<%= link_to "Edit Review", edit_review_path(review) %><br>
-							<%= link_to "Delete Review", review_path(review), confirm: "Are you sure?", method: :delete %>
+							<%= link_to "Edit Review", edit_review_path(review), id: "font-082em" %><br>
+							<%= link_to "Delete Review", review_path(review), confirm: "Are you sure?", method: :delete, id: "font-082em" %>
 								</div>
 							</li>
 						<% end %>
@@ -61,10 +61,10 @@
 			<div class="user-contributions margin-top-1em">
 				<div class="contributions-header">
 					<h2>Rents You've Submitted</h2>
-					<%= link_to(raw("<button class=\"btn\">Submit a New Rent</button>"), new_rent_path) %>
+					<%= link_to "Add a new rent", new_rent_path %>
 				</div>
 				<% if @rents.nil? || @rents.blank? %>
-				<%= raw("You have not submited a rent yet") %>
+				<p>You have not submited a rent yet</p>
 				<% else %>
 					<ul>
 						<% @rents.each do |rent| %>
@@ -77,8 +77,8 @@
 							") %>
 								</div>
 								<div id="user-edit-link">
-							<%= link_to "Edit rent", edit_rent_path(rent) %><br>
-							<%= link_to "Delete rent", rent_path(rent), confirm: "Are you sure?", method: :delete %>
+							<%= link_to "Edit rent", edit_rent_path(rent), id: "font-082em" %><br>
+							<%= link_to "Delete rent", rent_path(rent), confirm: "Are you sure?", method: :delete, id: "font-082em" %>
 								</div>
 							</li>
 						<% end %>
@@ -89,10 +89,10 @@
 			<div class="user-contributions margin-top-1em">
 				<div class="contributions-header">
 					<h2>Photos You've Added</h2>
-					<%= link_to(raw("<button class=\"btn\">Add a New Photo</button>"), new_photo_path) %>
+					<%= link_to "Add a new photo", new_photo_path %>
 				</div>
 				<% if @photos.nil? || @photos.blank? %>
-				<%= raw("You have not uploaded a photo yet") %>
+				<p>You have not uploaded a photo yet</p>
 				<% else %>
 					<ul>
 						<% @photos.each do |photo| %>
@@ -102,21 +102,45 @@
 								<%= image_tag photo.image.url, width: "200px" %>
 								</div>
 								<div id="user-edit-link">
-							<%= link_to "Edit photo", edit_photo_path(photo) %><br>
-							<%= link_to "Delete photo", photo_path(photo), confirm: "Are you sure?", method: :delete %>
+							<%= link_to "Edit photo", edit_photo_path(photo), id: "font-082em" %><br>
+							<%= link_to "Delete photo", photo_path(photo), confirm: "Are you sure?", method: :delete, id: "font-082em" %>
 								</div>
 							</li>
 						<% end %>
 					</ul>
 				<% end %>
 			</div>
+
+			<div class="user-contributions margin-top-1em">
+				<div class="contributions-header">
+					<h2>Buildings You've Added</h2>
+					<%= link_to "Add a new building", new_building_path %>
+				</div>
+				<% if @buildings.nil? || @buildings.blank? %>
+					<p>You have not added a building</p>
+				<% else %>
+					<ul>
+						<% @buildings.each do |building| %>
+							<li>
+								<div id="user-content-each">
+								<h4><%= link_to building.name, building_path(building) %><span id="building-address-text">, <%= building.address %></span></h4>
+							<%= geogrify(building) %>
+								</div>
+								<div id="user-edit-link">
+								</div>
+							</li>
+						<% end %>
+					</ul>
+				<% end %>
+			</div>
+
 		</div>
 
 		<div class="user-sidebar">
 			<h5>Thank you for contributing to our community</h5>
 			<p>The reviews, rental data, and photos you submit add to a growing collection of information that will make the rental process easier and hold agents and landlords accountable for providing better living conditions and playing by the rules.</p>
 			<p>Please take a moment to Like our site with your friends to help us in our mission:</p>
-			<div class="fb-like-box" data-href="https://www.facebook.com/breezedigs" data-width="230" data-show-faces="true" data-stream="false" data-show-border="false" data-header="false"></div>
+			<div class="fb-like-box" data-href="https://www.facebook.com/breezedigs" data-width="190" data-show-faces="true" data-stream="false" data-show-border="false" data-header="false"></div>
 		</div>
 
 	</div>

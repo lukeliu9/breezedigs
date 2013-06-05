@@ -103,12 +103,12 @@
 	border-bottom: 1px solid $grayLight;
 	h2 {
 		margin-top: 0.9em;
-		font-size: 1.2em;
+		font-size: 1em;
 	}
 }
 
 .review-btn-b {margin-top: 1.5em;}
-.no-reviews {width: 85%; padding: 1em 2em; margin:2em auto; border:1px solid $blueLight; border-radius:6px; background:$blueVeryLight; h2 {color: $gbVeryDark; margin-bottom: 1em;} p {font-size: 1.1em; color: $grayDark; font-weight: 300;}}
+.no-reviews {width: 85%; padding: 1em 2em; margin:2em auto; border:1px solid $blueLight; border-radius:6px; background:$blueVeryLight; h2 {color: $gbVeryDark; margin-bottom: 1em; font-size: 1.1em;} p {font-size: 1em; color: $grayDark; font-weight: 300;}}
 .review-content {
 	display: inline-block;
 	width: 96%;
