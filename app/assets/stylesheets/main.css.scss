@@ -59,7 +59,7 @@ a:hover { text-decoration: none;}
 .no-wrap {white-space: nowrap;}
 #body {padding-bottom: $footerHeight;}
 #holder {min-height: 100%; position:relative;margin-left:auto; margin-right:auto; width:100%;}
-.container{width: 1050px; margin-left:auto; margin-right:auto;}  
+.container{width: 960px; margin-left:auto; margin-right:auto;}  
 .no-border {border: 0;}
 
 .bg-texture-wrapper {
@@ -90,6 +90,7 @@ a:hover { text-decoration: none;}
 .buffer-small {height:30px;}
 
 .em-buffer-5 {height:5em;}
+.em-buffer-4 {height:4em;}
 .em-buffer-3 {height:3em;}
 .em-buffer-2 {height:2em;}
 .em-buffer-1 {height:1em;}  
@@ -112,17 +113,17 @@ p { font-size: 0.9em; line-height: 1.1em; }
 
 /* Main Topbar */
 
-.maintopbar {position: absolute; top: 0; left: 0; width: 100%; height: 5em; background-color: #d9eafb; border-bottom: 2px solid #5181b8; text-align:left; opacity:0.75; filter: alpha(opacity=75); /* For IE8 and earlier */}
-.maintopbar nav {padding:0.6em 0; display:inline-block;}
-#logo {font-size: 1.8em; font-weight: bold;margin-top: 2px; margin-right: 25px;&:hover { text-decoration: none; }}
-.header-box {display:inline-block; white-space:normal; width: 30em;}
-.header-buttons {width: 21%;}
-.header-links {margin: 15px 0; a {font-size: 1em;}}
-.header-links li {display:inline;margin-left:15px;}
+.maintopbar {position: absolute; top: 0; left: 0; width: 100%; height: 4em; background-color: #d9eafb; border-bottom: 2px solid #5181b8; text-align:left; opacity:0.75; filter: alpha(opacity=75); /* For IE8 and earlier */}
+.maintopbar nav {padding: 0 0 0.5em 0; display:inline-block;}
+#logo {font-size: 1.5em; font-weight: bold;margin-top: 2px; margin-right: 25px;&:hover { text-decoration: none; }}
+.header-box {display:inline-block; white-space:normal; width: 27em;}
+.header-buttons {width: 25%;}
+.header-links {margin: 15px 0; padding-top: 0.3em; a {font-size: 0.87em;}}
+.header-links li {display:inline; margin-left:15px;}
 
 /* Pagination */
 
-.pagination {height: 1.5em; padding: 0 1em;}
+.pagination {height: 1.5em; padding: 0 1em; a {font-size: 0.85em;}}
 
 /* Search Header */
 

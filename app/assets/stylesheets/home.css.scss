@@ -88,7 +88,10 @@ $grayLight: #d4d9dc;
 
 /* Home Stripe */
 
-.home-stripe { background: #42464b; height: 18em;
+.home-stripe { background: #42464b; height: 17em;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1em;
 	h3 {
 		margin: 1em 0 0.7em 0;
 		font-size: 1.05em;
@@ -98,13 +101,13 @@ $grayLight: #d4d9dc;
 }
 
 .featured-buildings-ul {
-	width: 102%;
+	width: 98%;
 	margin-left: 0;
 	h4 {
 		display: inline-block;
 		margin: 0 0 0.7em 0;
 		color: $grayLight;
-		font-size: 1em;
+		font-size: 0.87em;
 		font-weight: 200;
 	}
 	image {
@@ -117,16 +120,16 @@ $grayLight: #d4d9dc;
 .featured-building {
 	display: inline-block;
 	vertical-align: bottom;
-	width: 18%;
-	height: 11em;
+	width: 14.5%;
+	height: 10em;
 	padding: 0.5em;
 	border-radius: 6px;
 	background: $grayMediumDark;
 }
 
 .featured-image-container {
-	width: 203px;
-	height: 100px;
+	width: 140px;
+	height: 90px;
 	position: relative; overflow: hidden;
 	img { position: absolute; }
 }

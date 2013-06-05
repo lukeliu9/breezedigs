@@ -49,7 +49,7 @@
 	padding: 0.7em 0.7em 0.7em 0.7em;
 	background: white;
 	h2 {
-		font-size: 1.2em;
+		font-size: 1em;
 		font-weight: 400;
 	}
 }
@@ -69,8 +69,8 @@
 }
 
 .building-image {
-	width: 125px;
-	height: 105px;
+	width: 90px;
+	height: 80px;
 	margin-top: 0.3em;
 	padding: 2px;
 	display: inline-block;
@@ -88,26 +88,29 @@
 	margin-left: 0.8em;
 	h3 {
 		display: inline-block;
-		font-size:1.2em;
+		vertical-align: middle;
+		font-size: 0.95em;
 		font-weight:350;
 		color: $offBlack;
 		padding:0 0 0 0;
-		margin:0;
+		margin: 0;
 	}
 	img {
 		display: inline-block;
+		vertical-align: middle;
 		margin-left: 0.5em;
+		margin-top: -3px;
 	}
 	h4 {
 		color: $grayVeryDark;
-		font-size: 1.05em;
+		font-size: 0.85em;
 		font-weight: 300;
-		padding:0 0 0 0;
-		margin:0.2em 0 0.2em 0;
+		padding: 0 0 0 0;
+		margin: -0.2em 0 0.2em 0;
 	}
 	span {
-		font-size:1em;
-		font-weight:300;
+		font-size: 0.85em;
+		font-weight: 300;
 		font-style: italic;
 		padding:0 0 0 0;
 		margin:0;
@@ -116,13 +119,13 @@
 	p {
 		color: $blueVVDark;
 		margin-top: 1.5%;
-		font-size: 1em;
+		font-size: 0.9em;
 	}
 	a {
 		color: $blueVVDark;
 	}
 }
-#reviews-count {color: $grayDark; font-weight: 300;}
+#reviews-count {margin-left: 0.6em; color: $grayDark; font-weight: 300; display: inline-block; vertical-align: middle;}
 
 .review-summary {
 	display: inline-block;
@@ -184,7 +187,7 @@
 .building-sidebar {
 	display: inline-block;
 	vertical-align: top;
-	width: 32%;
+	width: 32.5%;
 	height: 2em;
 	margin-left: 0.5%;
 	padding: 0.7em;
@@ -215,8 +218,8 @@
 		line-height: 1.2em;
 	}
 }
-#geography {font-size: 0.9em; font-style: italic; color:$grayDark;}
-#address-text {font-size: 0.9em; margin:-0.8em 0 1em 0; padding:0; color: $gbDark;}
+#geography {font-size: 0.8em; font-style: italic; color:$grayDark;}
+#address-text {font-size: 0.8em; margin:-0.8em 0 1em 0; padding:0; color: $gbDark;}
 .review-rent-btns {margin-top: 0em;}
 .building-stats {
 	width: 98%;
@@ -225,7 +228,7 @@
 	padding: 1em 0.5em 0.5em 0.5em;
 	margin-top: -0.7em;
 	h4 {
-		font-size: 0.95em;
+		font-size: 0.8em;
 		color: $grayDark;
 		font-weight: 400;
 		text-align: right;
@@ -238,7 +241,7 @@
 #overall-rating-div {
 	width: 16.5em;
 	height: 1.75em;
-	margin: 0.5em 0 0.75em 2.9em;
+	margin: 0.5em 0 0.75em 1em;
 	padding-left: 0em;
 	background: $blueLight;
 	border: 1px solid $blueLight;
@@ -262,7 +265,7 @@
 	padding: 0;
 	ul {
 		li {
-			margin-bottom: 0.75em;
+			margin-bottom: 0em;
 		}
 	}
 }
@@ -294,7 +297,7 @@
 	display: inline-block;
 	vertical-align: top;
 	width: 100%;
-	height: 23.3em;
+	height: 22em;
 	margin-top: -0.5em;
 	padding: 1% 0 1% 2%;
 	border: 1px solid $grayLight;
@@ -337,7 +340,7 @@
 .ad-holder-336 {
 	width: 92%;
 	margin-top: 1.5em;
-	padding: 4%;
+	padding: 0;
 	border: 1px solid $grayLight;
 }
 
@@ -355,7 +358,7 @@
 	h3 {
 		margin: 0 0 1.5em 0;
 		font-weight: 500;
-		font-size: 1.1em;
+		font-size: 0.95em;
 	}
 	ul {
 		margin: 0;
@@ -364,11 +367,15 @@
 			margin: 0 0 0.4em 0;
 			border-radius: 6px;
 			h5 {
+				font-size: 0.85em;
 				margin: 0.6em 0 0 0;
 				font-weight: 500;
 			}
 			img {
 				margin: 0.5em 0 0.5em 0;
+			}
+			p {
+				font-size: 0.8em;
 			}
 			&:hover {
 				background: $blueLight;

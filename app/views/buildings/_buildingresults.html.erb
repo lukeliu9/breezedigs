@@ -13,20 +13,29 @@
 				<div class="building-image">
 					<!-- Sets default image if building does not have one yet -->
 					<% if building.photos.blank? %>
-						<%= image_tag 'nobuildingimage.png', size: "125x125" %>
+						<%= image_tag 'nobuildingimage.png', size: "100x100" %>
 					<% else %>
-						<%= image_tag building.photos.first.image.url, size: "125x125" %>
+						<%= image_tag building.photos.first.image.url, size: "100x100" %>
 					<% end %>
 				</div>
 				<!-- All the content to the right of the building image -->
 				<div class="building-listing-info">
 					<div>
 						<h3><%= building.name%></h3>
+
+						<!-- Shows the overall average star image -->
 						<% if building.reviews.nil? || building.reviews.blank? %>
 							<img src="/assets/stars/star0.png" height="16px" width="80px">
 						<% else %>
 						<%= star_image((building.reviews.average("overall")*4).round) %>
 						<% end %>
+						<!-- Shows reviews count next to star -->
+						<% if building.reviews.blank? %>
+							<p id="reviews-count">No reviews yet</p>		
+						<% else %>
+							<p id="reviews-count">(<%= raw("#{building.reviews.count}") %> Reviews)</p>
+						<% end %>
+
 					</div>
 					<h4>
 					<%= geogrify(building) %>
@@ -34,13 +43,13 @@
 					<span><%= building.address %>, <%= building.zip %></span>
 					
 						<% if building.reviews.blank? %>
-						<%= raw("<p>") %><%= "No reviews yet" %><%= raw("</p>") %>						
-						<%= link_to(raw("<button class=\"btn\">Submit a Rent</button>"), new_building_rent_path(building)) %>
-						<%= link_to raw("<button class=\"btn\">Write the first review</button>"), new_building_review_path(building) %>
+							<br>					
+							<%= link_to(raw("<button class=\"btn btn-small\">Submit a Rent</button>"), new_building_rent_path(building)) %>
+							<%= link_to raw("<button class=\"btn btn-small\">Write the first review</button>"), new_building_review_path(building) %>
 						<% else %>
-						<%= raw("<p id=\"reviews-count\">(#{building.reviews.count} Reviews)</p>") %>
-						<%= raw("<p>\"#{building.reviews.map(&:pros).first} reviews\"") %>
+							<%= raw("<p>\"#{building.reviews.map(&:pros).first} reviews\"") %>
 						<% end %>
+
 				</div>
 							
 			</li>

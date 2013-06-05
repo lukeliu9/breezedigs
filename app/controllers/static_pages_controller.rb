@@ -4,7 +4,7 @@ class StaticPagesController < ApplicationController
     @buildings = Building.all
     @reviews = Review.all
     @rents = Rent.all
-    @featured = Building.select_only_in_city("Chicago").has_image.sort_featured("count").first(5)
+    @featured = Building.select_only_in_city("Chicago").has_image.sort_featured("count").first(6)
   end
 
   def terms
