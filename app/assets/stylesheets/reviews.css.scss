@@ -203,8 +203,8 @@
 .new-review-form {
 	display: inline-block;
 	vertical-align: top;
-	width: 59%;
-	margin: 3em 0 8em 0;
+	width: 52%;
+	margin: 3em 0 8em 4%;
 	padding: 0.1em 3em 2em 3em;
 	border: 1px solid $grayMedium;
 	border-radius: 5px;
@@ -214,26 +214,31 @@
 		width: 10em;
 	}
 	h1 {
-		font-size: 1.6em;
+		font-size: 1.3em;
 		margin: 0.9em 0 0.5em 0;
 		padding-bottom: 0.6em;
 		color: #2d68a5;
-		font-weight: 300;
+		font-weight: 400;
 		border-bottom: 1px solid #a5afb9;
 	}
 	p {
 		margin-top: 1em;
 		margin-bottom: 0;
 		margin-left: 2px;
-		font-size: 1em;
+		font-size: 0.87em;
 	}
 	select {
 		margin-top: 0.5em;
 		height: 2em;
+		font-size: 0.84em;
 	}
 	textarea {
 		margin-top: 0.5em;
 		padding: 0.5em;
+		font-size: 0.84em;
+	}
+	input {
+		font-size: 0.84em;	
 	}
 }
 
@@ -254,7 +259,7 @@
 	h2 {
 		margin: 0 0 0.4em 0;
 		padding: 0;
-		font-size: 1.2em;
+		font-size: 1em;
 		font-weight: 400;
 		color: $offBlack;
 		text-align: left;
@@ -263,7 +268,7 @@
 		margin: 0;
 		padding: 0;
 		color: $grayDark;
-		font-size: 0.95em;
+		font-size: 0.9em;
 		font-style: italic;
 	}
 }
@@ -279,14 +284,14 @@
 	color: $grayDark;
 	h2 {
 		color: $grayVeryDark;
-		font-size: 1.35em;
+		font-size: 1.1em;
 		font-weight: 500;
 		border-bottom: 1px solid #a5afb9;
 		padding:0 0 0.4em 0;
 		margin-bottom: 0.75em;
 	}
 	p {
-		font-size: 1em;
+		font-size: 0.88em;
 		line-height: 1.5em;
 	}
 	ul {
@@ -301,11 +306,11 @@
 .review-form-fields {
 	margin-top: 2em;
 	p {
-		font-size: 0.95em;
+		font-size: 0.85em;
 		font-weight: 600;
 	}
 	h4 {
-		font-size: 1em;
+		font-size: 0.95em;
 		font-weight: 400;
 		color: $grayVeryDark;
 	}
@@ -324,7 +329,7 @@
 
 
 .tell-us-more {
-	width: 96%;
+	width: 92%;
 	margin-top: 1.5em;
 	margin-bottom: 0.5em;
 	margin-left: auto;

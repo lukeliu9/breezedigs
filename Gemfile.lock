@@ -303,6 +303,7 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
+    sitemap (0.3.3)
     slop (3.4.5)
     spork (0.9.2)
     sprockets (2.2.2)
@@ -395,6 +396,7 @@ DEPENDENCIES
   rspec-rails (= 2.11.0)
   sass-rails (= 3.2.5)
   simplecov
+  sitemap
   spork (= 0.9.2)
   squeel
   therubyracer

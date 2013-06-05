@@ -5,7 +5,8 @@
 			<%= form_tag buildings_path, :method => 'get' do %>
 		 	<p>
 		    <%= text_field_tag :search, params[:search], placeholder: "City, area, neighborhood, building", class: "searchbar-field"%>
-		    <%= submit_tag "search", :name => nil, class: "btn bottom-buffer" %>
+		    
+		    <%= submit_tag "search", :name => nil, class: "btn btn-small bottom-buffer" %>
 		  	</p>
 			<% end %>
 	</div>

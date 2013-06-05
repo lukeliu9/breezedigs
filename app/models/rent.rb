@@ -7,7 +7,7 @@ class Rent < ActiveRecord::Base
   belongs_to :user
 
   validates :rent, 		presence: true, numericality: { only_integer: true }, length: {minimum: 3, maximum: 5}
-  validates :utilities,	presence: true, numericality: { only_integer: true }, length: {minimum: 3, maximum: 5}
+  validates :utilities,	presence: true, numericality: { only_integer: true }, length: {minimum: 2, maximum: 5}
   validates :beds,		presence: true
   validates :baths,		presence: true, numericality: { only_integer: true }
   validates :unitnum,	presence: true, length: {minimum: 1, maximum: 6}
