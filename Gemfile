@@ -29,6 +29,7 @@ gem 'omniauth-google-oauth2'
 #Image Upload
 gem "paperclip", "3.4.2"
 gem 'cocaine', '0.5'
+gem 'aws-sdk'
 # Used for building search
 gem "squeel"
 gem "meta_search"

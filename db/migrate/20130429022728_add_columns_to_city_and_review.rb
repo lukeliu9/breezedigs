@@ -8,6 +8,7 @@ class AddColumnsToCityAndReview < ActiveRecord::Migration
     add_column :buildings, :city_id, :integer
     add_column :buildings, :neighborhood_id, :integer
     add_column :buildings, :reviews_count, :integer
+    add_column :buildings, :user_id, :integer
 
     add_column :reviews, :user_id, :integer
     add_column :reviews, :management_rating, :integer

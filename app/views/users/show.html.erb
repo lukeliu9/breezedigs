@@ -123,8 +123,8 @@
 						<% @buildings.each do |building| %>
 							<li>
 								<div id="user-content-each">
-								<h4><%= link_to building.name, building_path(building) %><span id="building-address-text">, <%= building.address %></span></h4>
-							<%= geogrify(building) %>
+								<h4><%= link_to building.name, building_path(building) %><span id="building-address-text"> | <%= building.address %>, <%= building.zip %></span></h4>
+								<p><%= geogrify(building) %></p>
 								</div>
 								<div id="user-edit-link">
 								</div>

@@ -18,41 +18,34 @@ FactoryGirl.define do
 		building "The Chandler"
 		pros "Great building"
 		cons "Very noisy"
-		overall 6
+		overall 4
 		neighborhood "Very alive at night"
-		neighborhood_rating 6
+		neighborhood_rating 4
 		management "Magellan"
-		management_rating 6
+		management_rating 4
 		staff "Very friendly doorman"
-		staff_rating 6
+		staff_rating 4
 		amenities "washer/dryer, dry cleaners"
-		amenities_rating 6
+		amenities_rating 4
 		noise "On a busy street by a train"
-		noise_rating 6
+		noise_rating 4
 		safety "Always feel safe"
-		safety_rating 6
+		safety_rating 4
 		parking "Heated parking"
 		maintenance "Always prompt"
-		maintenance_rating 6
+		maintenance_rating 4
 		transportation "Easy bus access"
-		transportation_rating 6
+		transportation_rating 4
 		construction "Very solid & exposed concrete"
 		nightlife "The Keg"
 		people "Mostly families"
-		floor 20
-		view "Views of the Lake"
-		rent 1400
-		beds 2
-		baths 2
 		user_id 1
-		identity "anonymous"
 	end
 end
  
 FactoryGirl.define do
 	factory :building do
 		name "The Chandler"
-		description "New luxury highrise in LakeshoreEast"
 		zip "60601"
 		city "Chicago"
 		area "Downtown"

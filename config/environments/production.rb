@@ -65,6 +65,15 @@ Breezedigs::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['bzbldgsimgs'],
+      :access_key_id => ENV['AKIAITD6KHDH26ZS4OCQ'],
+      :secret_access_key => ENV['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']
+    }
+  }
+
   TWITTER_KEY = 'NT1fdKC7veGFZjpt69GF8g'
   TWITTER_SECRET = 'Qeo7mpyADS9TmyPS1sf2b4KjbyaJxYr5IRnA3r24OY'
 
