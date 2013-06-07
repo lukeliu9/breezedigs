@@ -13,7 +13,6 @@ class Building < ActiveRecord::Base
   belongs_to :neighborhood
   belongs_to :user
 
-  validates :user_id,             presence: true
   validates :name, 				        presence: true, uniqueness: true
   validates :zip, 				        presence: true, zip: true 
   validates :address, 			      presence: true, uniqueness: true

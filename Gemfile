@@ -18,6 +18,10 @@ gem 'contact_us', '~> 0.4.0'
 gem "rmagick"
 gem 'jquery-star-rating-rails'
 gem 'hirb'
+
+gem 'whenever', :require => false #deploying cron jobs
+
+gem 'sitemap_generator'
 # Authentication
 gem 'devise'
 gem 'omniauth'

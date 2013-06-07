@@ -69,8 +69,8 @@ Breezedigs::Application.configure do
     :storage => :s3,
     :s3_credentials => {
       :bucket => ENV['BZBLDGSIMGS'],
-      :access_key_id => ENV['AKIAITD6KHDH26ZS4OCQ'],
-      :secret_access_key => ENV['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']
+      :access_key_id => ENV['AKIAIW7DUKBN626B7H6Q'],
+      :secret_access_key => ENV['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']
     }
   }
 

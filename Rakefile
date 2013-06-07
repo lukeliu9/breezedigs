@@ -5,3 +5,5 @@
 require File.expand_path('../config/application', __FILE__)
 
 Breezedigs::Application.load_tasks
+
+require 'sitemap_generator/tasks'
