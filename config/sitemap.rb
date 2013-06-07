@@ -1,5 +1,9 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://www.breezedigs.com"
+SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/bzbldgsimgs/"
+SitemapGenerator::Sitemap.public_path = 'tmp/'
+SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -24,5 +28,7 @@ SitemapGenerator::Sitemap.create do
     Building.find_each do |building|
       add building_path(building), :lastmod => building.updated_at
     end
+
+    add '/buildings', changefreq: 'weekly'
 
 end
