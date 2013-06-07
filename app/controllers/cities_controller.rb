@@ -1,9 +1,11 @@
 class CitiesController < ApplicationController
 
 	def index
+		@citeis = City.all
 	end
 
 	def create
+
 	end
 
 	def show
@@ -18,12 +20,16 @@ class CitiesController < ApplicationController
 	end
 
 	def new
+
 	end
 
 	def edit
+
 	end
 
 	def destroy
+		@city = City.find(params[:id])
+		@city.delete
 	end
 
 end

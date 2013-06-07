@@ -31,7 +31,7 @@ class BuildingsController < ApplicationController
 		empty_search = params[:search] ? false : true
 
     	if empty_search
-    		@buildings = Building.all
+    		@buildings = []
     		@buildingresults = Kaminari.paginate_array(@buildings).page(params[:page]).per(10)
     		@json = @buildings.to_gmaps4rails
     		@areas = @buildings.map(&:area)
@@ -50,12 +50,15 @@ class BuildingsController < ApplicationController
 	end
 
 	def update
+
 	end
 
 	def edit
+		@building = Building.find(params[:id])
 	end
 
 	def destroy
+
 	end
 
 	def update_areas

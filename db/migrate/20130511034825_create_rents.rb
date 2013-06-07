@@ -11,8 +11,8 @@ class CreateRents < ActiveRecord::Migration
       t.integer :user_id
       t.text    :notes
       t.string  :unitnum
-      t.date    :start
-      t.date    :stop
+      t.integer :start
+      t.integer :stop
 
       t.timestamps
     end

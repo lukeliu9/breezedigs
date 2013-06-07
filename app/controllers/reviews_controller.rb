@@ -24,9 +24,9 @@ class ReviewsController < ApplicationController
 	def create
 		@building = Building.find(params[:building_id])
 		@review = @building.reviews.new(params[:review])
-		current_user.reviews << @review
-		if @review.save
+		if @review.save!
 			flash[:notice] = "Thank you for submitting a review and contributing to our community!"
+			current_user.reviews << @review
 			redirect_to current_user
 		else
 			render :action => 'new'
@@ -37,6 +37,12 @@ class ReviewsController < ApplicationController
 	end
 
 	def update
+		@review = Review.find(params[:id])
+		if @review.update_attributes(params[:review])
+			redirect_to current_user
+		else
+			render :action => 'edit'
+		end
 	end
 
 	def edit

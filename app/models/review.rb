@@ -11,8 +11,8 @@ class Review < ActiveRecord::Base
   validates :pros, 					        presence: true, length: {minimum: 100} 
   validates :cons, 					        presence: true, length: {minimum: 100}
   validates :overall, 				      presence: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
-  validates :start,                 presence: true
-  validates :stop,                  presence: true
+  # validates :start,                 presence: true
+  # validates :stop,                  presence: true
   validates :management_rating,     allow_blank: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
   validates :neighborhood_rating, 	allow_blank: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
   validates :management_rating, 	  allow_blank: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
@@ -22,7 +22,6 @@ class Review < ActiveRecord::Base
   validates :safety_rating, 		    allow_blank: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
   validates :maintenance_rating, 	  allow_blank: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
   validates :transportation_rating, allow_blank: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
-  validates :user_id, 				      presence: true, numericality: { only_integer: true }
   validates :user_id,               uniqueness: { scope: :building_id, message: "Users may only write one review per building" }
 
 def self.average_review_rating(rating)

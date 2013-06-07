@@ -17,9 +17,9 @@ class PhotosController < ApplicationController
 	def create
 		@building = Building.find(params[:building_id])
 		@photo = @building.photos.new(params[:photo])
-		current_user.photos << @photo
-		if @photo.save
+		if @photo.save!
 			flash[:notice] = "Thank you for submitting your rent and contributing to our community!"
+			current_user.photos << @photo
 			redirect_to building_path(@building)
 		else
 			render :action => 'new'
@@ -38,6 +38,12 @@ class PhotosController < ApplicationController
 	end
 
 	def update
+		@photo = Photo.find(params[:id])
+		if @photo.update_attributes(params[:photo])
+			redirect_to current_user
+		else
+			render :action => 'edit'
+		end
 	end
 
 	def destroy

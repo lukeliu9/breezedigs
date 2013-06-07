@@ -16,6 +16,12 @@ class UsersController < ApplicationController
 	end
 
 	def update
+		@user = User.find(params[:id])
+		if @user.update_attributes(params[:user])
+			redirect_to current_user
+		else
+			render :action => 'edit'
+		end
 	end
 
 	def new
@@ -26,20 +32,9 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-	end
-
-	def manager
-		respond_to do |format|
-			format.html
-	  		format.js
-		end
-	end
-
-	def tenant
-		respond_to do |format|
-			format.html
-	  		format.js
-		end
+		@user = User.find(params[:id])
+		@user.delete
+		redirect_to root_path
 	end
 
 end

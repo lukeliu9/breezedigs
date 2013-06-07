@@ -17,9 +17,9 @@ class RentsController < ApplicationController
 	def create
 		@building = Building.find(params[:building_id])
 		@rent = @building.rents.new(params[:rent])
-		current_user.rents << @rent
-		if @rent.save
+		if @rent.save!
 			flash[:notice] = "Thank you for submitting your rent and contributing to our community!"
+			current_user.rents << @rent
 			redirect_to building_rents_path(@building)
 		else
 			render :action => 'new'
@@ -38,6 +38,12 @@ class RentsController < ApplicationController
 	end
 
 	def update
+		@rent = Rent.find(params[:id])
+		if @rent.update_attributes(params[:review])
+			redirect_to current_user
+		else
+			render :action => 'edit'
+		end
 	end
 
 	def edit

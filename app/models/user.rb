@@ -38,15 +38,15 @@ class User < ActiveRecord::Base
     end
   end
 
-  def password_required?
+  def password_required? # Skips the password validation for creating a user if an external auth is used
     super && provider.blank?
   end
 
-  def email_required?
+  def email_required? # Skips the email validation for creating a user if an external auth is used
     super && provider.blank?
   end
 
-  def update_with_password(params, *options)
+  def update_with_password(params, *options) # If user edits their profile after using external authentication, hides the current password field
     if encrypted_password.blank?
       update_attributes(params, *options)
     else

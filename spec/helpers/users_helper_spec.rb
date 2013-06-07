@@ -11,5 +11,12 @@ require 'spec_helper'
 #   end
 # end
 describe UsersHelper do
-  
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:twitter] = {
+    'uid' => '1337',
+    'provider' => 'twitter',
+    'info' => {
+      'name' => 'John Smith'
+    }
+  }
 end

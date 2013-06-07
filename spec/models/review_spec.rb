@@ -18,8 +18,18 @@ describe Review do
 	it { should respond_to(:safety_rating)}
 	it { should respond_to(:maintenance_rating)}
 	it { should respond_to(:transportation_rating)}
-	it { should respond_to(:construction_rating)}
+	it { should respond_to(:msm)}
+	it { should respond_to(:nsn)}
+	it { should respond_to(:unitamen)}
+	it { should respond_to(:parktrans)}
+	it { should respond_to(:advice)}
 	it { should respond_to(:user_id)}
+
+# Creating a new review
+
+	describe "When overall rating is not present" do
+
+	end	
 
 end
 

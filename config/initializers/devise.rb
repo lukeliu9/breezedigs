@@ -214,6 +214,13 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
+  
+  TWITTER_KEY = 'NT1fdKC7veGFZjpt69GF8g'
+  TWITTER_SECRET = 'Qeo7mpyADS9TmyPS1sf2b4KjbyaJxYr5IRnA3r24OY'
+
+  FACEBOOK_KEY = '363280463794243'
+  FACEBOOK_SECRET = '19b711f8e62c8e1d5c0082059f524d82'
+  
   config.omniauth :twitter, TWITTER_KEY, TWITTER_SECRET
   config.omniauth :facebook, FACEBOOK_KEY, FACEBOOK_SECRET
 

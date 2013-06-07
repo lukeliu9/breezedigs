@@ -10,6 +10,7 @@ ActiveAdmin.register Building do
   	column :neighborhood
   	column :zip
     column :status
+    column :created_at
     
   	default_actions
   end

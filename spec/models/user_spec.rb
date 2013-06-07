@@ -4,22 +4,18 @@ describe User do
 
   before do
 	 @user = User.new(first_name: "Example", last_name: "user", email: "user@example.com", password: "foobar", password_confirmation: "foobar") 
+	 request.env["devise.mapping"] = Devise.mappings[:user] 
+  	 request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:twitter]
 	end
 
 	subject { @user }
 
 	it { should respond_to(:first_name) }
 	it { should respond_to(:last_name) }
-	it { should respond_to(:role) }
 	it { should respond_to(:email) }
 	it { should respond_to(:password_digest) }
 	it { should respond_to(:password) }
 	it { should respond_to(:password_confirmation) }
-
-	describe "When user type is not present" do
-		before { @user.role = " " }
-		it { should_not be_valid }
-	end
 
 	describe "When first name is not present" do
 		before { @user.first_name = " " }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605014253) do
+ActiveRecord::Schema.define(:version => 20130607022439) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -157,8 +157,8 @@ ActiveRecord::Schema.define(:version => 20130605014253) do
     t.integer  "user_id"
     t.text     "notes"
     t.string   "unitnum"
-    t.date     "start"
-    t.date     "stop"
+    t.integer  "start"
+    t.integer  "stop"
   end
 
   create_table "reviews", :force => true do |t|
@@ -185,8 +185,8 @@ ActiveRecord::Schema.define(:version => 20130605014253) do
     t.text     "unitamen"
     t.string   "status",                :default => "unapproved"
     t.text     "flagged",               :default => "no"
-    t.date     "start"
-    t.date     "stop"
+    t.integer  "start"
+    t.integer  "stop"
   end
 
   create_table "settings", :force => true do |t|

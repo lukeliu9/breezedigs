@@ -52,7 +52,7 @@ class Building < ActiveRecord::Base
     self.joins{city}.joins{area}.joins{neighborhood}.where{(zip =~ "%#{search}%") | (name =~ "%#{search}%") | (address =~ "%#{search}%") | (city.name =~ "%#{search}%") | (area.name =~ "%#{search}%") | (neighborhood.name =~ "%#{search}%")}
   end
 
-  def self.search_by_city(search)
+  def self.search_by_city(search) # Used for the individual city views to find all the buildings in a city
     self.joins{city}.where{city.name =~ "%#{search.name}%"}
   end
 
@@ -60,7 +60,7 @@ class Building < ActiveRecord::Base
     self.joins{city}.where{city.name =~ selection}
   end
 
-  def self.has_image
+  def self.has_image # Only find buildings that have an image
     self.includes{photos}.where{photos.id != nil}
   end
 
