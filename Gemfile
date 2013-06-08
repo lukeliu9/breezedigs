@@ -26,7 +26,7 @@ gem 'sitemap_generator'
 gem 'carrierwave'
 gem 'fog'
 
-gem 'cloudinary'
+gem 'delayed_job_active_record' # background upload of images to s3
 
 # Authentication
 gem 'devise'
