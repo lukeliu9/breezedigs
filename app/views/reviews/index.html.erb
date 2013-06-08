@@ -31,9 +31,9 @@
 					</div>
 
 					<div class="review-content">
-							<% if @reviews.nil? || @reviews.blank? %>
+						<% if @reviews.nil? || @reviews.blank? %>
 							<%= render 'noreviews' %>
-							<% else %>
+						<% else %>
 							<% @reviews.each do |review| %>
 							<div class="single-review-header">
 								<div>									

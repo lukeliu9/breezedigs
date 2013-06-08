@@ -15,6 +15,7 @@ class Rent < ActiveRecord::Base
   validates :stop,		presence: true
   validates :user_id,   uniqueness: { scope: :building_id, message: "Users may only submit one rent per building" }
 
+  # Five methods below are used by rent helper file to calulate variables needed to show rent bars
   def self.average_for(beds, baths, metric)
  	 where(beds: beds, baths: baths).average(metric)
   end
