@@ -399,6 +399,21 @@
 	display: inline-block;
 	margin-left: 0.7em;
 }
+
+.no-nearby {
+	width: 92%;
+	height: 2.5em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 4%;
+	background: $blueLight;
+	border-radius: 6px;
+	h3 {
+		font-size: 0.9em;
+		font-weight: 300;
+	}
+}
+
 /* New building form */
 
 .new-building-form {

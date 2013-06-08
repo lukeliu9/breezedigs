@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   has_many :photos, dependent: :destroy
   has_many :buildings, dependent: :destroy
 
+  validates :email,         uniqueness: true
+
   def self.from_omniauth(auth) #Takes the auth params from external provider and parses the data to create a new user
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider

@@ -544,8 +544,8 @@ end
 # Brooklyn neighborhoods
 ["Greenpoint", "Williamsburg", "Boerum Hill", "Brooklyn Heights", "Brooklyn Navy Yard", "Clinton Hill", "DUMBO", "Fort Greene", "Fulton Ferry", "Fulton Mall", "Vinegar Hill", "Bedford Stuyvesant", 
 	"Ocean Hill", "Stuyvesant Heights", "Bushwick", "City Line", "Cypress Hills", "East New York", "Highland Park", "New Lots", "Starrett City", "Carroll Gardens", "Cobble Hill", "Gowanus", 
-	"Park Slope", "Red Hook", "Greenwood Heights", "Sunset Park", "Windsor Terrace", "Crown Heights", "Prospect Heights", "Weeksville", "Crown Heights", "Prospect Lefferts Gardens", "Wingate", 
-	"Bay Ridge", "Dyker Heights", "Fort Hamilton", "Bath Beach", "Bensonhurst", "Gravesend", "Mapleton", "Borough Park", "Kensington", "Midwood", "Ocean Parkway", "Bensonhurst", "Brighton Beach", 
+	"Park Slope", "Red Hook", "Greenwood Heights", "Sunset Park", "Windsor Terrace", "Crown Heights", "Prospect Heights", "Weeksville", "Prospect Lefferts Gardens", "Wingate", 
+	"Bay Ridge", "Dyker Heights", "Fort Hamilton", "Bath Beach", "Gravesend", "Mapleton", "Borough Park", "Kensington", "Midwood", "Ocean Parkway", "Bensonhurst", "Brighton Beach", 
 	"Coney Island", "Gravesend", "Sea Gate", "Flatbush", "Kensington", "Midwood", "Ocean Parkway", "East Gravesend", "Gerritsen Beach", "Homecrest", "Kings Bay", "Kings Highway", "Madison", "Manhattan Beach", 
 	"Plum Beach", "Sheepshead Bay", "Brownsville", "Ocean Hill", "Ditmas Village", "East Flatbush", "Erasmus", "Farragut", "Remsen Village", "Rugby", "Canarsie", "Bergen Beach", "Mill Basin", "Flatlands", 
 	"Marine Park", "Georgetown", "Mill Island"].each do |name|
@@ -553,9 +553,9 @@ end
 end
 # Manhattan neighborhoods
 ["Battery Park City", "Financial District", "TriBeCa", "Chinatown", "Greenwich Village", "Little Italy", "Lower East Side", "NoHo", "SoHo", "West Village", "Alphabet City", "Chinatown", "East Village", 
-	"Lower East Side", "Two Bridges", "Chelsea", "Clinton", "Midtown", "Gramercy Park", "Kips Bay", "Murray Hill", "Peter Cooper Village", "Stuyvesant Town", "Sutton Place", "Tudor City", "Turtle Bay", 
+	 "Two Bridges", "Chelsea", "Clinton", "Midtown", "Gramercy Park", "Kips Bay", "Murray Hill", "Peter Cooper Village", "Stuyvesant Town", "Sutton Place", "Tudor City", "Turtle Bay", 
 	"Waterside Plaza", "Lincoln Square", "Manhattan Valley", "Upper West Side", "Lenox Hill", "Roosevelt Island", "Upper East Side", "Yorkville", "Hamilton Heights", "Manhattanville", "Morningside Heights", 
-	"Harlem", "Polo Grounds", "East Harlem", "Randalls Island", "Spanish Harlem", "Wards Island", "Inwood", "Washington Heights"].each do |name|
+	"Harlem", "Polo Grounds", "East Harlem", "Randalls Island", "Central Harlem", "Wards Island", "Inwood", "Washington Heights", "Hell\'s Kitchen"].each do |name|
 	Neighborhood.create!(name: name, area_id: 373)
 end
 # Queens

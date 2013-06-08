@@ -47,6 +47,10 @@ gem 'gmaps4rails'
 gem 'unicorn'
 gem 'capistrano'
 
+#Heroku performance
+gem 'asset_sync' # Syncs files to s3
+gem 'resque' # Redis background jobs
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
