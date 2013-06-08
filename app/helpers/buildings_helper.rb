@@ -25,16 +25,8 @@ module BuildingsHelper
 		"#{city} #{area} #{hood}"
 	end
 
-	def supermarket
-		"N/A"
-	end
-
-	def schools
-		"N/A"
-	end
-
-	def pets
-		"N/A"
+	def first_n_words_of_first_review(building, n)
+		"#{building.reviews.map(&:pros).first.split(/\s+/, n+1)[0...n].join(' ')}..."
 	end
 
 	def star_image(avg)

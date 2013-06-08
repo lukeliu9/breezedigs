@@ -57,7 +57,7 @@ class RentsController < ApplicationController
 		redirect_to current_user
 	end
 
-	def selectbuildingrent
+	def selectbuildingrent # Action called when a user clicks on a link to create a rent, photo, or review and there is no building selected
 		@featured = Building.select_only_in_city("Chicago").has_image.select_featured(15)
 	end
 
