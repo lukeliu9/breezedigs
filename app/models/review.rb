@@ -8,8 +8,8 @@ class Review < ActiveRecord::Base
   belongs_to :user
 
   validates :building_id, 				  presence: true
-  validates :pros, 					        presence: true, length: {minimum: 100} 
-  validates :cons, 					        presence: true, length: {minimum: 100}
+  validates :pros, 					        presence: true, length: {minimum: 75} 
+  validates :cons, 					        presence: true, length: {minimum: 50}
   validates :overall, 				      presence: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
   # validates :start,                 presence: true
   # validates :stop,                  presence: true

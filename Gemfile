@@ -26,6 +26,8 @@ gem 'sitemap_generator'
 gem 'carrierwave'
 gem 'fog'
 
+gem 'cloudinary'
+
 # Authentication
 gem 'devise'
 gem 'omniauth'
@@ -45,11 +47,10 @@ gem 'gmaps4rails'
 
 # Deployment
 gem 'unicorn'
-gem 'capistrano'
 
 #Heroku performance
 gem 'asset_sync' # Syncs files to s3
-gem 'resque' # Redis background jobs
+gem 'resque', '1.22.0' # Redis background jobs
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
