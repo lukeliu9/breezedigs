@@ -1,3 +1,4 @@
+//Sets the size of the gallery box for each biulding's page
 $(function(){
 	$('#gallery').galleryView({
 		panel_width: 310,
@@ -7,7 +8,7 @@ $(function(){
 	});
 });
 
-$.fn.rating.options.required = true;
+$.fn.rating.options.required = true; // Removes the cancel button for each star rating on the new review form
 
 $(function(){ // wait for document to load
 $('input.star').rating();

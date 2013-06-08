@@ -30,7 +30,7 @@ class Building < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
 
-  def gmaps4rails_address
+  def gmaps4rails_address # Gets a building's address for creating the latitude & longitude
     "#{self.address}, #{self.zip}"
   end
 
@@ -47,7 +47,7 @@ class Building < ActiveRecord::Base
     instance_eval { reduce(:+) / size.to_f }
   end
 
-  def self.search_attributes(search)
+  def self.search_attributes(search) # Used on the home page and search header search field to search all buildings by any of its attributes
     self.joins{city}.joins{area}.joins{neighborhood}.where{(zip =~ "%#{search}%") | (name =~ "%#{search}%") | (address =~ "%#{search}%") | (city.name =~ "%#{search}%") | (area.name =~ "%#{search}%") | (neighborhood.name =~ "%#{search}%")}
   end
 
@@ -55,7 +55,7 @@ class Building < ActiveRecord::Base
     self.joins{city}.where{city.name =~ "%#{search.name}%"}
   end
 
-  def self.select_only_in_city(selection)
+  def self.select_only_in_city(selection) # Used for the individual city pages to get buildings only in that city
     self.joins{city}.where{city.name =~ selection}
   end
 
@@ -63,7 +63,7 @@ class Building < ActiveRecord::Base
     self.includes{photos}.where{photos.id != nil}
   end
 
-  def self.select_featured(many)
+  def self.select_featured(many) #randoly selects from the passed in array. Used for the home page featured buildings
     self.order("RANDOM()").first(many)
   end
 
@@ -71,7 +71,7 @@ class Building < ActiveRecord::Base
     self.select { |place| place.name == name }
   end
 
-  def self.sort_by_reviews(type)
+  def self.sort_by_reviews(type) # For the building results page and lets users filter results by the number of reviews for a building or the building's overall average rating
     if type == "count"
       self.all.sort! { |x, y| y.reviews.count <=> x.reviews.count }
     else

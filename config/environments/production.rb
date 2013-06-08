@@ -72,7 +72,7 @@ Breezedigs::Application.configure do
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     },
-    :path => "/images/:attachment/:id.:extension"
+    :path => "/:attachment/:id.:extension"
   }
 
 end
