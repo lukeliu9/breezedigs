@@ -2,24 +2,189 @@
 <html>
 <head>
   <title>We're sorry, but something went wrong (500)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
+  <link href="/assets/main.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/bootstrap_and_overrides.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/static_pages.css?body=1" media="screen" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <h1>We're sorry, but something went wrong.</h1>
+  <div id="holder">
+
+  <div class="maintopbar">
+  <div class="container no-wrap">
+    <nav class="header-box logo-box">
+      <div id="logo">
+        <a href="/"><img alt="Edit Entry" height="41" onmouseout="this.src=&#x27;/assets/BreezedigsLogo.png&#x27;" onmouseover="this.src=&#x27;/assets/breezedigslogo_hover.png&#x27;" src="/assets/BreezedigsLogo.png" width="150" /></a>
+      </div>
+    </nav>
+
+    <nav class="header-buttons">
+    </nav>
+
+    <nav class="header-box">
+      <ul class="header-links">
+        <li>
+        <a href="/rents/new"><strong>Submit a Rent</strong></a>
+        </li>
+        <li>
+        <a href="/reviews/new"><strong>Write a Review</strong></a>
+        </li>
+        </ul>
+    </nav>
   </div>
+</div>
+
+
+  <div class="em-buffer-4"></div> <!-- To clear the header -->
+
+<div class="searchbar">
+  <div class="container center">
+      <form accept-charset="UTF-8" action="/buildings" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+      <p>
+        <input class="searchbar-field" id="search" name="search" placeholder="Building name, address, city, zip, or neighborhood" type="text" />
+        
+        <input class="btn btn-small bottom-buffer" type="submit" value="search" />
+        </p>
+</form> </div>
+</div>
+
+<div id="body">
+    
+
+<div class="error-hero">
+  <div class="em-buffer-1"></div>
+  <div class="error-page-hero hero-content">
+    <h1>Uh-oh, looks like our site experienced an error while processing this request</h1>
+    <div class="error-page-subtitle hero-desc-holder">
+      <p>
+        Please feel free to send us a message about this or navigate back to the home page
+      </p>
+    </div>  
+  </div>
+</div>
+
+<footer>
+  <div class="footer-narrow">
+  <div class="container">
+    <div class="upper-footer">
+      <h3>View apartments in:</h3>
+      <ul class="footer-col no-wrap">
+        <li id="footer-cities">
+  <ul>
+    <a href="/cities/albuquerque"><li id="footer-cities">Albuquerque</li></a><a href="/cities/anaheim"><li id="footer-cities">Anaheim</li></a><a href="/cities/anchorage"><li id="footer-cities">Anchorage</li></a><a href="/cities/arlington"><li id="footer-cities">Arlington</li></a><a href="/cities/atlanta"><li id="footer-cities">Atlanta</li></a><a href="/cities/aurora"><li id="footer-cities">Aurora</li></a><a href="/cities/austin"><li id="footer-cities">Austin</li></a><a href="/cities/bakersfield"><li id="footer-cities">Bakersfield</li></a><a href="/cities/baltimore"><li id="footer-cities">Baltimore</li></a><a href="/cities/baton-rouge"><li id="footer-cities">Baton Rouge</li></a><a href="/cities/birmingham"><li id="footer-cities">Birmingham</li></a><a href="/cities/boston"><li id="footer-cities">Boston</li></a><a href="/cities/buffalo"><li id="footer-cities">Buffalo</li></a><a href="/cities/chandler"><li id="footer-cities">Chandler</li></a><a href="/cities/charlotte"><li id="footer-cities">Charlotte</li></a><a href="/cities/chesapeake"><li id="footer-cities">Chesapeake</li></a><a href="/cities/chicago"><li id="footer-cities">Chicago</li></a>
+  </ul>
+</li>
+
+<li id="footer-cities">
+  <ul>
+    <a href="/cities/cincinnati"><li id="footer-cities">Cincinnati</li></a><a href="/cities/cleveland"><li id="footer-cities">Cleveland</li></a><a href="/cities/colorado-springs"><li id="footer-cities">Colorado Springs</li></a><a href="/cities/columbus"><li id="footer-cities">Columbus</li></a><a href="/cities/corpus-christi"><li id="footer-cities">Corpus Christi</li></a><a href="/cities/dallas"><li id="footer-cities">Dallas</li></a><a href="/cities/denver"><li id="footer-cities">Denver</li></a><a href="/cities/detroit"><li id="footer-cities">Detroit</li></a><a href="/cities/durham"><li id="footer-cities">Durham</li></a><a href="/cities/el-paso"><li id="footer-cities">El Paso</li></a><a href="/cities/fort-wayne"><li id="footer-cities">Fort Wayne</li></a><a href="/cities/fort-worth"><li id="footer-cities">Fort Worth</li></a><a href="/cities/fresno"><li id="footer-cities">Fresno</li></a><a href="/cities/greensboro"><li id="footer-cities">Greensboro</li></a><a href="/cities/henderson"><li id="footer-cities">Henderson</li></a><a href="/cities/honolulu"><li id="footer-cities">Honolulu</li></a><a href="/cities/houston"><li id="footer-cities">Houston</li></a>
+  </ul>
+</li>
+
+<li id="footer-cities">
+  <ul>
+    <a href="/cities/indianapolis"><li id="footer-cities">Indianapolis</li></a><a href="/cities/jacksonville"><li id="footer-cities">Jacksonville</li></a><a href="/cities/jersey-city"><li id="footer-cities">Jersey City</li></a><a href="/cities/kansas-city"><li id="footer-cities">Kansas City</li></a><a href="/cities/laredo"><li id="footer-cities">Laredo</li></a><a href="/cities/las-vegas"><li id="footer-cities">Las Vegas</li></a><a href="/cities/lexington"><li id="footer-cities">Lexington</li></a><a href="/cities/lincoln"><li id="footer-cities">Lincoln</li></a><a href="/cities/long-beach"><li id="footer-cities">Long Beach</li></a><a href="/cities/los-angeles"><li id="footer-cities">Los Angeles</li></a><a href="/cities/louisville"><li id="footer-cities">Louisville</li></a><a href="/cities/lubbock"><li id="footer-cities">Lubbock</li></a><a href="/cities/madison"><li id="footer-cities">Madison</li></a><a href="/cities/memphis"><li id="footer-cities">Memphis</li></a><a href="/cities/miami"><li id="footer-cities">Miami</li></a><a href="/cities/milwaukee"><li id="footer-cities">Milwaukee</li></a><a href="/cities/minneapolis"><li id="footer-cities">Minneapolis</li></a>
+  </ul>
+</li>
+
+<li id="footer-cities">
+  <ul>
+    <a href="/cities/nashville"><li id="footer-cities">Nashville</li></a><a href="/cities/new-orleans"><li id="footer-cities">New Orleans</li></a><a href="/cities/new-york"><li id="footer-cities">New York</li></a><a href="/cities/newark"><li id="footer-cities">Newark</li></a><a href="/cities/norfolk"><li id="footer-cities">Norfolk</li></a><a href="/cities/oakland"><li id="footer-cities">Oakland</li></a><a href="/cities/oklahoma-city"><li id="footer-cities">Oklahoma City</li></a><a href="/cities/omaha"><li id="footer-cities">Omaha</li></a><a href="/cities/orlando"><li id="footer-cities">Orlando</li></a><a href="/cities/philadelphia"><li id="footer-cities">Philadelphia</li></a><a href="/cities/phoenix"><li id="footer-cities">Phoenix</li></a><a href="/cities/pittsburgh"><li id="footer-cities">Pittsburgh</li></a><a href="/cities/plano"><li id="footer-cities">Plano</li></a><a href="/cities/portland"><li id="footer-cities">Portland</li></a><a href="/cities/raleigh"><li id="footer-cities">Raleigh</li></a><a href="/cities/riverside"><li id="footer-cities">Riverside</li></a><a href="/cities/sacramento"><li id="footer-cities">Sacramento</li></a>
+  </ul>
+</li>
+
+<li id="footer-cities">
+  <ul>
+    <a href="/cities/san-antonio"><li id="footer-cities">San Antonio</li></a><a href="/cities/san-diego"><li id="footer-cities">San Diego</li></a><a href="/cities/san-francisco"><li id="footer-cities">San Francisco</li></a><a href="/cities/san-jose"><li id="footer-cities">San Jose</li></a><a href="/cities/santa-ana"><li id="footer-cities">Santa Ana</li></a><a href="/cities/seattle"><li id="footer-cities">Seattle</li></a><a href="/cities/st-louis"><li id="footer-cities">St. Louis</li></a><a href="/cities/st-paul"><li id="footer-cities">St. Paul</li></a><a href="/cities/st-petersburg"><li id="footer-cities">St. Petersburg</li></a><a href="/cities/stockton"><li id="footer-cities">Stockton</li></a><a href="/cities/tampa"><li id="footer-cities">Tampa</li></a><a href="/cities/toledo"><li id="footer-cities">Toledo</li></a><a href="/cities/tucson"><li id="footer-cities">Tucson</li></a><a href="/cities/tulsa"><li id="footer-cities">Tulsa</li></a><a href="/cities/virginia-beach"><li id="footer-cities">Virginia Beach</li></a><a href="/cities/washington"><li id="footer-cities">Washington</li></a><a href="/cities/wichita"><li id="footer-cities">Wichita</li></a>
+  </ul>
+</li>
+      </ul>
+      <div class="view-all-cities"><a href="/allcities">View all cities &gt;&gt;</a></div>
+    </div>
+  </div>
+</div>
+<div class="buffer-small"></div>
+    <div class="lower-footer">
+      <div class="footer-narrow">
+      <div class="container">       
+        <ul class="footer-col no-wrap">
+          <li>
+            <h3 id="footer-title">General</h3>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/users/sign_up">Sign Up</a></li>
+              <li><a href="/users/sign_in">Sign In</a></li>
+              <li><a href="/reviews/new">Write a review</a></li>
+              <li><a href="/buildings/new">Add a building</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <h3 id="footer-title">Our Company</h3>
+            <ul>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/careers">Careers</a></li>
+              <li><a href="/contact-us">Contact</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <h3 id="footer-title">Useful</h3>
+            <ul>              
+              <li><a href="/advertise">Advertise</a></li>
+              <li><a href="/managers">Managers</a></li>
+              <li><a href="/partners">Partners</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <h3 id="footer-title">Please Note</h3>
+            <ul>
+              
+              <li><a href="/terms">Terms of Use</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/guidelines">Review Guidelines</a></li>
+            </ul>
+          </li>
+
+          <li id="social-col">
+          <h3 id="footer-title">Social</h3>
+            <ul>
+
+              <a href="">
+              <li class="social-button facebook" id="social-button-container">
+                <span>w</span>
+                <p>Like us on Facebook</p>
+              </li>
+              </a>
+
+              <a href="">
+              <li class="social-button twitter" id="social-button-container">
+                <span>t</span>
+                <p>&nbsp;Share with Twitter</p>
+              </li>
+              </a>
+
+              <a href="">
+              <li class="social-button google" id="social-button-container">
+                <span>g</span>
+                <p>Share with Google</p>
+              </li>
+              </a>
+            </ul>
+          </li>
+        </ul>
+
+      <br>
+          <div id="copyright-footer">
+            <a href="/"><img alt="Breezedigslogo" height="34" src="/assets/BreezedigsLogo.png" width="125" /></a>
+            <p>&#169; Breezedigs. All rights reserved. Breezedigs, Dig Seeker, Dig Finder, and the Breezedigs logo are the registered trademarks of Breezedigs, Inc</p>
+          </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

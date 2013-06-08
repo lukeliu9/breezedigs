@@ -22,44 +22,14 @@
 	background-size: 100%;
 }
 
-.about-hero-content {
-	width: 60em;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 1em;
-	border-radius: 8px;
-	text-align: center;
-	h1 {
-			padding: 0;
-			margin: 0;
-			color: $grayVeryLight;
-			font-size: 3em;
-			font-weight: 200;
-			text-shadow: 0 0 5px #000; -moz-text-shadow: 0 0 5px #000;
-		}
-}
-
-.about-hero-desc-holder {
-	width: 35em;
-	margin-top: 1.5em;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-	p {
-		color: white;
-		font-size: 1.5em;
-		font-weight: 100;
-		text-shadow: 0 0 5px #000; -moz-text-shadow: 0 0 5px #000;
-	}	
-}
-
 .about-stripe {
-	height: 35em;
+	height: 28em;
 	width: 100%;
+	margin-top: -3.5em;
 	margin-left: auto;
 	margin-right: auto;
 	h2 {
-		margin-top: 1.1em;
+		margin-bottom: 1em;
 		color: $grayMediumDark;
 		font-size: 1.5em;
 		font-weight: 300;
@@ -73,11 +43,11 @@
 			display: inline-block;
 			h3 {
 				color: $blueVVVDark;
-				font-size: 1.6em;
+				font-size: 1.3em;
 				font-weight: 400;
 			}
 			p {
-				font-size: 1.2em;
+				font-size: 0.9em;
 				line-height: 1.5em;
 				font-weight: 300;
 				color: $grayVeryDark;
@@ -122,7 +92,7 @@
 			padding: 0;
 			margin: 0;
 			color: $grayVeryLight;
-			font-size: 3em;
+			font-size: 2.6em;
 			font-weight: 200;
 			text-shadow: 0 0 5px #000; -moz-text-shadow: 0 0 5px #000;
 		}
@@ -136,20 +106,20 @@
 	text-align: center;
 	p {
 		color: white;
-		font-size: 1.5em;
+		font-size: 1.2em;
 		font-weight: 100;
 		text-shadow: 0 0 5px #000; -moz-text-shadow: 0 0 5px #000;
 	}	
 }
 
 .careers-stripe {
-	height: 45em;
+	height: 40em;
 	width: 100%;
+	margin-top: -5em;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
 	h2 {
-		margin-top: 1.1em;
 		color: $grayMediumDark;
 		font-size: 1.5em;
 		font-weight: 300;
@@ -164,11 +134,11 @@
 			text-align: center;
 			h3 {
 				color: $blueVVDark;
-				font-size: 1.6em;
+				font-size: 1.2em;
 				font-weight: 400;
 			}
 			p {
-				font-size: 1.2em;
+				font-size: 0.9em;
 				line-height: 1.5em;
 				font-weight: 300;
 				color: $grayVeryDark;
@@ -181,7 +151,7 @@
 	h4 {
 		margin-top: 4em;
 		color: $grayMediumDark;
-		font-size: 1.5em;
+		font-size: 1.2em;
 		font-weight: 200;
 	}
 }
@@ -191,7 +161,7 @@
 }
 
 /* Contact */
-#title {font-size: 1.4em; font-weight: 400; color: $grayVeryDark; margin-top: 3em;}
+#title {font-size: 1.2em; font-weight: 400; color: $grayVeryDark; margin-top: 2em; margin-bottom: 2em;}
 .contact-sidebar {
 	display: inline-block;
 	vertical-align: top;
@@ -201,15 +171,15 @@
 	border-radius: 6px;
 	h3 {
 		margin-top: 0em;
-		font-size: 1.2em;
-		font-weight: 500;
+		font-size: 1em;
+		font-weight: 400;
 	}
 	h4 {
-		font-size: 1.1em;
+		font-size: 1em;
 		font-weight: 400;
 	}
 	p {
-		font-size: 1em;
+		font-size: 0.9em;
 		font-weight: 300;
 	}
 }
@@ -240,7 +210,7 @@
 /* General */
 
 .static-content {
-	width: 92%;
+	width: 80%;
 	min-height: 30em;
 	margin-top: 4em;
 	margin-left: auto;
@@ -256,7 +226,7 @@
 	h2 {
 		margin-top: 2em;
 		margin-bottom: 0.5em;
-		font-size: 1.2em;
+		font-size: 1.1em;
 		color: $offBlack;
 		text-align: left;
 	}
@@ -268,7 +238,7 @@
 	}
 	p {
 		color: $offBlack;
-		font-size: 1em;
+		font-size: 0.86em;
 		line-height: 1.3em;
 	}
 	span {
@@ -348,10 +318,66 @@
 	}
 }
 
+/* General */
 
+.hero-content {
+	width: 60em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em;
+	border-radius: 8px;
+	text-align: center;
+	h1 {
+			padding: 0;
+			margin: 0;
+			color: $grayVeryLight;
+			font-size: 2.6em;
+			font-weight: 200;
+			text-shadow: 0 0 5px #000; -moz-text-shadow: 0 0 5px #000;
+		}
+}
 
+.hero-desc-holder {
+	width: 35em;
+	margin-top: 1.5em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	p {
+		color: white;
+		font-size: 1.2em;
+		font-weight: 100;
+		text-shadow: 0 0 5px #000; -moz-text-shadow: 0 0 5px #000;
+	}	
+}
 
+/* Error pages */
 
+.error-hero {
+	width: 100%;
+	height: 33em;
+	background: url("construction.png") no-repeat;
+	background-size: 100%;
+}
 
+.error-page-hero {
+	h1 {
+		padding: 0;
+		margin: 0;
+		color: $grayVeryLight;
+		font-size: 2.6em;
+		font-weight: 200;
+		text-shadow: 0 0 10px #502019; -moz-text-shadow: 0 0 10px #502019;
+	}
+}
+
+.error-page-subtitle {
+	p {
+		color: white;
+		font-size: 1.2em;
+		font-weight: 200;
+		text-shadow: 0 0 10px #502019; -moz-text-shadow: 0 0 5px #502019;
+	}
+}
 
 

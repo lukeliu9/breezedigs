@@ -24,9 +24,8 @@ gem 'whenever', :require => false #deploying cron jobs
 gem 'sitemap_generator'
 # To be able to upload sitemap to amazon S3
 gem 'carrierwave'
-gem 'fog'
 
-gem 'delayed_job_active_record' # background upload of images to s3
+gem 'delayed_job_active_record' # background upload of images to
 
 # Authentication
 gem 'devise'

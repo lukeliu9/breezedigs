@@ -405,7 +405,6 @@ DEPENDENCIES
   factory_girl (~> 2.0.0)
   factory_girl_rails (~> 1.1.0)
   faker (= 1.0.1)
-  fog
   font-awesome-rails
   friendly_id
   geocoder
