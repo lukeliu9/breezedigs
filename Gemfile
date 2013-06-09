@@ -46,7 +46,6 @@ gem 'gmaps4rails'
 gem 'unicorn'
 
 #Heroku performance
-gem 'asset_sync' # Syncs files to s3
 gem 'resque', '1.22.0' # Redis background jobs
 gem 'delayed_job_active_record' # background upload of images to
 
