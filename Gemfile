@@ -25,8 +25,6 @@ gem 'sitemap_generator'
 # To be able to upload sitemap to amazon S3
 gem 'carrierwave'
 
-gem 'delayed_job_active_record' # background upload of images to
-
 # Authentication
 gem 'devise'
 gem 'omniauth'
@@ -50,6 +48,7 @@ gem 'unicorn'
 #Heroku performance
 gem 'asset_sync' # Syncs files to s3
 gem 'resque', '1.22.0' # Redis background jobs
+gem 'delayed_job_active_record' # background upload of images to
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
