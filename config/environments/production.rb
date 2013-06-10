@@ -67,4 +67,6 @@ Breezedigs::Application.configure do
 
   config.logger = Logger.new(STDOUT)
 
+  config.cache_store = :dalli_store #Memcachier
+
 end

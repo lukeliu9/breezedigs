@@ -50,8 +50,9 @@ gem 'unicorn'
 gem 'resque', '1.22.0' # Redis background jobs
 gem 'delayed_job_active_record' # background upload of images to
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+# Caching on Heroku
+gem 'memcachier'
+gem 'dalli'
 
 gem 'pg', '0.12.2'
 
