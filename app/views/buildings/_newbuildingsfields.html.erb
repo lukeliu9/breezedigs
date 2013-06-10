@@ -31,13 +31,13 @@
 	</div>
 
 	<div id="area">
-		<p>City area:</p>
+		<p>City area (optional):</p>
 		<%= f.collection_select(:area_id, [], :id, :name, {:prompt   => "Select an Area"}, {:id => 'areas_select'}) %>
 		<br />
 	</div>
 
 	<div id="neighborhood">
-		<p>Neighborhood:</p>
+		<p>Neighborhood (optional):</p>
 		<%= f.collection_select(:neighborhood_id, [], :id, :name, {:prompt   => "Select a Neighborhood"}, {:id => 'neighborhoods_select'}) %>
 		<br />
 	</div>

@@ -27,8 +27,8 @@ Breezedigs::Application.routes.draw do
   resources :rents
   resources :floorplans
   resources :photos
-
   resources :cities
+  resources :contact_us
 
   resources :buildings do
     resources :reviews
