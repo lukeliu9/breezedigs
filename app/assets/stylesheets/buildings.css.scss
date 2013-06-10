@@ -27,19 +27,24 @@
 /* Building Results */
 
 .results-header {
-	margin-bottom: 1em;
-	padding: 0.7em 0;
+	height: 1em;
+	margin-bottom: 0.5em;
+	padding: 0.7em 1em;
 	border-radius: 6px;
 	background: $gbVeryLight;
 	h2 {
+		float: left;
 		padding: 0;
 		margin: 0;
 		color: $blueVVVDark;
 		font-weight: 300;
-		font-size: 1em;
+		font-size: 0.95em;
+	}
+	a {
+		float: right;
+		font-size: 0.8em;
 	}
 }
-
 .building-results {
 	vertical-align: top;
 	display: inline-block;

@@ -29,7 +29,7 @@
 			<% else %>
 				<h2>Your search returned <%= pluralize(@buildings.count, "result") %></h2>
 			<% end %>
-
+			<%= link_to "Add building", new_building_path %>
 			</div>
 
 			<%= render 'buildingresults' %>

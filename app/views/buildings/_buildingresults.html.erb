@@ -2,8 +2,9 @@
 	<%= render 'noresults' %>
 	<% else %>
 <div class="pagination">
-<%= paginate @buildingresults %>
+	<%= paginate @buildingresults %>
 </div>
+
 <ul class="building-results-ul"> 
 	<% @buildingresults.each do |building| %>
 
