@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
 		if @review.save!
 			flash[:notice] = "Thank you for submitting a review and contributing to our community!"
 			current_user.reviews << @review
-			redirect_to current_user
+			redirect_to building
 		else
 			render :action => 'new'
 		end

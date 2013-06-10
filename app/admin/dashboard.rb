@@ -8,7 +8,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Recent Reviews" do
-          table_for Review.order('created_at desc').limit(5) do
+          table_for Review.order('created_at desc').limit(3) do
             column("User")          {|review| review.user.email} 
             column("Building")      {|review| review.building.name} 
             column("Pros")          {|review| review.pros} 
@@ -24,6 +24,18 @@ ActiveAdmin.register_page "Dashboard" do
             column("Building")      {|rent| rent.building.name} 
             column("Rent Price")    {|rent| rent.rent} 
             column("Created At")    {|rent| rent.created_at} 
+          end
+        end
+      end
+    end # Ends first column
+
+    columns do
+
+      column do
+        panel "Recent Photos" do
+          table_for Photo.order('created_at desc').limit(5).each do |user|
+            column("User")          {|photo| photo.user.email }
+            column(:image)    {|photo| photo.image }
           end
         end
       end
