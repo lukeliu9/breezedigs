@@ -14,6 +14,7 @@ gem 'friendly_id'
 gem 'client_side_validations'
 gem 'active_admin_importable'
 gem 'activerecord-reputation-system'
+gem 'contact_us', '~> 0.4.0'
 gem "rmagick"
 gem 'jquery-star-rating-rails'
 gem 'hirb'
