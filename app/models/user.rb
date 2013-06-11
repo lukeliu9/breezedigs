@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
       fullname = auth.info.name.split(' ')
       user.first_name = fullname[0]
       user.last_name = fullname[1]
+      user.email = auth.info.email ? auth.info.email : ""
     end
   end
 
