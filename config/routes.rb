@@ -28,7 +28,12 @@ Breezedigs::Application.routes.draw do
   resources :floorplans
   resources :photos
   resources :cities
-  resources :contact_us
+
+  resources :contacts,
+    :controller => 'contact_us/contacts',
+    :only       => [:new, :create]
+  match 'contact-us' => 'contact_us/contacts#new', :as => :contact_us
+
 
   resources :buildings do
     resources :reviews
