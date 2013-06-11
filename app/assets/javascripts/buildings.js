@@ -3,7 +3,7 @@ $(function(){
 	$('#gallery').galleryView({
 		panel_width: 310,
 		panel_height: 250,
-		frame_width: 60,
+		frame_width: 65,
 		frame_height: 50
 	});
 });

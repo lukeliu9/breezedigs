@@ -14,7 +14,7 @@
 .gv_galleryWrap { position: relative; background: #d9dddf; border: 1px solid #bbbfc3; border-radius: 5px; font-size: 10pt; }
 
 /* GALLERY DIV */
-.gv_gallery { overflow: hidden; position: relative;}
+.gv_gallery { position: relative;}
 
 .gv_imageStore { visibility: hidden; position: absolute; top: -10000px; left: -10000px; }
 
@@ -52,7 +52,6 @@
 	font-size: 10pt;
 	font-weight: bold;
 	color: white;
-	
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -106,7 +105,6 @@
 .gv_navPause,
 .gv_navNext,
 .gv_navPrev {
-	
 	opacity: 0.3;
 	-moz-opacity: 0.3;
 	-khtml-opacity: 0.3;
