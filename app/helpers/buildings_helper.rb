@@ -3,8 +3,8 @@ module BuildingsHelper
 	# For use in the single building listing page where we have an instance variable from the controller
 	def building_geography
 		city = @building.city.name
-		area = @building.area.name
-		hood = @building.neighborhood.name
+		area = @building.area ? @building.area.name : ""
+		hood = @building.neighborhood ? @building.neighborhood.name : ""
 
 		city = area.blank? ? "#{city}" : "#{city} > "
 		area = hood.blank? ? "#{area}" : "#{area} > "

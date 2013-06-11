@@ -38,7 +38,7 @@ class BuildingsController < ApplicationController
   			@neighborhoods = @buildings.map(&:neighborhood)
     	else
 	  		@search = Building.search_attributes(params[:search])
-	  		@buildings = @search.sort_by_reviews("count")
+	  		@buildings = Building.sort_by_reviews(@search, "count")
 	  		@buildingresults = Kaminari.paginate_array(@buildings).page(params[:page]).per(10)
   			@areas = @buildings.map(&:area)
   			@neighborhoods = @buildings.map(&:neighborhood)

@@ -106,7 +106,7 @@ puts "Chicago: West Side"
 
 ["Cabrini-Green", "Gold Coast", "Goose Island", "Old Town", 
 	"River West", "River North", "Streeterville", "Loop", 
-	"Near East Side", "West Look Gate", "Dearborn Park", 
+	"Near East Side", "West Loop Gate", "Dearborn Park", 
 	"Printer's Row", "South Loop"].each do |neighborhood|
 		Neighborhood.create!(name: neighborhood, area_id: 5)
 	end	

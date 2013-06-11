@@ -32,13 +32,16 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
 
       column do
-        panel "Recent Photos" do
-          table_for Photo.order('created_at desc').limit(5).each do |user|
-            column("User")          {|photo| photo.user.email }
-            column(:image)    {|photo| photo.image }
+        panel "Recent Buildings" do
+          table_for Building.order('created_at desc').limit(5).each do |building|
+            column("Name")          {|building| building.name }
+            column("Address")       {|building| building.address }
+            column("Zip")           {|building| building.zip }
+            column("City")          {|building| building.city }
+            column("User")          {|building| building.user }
+            end
           end
         end
-      end
 
       column do
         panel "Recent Signups" do
@@ -48,7 +51,18 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
       end
+    end # Ends 2nd column
 
+  columns do
+     column do
+      panel "Recent Photos" do
+        table_for Photo.order('created_at desc').limit(5).each do |photo|
+          column("User")          {|photo| photo.user.email }
+          column(:image)    {|photo| photo.image }
+        end
+      end
     end
+  end
+
   end
 end

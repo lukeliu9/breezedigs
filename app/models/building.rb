@@ -1,7 +1,7 @@
 class Building < ActiveRecord::Base
   attr_accessible :name, :address, :city, 
   :latitude, :longitude, :area, :neighborhood, :website, :zip, 
-  :management, :city_id, :area_id, :neighborhood_id, :slug, :status, :user_id
+  :management, :city_id, :area_id, :neighborhood_id, :slug, :status, :user_id, :gmaps
 
   has_many :reviews, dependent: :destroy
   has_many :rents, dependent: :destroy
@@ -48,7 +48,10 @@ class Building < ActiveRecord::Base
   end
 
   def self.search_attributes(search) # Used on the home page and search header search field to search all buildings by any of its attributes
-    self.joins{city}.joins{area}.joins{neighborhood}.where{(zip =~ "%#{search}%") | (name =~ "%#{search}%") | (address =~ "%#{search}%") | (city.name =~ "%#{search}%") | (area.name =~ "%#{search}%") | (neighborhood.name =~ "%#{search}%")}
+    city_search = self.joins{city}.where{(zip =~ "%#{search}%") | (name =~ "%#{search}%") | (address =~ "%#{search}%") | (city.name =~ "%#{search}%")}
+    hood_search = self.joins{neighborhood}.where{ neighborhood.name =~ "%#{search}%" }
+    area_search = self.joins{area}.where{ area.name =~ "%#{search}%" }
+    return city_search + hood_search + area_search
   end
 
   def self.search_by_city(search) # Used for the individual city views to find all the buildings in a city
@@ -71,11 +74,11 @@ class Building < ActiveRecord::Base
     self.select { |place| place.name == name }
   end
 
-  def self.sort_by_reviews(type) # For the building results page and lets users filter results by the number of reviews for a building or the building's overall average rating
+  def self.sort_by_reviews(array, type) # For the building results page and lets users filter results by the number of reviews for a building or the building's overall average rating
     if type == "count"
-      self.all.sort! { |x, y| y.reviews.count <=> x.reviews.count }
+      array.sort! { |x, y| y.reviews.count <=> x.reviews.count }
     else
-      self.all.sort! { |x, y| y.reviews.average("overall").to_f <=> x.reviews.average("overall").to_f }
+      array.sort! { |x, y| y.reviews.average("overall").to_f <=> x.reviews.average("overall").to_f }
     end
   end
 
