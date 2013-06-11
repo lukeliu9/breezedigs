@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
-    # @buildings = Building.all
+    @buildings = Building.all.count
     # @reviews = Review.all
     # @rents = Rent.all
     @featured = Building.select_only_in_city("Chicago").has_image.sort_featured("count").first(6)
