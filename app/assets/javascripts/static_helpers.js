@@ -4,6 +4,12 @@ window.setTimeout(function() {
     });
 }, 2000);
 
+window.setTimeout(function() {
+    $(".success").fadeTo(300, 0).slideUp(400, function(){
+        $(this).remove(); 
+    });
+}, 3000);
+
 
 window.setTimeout(function() {
     $(".sign-error-messages").fadeTo(300, 0).slideUp(300, function(){

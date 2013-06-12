@@ -2,6 +2,10 @@
   <%= stylesheet_link_tag 'static_pages' %>
 <% end %>
 
+<% content_for :scripts do %>
+  <%= javascript_include_tag "static_helpers" %>
+<% end %>
+
 <%= render 'layouts/facebooklikebox' %>
 
 <% provide(:title, 'Contact Us') %>
@@ -9,6 +13,11 @@
 <div class="container">
   <div class="main-content-area narrower-container">
     <h1 id="title">Please get in touch with us below:</h1>
+
+    <% flash.each do |key, value| %>
+		<%= content_tag(:div, value, class: "alert alert-success") %>
+	<% end %>
+
     <div class="contact-sidebar">
       <h3>Like our Facebook Page</h3>
       <div class="fb-like-box" data-href="https://www.facebook.com/breezedigs" data-width="80px" data-show-faces="true" data-stream="false" data-show-border="false" data-header="false"></div>
