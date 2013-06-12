@@ -214,6 +214,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (2.6.7)
     netrc (0.7.7)
+    newrelic_rpm (3.6.3.111)
     nokogiri (1.5.9)
     oauth (0.4.7)
     oauth2 (0.8.1)
@@ -419,6 +420,7 @@ DEPENDENCIES
   less-rails
   memcachier
   meta_search
+  newrelic_rpm
   omniauth
   omniauth-facebook
   omniauth-google-oauth2

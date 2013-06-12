@@ -42,12 +42,13 @@ gem "meta_search"
 gem "geocoder"
 gem 'gmaps4rails'
 
-# Deployment
+# Heroku server
 gem 'unicorn'
 
 #Heroku performance
 gem 'resque', '1.22.0' # Redis background jobs
 gem 'delayed_job_active_record' # background upload of images to
+gem 'newrelic_rpm' # App Monitoring
 
 # Caching on Heroku
 gem 'memcachier'
