@@ -22,7 +22,7 @@ class Review < ActiveRecord::Base
   validates :safety_rating, 		    allow_blank: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
   validates :maintenance_rating, 	  allow_blank: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
   validates :transportation_rating, allow_blank: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
-  validates :user_id,               uniqueness: { scope: :building_id, message: "Users may only write one review per building" }
+ # validates :user_id,               uniqueness: { scope: :building_id, message: "Users may only write one review per building" }
 
 def self.average_review_rating(rating)
   return nil if self.blank?
