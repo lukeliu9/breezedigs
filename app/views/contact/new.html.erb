@@ -1,0 +1,44 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'static_pages' %>
+<% end %>
+
+<%= render 'layouts/facebooklikebox' %>
+
+<% provide(:title, 'Contact Us') %>
+
+<div class="container">
+  <div class="main-content-area narrower-container">
+    <h1 id="title">Please get in touch with us below:</h1>
+    <div class="contact-sidebar">
+      <h3>Like our Facebook Page</h3>
+      <div class="fb-like-box" data-href="https://www.facebook.com/breezedigs" data-width="80px" data-show-faces="true" data-stream="false" data-show-border="false" data-header="false"></div>
+    </div>
+
+    <div class="contact-content">
+      <%= form_for @message, :url => contact_path, validate: true do |f| %>
+          <li class='string required' id='contact_us_contact_name_input'>
+            <p>Name</p>
+            <%= f.text_field :name, class: "name" %>
+          </li>
+        
+        <li class='string required' id='contact_us_contact_email_input'>
+          <p>Email</p>
+          <%= f.text_field :email, class: "email" %>
+        </li>
+          <li class='string required' id='contact_us_contact_subject_input'>
+            <p>Subject</p>
+            <%= f.select :subject, ["Support & technical questions","General feedback & suggestions","Partnership inquiry", "Adertising inquiry", "Content & copyright issues", "Building manager inquiry"] %>
+          </li>
+        <li class='text required' id='contact_us_contact_message_input'>
+          <p>Body</p>
+          <%= f.text_area :body, cols: "30", rows: "10" %>
+        </li>
+        <li class='commit'>
+          <%= f.submit 'Submit Review', class: "btn btn-primary btn-large" %>
+        </li>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>

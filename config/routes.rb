@@ -29,10 +29,8 @@ Breezedigs::Application.routes.draw do
   resources :photos
   resources :cities
 
-  resources :contacts,
-    :controller => 'contact_us/contacts',
-    :only       => [:new, :create]
-  match 'contact-us' => 'contact_us/contacts#new', :as => :contact_us
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
 
   resources :buildings do

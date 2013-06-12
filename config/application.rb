@@ -65,5 +65,20 @@ module Breezedigs
     
     Paperclip::Railtie.insert
 
+    # Config for sending emails to Google Apps email account
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => "www.breezedigs.com",
+      :user_name            => "luke@breezedigs.com",
+      :password             => "trapa!321",
+      :authentication       => :plain,
+      :enable_starttls_auto => true
+    }
+
+    config.action_mailer.default_url_options = {
+      :host => "www.breezedigs.com"
+    }
+
   end
 end
