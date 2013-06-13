@@ -42,8 +42,8 @@ gem "meta_search"
 gem "geocoder"
 gem 'gmaps4rails'
 
-# Heroku server
-gem 'unicorn'
+# Heroku production server
+gem 'puma'
 
 #Heroku performance
 gem 'resque', '1.22.0' # Redis background jobs
