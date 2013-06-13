@@ -4,4 +4,4 @@
 # User-Agent: *
 # Disallow: /
 
-Sitemap: http://bzbldgsimgs.s3.amazonaws.com/bzbldgsimgs/sitemaps/sitemap.xml.gz
+Sitemap: http://www.breezedigs.com/sitemap.xml.gz
