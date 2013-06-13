@@ -137,7 +137,8 @@ $grayLight: #d4d9dc;
 /* Main Content Area */
 
 .home-content-area {
-	height: 0; width: 100%;
+	display: inline-block;
+	width: 100%;
 	border-top: 5px solid $bordercolor;
 	background: white;
 
@@ -163,7 +164,54 @@ $grayLight: #d4d9dc;
 }
 
 
+/* Recent Reviews */
 
+.recent-reviews {
+	margin: 2.5em 0 10em 0;
+	padding: 0.7em 2em;
+	background: white;
+	border: 1px solid $grayLight;
+	border-radius: 6px;
+	h3 {
+		color: $grayDark;
+		font-size: 1.1em;
+		font-weight: 500;
+		margin: 0.5em 0 1em 0;
+	}
+	ul {
+		li {
+			padding: 0.5em;
+			border-bottom: 1px solid $grayLight;
+			h5 {
+				color: $gbVeryDark;
+				font-size: 0.95em;
+				font-weight: 400;
+				margin: 0 0 0 0;
+					span {
+					color: $gbMedium;
+					font-size: 0.86em;
+					font-weight: 300;
+					font-style: italic;
+				}
+			}
+			h6 {
+				color: $grayMediumDark;
+				font-size: 0.7em;
+				font-weight: 300;
+				margin: 0.2em 0 0.5em 0;
+			}
+			p {
+				color: $offBlack;
+				font-size: 0.89em;
+				font-weight: 300;
+				margin: 0.5em 0 0 0;
+				span {
+					font-weight: 500;
+				}
+			}
+		}
+	}
+}
 
 
 

@@ -34,6 +34,10 @@ def average_review_rating(rating)
   self.average(rating)
 end
 
+def self.get_recent_reviews(number)
+  self.order('created_at desc').limit(number)
+end
+
 end
 
 

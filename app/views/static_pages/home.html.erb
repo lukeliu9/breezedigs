@@ -4,17 +4,28 @@
 
 <% provide(:title, 'Home') %>
 
-<% if controller.controller_name == 'static_pages' && controller.action_name == 'home' %>
 <%= render 'layouts/hero' %>
-<% end %>
 
-<!-- Content Starts Here -->
-
+<!-- Home Content Starts Here -->
 <div class="home-content-area">
+	<div class="bg-texture-wrapper">
 	<div class="container">
 
-
+		<div class="recent-reviews">
+			<h3>Recent reviews</h3>
+			<ul>
+				<% @recent_reviews.each do |review| %>
+					<li>
+						<h5><%= review.building.name %> | <span><%= review.building.city.name %> - <%= review.building.address %>, <%= review.building.zip %></span></h5>
+						<h6><%= review.created_at.strftime("%I:%M %p %d %b %Y") %><h6>
+						<p><span>Pros:</span> <%= review.pros %></p>
+						<p><span>Cons:</span> <%= review.cons %></p>
+					</li>
+				<% end %>
+			</ul>
+		</div>
 
 	</div>
+</div>
 </div>
 			

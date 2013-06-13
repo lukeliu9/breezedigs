@@ -2,6 +2,8 @@ Breezedigs::Application.routes.draw do
 
   root to: 'static_pages#home'
 
+  match "/sitemap.xml", :controller => "sitemap", :action => "index" # redirects sitemap URL to the one hosted on Amazon S3
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
