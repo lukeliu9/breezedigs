@@ -67,6 +67,9 @@ Breezedigs::Application.configure do
 
   config.logger = Logger.new(STDOUT)
 
-  config.cache_store = :dalli_store #Memcachier
+  config.cache_store = :dalli_store # Memcachier
+
+  config.action_controller.asset_host = ENV['CDN_SUMO_URL']  # Sumo CDN
+  config.static_cache_control = "public, max-age=2592000" # Makes static files public for Sumo
 
 end
