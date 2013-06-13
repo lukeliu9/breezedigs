@@ -1,0 +1,2 @@
+class SitemapcontrollerController < ApplicationController
+end

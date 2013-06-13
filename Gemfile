@@ -20,8 +20,8 @@ gem 'hirb'
 
 gem 'whenever', :require => false #deploying cron jobs
 
-gem 'sitemap_generator'
 # To be able to upload sitemap to amazon S3
+gem 'sitemap_generator'
 gem 'carrierwave'
 gem 'fog'
 
