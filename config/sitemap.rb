@@ -1,5 +1,3 @@
-SITEMAP_PATH= "https://s3-us-west-2.amazonaws.com/bzbldgsimgs/sitemaps/sitemap.xml.gz"
-
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "http://www.breezedigs.com"
 SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/bzbldgsimgs/"

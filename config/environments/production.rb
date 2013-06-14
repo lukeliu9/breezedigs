@@ -72,4 +72,6 @@ Breezedigs::Application.configure do
   config.action_controller.asset_host = ENV['CDN_SUMO_URL']  # Sumo CDN
   config.static_cache_control = "public, max-age=2592000" # Makes static files public for Sumo
 
+  SITEMAP_PATH = "https://s3-us-west-2.amazonaws.com/bzbldgsimgs/sitemaps/sitemap.xml.gz"
+
 end

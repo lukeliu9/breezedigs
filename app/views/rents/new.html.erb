@@ -6,6 +6,27 @@
 
 <div class="bg-texture-wrapper">
 	<div class="container">
-		<%= render 'newrentform' %>
+		<div class="new-rent-form">
+			<h1>Your addition will help other renters - thank you!</h1>
+			<div class="building-profile-rentform">
+				<div class="building-text-rentform">
+					<h2><%= link_to @building.name, building_path(@building) %></h1>
+					<p id="geography"><%= building_geography %></p>
+					<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
+				</div>
+			</div>
+
+			<%= render 'newrentfields' %>
+
+		</div>
+
+		<div class="new-rent-sidebar">
+			<h2>&nbsp;Adding your rental data:&nbsp;</h2>
+			<p>Our number one priority is ensuring the accuracy and objectivity of the rental data that we display to users</p>
+
+			<p>As such, we review all content submitted to our site and check for suspicious submissions on a regular basis</p>
+			
+			<p></p>
+		</div>	
 	</div>
 </div>
