@@ -1,7 +1,7 @@
 class Building < ActiveRecord::Base
   attr_accessible :name, :address, :city, 
   :latitude, :longitude, :area, :neighborhood, :website, :zip, 
-  :management, :city_id, :area_id, :neighborhood_id, :slug, :status, :user_id, :gmaps
+  :management, :city_id, :area_id, :neighborhood_id, :slug, :status, :user_id, :gmaps, :alias
 
   has_many :reviews, dependent: :destroy
   has_many :rents, dependent: :destroy
@@ -81,24 +81,18 @@ class Building < ActiveRecord::Base
     end
   end
 
-  def self.sort_featured(type)
-    if type == "count"
-      self.all.sort! { |x, y| y.reviews.count <=> x.reviews.count }
-    else
-      self.all.sort! { |x, y| y.reviews.average("overall").to_f <=> x.reviews.average("overall").to_f }
-    end
-  end
-
   def self.delete_current_building(building)
     self.all.delete_if { |x| x.name == building.name }
   end
 
   def self.get_best_buildings
-    self.all.sort! { |x, y| y.reviews.average("overall").to_f <=> x.reviews.average("overall").to_f }
+    sorted = self.all.sort! { |x, y| y.reviews.average("overall").to_f <=> x.reviews.average("overall").to_f }
+    sorted.first(6)
   end
 
   def self.get_worst_buildings
-    self.all.sort! { |x, y| x.reviews.average("overall").to_f <=> y.reviews.average("overall").to_f }
+    sorted = self.all.sort! { |x, y| x.reviews.average("overall").to_f <=> y.reviews.average("overall").to_f }
+    sorted.first(6)
   end
 
   private

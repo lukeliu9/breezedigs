@@ -80,7 +80,7 @@ puts "Chicago: Far North Side"
 # Chicago: Northwest Side
 
 ["Portage Park", "Irving Park", "Dunning", "Montclare", 
-	"Belmont Cragin", "Hermosa"].each do |neighborhood|
+	"Belmont Cragin", "Hermosa", "Bucktown"].each do |neighborhood|
 		Neighborhood.create!(name: neighborhood, area_id: 2)
 	end
 puts "Chicago: Northwest Side"	
@@ -97,7 +97,7 @@ puts "Chicago: North Side"
 
 ["Humboldt Park", "West Town", "Austin", "West Garfield Park", 
 	"East Garfield Park", "Near West Side", "North Lawndale", 
-	"South Lawndale", "Lower West Side"].each do |neighborhood|
+	"South Lawndale", "Lower West Side", "West Loop"].each do |neighborhood|
 		Neighborhood.create!(name: neighborhood, area_id: 4)
 	end	
 puts "Chicago: West Side"	

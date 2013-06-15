@@ -27,8 +27,10 @@
 
 							<div class="best-worst-building-content">
 							<h7><%= building.name %></h7>
+							<span>&nbsp;(<%= pluralize(building.reviews.count, 'review') %>)</span>
+							<br>
 							<%= star_image((building.reviews.average("overall")*4).round, 13, 65, "best-worst-star") %>
-							<p><%= geogrify(building) %></p>
+							<p id="geogrify"><%= geogrify(building) %></p>
 							<p><%= building.address %>, <%= building.zip %></p>
 							</div>
 						</li>
@@ -51,8 +53,10 @@
 
 							<div class="best-worst-building-content">
 							<h7><%= building.name %></h7>
+							<span>&nbsp;(<%= pluralize(building.reviews.count, 'review') %>)</span>
+							<br>
 							<%= star_image((building.reviews.average("overall")*4).round, 13, 65, "best-worst-star") %>
-							<p><%= geogrify(building) %></p>
+							<p id="geogrify"><%= geogrify(building) %></p>
 							<p><%= building.address %>, <%= building.zip %></p>
 							</div>
 						</li>

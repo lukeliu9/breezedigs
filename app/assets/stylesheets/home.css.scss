@@ -199,18 +199,24 @@ $grayLight: #d4d9dc;
 			margin: 0 0 0 0;
 			padding: 0;
 		}
-		p {
+		span {
+			vertical-align: middle;
 			color: $grayDark;
+			font-size: 0.75em;
+			margin: 0 0 0 0;
+		}
+		p {
+			color: $gbVeryDark;
 			font-size: 0.8em;
-			margin: -0.2em 0 0.3em 0;
+			margin: 0 0 1.3em 0;
 		}
 	}
 }
 #best-worst-star {
 	display: inline-block;
-	vertical-align: middle;
-	margin: -0.25em 0 0 0.2em;
+	margin: -0.1em 0 0 0;
 }
+#geogrify {margin: -0.7em 0 0 0;}
 .best-worst-building-content {
 	vertical-align: top;
 	display: inline-block;
