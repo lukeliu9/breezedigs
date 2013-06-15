@@ -17,15 +17,17 @@
 				<ul>
 					<% @best.each do |building| %>
 						<li>
-							<% if building.photos.blank? %>
-								<%= image_tag 'nobuildingimage.png', size: "60x60" %>
-							<% else %>
-								<%= image_tag building.photos.first.image.url, size: "60x60" %>
+							<%= link_to building do %>
+								<% if building.photos.blank? %>
+									<%= image_tag 'nobuildingimage.png', size: "60x60" %>
+								<% else %>
+									<%= image_tag building.photos.first.image.url, size: "60x60" %>
+								<% end %>
 							<% end %>
 
 							<div class="best-worst-building-content">
 							<h7><%= building.name %></h7>
-							<%= light_star_image((building.reviews.average("overall")*4).round, 13, 65, "best-worst-star") %>
+							<%= star_image((building.reviews.average("overall")*4).round, 13, 65, "best-worst-star") %>
 							<p><%= geogrify(building) %></p>
 							<p><%= building.address %>, <%= building.zip %></p>
 							</div>
@@ -39,15 +41,17 @@
 				<ul>
 					<% @worst.each do |building| %>
 						<li>
-							<% if building.photos.blank? %>
-								<%= image_tag 'nobuildingimage.png', size: "60x60" %>
-							<% else %>
-								<%= image_tag building.photos.first.image.url, size: "60x60" %>
+							<%= link_to building do %>
+								<% if building.photos.blank? %>
+									<%= image_tag 'nobuildingimage.png', size: "60x60" %>
+								<% else %>
+									<%= image_tag building.photos.first.image.url, size: "60x60" %>
+								<% end %>
 							<% end %>
 
 							<div class="best-worst-building-content">
 							<h7><%= building.name %></h7>
-							<%= light_star_image((building.reviews.average("overall")*4).round, 13, 65, "best-worst-star") %>
+							<%= star_image((building.reviews.average("overall")*4).round, 13, 65, "best-worst-star") %>
 							<p><%= geogrify(building) %></p>
 							<p><%= building.address %>, <%= building.zip %></p>
 							</div>
@@ -62,7 +66,7 @@
 			<ul>
 				<% @recent_reviews.each do |review| %>
 					<li>
-						<h5><%= review.building.name %> | <span><%= review.building.city.name %> - <%= review.building.address %>, <%= review.building.zip %></span></h5>
+						<h5><%= link_to review.building.name, building_path(review.building) %> | <span><%= review.building.city.name %> - <%= review.building.address %>, <%= review.building.zip %></span></h5>
 						<%= light_star_image((review.overall*4).round, 13, 65) %>
 						<div class="review-content-home pros"><p><span>Pros:</span> <%= review.pros %></p></div>
 						<div class="review-content-home cons"><p><span>Cons:</span> <%= review.cons %></p></div>

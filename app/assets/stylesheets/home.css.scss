@@ -178,6 +178,7 @@ $grayLight: #d4d9dc;
 	border: 1px solid $grayLightMedium;
 	border-radius: 6px;
 	h4 {
+		color: $grayVeryDark;
 		font-size: 0.9em;
 		font-weight: 400;
 		margin: 0 0 1em 0;
@@ -232,7 +233,7 @@ $grayLight: #d4d9dc;
 	margin: 2.5em 0 10em 1em;
 	padding: 0 2em;
 	h3 {
-		color: $grayDark;
+		color: $grayVeryDark;
 		font-size: 1.1em;
 		font-weight: 500;
 		margin: 0 0 1em -0.5em;
@@ -243,8 +244,11 @@ $grayLight: #d4d9dc;
 			padding: 0.8em 1.2em 0.5em 1.2em;
 			margin: 0 0 1.1em 0;
 			background: white;
-			border: 1px dashed $grayMedium;
+			border: 1px dashed $grayDark;
 			border-radius: 6px;
+			a {
+				color: $offBlack;
+			}
 			h5 {
 				color: $offBlack;
 				font-size: 0.95em;
