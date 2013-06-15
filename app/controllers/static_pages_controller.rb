@@ -2,8 +2,8 @@ class StaticPagesController < ApplicationController
 
   def home
     @buildings = Building.all.count
-    # @reviews = Review.all
-    # @rents = Rent.all
+    @best = Building.has_reviews.get_best_buildings.first(6)
+    @worst = Building.has_reviews.get_worst_buildings.first(6)
     @featured = Building.select_only_in_city("Chicago").has_image.sort_featured("count").first(6)
     @recent_reviews = Review.get_recent_reviews(5)
   end

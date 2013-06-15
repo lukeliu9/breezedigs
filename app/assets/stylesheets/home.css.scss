@@ -163,27 +163,90 @@ $grayLight: #d4d9dc;
 	margin-bottom: 15px;
 }
 
+/* Best & Worst */
+
+.best-and-worst-holder {
+	display: inline-block;
+	vertical-align: top;
+	width: 43%;
+	margin: 2.5em 0 10em 0.4em;
+}
+
+.best-and-worst {
+	padding: 0.7em 1em 1em 1em;
+	background: white;
+	border: 1px solid $grayLightMedium;
+	border-radius: 6px;
+	h4 {
+		font-size: 0.9em;
+		font-weight: 400;
+		margin: 0 0 1em 0;
+	}
+	li {
+		margin: 0 0 0.6em 0;
+		img {
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 0.5em 0 -1.6em;
+		}
+		h7 {
+			display: inline-block;
+			vertical-align: middle;
+			color: gbVeryVeryDark;
+			font-size: 0.87em;
+			font-weight: 500;
+			margin: 0 0 0 0;
+			padding: 0;
+		}
+		p {
+			color: $grayDark;
+			font-size: 0.8em;
+			margin: -0.2em 0 0.3em 0;
+		}
+	}
+}
+#best-worst-star {
+	display: inline-block;
+	vertical-align: middle;
+	margin: -0.25em 0 0 0.2em;
+}
+.best-worst-building-content {
+	vertical-align: top;
+	display: inline-block;
+}
+
+.best {
+
+}
+
+.worst {
+	margin-top: 1.5em;
+}
 
 /* Recent Reviews */
 
 .recent-reviews {
-	margin: 2.5em 0 10em 0;
-	padding: 0.7em 2em;
-	background: white;
-	border: 1px solid $grayLight;
-	border-radius: 6px;
+	width: 45%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 2.5em 0 10em 1em;
+	padding: 0 2em;
 	h3 {
 		color: $grayDark;
 		font-size: 1.1em;
 		font-weight: 500;
-		margin: 0.5em 0 1em 0;
+		margin: 0 0 1em -0.5em;
 	}
 	ul {
+		margin-left: -0.5em;
 		li {
-			padding: 0.5em;
-			border-bottom: 1px solid $grayLight;
+			padding: 0.8em 1.2em 0.5em 1.2em;
+			margin: 0 0 1.1em 0;
+			background: white;
+			border: 1px dashed $grayMedium;
+			border-radius: 6px;
 			h5 {
-				color: $gbVeryDark;
+				color: $offBlack;
 				font-size: 0.95em;
 				font-weight: 400;
 				margin: 0 0 0 0;
@@ -201,10 +264,9 @@ $grayLight: #d4d9dc;
 				margin: 0.2em 0 0.5em 0;
 			}
 			p {
-				color: $offBlack;
-				font-size: 1.1em;
+				font-size: 0.82em;
 				font-weight: 400;
-				margin: 0.5em 0 0 0;
+				margin: 0 0 0 0;
 				span {
 					font-weight: 500;
 				}
@@ -213,7 +275,21 @@ $grayLight: #d4d9dc;
 	}
 }
 
-
+.review-content-home {
+	margin: 0.5em 0 0.6em -0.3em;
+	padding: 0.6em 1.1em;
+	border-radius: 6px;
+}
+.pros {
+	background: #effbee;
+	border: 1px solid #b9e7b2;
+	color: #1e830d;
+}
+.cons {
+	background: #f9efe8;
+	border: 1px solid #f0d5c3;
+	color: #893b10;
+}
 
 
 

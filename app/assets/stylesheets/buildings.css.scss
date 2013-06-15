@@ -313,10 +313,16 @@
 	border-radius: 6px;
 	h1 {
 		font-weight: 400;
-		font-size: 1em;
+		font-size: 0.8em;
+		margin: 0;
 	}
 	h2 {
-		font-size: 0.9em;
+		font-size: 0.8em;
+		margin: 0;
+	}
+	img {
+		display: inline-block;
+		margin: 0 0 0.6em 0;
 	}
 }
 

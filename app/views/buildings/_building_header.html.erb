@@ -1,7 +1,7 @@
 <div class="building-topbar">
 	<div class="building-info">
 		<h1><%= @building.name %></h1>
-		<p id="geography"><%= building_geography %></p>
+		<p id="geography"><%= geogrify(@building) %></p>
 		<p id="address-text"><%= @building.address %>, <%= @building.zip %></p>
 
 		<div class="review-rent-btns"><!-- Write review & submit rent btns in bldg prof -->

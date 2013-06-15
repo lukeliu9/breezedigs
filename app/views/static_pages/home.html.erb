@@ -11,15 +11,62 @@
 	<div class="bg-texture-wrapper">
 	<div class="container">
 
+		<div class="best-and-worst-holder">
+			<div class="best-and-worst best">
+				<h4>Highest rated buildings</h4>
+				<ul>
+					<% @best.each do |building| %>
+						<li>
+							<% if building.photos.blank? %>
+								<%= image_tag 'nobuildingimage.png', size: "60x60" %>
+							<% else %>
+								<%= image_tag building.photos.first.image.url, size: "60x60" %>
+							<% end %>
+
+							<div class="best-worst-building-content">
+							<h7><%= building.name %></h7>
+							<%= light_star_image((building.reviews.average("overall")*4).round, 13, 65, "best-worst-star") %>
+							<p><%= geogrify(building) %></p>
+							<p><%= building.address %>, <%= building.zip %></p>
+							</div>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+
+			<div class="best-and-worst worst">
+				<h4>Lowest rated buildings</h4>
+				<ul>
+					<% @worst.each do |building| %>
+						<li>
+							<% if building.photos.blank? %>
+								<%= image_tag 'nobuildingimage.png', size: "60x60" %>
+							<% else %>
+								<%= image_tag building.photos.first.image.url, size: "60x60" %>
+							<% end %>
+
+							<div class="best-worst-building-content">
+							<h7><%= building.name %></h7>
+							<%= light_star_image((building.reviews.average("overall")*4).round, 13, 65, "best-worst-star") %>
+							<p><%= geogrify(building) %></p>
+							<p><%= building.address %>, <%= building.zip %></p>
+							</div>
+						</li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+
 		<div class="recent-reviews">
 			<h3>Recent reviews</h3>
 			<ul>
 				<% @recent_reviews.each do |review| %>
 					<li>
 						<h5><%= review.building.name %> | <span><%= review.building.city.name %> - <%= review.building.address %>, <%= review.building.zip %></span></h5>
+						<%= light_star_image((review.overall*4).round, 13, 65) %>
+						<div class="review-content-home pros"><p><span>Pros:</span> <%= review.pros %></p></div>
+						<div class="review-content-home cons"><p><span>Cons:</span> <%= review.cons %></p></div>
 						<h6><%= review.created_at.strftime("%I:%M %p %d %b %Y") %><h6>
-						<p><span>Pros:</span> <%= review.pros %></p>
-						<p><span>Cons:</span> <%= review.cons %></p>
 					</li>
 				<% end %>
 			</ul>

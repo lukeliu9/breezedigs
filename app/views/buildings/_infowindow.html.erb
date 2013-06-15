@@ -1,4 +1,11 @@
 <div class="info-window">
-<h1><%= building.name %></h1>
-<h2>Address: <%= building.address %></h2>
+	   <% if building.reviews.nil? || building.reviews.blank? %>
+			<img src="/assets/stars/star0.png" height="16px" width="80px">
+		<% else %>
+		<%= star_image((building.reviews.average("overall")*4).round) %>
+		<% end %>
+		
+	   <h1><%= building.name %></h1>
+	   <h2>Address: <%= building.address %></h2>
+	</div>
 </div>

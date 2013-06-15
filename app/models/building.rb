@@ -30,6 +30,9 @@ class Building < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
 
+  scope :has_reviews, joins{reviews.outer}.where{reviews.id != nil}
+  scope :has_image, includes{photos}.where{photos.id != nil}
+
   def gmaps4rails_address # Gets a building's address for creating the latitude & longitude
     "#{self.address}, #{self.zip}"
   end
@@ -62,10 +65,6 @@ class Building < ActiveRecord::Base
     self.joins{city}.where{city.name =~ selection}
   end
 
-  def self.has_image # Only find buildings that have an image
-    self.includes{photos}.where{photos.id != nil}
-  end
-
   def self.select_featured(many) #randoly selects from the passed in array. Used for the home page featured buildings
     self.order("RANDOM()").first(many)
   end
@@ -94,14 +93,22 @@ class Building < ActiveRecord::Base
     self.all.delete_if { |x| x.name == building.name }
   end
 
+  def self.get_best_buildings
+    self.all.sort! { |x, y| y.reviews.average("overall").to_f <=> x.reviews.average("overall").to_f }
+  end
+
+  def self.get_worst_buildings
+    self.all.sort! { |x, y| x.reviews.average("overall").to_f <=> y.reviews.average("overall").to_f }
+  end
+
   private
 
   def downcase_name
-  self.name = self.name.downcase if self.name.present?
+    self.name = self.name.downcase if self.name.present?
   end
 
   def downcase_address
-  self.address = self.address.downcase if self.address.present?
+    self.address = self.address.downcase if self.address.present?
   end
 
 end
