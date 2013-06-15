@@ -1,7 +1,7 @@
 class Building < ActiveRecord::Base
   attr_accessible :name, :address, :city, 
   :latitude, :longitude, :area, :neighborhood, :website, :zip, 
-  :management, :city_id, :area_id, :neighborhood_id, :slug, :status, :user_id, :gmaps, :alias
+  :management, :city_id, :area_id, :neighborhood_id, :slug, :status, :user_id, :gmaps, :nickname
 
   has_many :reviews, dependent: :destroy
   has_many :rents, dependent: :destroy
@@ -51,7 +51,7 @@ class Building < ActiveRecord::Base
   end
 
   def self.search_attributes(search) # Used on the home page and search header search field to search all buildings by any of its attributes
-    city_search = self.joins{city}.where{(zip =~ "%#{search}%") | (name =~ "%#{search}%") | (address =~ "%#{search}%") | (city.name =~ "%#{search}%")}
+    city_search = self.joins{city}.where{(zip =~ "%#{search}%") | (name =~ "%#{search}%") | (address =~ "%#{search}%") | (nickname =~ "%#{search}%") | (city.name =~ "%#{search}%")}
     hood_search = self.joins{neighborhood}.where{ neighborhood.name =~ "%#{search}%" }
     area_search = self.joins{area}.where{ area.name =~ "%#{search}%" }
     return city_search + hood_search + area_search
