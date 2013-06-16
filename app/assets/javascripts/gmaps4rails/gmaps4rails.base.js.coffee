@@ -442,3 +442,5 @@ class @Gmaps4Rails
 
   #gives a value between -1 and 1
   random : -> return(Math.random() * 2 -1)
+
+  
