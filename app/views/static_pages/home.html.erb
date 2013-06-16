@@ -74,7 +74,7 @@
 						<%= light_star_image((review.overall*4).round, 13, 65) %>
 						<div class="review-content-home pros"><p><span>Pros:</span> <%= review.pros %></p></div>
 						<div class="review-content-home cons"><p><span>Cons:</span> <%= review.cons %></p></div>
-						<h6><%= review.created_at.strftime("%I:%M %p %d %b %Y") %><h6>
+						<h6><%= review.created_at.strftime("%l:%M %p %d %b %Y") %><h6>
 					</li>
 				<% end %>
 			</ul>
