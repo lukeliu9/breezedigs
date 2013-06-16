@@ -26,7 +26,7 @@
 							<% end %>
 
 							<div class="best-worst-building-content">
-							<h7><%= building.name %></h7>
+							<h7><%= link_to building.name, building %></h7>
 							<span>&nbsp;(<%= pluralize(building.reviews.count, 'review') %>)</span>
 							<br>
 							<%= star_image((building.reviews.average("overall")*4).round, 13, 65, "best-worst-star") %>
@@ -52,7 +52,7 @@
 							<% end %>
 
 							<div class="best-worst-building-content">
-							<h7><%= building.name %></h7>
+							<h7><%= link_to building.name, building %></h7>
 							<span>&nbsp;(<%= pluralize(building.reviews.count, 'review') %>)</span>
 							<br>
 							<%= star_image((building.reviews.average("overall")*4).round, 13, 65, "best-worst-star") %>
