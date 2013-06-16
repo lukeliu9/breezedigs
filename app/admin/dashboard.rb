@@ -5,6 +5,34 @@ ActiveAdmin.register_page "Dashboard" do
   content :title => proc{ I18n.t("active_admin.dashboard") } do
 
     columns do
+      column do
+        panel "Building Count" do
+            pluralize(Building.all.count, 'Building')
+        end
+      end
+      column do
+        panel "User Count" do
+            pluralize(User.all.count, 'User')
+        end
+      end
+      column do
+        panel "Review Count" do
+            pluralize(Review.all.count, 'Review')
+        end
+      end
+      column do
+        panel "Rent Count" do
+            pluralize(Rent.all.count, 'Rent')
+        end
+      end
+      column do
+        panel "Photo Count" do
+            pluralize(Photo.all.count, 'Photo')
+        end
+      end
+    end
+
+    columns do
 
       column do
         panel "Recent Reviews" do
