@@ -65,7 +65,7 @@ ActiveAdmin.register_page "Dashboard" do
             column("Name")          {|building| building.name }
             column("Address")       {|building| building.address }
             column("Zip")           {|building| building.zip }
-            column("City")          {|building| building.city }
+            column("City")          {|building| building.city.name }
             column("User")          {|building| building.user }
             end
           end
