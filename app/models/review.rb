@@ -24,19 +24,23 @@ class Review < ActiveRecord::Base
   validates :transportation_rating, allow_blank: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
   validates :user_id,               uniqueness: { scope: :building_id, message: "Users may only write one review per building" }
 
-def self.average_review_rating(rating)
-  return nil if self.blank?
-  self.average(rating)
-end
+  def self.average_review_rating(rating)
+    return nil if self.blank?
+    self.average(rating)
+  end
 
-def average_review_rating(rating)
-  return nil if self.blank?
-  self.average(rating)
-end
+  def average_review_rating(rating)
+    return nil if self.blank?
+    self.average(rating)
+  end
 
-def self.get_recent_reviews(number)
-  self.order('created_at desc').limit(number)
-end
+  def self.get_recent_reviews(num)
+    self.order('created_at desc').limit(num)
+  end
+
+  def self.get_reviews_for_building(building)
+    building.reviews.sort_by { |obj| obj.created_at }
+  end
 
 end
 

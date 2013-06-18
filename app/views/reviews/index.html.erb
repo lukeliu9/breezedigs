@@ -34,7 +34,7 @@
 						<% if @reviews.nil? || @reviews.blank? %>
 							<%= render 'noreviews' %>
 						<% else %>
-							<% @reviews.each do |review| %>
+							<% sort_recent(@reviews).each do |review| %>
 							<div class="single-review-header">
 								<div>									
 									<h4>Overall rating:</h4>
