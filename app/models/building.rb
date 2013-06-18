@@ -82,12 +82,14 @@ class Building < ActiveRecord::Base
   end
 
   def self.get_best_buildings(number)
-    sorted = self.uniq.sort! { |x, y| y.reviews.count <=> x.reviews.count }.sort! { |x, y| y.reviews.average("overall").to_f <=> x.reviews.average("overall").to_f }
+    sorted = self.uniq.sort { |x, y| y.reviews.count <=> x.reviews.count }
+    sorted = sorted.sort { |x, y| y.reviews.average("overall").to_f <=> x.reviews.average("overall").to_f }
     sorted.first(number)
   end
 
   def self.get_worst_buildings(number)
-    sorted = self.uniq.sort! { |x, y| x.reviews.average("overall").to_f <=> y.reviews.average("overall").to_f }
+    sorted = self.uniq.sort { |x, y| x.reviews.average("overall")
+    sorted = sorted.to_f <=> y.reviews.average("overall").to_f }
     sorted.first(number)
   end
 

@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @buildings = Building.all.count
-    @best = Building.get_best_buildings(6)
+    @best = Building.has_reviews.get_best_buildings(6)
     @worst = Building.has_reviews.get_worst_buildings(6)
     @recent_reviews = Review.get_recent_reviews(5)
   end
