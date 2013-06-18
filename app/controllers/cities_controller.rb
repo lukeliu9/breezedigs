@@ -11,9 +11,14 @@ class CitiesController < ApplicationController
 	def show
 		@city = City.find(params[:id])
 		@search = Building.search_by_city(@city)
-  		@buildings = @search
-  		@buildingresults = Kaminari.paginate_array(@buildings).page(1).per(10)
-		@json = @buildingresults.to_gmaps4rails
+  		@buildings = Building.sort_by_reviews(@search, "count")
+  		@buildingresults = Kaminari.paginate_array(@buildings).page(params[:page]).per(10)
+		@areas = @buildings.map(&:area)
+  		@neighborhoods = @buildings.map(&:neighborhood)
+		@json = @buildingresults.to_gmaps4rails do |building, marker|
+		  	marker.infowindow render_to_string(:partial => "/buildings/infowindow", :locals => { :building => building})
+		    marker.title "#{building.name}"
+		end
 	end
 
 	def update

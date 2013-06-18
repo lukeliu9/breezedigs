@@ -10,11 +10,11 @@
 		<div class="em-buffer-3"></div>
 
 		<h1><%= "#{@city.name}" %></h1>
-		
+
 		<div class="search-sidebar">
 			<div class="map-area">
 				<%= gmaps({
-  				"map_options" => {"auto_zoom" => false, "zoom" => 13 },
+  				"map_options" => {"auto_zoom" => true },
  				"markers" => {"data" => @json }
 				}) %>
 			</div>

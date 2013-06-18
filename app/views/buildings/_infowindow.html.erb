@@ -5,7 +5,7 @@
 		<%= star_image((building.reviews.average("overall")*4).round) %>
 		<% end %>
 		
-	   <h1><%= building.name %></h1>
+	   <h1><%= link_to building.name, building %></h1>
 	   <h2>Address: <%= building.address %></h2>
 	</div>
 </div>
