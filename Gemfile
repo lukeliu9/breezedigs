@@ -8,7 +8,7 @@ gem "font-awesome-rails"
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'kaminari'
-gem 'heroku', '2.26.7'
+gem 'heroku'
 gem 'activeadmin'
 gem 'friendly_id'
 gem 'client_side_validations'
