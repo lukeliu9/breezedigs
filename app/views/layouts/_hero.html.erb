@@ -10,7 +10,7 @@
 		<div class="hero-search">
 			<%= form_tag buildings_path, method: :get do %>
 			  
-			    <%= text_field_tag :search, params[:search], placeholder: "Building name, address, city, zip, or neighborhood" %>
+			    <%= text_field_tag :search, params[:search], placeholder: "Building name, address, street, city, zip, or neighborhood" %>
 
 		   	<button type="submit" class="hero-search-button">
     		<i class="icon-search icon-large"></i> 

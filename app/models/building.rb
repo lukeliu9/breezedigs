@@ -33,6 +33,13 @@ class Building < ActiveRecord::Base
   scope :has_reviews, joins{reviews.outer}.where{reviews.id != nil}
   scope :has_image, includes{photos}.where{photos.id != nil}
 
+  def self.search_attributes(search) # Used on the home page and search header search field to search all buildings by any of its attributes
+    city_search = self.joins{city}.where{(zip =~ "%#{search}%") | (name =~ "%#{search}%") | (address =~ "%#{search}%") | (nickname =~ "%#{search}%") | (city.name =~ "%#{search}%")}
+    hood_search = self.joins{neighborhood}.where{ neighborhood.name =~ "%#{search}%" }
+    area_search = self.joins{area}.where{ area.name =~ "%#{search}%" }
+    return city_search + hood_search + area_search
+  end
+
   def gmaps4rails_address # Gets a building's address for creating the latitude & longitude
     "#{self.address}, #{self.zip}"
   end
@@ -50,23 +57,12 @@ class Building < ActiveRecord::Base
     instance_eval { reduce(:+) / size.to_f }
   end
 
-  def self.search_attributes(search) # Used on the home page and search header search field to search all buildings by any of its attributes
-    city_search = self.joins{city}.where{(zip =~ "%#{search}%") | (name =~ "%#{search}%") | (address =~ "%#{search}%") | (nickname =~ "%#{search}%") | (city.name =~ "%#{search}%")}
-    hood_search = self.joins{neighborhood}.where{ neighborhood.name =~ "%#{search}%" }
-    area_search = self.joins{area}.where{ area.name =~ "%#{search}%" }
-    return city_search + hood_search + area_search
-  end
-
   def self.search_by_city(search) # Used for the individual city views to find all the buildings in a city
     self.joins{city}.where{city.name =~ "%#{search.name}%"}
   end
 
   def self.select_only_in_city(selection) # Used for the individual city pages to get buildings only in that city
     self.joins{city}.where{city.name =~ selection}
-  end
-
-  def self.select_featured(many) #randoly selects from the passed in array. Used for the home page featured buildings
-    self.order("RANDOM()").first(many)
   end
 
   def find_for_count(name)
@@ -85,14 +81,18 @@ class Building < ActiveRecord::Base
     self.all.delete_if { |x| x.name == building.name }
   end
 
-  def self.get_best_buildings
-    sorted = self.all.sort! { |x, y| y.reviews.average("overall").to_f <=> x.reviews.average("overall").to_f }
-    sorted.first(6)
+  def self.get_best_buildings(number)
+    sorted = self.uniq.sort! { |x, y| y.reviews.average("overall").to_f <=> x.reviews.average("overall").to_f }
+    sorted.first(number)
   end
 
-  def self.get_worst_buildings
-    sorted = self.all.sort! { |x, y| x.reviews.average("overall").to_f <=> y.reviews.average("overall").to_f }
-    sorted.first(6)
+  def self.get_worst_buildings(number)
+    sorted = self.uniq.sort! { |x, y| x.reviews.average("overall").to_f <=> y.reviews.average("overall").to_f }
+    sorted.first(number)
+  end
+
+  def has_at_least_n_reviews(number)
+
   end
 
   private
