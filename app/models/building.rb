@@ -25,7 +25,7 @@ class Building < ActiveRecord::Base
 
   reverse_geocoded_by :latitude, :longitude
   geocoded_by :gmaps4rails_address
-  acts_as_gmappable, process_geocoding = false
+  acts_as_gmappable :process_geocoding => false
 
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
