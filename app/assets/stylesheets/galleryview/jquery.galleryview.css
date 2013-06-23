@@ -82,7 +82,7 @@
 }
 
 /* WRAPPER FOR FILMSTRIP IMAGES */
-.gv_frame .gv_thumbnail { position: relative;overflow: hidden !important; }
+.gv_frame .gv_thumbnail { position: relative; overflow: hidden !important; }
 
 /* WRAPPER FOR CURRENT FILMSTRIP IMAGE */
 .gv_frame.current .gv_thumbnail {}

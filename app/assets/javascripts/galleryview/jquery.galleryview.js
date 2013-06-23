@@ -1072,14 +1072,14 @@ if (typeof Object.create !== 'function') {
 		enable_slideshow: true,			//BOOLEAN - flag indicating whether to display slideshow play/pause button
 		autoplay: false,				//BOOLEAN - flag to start slideshow on gallery load
 		show_captions: false, 			//BOOLEAN - flag to show or hide frame captions	
-		filmstrip_size: 3, 				//INT - number of frames to show in filmstrip-only gallery
+		filmstrip_size: 4, 				//INT - number of frames to show in filmstrip-only gallery
 		filmstrip_style: 'scroll', 		//STRING - type of filmstrip to use (scroll = display one line of frames, scroll filmstrip if necessary, showall = display multiple rows of frames if necessary)
 		filmstrip_position: 'bottom', 	//STRING - position of filmstrip within gallery (bottom, top, left, right)
-		frame_width: 80, 				//INT - width of filmstrip frames (in pixels)
-		frame_height: 40, 				//INT - width of filmstrip frames (in pixels)
+		frame_width: 60, 				//INT - width of filmstrip frames (in pixels)
+		frame_height: 40, 				//INT - height of filmstrip frames (in pixels)
 		frame_opacity: 0.4, 			//FLOAT - transparency of non-active frames (1.0 = opaque, 0.0 = transparent)
 		frame_scale: 'crop', 			//STRING - cropping option for filmstrip images (same as above)
-		frame_gap: 5, 					//INT - spacing between frames within filmstrip (in pixels)
+		frame_gap: 4, 					//INT - spacing between frames within filmstrip (in pixels)
 		
 		// Info Bar Options
 		show_infobar: true,				//BOOLEAN - flag to show or hide infobar

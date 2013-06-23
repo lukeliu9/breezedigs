@@ -1,7 +1,7 @@
 class Building < ActiveRecord::Base
   attr_accessible :name, :address, :city, 
   :latitude, :longitude, :area, :neighborhood, :website, :zip, 
-  :management, :city_id, :area_id, :neighborhood_id, :slug, :status, :user_id, :gmaps, :nickname
+  :management, :city_id, :area_id, :neighborhood_id, :slug, :status, :user_id, :gmaps, :nickname, :reviews_count
 
   has_many :reviews, dependent: :destroy
   has_many :rents, dependent: :destroy
@@ -82,13 +82,13 @@ class Building < ActiveRecord::Base
   end
 
   def self.get_best_buildings(number)
-    sorted = self.uniq.sort { |x, y| y.reviews.count <=> x.reviews.count }
+    sorted = self.uniq
     sorted = sorted.sort { |x, y| y.reviews.average("overall").to_f <=> x.reviews.average("overall").to_f }
     sorted.first(number)
   end
 
   def self.get_worst_buildings(number)
-    sorted = self.uniq.sort { |x, y| y.reviews.count <=> x.reviews.count }
+    sorted = self.uniq
     sorted = sorted.sort { |x, y| x.reviews.average("overall").to_f <=> y.reviews.average("overall").to_f }
     sorted.first(number)
   end
