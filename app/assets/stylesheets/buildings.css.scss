@@ -11,7 +11,7 @@
 	vertical-align: top;
 	display: inline-block;
 	min-height: 20em;
-	margin:0 1em 0 0;
+	margin: 0 1em 0 0;
 	padding: 0.7em 0 0 0;
 }
 
@@ -95,9 +95,9 @@
 		display: inline-block;
 		vertical-align: middle;
 		font-size: 0.95em;
-		font-weight:350;
+		font-weight: 350;
 		color: $offBlack;
-		padding:0 0 0 0;
+		padding: 0 0 0 0;
 		margin: 0;
 	}
 	img {
@@ -117,9 +117,9 @@
 		font-size: 0.85em;
 		font-weight: 300;
 		font-style: italic;
-		padding:0 0 0 0;
-		margin:0;
-		color:$gbVeryDark;
+		padding: 0 0 0 0;
+		margin: 0;
+		color: $gbVeryDark;
 	}
 	p {
 		color: $blueVVDark;
@@ -135,7 +135,7 @@
 .review-summary {
 	display: inline-block;
 	vertical-align: top;
-	width:31%;
+	width: 31%;
 	height: 9em;
 	padding: 0.8% 1%;
 	margin-left: 2%;
@@ -160,13 +160,29 @@
 		margin-left: 1.2em;
 	}
 	ul {
-		li {
-			margin-bottom: 1.3em;
-		}
+		li { margin-bottom: 1.3em; }
 	}
 	p {
 		font-size: 0.85em;
 		color: $offBlack;
+	}
+}
+
+/* Show view for single city */
+
+.city-header {
+	width: 59%;
+	padding: 0.5em 1em;
+	margin-left: 37%;
+	margin-bottom: 0.8em;
+	background: $grayVeryLight;
+	border-radius: 6px;
+	text-align: left;
+	h1 {
+		color: $grayDark;
+		font-size: 1.15em;
+		font-weight: 400;
+		margin: 0 0 0 -1em;
 	}
 }
 
@@ -195,9 +211,7 @@
 	padding: 0.7em;
 }
 
-.building-topbar {
-	width: 105%;
-}
+.building-topbar { width: 105%; }
 
 .building-info {
 	display: inline-block;
@@ -251,10 +265,7 @@
 	ul {
 		margin-left: 1.5em;
 		margin-top: -0.4em;
-		li {
-			display: inline-block;
-			vertical-align: middle;
-		}
+		li { display: inline-block; vertical-align: middle; }
 	}
 }
 #overall-avg-stars {margin-left: 1em;}
@@ -265,11 +276,7 @@
 	margin-top: -1em;
 	margin-left: -2em;
 	padding: 0;
-	ul {
-		li {
-			margin-bottom: 0em;
-		}
-	}
+	ul { li { margin-bottom: 0em; } }
 }
 .stats-stars {
 	vertical-align: top;
@@ -282,7 +289,7 @@
 			display: block;
 			margin-bottom: 0.07em;
 		}
-		&:first-child {line-height: 0.87em}
+		&:first-child { line-height: 0.87em }
 	}
 }
 
@@ -330,9 +337,7 @@
 	width: 95%;
 	margin-top: 1.5em;
 	padding: 0 1em;
-	span {
-		margin-right: 1.5em;
-	}
+	span { margin-right: 1.5em; }
 }
 
 .building-data-toggle {
@@ -384,9 +389,7 @@
 				font-size: 0.8em;
 				font-weight: 300;
 			}			
-			&:hover {
-				background: $blueLight;
-			}
+			&:hover { background: $blueLight; }
 		}
 	}
 }
@@ -414,7 +417,8 @@
 	margin-left: auto;
 	margin-right: auto;
 	padding: 4%;
-	background: $blueLight;
+	background: #fefff2;
+	border: 1px solid #eef2c9;
 	border-radius: 6px;
 	h3 {
 		font-size: 0.9em;
@@ -460,9 +464,7 @@
 		padding: 0.5em;
 		font-size: 0.83em;
 	}
-	input {
-		font-size: 0.83em;
-	}
+	input { font-size: 0.83em; }
 }
 
 .new-building-sidebar {
@@ -489,20 +491,20 @@
 }
 
 .building-form-fields {
-	div {display:block;}
+	div { display:block; }
 }
 
-#building-name	{width: 95%;}
-#address-field 	{width: 95%;}
-#zip 			{width: 20%;}
+#building-name	{ width: 95%; }
+#address-field 	{ width: 95%; }
+#zip 			{ width: 20%; }
 
-#city 			{width:30%;}
-#area 			{width:30%;}
-#neighborhood 	{width:30%;}
+#city 			{ width:30%; }
+#area 			{ width:30%; }
+#neighborhood 	{ width:30%; }
 
-#management 	{width:70%; margin-top: 2em;}
+#management 	{ width:70%; margin-top: 2em; }
 
-#create-building-btn {text-align: left; padding-top:1em;}
+#create-building-btn { text-align: left; padding-top:1em; }
 
 /* Thanks */
 
@@ -523,11 +525,6 @@
 		padding: 0;
 	}
 }
-
-.thankyou-fb-box {
-
-}
-
 
 
 

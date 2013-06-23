@@ -226,13 +226,7 @@ $grayLight: #d4d9dc;
 	display: inline-block;
 }
 
-.best {
-
-}
-
-.worst {
-	margin-top: 1.5em;
-}
+.worst { margin-top: 1.5em; }
 
 /* Recent Reviews */
 
@@ -256,9 +250,7 @@ $grayLight: #d4d9dc;
 			background: white;
 			border: 1px dashed $grayDark;
 			border-radius: 6px;
-			a {
-				color: $offBlack;
-			}
+			a { color: $offBlack; }
 			h5 {
 				color: $offBlack;
 				font-size: 0.95em;
@@ -281,9 +273,7 @@ $grayLight: #d4d9dc;
 				font-size: 0.82em;
 				font-weight: 400;
 				margin: 0 0 0 0;
-				span {
-					font-weight: 500;
-				}
+				span { font-weight: 500; }
 			}
 		}
 	}

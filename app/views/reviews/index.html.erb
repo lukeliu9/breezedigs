@@ -40,7 +40,14 @@
 									<h4>Overall rating:</h4>
 									<%= star_image((review[:overall]*4).round) %>
 									<p>
-										Posted by: <%= review.user.first_name.capitalize %> <%= review.user.last_name[0,1].capitalize %>. on <%= review.created_at.strftime("%d %b. %Y") %>
+										Posted by: 
+										<% if review.user.nil? || review.user.first_name.blank? %>
+										Anonymous
+										<% else %>
+										<%= review.user.first_name.capitalize %> 
+										<%= review.user.last_name[0,1].capitalize %>
+										<% end %>
+										. on <%= review.created_at.strftime("%d %b. %Y") %>
 									</p>
 								</div>
 								<div>

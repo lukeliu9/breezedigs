@@ -234,15 +234,9 @@
 }
 
 .rental-table {
-	td {
-		border: 0;
-	}
-	tr {
-		border-bottom: 1px solid $grayMedium;
-	}
-	th {
-		vertical-align: bottom;
-	}
+	td { border: 0; }
+	tr { border-bottom: 1px solid $grayMedium; }
+	th { vertical-align: bottom; }
 	h3 {
 		font-size: 0.9em;
 		font-weight: 400;

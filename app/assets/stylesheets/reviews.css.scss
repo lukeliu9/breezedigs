@@ -69,9 +69,7 @@
 	height: 100px;
 	position: relative; 
 	overflow: hidden;
-	img {
-		position: absolute;
-	}
+	img { position: absolute; }
 }
 
 .select-bldg-listing:hover .select-bldg-btn {
@@ -102,6 +100,7 @@
 	height: 2.25em;
 	border-bottom: 1px solid $grayLight;
 	h2 {
+		color: $grayVeryDark;
 		margin-top: 0.9em;
 		font-size: 1em;
 	}
@@ -117,7 +116,7 @@
 }
 
 .single-review-header {
-	height: 3.75em;
+	height: 3.5em;
 	width: 97%;
 	padding-left: 0.7em;
 	background: $gbVeryLight;
@@ -134,7 +133,8 @@
 		margin-left: 0.7em;
 	}
 	p {
-		font-size: 0.85;
+		color: $grayVeryDark;
+		font-size: 0.80em;
 		margin: -0.4em 0 0.5em 0;
 		font-style: italic;
 	}
@@ -168,9 +168,7 @@
 	vertical-align: top;
 	margin-top: 0.7em;
 	ul {
-		li {
-			margin-left: -1.5em;
-		}
+		li { margin-left: -1.5em; }
 	}
 	h4 {
 		font-size: 0.85em;

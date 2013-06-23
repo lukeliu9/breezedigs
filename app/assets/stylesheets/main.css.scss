@@ -39,19 +39,15 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {display: block;}
 body {line-height: 1;}
 ol, ul {list-style: none;}
-blockquote, q {quotes: none;}
 
-blockquote:before, blockquote:after,
-q:before, q:after {content: ''; content: none;}
+table { border-collapse: collapse; border-spacing: 0;}
 
-table {border-collapse: collapse;border-spacing: 0;}
-
-body {width:100%;}
-html, body {height:100%;}
+body { width:100%; }
+html, body { height:100%; }
 textarea { resize: vertical; }
-div > * {vertical-align:middle;}
+div > * {vertical-align:middle; }
 a { text-decoration: none; }
-a:hover { text-decoration: none;}
+a:hover { text-decoration: none; }
 
 /* General */
 .main-content-area {margin:0 auto;}
@@ -139,9 +135,7 @@ p { font-size: 0.9em; line-height: 1.1em; }
 	border-bottom: 1px solid #c3cbd4;
 	margin-left: auto;
 	margin-right: auto;
-	input {
-		margin-top: 0.8em;
-	}
+	input { margin-top: 0.8em; }
 }
 #search {
 	font-size: 0.86em;
@@ -165,7 +159,6 @@ footer {
 	color: #649ed0;
 	background-color: #eef4fa;
 	clear: both;
-	
 	a { color: #396392; display: block; margin-top: -4px; text-decoration: none;
 		&:hover { color: #699fdb; }
 	}
@@ -173,9 +166,7 @@ footer {
 .footer-narrow {width: 80%; margin-left: auto; margin-right: auto;}
 .footer-col { margin-left: -0.8em; li {vertical-align:top; display: inline-block; white-space: normal; width: 12.6em; line-height: 2.2em; text-align:left; font-size: 0.95em;}}
 .view-all-cities { margin-left: 74.5%; }
-.upper-footer {
-	h3 {font-size: 1em; margin-bottom: 20px; font-weight: 300;}
-}
+.upper-footer { h3 {font-size: 1em; margin-bottom: 20px; font-weight: 300;} }
 .lower-footer {background: #c3d8f0; height:25em; border-top: 1px solid #78a4d6;}
 
 #social-col {width:225px;}
