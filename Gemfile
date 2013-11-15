@@ -24,6 +24,7 @@ gem 'whenever', :require => false #deploying cron jobs
 gem 'sitemap_generator'
 gem 'carrierwave'
 gem 'fog'
+gem 'unf'
 
 # Authentication
 gem 'devise'
@@ -40,7 +41,7 @@ gem "squeel"
 gem "meta_search"
 # Geocoding & maps
 gem "geocoder"
-gem 'gmaps4rails'
+gem 'gmaps4rails', '1.5.6'
 
 # Heroku production server
 gem 'puma'
