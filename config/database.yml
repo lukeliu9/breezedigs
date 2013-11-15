@@ -15,11 +15,11 @@
 production:
   adapter: postgresql
   encoding: unicode
-  database: breezedigs_production
+  database: d73tc5vtot4ejr
   pool: 5
-  host: localhost
-  username: breezedigs
-  password: reviews321
+  host: ec2-54-204-27-119.compute-1.amazonaws.com
+  username: gwqgwtbkhhbbgs
+  password: pe1qykpYtEzeACJgdN4Sl2VtZg
 
 development:
   adapter: postgresql
