@@ -50,10 +50,6 @@ gem 'resque', '1.22.0' # Redis background jobs
 gem 'delayed_job_active_record' # background upload of images to
 gem 'newrelic_rpm' # App Monitoring
 
-# Caching on Heroku
-gem 'memcachier'
-gem 'dalli'
-
 gem 'pg', '0.12.2'
 
 group :production do
